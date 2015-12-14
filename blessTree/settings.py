@@ -26,6 +26,7 @@ SECRET_KEY = '2w%+23)d-xu*#12^1rewlbj=&d_-!ncq*t=2-g@$2^80wro&q+'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [
+    '.sinaapp.com',
     '.blesstree.sinaapp.com',
     '1.blesstree.sinaapp.com'
 ]
@@ -119,7 +120,7 @@ else:
     MYSQL_USER = 'root'
     MYSQL_PASS = '185313'# 本地环境下配置数据库账号密码
     MYSQL_DB = 'app_blessTree'
-    DEBUG = True
+    DEBUG = False
 
 DATABASES = {
     'default': {
