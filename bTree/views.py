@@ -19,7 +19,7 @@ from wechat_django.sdk.parser import parse_message
 
 WEIXIN_TOKEN = 'weixin'
 
-
+@csrf_exempt
 def weixin_main(request):
     """
         微信接入验证(GET)
