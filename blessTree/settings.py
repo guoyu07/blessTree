@@ -60,6 +60,9 @@ DEFAULT_FILE_STORAGE = 'sae.ext.django.storage.backend.Storage'
 # 使用media这个bucket
 STORAGE_BUCKET_NAME = 'media'
 # ref: https://docs.djangoproject.com/en/dev/topics/files/
+ADMINS = (
+    ('administrator', 'administrator@gmail.com'),
+)
 # ref: https://docs.djangoproject.com/en/dev/ref/settings/#email
 EMAIL_BACKEND = 'sae.ext.django.mail.backend.EmailBackend'
 EMAIL_HOST = 'smtp.example.com'
