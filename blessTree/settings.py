@@ -24,11 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '2w%+23)d-xu*#12^1rewlbj=&d_-!ncq*t=2-g@$2^80wro&q+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
 
 ALLOWED_HOSTS = [
     '.blesstree.sinaapp.com',
-    'http://blesstree.sinaapp.com/'
+    '1.blesstree.sinaapp.com'
 ]
 
 
