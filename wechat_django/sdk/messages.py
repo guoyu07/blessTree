@@ -1,12 +1,12 @@
 # -*-coding:utf-8-*-
-__author__ = 'albert'
+# __author__ = 'albert'
 
 """
     微信服务器推送的普通消息类型
     参考：http://mp.weixin.qq.com/wiki/17/fc9a27730e07b9126144d9c96eaf51f9.html
 """
 
-from __future__ import absolute_import, unicode_literals
+# from __future__ import absolute_import, unicode_literals
 import copy
 import six
 

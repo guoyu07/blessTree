@@ -5,7 +5,7 @@ __author__ = 'albert'
     一些有用的函数
 """
 
-from __future__ import absolute_import, unicode_literals
+# from __future__ import absolute_import, unicode_literals
 import string
 import random
 import hashlib

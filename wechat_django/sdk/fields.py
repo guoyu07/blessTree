@@ -5,7 +5,7 @@ __author__ = 'albert'
     参考：http://mp.weixin.qq.com/wiki/17/fc9a27730e07b9126144d9c96eaf51f9.html
 """
 
-from __future__ import absolute_import, unicode_literals
+# from __future__ import absolute_import, unicode_literals
 import time
 from datetime import datetime
 import base64

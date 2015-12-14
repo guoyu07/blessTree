@@ -6,7 +6,7 @@ __author__ = 'albert'
     参考：http://mp.weixin.qq.com/wiki/14/f79bdec63116f376113937e173652ba2.html
 """
 
-from __future__ import absolute_import, unicode_literals
+# from __future__ import absolute_import, unicode_literals
 
 from wechat_django.sdk.fields import (
     BaseField,
