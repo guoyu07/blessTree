@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '.sinaapp.com',
-    'http://1.blesstree.sinaapp.com'
+    '1.blesstree.sinaapp.com'
 ]
 
 
