@@ -34,17 +34,9 @@ def weixin_main(request):
         token = WEIXIN_TOKEN
         if check_signature(token, signature, timestamp, nonce):
             return HttpResponse(echostr)
-        # tmp_list = [token, timestamp, nonce]
-        # tmp_list.sort()
-        # tmp_str = "%s%s%s" % tuple(tmp_list)
-        # tmp_str = hashlib.sha1(tmp_str).hexdigest()
-        # if tmp_str == signature:
-        #     return HttpResponse(echostr)
-        # else:
-        #     return HttpResponse("weixin  index")
     else:
         msg = parse_message(request.body)  # request.body就是post的xml格式文件
-        return HttpResponse(msg)
+        return HttpResponse(msg.type)
 
 def test(request):
     html = "<p>你好</p>"
