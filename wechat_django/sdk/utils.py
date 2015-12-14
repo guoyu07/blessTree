@@ -24,24 +24,60 @@ class ObjectDict(dict):
     def __setattr__(self, key, value):
         self[key] = value
 
-
 class WeChatSigner(object):
-    """wechat 数据签名,用于微信与服务器验证校验 """
+    """WeChat data signer"""
+
     def __init__(self, delimiter=b''):
         self._data = []
         self._delimiter = to_binary(delimiter)
 
     def add_data(self, *args):
-        """ 把数据加到singer上"""
+        """Add data to signer"""
         for data in args:
             self._data.append(to_binary(data))
 
-    @property  # 这个内置的装饰器可以让函数像属性一样访问：WeChatSignerObj.signature
+    @property
     def signature(self):
-        """得到数据签名 """
+        """Get data signature"""
         self._data.sort()
-        str_to_sign = self._delimiter.join(self._data)  # 将列表转化为字符串，为了给hashlib.sha1处理
+        str_to_sign = self._delimiter.join(self._data)
         return hashlib.sha1(str_to_sign).hexdigest()
+
+
+def check_signature(token, signature, timestamp, nonce):
+    """Check WeChat callback signature, raises InvalidSignatureException
+    if check failed.
+
+    :param token: WeChat callback token
+    :param signature: WeChat callback signature sent by WeChat server
+    :param timestamp: WeChat callback timestamp sent by WeChat server
+    :param nonce: WeChat callback nonce sent by WeChat sever
+    """
+    signer = WeChatSigner()
+    signer.add_data(token, timestamp, nonce)
+    if signer.signature != signature:
+        # from wechatpy.exceptions import InvalidSignatureException
+        #
+        # raise InvalidSignatureException()
+        return False
+    return True
+# class WeChatSigner(object):
+#     """wechat 数据签名,用于微信与服务器验证校验 """
+#     def __init__(self, delimiter=b''):
+#         self._data = []
+#         self._delimiter = to_binary(delimiter)
+#
+#     def add_data(self, *args):
+#         """ 把数据加到singer上"""
+#         for data in args:
+#             self._data.append(to_binary(data))
+#
+#     @property  # 这个内置的装饰器可以让函数像属性一样访问：WeChatSignerObj.signature
+#     def signature(self):
+#         """得到数据签名 """
+#         self._data.sort()
+#         str_to_sign = self._delimiter.join(self._data)  # 将列表转化为字符串，为了给hashlib.sha1处理
+#         return hashlib.sha1(str_to_sign).hexdigest()
 
 
 def to_binary(value, encoding='utf-8'):
@@ -59,22 +95,22 @@ def to_binary(value, encoding='utf-8'):
     return six.binary_type(value)
 
 
-def check_signature(token, signature, timestamp, nonce):
-    """ 检验微信服务器端回调过来的值
-        用于微信服务器端与本服务器端的链接验证
-
-    :param token:微信回调的token，你自己定义的
-    :param signature: 微信服务器生成的签名，在GET方法中可以得到
-    :param timestamp: 微信服务器生成的，在GET方法中可以得到
-    :param nonce: 微信服务器生成的，在GET方法中可以得到
-    :return:None
-    """
-
-    signer = WeChatSigner()
-    signer.add_data(token, timestamp, nonce)
-    if signer.signature != signature:
-        return False
-    return True
+# def check_signature(token, signature, timestamp, nonce):
+#     """ 检验微信服务器端回调过来的值
+#         用于微信服务器端与本服务器端的链接验证
+#
+#     :param token:微信回调的token，你自己定义的
+#     :param signature: 微信服务器生成的签名，在GET方法中可以得到
+#     :param timestamp: 微信服务器生成的，在GET方法中可以得到
+#     :param nonce: 微信服务器生成的，在GET方法中可以得到
+#     :return:None
+#     """
+#
+#     signer = WeChatSigner()
+#     signer.add_data(token, timestamp, nonce)
+#     if signer.signature != signature:
+#         return False
+#     return True
 
 
 def to_text(value, encoding='utf-8'):
