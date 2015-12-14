@@ -40,4 +40,4 @@ WEIXIN_TOKEN = 'weixin_token'
 
 def test(request):
     html = "<p>你好</p>"
-    return render_to_response(locals())
+    return render_to_response(html)
