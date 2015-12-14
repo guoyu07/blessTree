@@ -27,8 +27,8 @@ SECRET_KEY = '2w%+23)d-xu*#12^1rewlbj=&d_-!ncq*t=2-g@$2^80wro&q+'
 # DEBUG = True
 
 ALLOWED_HOSTS = [
-    'blesstree.sinaapp.com',
-    '1.blesstree.sinaapp.com'
+    '.blesstree.sinaapp.com',
+    'http://blesstree.sinaapp.com/'
 ]
 
 
