@@ -35,8 +35,7 @@ def register_message(msg_type):
 
 
 class MessageMetaClass(type):
-    """ 所有消息类型的元类，元类：产生类的类
-    """
+    """Metaclass for all messages"""
     def __new__(cls, name, bases, attrs):
         for b in bases:
             if not hasattr(b, '_fields'):
@@ -47,8 +46,9 @@ class MessageMetaClass(type):
                     continue
                 if isinstance(v, FieldDescriptor):
                     attrs[k] = copy.deepcopy(v.field)
-        cls = super(MessageMetaClass.cls).__new__(cls, name, bases, attrs)
-        cls._field = {}
+
+        cls = super(MessageMetaClass, cls).__new__(cls, name, bases, attrs)
+        cls._fields = {}
 
         for name, field in cls.__dict__.items():
             if isinstance(field, BaseField):
