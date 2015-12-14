@@ -26,7 +26,7 @@ class ObjectDict(dict):
 
 
 class WeChatSigner(object):
-    """wechat 数据签名 """
+    """wechat 数据签名,用于微信与服务器验证校验 """
     def __init__(self, delimiter=b''):
         self._data = []
         self._delimiter = to_binary(delimiter)
@@ -36,7 +36,7 @@ class WeChatSigner(object):
         for data in args:
             self._data.append(to_binary(data))
 
-    @property
+    @property  # 这个内置的装饰器可以让函数像属性一样访问：WeChatSignerObj.signature
     def signature(self):
         """得到数据签名 """
         self._data.sort()
@@ -46,7 +46,7 @@ class WeChatSigner(object):
 
 def to_binary(value, encoding='utf-8'):
     """
-        将数据转化为二进制字符，默认为utf-8编码
+        six.binary_type:主要是兼容python2的str()与python3的bytes()
         :param value:被转化的数据
         :param encoding:编码类型
     """
@@ -75,6 +75,7 @@ def check_signature(token, signature, timestamp, nonce):
     if signer.signature != signature:
         return False
     return True
+
 
 def to_text(value, encoding='utf-8'):
     """ 将数据转换为文本，默认编码是utf-8
@@ -111,6 +112,11 @@ def timezone(zone):
 
 
 def random_string(length=16):
+    """
+    截取随机的字符串并返回
+    :param length: 返回字符串的长度
+    :return:随机字符串
+    """
     rule = string.ascii_letters + string.digits
     rand_list = random.sample(rule, length)
     return ''.join(rand_list)

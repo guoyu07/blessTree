@@ -18,7 +18,7 @@ from wechat_django.sdk.fields import (
 )
 from wechat_django.sdk.messages import BaseMessage
 
-EVENT_TYPE = {}
+EVENT_TYPES = {}
 
 
 def register_event(event_type):
@@ -28,7 +28,7 @@ def register_event(event_type):
     :return:
     """
     def register(cls):
-        EVENT_TYPE[event_type] = cls
+        EVENT_TYPES[event_type] = cls
         return cls
     return register
 

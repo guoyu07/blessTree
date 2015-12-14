@@ -28,7 +28,7 @@ def register_message(msg_type):
     :param msg_type:
     :return:
     """
-    def register(cls):
+    def register(cls):  # self表示实例对象本身，cls表示类本身，没有则表示静态方法
         MESSAGE_TYPES[msg_type] = cls
         return cls
     return register
@@ -78,3 +78,19 @@ class BaseMessage(six.with_metaclass(MessageMetaClass)):
             return to_binary(_repr)
         else:
             return to_text(_repr)
+
+
+@register_message('text')
+class TextMessage(BaseMessage):
+    """
+    文本消息
+    参阅
+    http://mp.weixin.qq.com/wiki/10/79502792eef98d6e0c6e1739da387346.html
+    """
+    type = 'text'
+    content = StringField('Content')
+
+
+class UnknownMessage(BaseMessage):
+    """未知消息类型"""
+    pass

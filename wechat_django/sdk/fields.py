@@ -16,6 +16,7 @@ from wechat_django.sdk.utils import to_binary, to_text, ObjectDict, timezone
 
 default_timezone = timezone('Asia/Shanghai')
 
+
 class FieldDescriptor(object):
     def __init__(self, field):
         self.field = field
