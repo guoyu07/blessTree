@@ -27,7 +27,7 @@ SECRET_KEY = '2w%+23)d-xu*#12^1rewlbj=&d_-!ncq*t=2-g@$2^80wro&q+'
 # DEBUG = True
 
 ALLOWED_HOSTS = [
-    '.sinaapp.com',
+    'blesstree.sinaapp.com',
     '1.blesstree.sinaapp.com'
 ]
 
@@ -89,7 +89,7 @@ ROOT_URLCONF = 'blessTree.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates').replace('\\', '/'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -104,7 +104,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blessTree.wsgi.application'
 
-
+STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static')
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
@@ -113,7 +113,7 @@ WSGI_APPLICATION = 'blessTree.wsgi.application'
 if 'SERVER_SOFTWARE' in os.environ:
     import sae.const
     from sae.const import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
-    DEBUG = True
+    DEBUG = False
 else:
     MYSQL_HOST = 'localhost'
     MYSQL_PORT = '3306'
