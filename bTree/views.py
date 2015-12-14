@@ -27,26 +27,21 @@ def weixin_main(request):
     """
 
     if request.method == 'GET':
-        # signature = request.GET.get('signature', None)
-        # timestamp = request.GET.get('timestamp', None)
-        # nonce = request.GET.get('nonce', None)
-        # echostr = request.GET.get('echostr', None)
-        # token = WEIXIN_TOKEN
-        # if check_signature(token, signature, timestamp, nonce):
-        #     return HttpResponse(echostr)
         signature = request.GET.get("signature", None)
         timestamp = request.GET.get("timestamp", None)
         nonce = request.GET.get("nonce", None)
         echostr = request.GET.get("echostr", None)
         token = WEIXIN_TOKEN
-        tmp_list = [token, timestamp, nonce]
-        tmp_list.sort()
-        tmp_str = "%s%s%s" % tuple(tmp_list)
-        tmp_str = hashlib.sha1(tmp_str).hexdigest()
-        if tmp_str == signature:
+        if check_signature(token, signature, timestamp, nonce):
             return HttpResponse(echostr)
-        else:
-            return HttpResponse("weixin  index")
+        # tmp_list = [token, timestamp, nonce]
+        # tmp_list.sort()
+        # tmp_str = "%s%s%s" % tuple(tmp_list)
+        # tmp_str = hashlib.sha1(tmp_str).hexdigest()
+        # if tmp_str == signature:
+        #     return HttpResponse(echostr)
+        # else:
+        #     return HttpResponse("weixin  index")
     else:
         msg = parse_message(request.body)  # request.body就是post的xml格式文件
         return HttpResponse(msg)
