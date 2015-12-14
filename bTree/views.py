@@ -1,3 +1,4 @@
+# -*-coding:utf-8-*-
 # python内置库
 import hashlib
 import json
