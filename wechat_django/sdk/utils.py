@@ -71,7 +71,7 @@ def check_signature(token, signature, timestamp, nonce):
     """
 
     signer = WeChatSigner()
-    signer.add_data(token, signature, timestamp, nonce)
+    signer.add_data(token, timestamp, nonce)
     if signer.signature != signature:
         return False
     return True

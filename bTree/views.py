@@ -27,7 +27,7 @@ def weixin_main(request):
     """
 
     if request.method == 'GET':
-        signature  =request.GET.get('signature', None)
+        signature = request.GET.get('signature', None)
         timestamp = request.GET.get('timestamp', None)
         nonce = request.GET.get('nonce', None)
         echostr = request.GET.get('echostr', None)
