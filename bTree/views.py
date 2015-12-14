@@ -36,3 +36,7 @@ def weixin_main(request):
     else:
         xml_str = smart_str(request.body)
         request_xml = etree.fromstring(xml_str)
+
+def test(request):
+    html = "<p>你好</p>"
+    return render_to_response(locals())
