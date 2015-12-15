@@ -113,8 +113,8 @@ def to_binary(value, encoding='utf-8'):
 #     return True
 
 
-def to_text(value, encoding='unicode'):
-    """ 将数据转换为文本，默认编码是unicode
+def to_text(value, encoding='Unicode'):
+    """ 将数据转换为文本，默认编码是utf-8
 
     :param value: 被转换的数据
     :param encoding: 编码规则
