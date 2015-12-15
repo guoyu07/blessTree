@@ -31,11 +31,21 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61875" vertical-offset="603" max-vertical-offset="1116">
-              <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.76875" vertical-offset="549" max-vertical-offset="1116">
+              <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
               <folding>
                 <element signature="e#33#47#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bTree/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -858,14 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1875" vertical-offset="0" max-vertical-offset="480">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/static/tree/js/jquery.lqc.extension.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
@@ -882,10 +884,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bTree/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61875" vertical-offset="603" max-vertical-offset="1116">
-          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.76875" vertical-offset="549" max-vertical-offset="1116">
+          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
           <folding>
             <element signature="e#33#47#0" expanded="true" />
           </folding>
