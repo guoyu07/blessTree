@@ -15,6 +15,7 @@ from django.shortcuts import render_to_response,get_object_or_404
 from django.http import Http404
 from wechat_django.sdk.utils import check_signature
 from wechat_django.sdk.parser import parse_message
+from wechat_django.sdk.replies import TextReply
 # Create your views here.
 
 WEIXIN_TOKEN = 'weixin'
@@ -36,8 +37,14 @@ def weixin_main(request):
             return HttpResponse(echostr)
     else:
         msg = parse_message(request.body)  # request.body就是post的xml格式文件
-        return HttpResponse(msg.type)
+        if msg.type == 'text':
+            reply = TextReply()
+            reply.source = msg.target
+            reply.target = msg.source
+            reply.content = 'test'
 
+            xml = reply.render()
+            return HttpResponse(xml)
 def test(request):
     html = "<p>你好</p>"
     return HttpResponse(html)
