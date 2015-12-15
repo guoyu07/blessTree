@@ -18,6 +18,7 @@ default_timezone = timezone('Asia/Shanghai')
 
 
 class FieldDescriptor(object):
+
     def __init__(self, field):
         self.field = field
         self.attr_name = field.name
@@ -30,7 +31,8 @@ class FieldDescriptor(object):
                 instance._data[self.attr_name] = value
             if isinstance(value, dict):
                 value = ObjectDict(value)
-            if value and not isinstance(value, (dict, list, tuple)) and six.callable(self.field.converter):
+            if value and not isinstance(value, (dict, list, tuple)) and \
+                    six.callable(self.field.converter):
                 value = self.field.converter(value)
             return value
         return self.field
@@ -40,7 +42,7 @@ class FieldDescriptor(object):
 
 
 class BaseField(object):
-    converter = None  # 转换
+    converter = None
 
     def __init__(self, name, default=None):
         self.name = name
@@ -83,7 +85,7 @@ class IntegerField(BaseField):
 
     def to_xml(self, value):
         value = self.converter(value) if value is not None else self.default
-        tpl = '<name>{value}</{name}>'
+        tpl = '<{name}>{value}</{name}>'
         return tpl.format(name=self.name, value=value)
 
 
@@ -104,9 +106,17 @@ class FloatField(BaseField):
     converter = float
 
     def to_xml(self, value):
+        value = self.converter(value) if value is not None else self.default
+        tpl = '<{name}>{value}</{name}>'
+        return tpl.format(name=self.name, value=value)
+
+
+class ImageField(StringField):
+
+    def to_xml(self, value):
         value = self.converter(value)
         tpl = """<Image>
-            <MediaId><![CDATA[{value}]]></MediaId>
+        <MediaId><![CDATA[{value}]]></MediaId>
         </Image>"""
         return tpl.format(value=value)
 
@@ -115,9 +125,9 @@ class VoiceField(StringField):
 
     def to_xml(self, value):
         value = self.converter(value)
-        tpl = """<Image>
-            <MediaId><![CDATA[{value}]]></MediaId>
-        </Image>"""
+        tpl = """<Voice>
+        <MediaId><![CDATA[{value}]]></MediaId>
+        </Voice>"""
         return tpl.format(value=value)
 
 
@@ -143,19 +153,18 @@ class VideoField(StringField):
 
 class Base64EncodeField(StringField):
 
-    def __base64_encode(self, value):
-        return to_text(base64.encode(to_binary(value)))
+    def __base64_encode(self, text):
+        return to_text(base64.b64encode(to_binary(text)))
 
     converter = __base64_encode
 
 
 class Base64DecodeField(StringField):
 
-    def __base64_decode(self, value):
-        return to_text(base64.decode(to_binary(value)))
+    def __base64_decode(self, text):
+        return to_text(base64.b64decode(to_binary(text)))
 
     converter = __base64_decode
-
 
 # 其他类型以后再写
 # class MusicField(StringField):
