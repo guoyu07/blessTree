@@ -16,7 +16,9 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+FILE_CHARSET = 'utf-8'
+DEFAULT_CHARSET = 'utf-8'
+LANGUAGE_CODE = 'zh-cn'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 

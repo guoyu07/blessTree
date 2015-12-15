@@ -28,7 +28,6 @@ def weixin_main(request):
         微信接入验证(GET)
         微信正常接收信息(POST)
     """
-    request.setCharacterEncoding("UTF-8")
 
     if request.method == 'GET':
         signature = request.GET.get("signature", None)
