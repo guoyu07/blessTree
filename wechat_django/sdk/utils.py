@@ -113,7 +113,7 @@ def to_binary(value, encoding='utf-8'):
 #     return True
 
 
-def to_text(value, encoding='Unicode'):
+def to_text(value, encoding='utf-8'):
     """ 将数据转换为文本，默认编码是utf-8
 
     :param value: 被转换的数据
@@ -126,7 +126,8 @@ def to_text(value, encoding='Unicode'):
         return value
     if isinstance(value, six.binary_type):
         return value.decode(encoding)
-    return six.text_type(value)
+    # return six.text_type(value)
+    return value
 
 
 def timezone(zone):
