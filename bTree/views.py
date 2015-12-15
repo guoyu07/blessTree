@@ -42,7 +42,7 @@ def weixin_main(request):
             reply = TextReply()
             reply.source = msg.target
             reply.target = msg.source
-            reply.content = 'test'
+            reply.content = 'http://1.lqbazao.sinaapp.com/tree/main.html'
 
             xml = reply.render()
             return HttpResponse(xml)
