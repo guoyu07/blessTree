@@ -43,7 +43,7 @@ def weixin_main(request):
             reply = TextReply()
             reply.source = msg.target
             reply.target = msg.source
-            if msg.content == to_text('祝福树'):
+            if msg.content == 'bless':
                 reply.content = 'http://1.blesstree.sinaapp.com/wechat/'
             else:
                 reply.content = msg.content
