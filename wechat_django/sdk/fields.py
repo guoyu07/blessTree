@@ -88,12 +88,15 @@ class IntegerField(BaseField):
 
 
 class DateTimeField(BaseField):
-    converter = float
+    def __converter(self, value):
+        v = int(value)
+        return datetime.fromtimestamp(v, tz=default_timezone)
+    converter = __converter
 
     def to_xml(self, value):
         value = time.mktime(datetime.timetuple(value))
         value = int(value)
-        tpl = '<name>{value}</{name}>'
+        tpl = '<{name}>{value}</{name}>'
         return tpl.format(name=self.name, value=value)
 
 

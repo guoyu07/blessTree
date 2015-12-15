@@ -20,6 +20,7 @@ from wechat_django.sdk.replies import TextReply
 
 WEIXIN_TOKEN = 'weixin'
 
+
 @csrf_exempt
 def weixin_main(request):
     """
