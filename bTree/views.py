@@ -49,7 +49,7 @@ def weixin_main(request):
 
 
 def main_page(request):
-    return render_to_response('main.html')
+    return render_to_response('main.html', locals())
 
 
 def test(request):
