@@ -42,10 +42,16 @@ def weixin_main(request):
             reply = TextReply()
             reply.source = msg.target
             reply.target = msg.source
-            reply.content = 'http://1.lqbazao.sinaapp.com/tree/main.html'
+            reply.content = 'http://1.blesstree.sinaapp.com/wechat/'
 
             xml = reply.render()
             return HttpResponse(xml)
+
+
+def main_page(request):
+    return HttpResponse('main.html')
+
+
 def test(request):
     html = "<p>你好</p>"
     return HttpResponse(html)
