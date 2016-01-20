@@ -16,14 +16,14 @@ class WeChatUser(BaseWeChatAPI):
         :param lang: 国家地区语言
         :return:返回json数据包
         """
-        assert lang in ('zh_CN', 'zh_TW', 'en'), 'lang can only be one of these language code'
-        return self._get(
-            'user/info',
-            params={
-                'openid': user_id,
-                'lang': lang
-                }
-        )
+        # return self._get(
+        #     'user/info',
+        #     params={
+        #         'openid': user_id,
+        #         'lang': lang
+        #         }
+        # )
+        return 1
     #
     # def get_followers(self, first_user_id=None):
     #     """
