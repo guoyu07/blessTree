@@ -23,7 +23,7 @@ class WeChatUser(BaseWeChatAPI):
         #         'lang': lang
         #         }
         # )
-        return 1
+        pass
     #
     # def get_followers(self, first_user_id=None):
     #     """
