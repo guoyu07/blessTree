@@ -11,7 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 from django.shortcuts import render,HttpResponse
-from django.shortcuts import render_to_response,get_object_or_404
+from django.shortcuts import render_to_response, get_object_or_404
 from django.http import Http404
 from wechat_django.sdk.utils import check_signature
 from wechat_django.sdk.parser import parse_message

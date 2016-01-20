@@ -4,7 +4,6 @@ __author__ = 'albert'
 """
     wechat api 基类
 """
-from __future__ import absolute_import, unicode_literals
 
 
 class BaseWeChatAPI(object):
