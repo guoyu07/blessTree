@@ -55,8 +55,8 @@ def weixin_main(request):
                 reply.content = 'http://1.blesstree.sinaapp.com/wechat/'
             elif msg.content == '我':
                 user_test = WeChatUser()
-                s = json.loads(user_test.get(msg.source))
-                reply.content = user_test.get(msg.source)['nickname']
+                s = json.read(user_test.get(msg.source))
+                reply.content = s['nickname']
             else:
                reply.content = msg.content
 
