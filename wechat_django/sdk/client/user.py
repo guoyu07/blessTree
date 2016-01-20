@@ -5,7 +5,6 @@ __author__ = 'albert'
     获取用户基本信息的类
     参阅：http://mp.weixin.qq.com/wiki/14/bb5031008f1494a59c6f71fa0f319c66.html
 """
-from __future__ import absolute_import, unicode_literals
 from wechat_django.sdk.client.base import BaseWeChatAPI
 
 
