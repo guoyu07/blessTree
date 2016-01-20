@@ -16,7 +16,7 @@ from django.http import Http404
 from wechat_django.sdk.utils import check_signature
 from wechat_django.sdk.parser import parse_message
 from wechat_django.sdk.replies import TextReply
-from wechat_django.sdk.client.user import WeChatUser
+# from wechat_django.sdk.client.user import WeChatUser
 from wechat_django.sdk.utils import to_text
 # Create your views here.
 
