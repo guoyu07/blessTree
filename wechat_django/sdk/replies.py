@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-    wechatpy.replies
+    wechat_django.sdk.replies
     ~~~~~~~~~~~~~~~~~~
     This module defines all kinds of replies you can send to WeChat
 
@@ -14,6 +14,9 @@ import six
 from wechat_django.sdk.fields import(
     StringField,
     IntegerField,
+    ImageField,
+    VoiceField,
+    VideoField,
 )
 from wechat_django.sdk.messages import BaseMessage, MessageMetaClass
 from wechat_django.sdk.utils import to_text, to_binary
@@ -86,6 +89,50 @@ class TextReply(BaseReply):
     type = 'text'
     content = StringField('Content')
 
+
+@register_reply('image')
+class ImageReply(BaseReply):
+    """
+    图片回复
+    参阅：http://mp.weixin.qq.com/wiki/9/2c15b20a16019ae613d413e30cac8ea1.html
+    """
+    type = 'text'
+    image = ImageField('Image')
+
+    @property
+    def media_id(self):
+        return self.image
+
+
+@register_reply('voice')
+class VoiceReply(BaseReply):
+    """
+    语音回复
+    参阅:http://mp.weixin.qq.com/wiki/9/2c15b20a16019ae613d413e30cac8ea1.html
+    """
+    type = 'voice'
+    voice = VoiceField('Voice')
+
+    @property
+    def media_id(self):
+        return self.voice
+
+    @media_id.setter
+    def media_id(self, value):
+        self.voice = value
+
+
+@register_reply('video')
+class VideoReply(BaseReply):
+    """
+    视频回复
+    参阅：http://mp.weixin.qq.com/wiki/9/2c15b20a16019ae613d413e30cac8ea1.html
+    """
+    type = 'video'
+    video = VideoField('Video',{})
+
+
+# 快速回复
 def create_reply(reply, message=None, render=False):
     """
     Create a reply quickly

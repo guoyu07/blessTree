@@ -10,9 +10,9 @@ from wechat_django.sdk.client.base import BaseWeChatAPI
 
 
 class WeChatUser(BaseWeChatAPI):
-    def _get(self, user_id, lang='zh_CN'):
+    def get(self, user_id, lang='zh_CN'):
         """
-            获取用户的基本信息
+        获取用户的基本信息
         :param user_id: 用户id
         :param lang: 国家地区语言
         :return:返回json数据包
@@ -59,7 +59,7 @@ class WeChatUser(BaseWeChatAPI):
 
     def get_group_id(self, user_id):
         """
-            获取用户所在分组
+        获取用户所在分组
         :param user_id:
         :return:
         """

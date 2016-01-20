@@ -9,6 +9,20 @@ $(function () {
 
     init_main();
 
+
+    /****
+     * 微信js-sdk接口认证
+     * */
+
+    wx.config({
+        debug:true,
+        appId:'',
+        timestamp:'',
+        nonceStr:'',
+        signature:'',
+        jsApiList:[]
+    })
+
     /*********************
      * 点击事件，按钮
      * */
@@ -22,7 +36,7 @@ $(function () {
     $(".willing").fadeIn(1000)
         .on('tap', function () {
             $.ajax({
-                type:'POST',
+                type:'POST'
             });
             $(".weui_dialog_hd").html('<p>这是心愿</p>');
             $("#dialog1").show();
