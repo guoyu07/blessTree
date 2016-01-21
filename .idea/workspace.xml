@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat_django/sdk/client/__init__.py" afterPath="$PROJECT_DIR$/wechat_django/sdk/client/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat_django/sdk/client/base.py" afterPath="$PROJECT_DIR$/wechat_django/sdk/client/base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat_django/sdk/client/user.py" afterPath="$PROJECT_DIR$/wechat_django/sdk/client/user.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/views.py" afterPath="$PROJECT_DIR$/bTree/views.py" />
     </list>
     <ignored path="blessTree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +33,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="761" max-vertical-offset="1530">
-              <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="761" max-vertical-offset="1548">
+              <caret line="63" column="45" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="45" />
               <folding>
                 <element signature="e#33#47#0" expanded="true" />
               </folding>
@@ -55,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="864">
-              <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.5088677" vertical-offset="131" max-vertical-offset="864">
+              <caret line="28" column="26" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="26" />
               <folding>
                 <element signature="e#45#56#0" expanded="true" />
               </folding>
@@ -82,8 +79,8 @@
       <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620">
-              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1638">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -99,20 +96,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.627558" vertical-offset="116" max-vertical-offset="2304">
-              <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1232" max-vertical-offset="2376">
+              <caret line="180" column="8" selection-start-line="180" selection-start-column="8" selection-end-line="180" selection-end-column="8" />
               <folding>
                 <element signature="e#71#81#0" expanded="true" />
-                <element signature="e#1021#1847#0" expanded="false" />
-                <element signature="e#1935#2114#0" expanded="false" />
-                <element signature="e#2170#2214#0" expanded="false" />
-                <element signature="e#2283#3532#0" expanded="false" />
-                <element signature="e#3578#3650#0" expanded="false" />
-                <element signature="e#3773#4925#0" expanded="false" />
-                <element signature="e#4969#5080#0" expanded="false" />
+                <element signature="e#1020#1846#0" expanded="false" />
+                <element signature="e#1934#2113#0" expanded="false" />
+                <element signature="e#2169#2213#0" expanded="false" />
+                <element signature="e#2282#3531#0" expanded="false" />
+                <element signature="e#3577#3649#0" expanded="false" />
+                <element signature="e#3772#4924#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -179,8 +175,8 @@
         <option value="$PROJECT_DIR$/wechat_django/sdk/session/memorystorage.py" />
         <option value="$PROJECT_DIR$/bTree/views.py" />
         <option value="$PROJECT_DIR$/wechat_django/sdk/client/user.py" />
-        <option value="$PROJECT_DIR$/wechat_django/sdk/client/__init__.py" />
         <option value="$PROJECT_DIR$/wechat_django/sdk/client/base.py" />
+        <option value="$PROJECT_DIR$/wechat_django/sdk/client/__init__.py" />
       </list>
     </option>
   </component>
@@ -1078,20 +1074,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="864">
-          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-          <folding>
-            <element signature="e#45#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="761" max-vertical-offset="1530">
-          <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="761" max-vertical-offset="1548">
+          <caret line="63" column="45" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="45" />
           <folding>
             <element signature="e#33#47#0" expanded="true" />
           </folding>
@@ -1100,25 +1086,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1638">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.627558" vertical-offset="116" max-vertical-offset="2304">
-          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1232" max-vertical-offset="2376">
+          <caret line="180" column="8" selection-start-line="180" selection-start-column="8" selection-end-line="180" selection-end-column="8" />
           <folding>
             <element signature="e#71#81#0" expanded="true" />
-            <element signature="e#1021#1847#0" expanded="false" />
-            <element signature="e#1935#2114#0" expanded="false" />
-            <element signature="e#2170#2214#0" expanded="false" />
-            <element signature="e#2283#3532#0" expanded="false" />
-            <element signature="e#3578#3650#0" expanded="false" />
-            <element signature="e#3773#4925#0" expanded="false" />
-            <element signature="e#4969#5080#0" expanded="false" />
+            <element signature="e#1020#1846#0" expanded="false" />
+            <element signature="e#1934#2113#0" expanded="false" />
+            <element signature="e#2169#2213#0" expanded="false" />
+            <element signature="e#2282#3531#0" expanded="false" />
+            <element signature="e#3577#3649#0" expanded="false" />
+            <element signature="e#3772#4924#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5088677" vertical-offset="131" max-vertical-offset="864">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="26" />
+          <folding>
+            <element signature="e#45#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
