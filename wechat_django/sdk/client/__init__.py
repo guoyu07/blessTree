@@ -5,6 +5,8 @@ import time
 
 from wechat_django.sdk.client.base import BaseWeChatClient
 from wechat_django.sdk.client.user import WeChatUser
+
+
 class WeChatClient(BaseWeChatClient):
 
     """
