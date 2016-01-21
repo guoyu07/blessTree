@@ -19,10 +19,10 @@ class BaseWeChatAPI(object):
         self._client = client
 
     def _get(self, url, **kwargs):
-        # if getattr(self, 'API_BASE_URL', None):
-        #     kwargs['api_base_url'] = self.API_BASE_URL
-        # return self._client.get(url, **kwargs)
-        return "lqczzz"
+        if getattr(self, 'API_BASE_URL', None):
+            kwargs['api_base_url'] = self.API_BASE_URL
+        return self._client.get(url, **kwargs)
+        # return "lqczzz"
 
     def _post(self, url, **kwargs):
         if getattr(self, 'API_BASE_URL', None):
