@@ -194,13 +194,14 @@ class BaseWeChatClient(object):
         expires_in = 7200
         if 'expires_in' in result:
             expires_in = result['expires_in']
-            return result['access_token']
+            # 运行到这里没问题
         self.session.set(
             result['access_token'],
             expires_in
         )
-        self.expires_at = int(time.time()) + expires_in
-        return result
+        return "lqczzz"
+        # self.expires_at = int(time.time()) + expires_in
+        # return result
 
     def fetch_access_token(self):
         raise NotImplementedError()
