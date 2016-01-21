@@ -60,10 +60,11 @@ def weixin_main(request):
                 reply.content = 'http://1.blesstree.sinaapp.com/wechat/'
             elif msg.content == '我':
                 client = WeChatClient(appId, appsecret)
-                client.fetch_access_token()
-                user_test = client.user.get(msg.source)  # TODO：这句话有问题，查看逻辑调用
-                reply.content = json.read(user_test)['nickname']
+                client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
+                # user_test = client.user.get(msg.source)  # TODO：这句话有问题，查看逻辑调用
+                # reply.content = json.read(user_test)['nickname']
                 # reply.content = msg.content
+                reply.content = client.user.get(msg.source)
 
                 # reply.content = client.session.get('test')
             else:
