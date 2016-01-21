@@ -19,13 +19,14 @@ class WeChatUser(BaseWeChatAPI):
         assert lang in ('zh_CN', 'zh_TW', 'en'), 'lang can only be one of \
             zh_CN, zh_TW, en language codes'
 
-        return self._get(
-            'user/info',
-            params={
-                'openid': user_id,
-                'lang': lang
-                }
-        )
+        # return self._get(
+        #     'user/info',
+        #     params={
+        #         'openid': user_id,
+        #         'lang': lang
+        #         }
+        # )
+        return "hello lqc"
 
     def get_followers(self, first_user_id=None):
         """
