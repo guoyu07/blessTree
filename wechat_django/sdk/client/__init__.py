@@ -3,9 +3,9 @@ __author__ = 'albert'
 
 import time
 
-from wechat_django.sdk.client.base import BaseWeChatAPI
+from wechat_django.sdk.client.base import BaseWeChatClient
 
-class WeChatClient(BaseWeChatAPI):
+class WeChatClient(BaseWeChatClient):
 
     """
     微信api操作类，很多主动接口调用都需要的
