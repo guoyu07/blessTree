@@ -27,7 +27,6 @@ class WeChatUser(BaseWeChatAPI):
                 }
         )
 
-
     def get_followers(self, first_user_id=None):
         """
             获取关注者列表，微信服务器会保存关注者列表

@@ -13,6 +13,7 @@ import requests
 
 from wechat_django.sdk.session.memorystorage import MemoryStorage
 
+
 class BaseWeChatAPI(object):
     def __init__(self, client=None):
         self._client = client
@@ -199,7 +200,8 @@ class BaseWeChatClient(object):
             expires_in
         )
         self.expires_at = int(time.time()) + expires_in
-        return result
+        # return result
+        return "hello lqczzz"
 
     def fetch_access_token(self):
         raise NotImplementedError()
