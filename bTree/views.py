@@ -61,7 +61,7 @@ def weixin_main(request):
             elif msg.content == '我':
                 client = WeChatClient(appId, appsecret)
                 reply.content = msg.content
-                user_test = client.user.get(msg.source)
+                # user_test = client.user.get(msg.source)
                 # reply.content = json.read(user_test)['nickname']
                 # reply.content = msg.content
             else:
