@@ -65,7 +65,7 @@ def weixin_main(request):
                 # reply.content = json.read(user_test)['nickname']
                 # reply.content = msg.content
 
-                reply.content = client.fetch_access_token()
+                reply.content = client.session.get('test')
             else:
                reply.content = msg.content
 
