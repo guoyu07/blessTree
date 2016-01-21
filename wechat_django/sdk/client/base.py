@@ -9,8 +9,8 @@ import time
 import inspect
 import six
 import json
-# import requests
-#
+import requests
+
 # from wechat_django.sdk.session.memorystorage import MemoryStorage
 
 
