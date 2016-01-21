@@ -74,150 +74,153 @@ class BaseWeChatClient(object):
         if isinstance(session, six.string_types):
             pass
 
-        @property
-        def access_token_key(self):
-            return '{0}_access_token'.format(self.appid)
+    @property
+    def access_token_key(self):
+        return '{0}_access_token'.format(self.appid)
 
-        def _request(self, method, url_or_endpoint, **kwargs):
-            if not url_or_endpoint.startswith('http://', 'https://'):
-                api_base_url = kwargs.pop('api_base_url', self.API_BASE_URL)
-                url = '{base}{endpoint}'.format(
-                    base=api_base_url,
-                    endpoint=url_or_endpoint
-                )
-            else:
-                url = url_or_endpoint
-
-            # 群发消息上传接口集成
-            if url.startswith('https://file.api.weixin.qq.com'):
-                kwargs['verify'] = False
-
-            if 'params' not in kwargs:
-                kwargs['params'] = {}
-
-            if isinstance(kwargs['params'], dict) and \
-                'access_token' not in kwargs['params']:
-                kwargs['params']['access_token'] = self.access_token
-
-            if isinstance(kwargs.get('data', ''), dict):
-                body = json.dumps(kwargs['data'], ensure_ascii=False)
-                body = body.encode('utf-8')
-                kwargs['data'] = body
-
-            kwargs['timeout'] = kwargs.get('timeout', self.timeout)
-            result_processor = kwargs.pop('result_processor', None)
-            res = requests.request(
-                method=method,
-                url=url,
-                **kwargs
+    def _request(self, method, url_or_endpoint, **kwargs):
+        if not url_or_endpoint.startswith('http://', 'https://'):
+            api_base_url = kwargs.pop('api_base_url', self.API_BASE_URL)
+            url = '{base}{endpoint}'.format(
+                base=api_base_url,
+                endpoint=url_or_endpoint
             )
-            # res.raise_for_status() 异常抛出
+        else:
+            url = url_or_endpoint
 
-            return self._handle_result(
-                res, method, url, result_processor, **kwargs
-            )
+        # 群发消息上传接口集成
+        if url.startswith('https://file.api.weixin.qq.com'):
+            kwargs['verify'] = False
+
+        if 'params' not in kwargs:
+            kwargs['params'] = {}
+
+        if isinstance(kwargs['params'], dict) and \
+            'access_token' not in kwargs['params']:
+            kwargs['params']['access_token'] = self.access_token
+
+        if isinstance(kwargs.get('data', ''), dict):
+            body = json.dumps(kwargs['data'], ensure_ascii=False)
+            body = body.encode('utf-8')
+            kwargs['data'] = body
+
+        kwargs['timeout'] = kwargs.get('timeout', self.timeout)
+        result_processor = kwargs.pop('result_processor', None)
+        res = requests.request(
+            method=method,
+            url=url,
+            **kwargs
+        )
+        # res.raise_for_status() 异常抛出
+
+        return self._handle_result(
+            res, method, url, result_processor, **kwargs
+        )
 
 
-        def _decode_result(self, res):
-            res.encoding = 'utf-8'
-            result = res.json()
+    def _decode_result(self, res):
+        res.encoding = 'utf-8'
+        result = res.json()
+        return result
+
+
+    def _handle_result(self, res, method=None, url=None,
+                       result_process=None, **kwargs):
+        if not isinstance(res, dict):
+            result = self._decode_result(res)
+        else:
+            result = res
+
+        if not isinstance(result, dict):
             return result
 
+        if 'base_resp' in result:
+            result = result['base_resp']
 
-        def _handle_result(self, res, method=None, url=None,
-                           result_process=None, **kwargs):
-            if not isinstance(res, dict):
-                result = self._decode_result(res)
-            else:
-                result = res
+        if 'errcode' in result:
+            result['errcode'] = int(result['errcode'])
 
-            if not isinstance(result, dict):
-                return result
-
-            if 'base_resp' in result:
-                result = result['base_resp']
-
-            if 'errcode' in result:
-                result['errcode'] = int(result['errcode'])
-
-            if 'errcode' in result and result['errcode'] != 0:
-                errcode = result['errcode']
-                errmsg = result['errmsg']
-                # 出错原因在于access_token时候的处理
-                if errcode in (40001, 40014, 42001):
-                    self.fetch_access_token()
-                    access_token = self.session.get(self.access_token_key)
-                    kwargs['params']['access_token'] = access_token
-                    return self._request(
-                        method=method,
-                        url_or_endpoint=url,
-                        result_process=result_process,
-                        **kwargs
-                    )
-                elif errcode == 45009:
-                    pass
-                else:
-                    pass
-                # 某些错误处理先不做
-
-            return result if not result_process else result_process(result)
-
-        def get(self, url, **kwargs):
-            return self._request(
-                method='get',
-                url_or_endpoint=url,
-                **kwargs
-            )
-
-        _get = get
-
-        def post(self, url, **kwargs):
-            return self._request(
-                method='post',
-                url_or_endpoint=url,
-                **kwargs
-            )
-        _post = post
-
-        def _fetch_access_token(self, url, params):
-            """
-            获取access_token 的方法
-            :param url:
-            :param params:
-            :return:
-            """
-            res = requests.get(
-                url=url,
-                params=params
-            )
-            result = res.json()
-            expires_in = 7200
-            if 'expires_in' in result:
-                expires_in = result['expires_in']
-
-            self.session.set(8++
-                result['access_token'],
-                expires_in
-            )
-            self.expires_at = int(time.time()) + expires_in
-            return result
-
-        def access_token(self):
-            """
-            wechat access_token
-            :return:
-            """
-            access_token = self.session.get(self.access_token_key)
-            if access_token:
-                if not self.expires_at:
-                    return access_token
-
-                timstamp = time.time()
-                if self.expires_at-timstamp>60:
-                    return access_token
-
+        if 'errcode' in result and result['errcode'] != 0:
+            errcode = result['errcode']
+            errmsg = result['errmsg']
+            # 出错原因在于access_token时候的处理
+            if errcode in (40001, 40014, 42001):
                 self.fetch_access_token()
-                return self.session.get(self.access_token_key)
+                access_token = self.session.get(self.access_token_key)
+                kwargs['params']['access_token'] = access_token
+                return self._request(
+                    method=method,
+                    url_or_endpoint=url,
+                    result_process=result_process,
+                    **kwargs
+                )
+            elif errcode == 45009:
+                pass
+            else:
+                pass
+            # 某些错误处理先不做
+
+        return result if not result_process else result_process(result)
+
+    def get(self, url, **kwargs):
+        return self._request(
+            method='get',
+            url_or_endpoint=url,
+            **kwargs
+        )
+
+    _get = get
+
+    def post(self, url, **kwargs):
+        return self._request(
+            method='post',
+            url_or_endpoint=url,
+            **kwargs
+        )
+    _post = post
+
+    def _fetch_access_token(self, url, params):
+        """
+        获取access_token 的方法
+        :param url:
+        :param params:
+        :return:
+        """
+        res = requests.get(
+            url=url,
+            params=params
+        )
+        result = res.json()
+        expires_in = 7200
+        if 'expires_in' in result:
+            expires_in = result['expires_in']
+
+        self.session.set(
+            result['access_token'],
+            expires_in
+        )
+        self.expires_at = int(time.time()) + expires_in
+        return result
+
+    def fetch_access_token(self):
+        raise NotImplementedError()
+
+    def access_token(self):
+        """
+        wechat access_token
+        :return:
+        """
+        access_token = self.session.get(self.access_token_key)
+        if access_token:
+            if not self.expires_at:
+                return access_token
+
+            timstamp = time.time()
+            if self.expires_at-timstamp>60:
+                return access_token
+
+            self.fetch_access_token()
+            return self.session.get(self.access_token_key)
 
 
         # TODO session改为使用django自带的session来实现，暂时采用自己实现的session

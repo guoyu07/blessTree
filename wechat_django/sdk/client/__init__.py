@@ -4,7 +4,7 @@ __author__ = 'albert'
 import time
 
 from wechat_django.sdk.client.base import BaseWeChatClient
-
+from wechat_django.sdk.client.user import WeChatUser
 class WeChatClient(BaseWeChatClient):
 
     """
@@ -12,6 +12,10 @@ class WeChatClient(BaseWeChatClient):
     """
 
     API_BASE_URL = 'https://api.weixin.qq.com/cgi-bin/'
+
+    # 以下实现让具体功能类成为这个统一接口的属性，便于调用
+
+    user = WeChatUser
 
     def __init__(self, appid, secret, access_token=None, session=None, timeout=None):
         super(WeChatClient, self).__init__(
@@ -27,7 +31,7 @@ class WeChatClient(BaseWeChatClient):
         :return:json数据包
         """
 
-        return self._fetch_acess_token(
+        return self._fetch_access_token(
             url='https://api.weixin.qq.com/cgi-bin/token',
             params={
                 'grant_type': 'client_credential',
