@@ -64,8 +64,8 @@ def weixin_main(request):
                 # user_test = client.user.get(msg.source)  # TODO：这句话有问题，查看逻辑调用
                 # reply.content = json.read(user_test)['nickname']
                 # reply.content = msg.content
-                userq = WeChatUser(client)
-                reply.content = json.read(userq.get(msg.source))['nickname']
+                # userq = WeChatUser(client)
+                # reply.content = json.read(userq.get(msg.source))['nickname']
                 # reply.content = 'lqczzz'
                 # reply.content = client.session.get('test')
             else:
