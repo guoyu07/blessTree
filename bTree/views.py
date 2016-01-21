@@ -16,12 +16,17 @@ from django.http import Http404
 from wechat_django.sdk.utils import check_signature
 from wechat_django.sdk.parser import parse_message
 from wechat_django.sdk.replies import TextReply
+from wechat_django.sdk.client import WeChatClient
+from wechat_django.sdk.client.user import WeChatUser
+
 from wechat_django.sdk.client.user import WeChatUser
 from wechat_django.sdk.utils import to_text
 # Create your views here.
 
 import json
 
+appId = 'wx96e5255e64f71a4d'
+appsecret = '04c6d39407f0e882bcf87f207758d0d5'
 WEIXIN_TOKEN = 'weixin'
 
 
@@ -54,9 +59,11 @@ def weixin_main(request):
             if msg.content == '祝福树':
                 reply.content = 'http://1.blesstree.sinaapp.com/wechat/'
             elif msg.content == '我':
-                user_test = WeChatUser()
-                s = json.read(user_test.get(msg.source))
-                reply.content = s['nickname']
+                client = WeChatClient(appId, appsecret)
+
+                # user_test = WeChatUser()
+                # s = json.read(user_test.get(msg.source))
+                # reply.content = s['nickname']
             else:
                reply.content = msg.content
 
