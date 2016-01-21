@@ -87,12 +87,10 @@
       <file leaf-file-name="base.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5555556" vertical-offset="985" max-vertical-offset="3546">
-              <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.6888889" vertical-offset="3673" max-vertical-offset="4230">
+              <caret line="223" column="34" selection-start-line="223" selection-start-column="34" selection-end-line="223" selection-end-column="34" />
               <folding>
                 <element signature="e#71#81#0" expanded="true" />
-                <element signature="e#3597#3669#0" expanded="false" />
-                <element signature="e#3792#4944#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -995,7 +993,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1638">
           <caret line="85" column="53" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
           <folding>
-            <element signature="e#69#125#0" expanded="true" />
+            <element signature="e#69#125#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1086,12 +1084,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5555556" vertical-offset="985" max-vertical-offset="3546">
-          <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.6888889" vertical-offset="3673" max-vertical-offset="4230">
+          <caret line="223" column="34" selection-start-line="223" selection-start-column="34" selection-end-line="223" selection-end-column="34" />
           <folding>
             <element signature="e#71#81#0" expanded="true" />
-            <element signature="e#3597#3669#0" expanded="false" />
-            <element signature="e#3792#4944#0" expanded="false" />
           </folding>
         </state>
       </provider>

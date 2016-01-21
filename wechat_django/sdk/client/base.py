@@ -119,12 +119,10 @@ class BaseWeChatClient(object):
             res, method, url, result_processor, **kwargs
         )
 
-
     def _decode_result(self, res):
         res.encoding = 'utf-8'
         result = res.json()
         return result
-
 
     def _handle_result(self, res, method=None, url=None,
                        result_process=None, **kwargs):
@@ -204,10 +202,10 @@ class BaseWeChatClient(object):
         self.expires_at = int(time.time()) + expires_in
         return result
 
-
     def fetch_access_token(self):
         raise NotImplementedError()
 
+    @property
     def access_token(self):
         """
         wechat access_token
