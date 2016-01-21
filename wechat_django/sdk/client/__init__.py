@@ -15,7 +15,7 @@ class WeChatClient(BaseWeChatClient):
 
     # 以下实现让具体功能类成为这个统一接口的属性，便于调用
 
-    user = WeChatUser
+    user = WeChatUser()
 
     def __init__(self, appid, secret, access_token=None, session=None, timeout=None):
         super(WeChatClient, self).__init__(
