@@ -29,7 +29,7 @@ class WeChatUser(BaseWeChatAPI):
         """
             获取关注者列表，微信服务器会保存关注者列表
             参考：http://mp.weixin.qq.com/wiki/3/17e6919a39c1c53555185907acf70093.html
-        :param firest_user_id:第一个拉取的用户id
+        :param first_user_id:第一个拉取的用户id
         :return:返回的json包
         """
         params = {}
