@@ -220,8 +220,8 @@ class BaseWeChatClient(object):
             if self.expires_at-timstamp > 60:
                 return access_token
 
-            self.fetch_access_token()
-            return self.session.get(self.access_token_key)
+        self.fetch_access_token()
+        return self.session.get(self.access_token_key)
 
 
         # TODO session改为使用django自带的session来实现，暂时采用自己实现的session
