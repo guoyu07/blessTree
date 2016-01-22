@@ -16,7 +16,7 @@ from wechat_django.sdk.session.memorystorage import MemoryStorage
 
 class BaseWeChatAPI(object):
 
-    API_BASE_URL = 'https://api.weixin.qq.com/cgi-bin/'
+    # API_BASE_URL = 'https://api.weixin.qq.com/cgi-bin/'
 
     def __init__(self, client=None):
         self._client = client

@@ -61,14 +61,7 @@ def weixin_main(request):
             elif msg.content == '我':
                 client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
-                # user_test = client.user.get(msg.source)  # TODO：这句话有问题，查看逻辑调用
-                # reply.content = json.read(user_test)['nickname']
-                # reply.content = msg.content
-                # userq = WeChatUser(client)
-                # reply.content = json.read(userq.get(msg.source))['nickname']
-                # reply.content = 'lqczzz'
-                user = WeChatUser(client)
-                user.get(msg.source)
+                user = client.user.get(msg.source)  # TODO：这句话有问题，查看逻辑调用
                 reply.content = "lqczzz"
             else:
                reply.content = msg.content
