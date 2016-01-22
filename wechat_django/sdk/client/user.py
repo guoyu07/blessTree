@@ -9,7 +9,24 @@ from wechat_django.sdk.client.base import BaseWeChatAPI
 
 
 class WeChatUser(BaseWeChatAPI):
-    def get(self, user_id, lang='zh_CN'):
+    # def get(self, user_id, lang='zh_CN'):
+    #     """
+    #     获取用户的基本信息
+    #     :param user_id: 用户id
+    #     :param lang: 国家地区语言
+    #     :return:返回json数据包
+    #     """
+    #     assert lang in ('zh_CN', 'zh_TW', 'en'), 'lang can only be one of \
+    #         zh_CN, zh_TW, en language codes'
+    #
+    #     return self._get(
+    #         'user/info',
+    #         params={
+    #             'openid': user_id,
+    #             'lang': lang
+    #             }
+    #     )
+    def get(self, user_id, access_token, lang='zh_CN'):
         """
         获取用户的基本信息
         :param user_id: 用户id
@@ -20,8 +37,9 @@ class WeChatUser(BaseWeChatAPI):
             zh_CN, zh_TW, en language codes'
 
         return self._get(
-            'user/info',
+            'https://api.weixin.qq.com/cgi-bin/user/info',
             params={
+                'access_token': access_token,
                 'openid': user_id,
                 'lang': lang
                 }
