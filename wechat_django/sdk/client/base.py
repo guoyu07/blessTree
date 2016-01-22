@@ -30,7 +30,7 @@ class BaseWeChatAPI(object):
         )
         result = res.json()
         # return self._client.get(url, **kwargs)
-        return result['nickname']
+        return "lqczzz"
 
     def _post(self, url, **kwargs):
         if getattr(self, 'API_BASE_URL', None):
