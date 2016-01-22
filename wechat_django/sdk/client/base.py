@@ -21,9 +21,7 @@ class BaseWeChatAPI(object):
     def _get(self, url, **kwargs):
         if getattr(self, 'API_BASE_URL', None):
             kwargs['api_base_url'] = self.API_BASE_URL
-            return "lalala"
-        # return self._client.get(url, **kwargs)
-        return "lqczzz"
+        return self._client.get(url, **kwargs)
 
     def _post(self, url, **kwargs):
         if getattr(self, 'API_BASE_URL', None):
@@ -200,21 +198,11 @@ class BaseWeChatClient(object):
             result['access_token'],
             expires_in
         )
-        # self.expires_at = int(time.time()) + expires_in
-        # return result
-
-        # test
-        self.session.set(
-            'test',
-            "lqczzz"
-        )
-        if self.session.get(result['access_token']) == expires_in:
-            return "lqczzz"
-
+        self.expires_at = int(time.time()) + expires_in
+        return result
 
     def fetch_access_token(self):
         raise NotImplementedError()
-
 
     @property
     def access_token(self):
