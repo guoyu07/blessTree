@@ -26,7 +26,7 @@ class WeChatUser(BaseWeChatAPI):
     #             'lang': lang
     #             }
     #     )
-    def get(self, user_id, access_token, lang='zh_CN'):
+    def get(self, access_token, user_id, lang='zh_CN'):
         """
         获取用户的基本信息
         :param user_id: 用户id
@@ -45,7 +45,7 @@ class WeChatUser(BaseWeChatAPI):
                 }
         )
 
-    def get_followers(self, first_user_id=None):
+    def get_followers(self, access_token, first_user_id=None):
         """
             获取关注者列表，微信服务器会保存关注者列表
             参考：http://mp.weixin.qq.com/wiki/3/17e6919a39c1c53555185907acf70093.html
@@ -53,6 +53,7 @@ class WeChatUser(BaseWeChatAPI):
         :return:返回的json包
         """
         params = {}
+        params['access_token'] = access_token
         if first_user_id:
             params['next_openid'] = first_user_id
         return self._get(
@@ -60,7 +61,7 @@ class WeChatUser(BaseWeChatAPI):
             params=params
         )
 
-    def update_remark(self, user_id, remark):
+    def update_remark(self, access_token, user_id, remark):
         """
             设置用户备注名字
             http://mp.weixin.qq.com/wiki/10/bf8f4e3074e1cf91eb6518b6d08d223e.html
@@ -71,6 +72,7 @@ class WeChatUser(BaseWeChatAPI):
         return self._post(
             'uer/info/updateremark',
             data={
+                'access_token': access_token,
                 'openid': user_id,
                 'remark': remark
             }
