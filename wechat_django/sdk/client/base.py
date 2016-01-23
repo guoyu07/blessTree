@@ -233,7 +233,9 @@ class BaseWeChatClient(object):
 
         self.fetch_access_token()
         # return self.access_token_key
-        return self.session.get(self.access_token_key)
+        # return self.session.get(self.access_token_key)
+        if self.session.get(self.access_token_key)==None:
+            return "lqczzz"
 
 
         # TODO session改为使用django自带的session来实现，暂时采用自己实现的session
