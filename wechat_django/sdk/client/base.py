@@ -32,7 +32,8 @@ class BaseWeChatAPI(object):
         result = res.json()
         # return "lqczzz"
         # # return self._client.get(url, **kwargs)
-        return result
+        # return result
+        return kwargs['access_token']
 
     def _post(self, url, **kwargs):
         if getattr(self, 'API_BASE_URL', None):
