@@ -232,7 +232,7 @@ class BaseWeChatClient(object):
                 return access_token
 
         self.fetch_access_token()
-        return 'lqczzz'
+        return self.session
         return self.session.get(self.access_token_key)
 
 
