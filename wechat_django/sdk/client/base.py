@@ -209,8 +209,9 @@ class BaseWeChatClient(object):
             result['access_token'],
             expires_in
         )
-        self.expires_at = int(time.time()) + expires_in
-        return result
+        return self.session.get(result['access_token'])
+        # self.expires_at = int(time.time()) + expires_in
+        # return result
 
     def fetch_access_token(self):
         raise NotImplementedError()
