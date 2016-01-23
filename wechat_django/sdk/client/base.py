@@ -21,13 +21,13 @@ class BaseWeChatAPI(object):
     def __init__(self, client=None):
         self._client = client
 
-    def _get(self, url, **kwargs):
+    def _get(self, url, params):
         # if getattr(self, 'API_BASE_URL', None):
         #     kwargs['api_base_url'] = self.API_BASE_URL
         # return kwargs['openid']
         res = requests.get(
             url=url,
-            params=kwargs
+            params=params
         )
         result = res.json()
         # return "lqczzz"
