@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="" />
+    <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="blessTree.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -28,10 +30,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="812" max-vertical-offset="1530">
+            <state vertical-scroll-proportion="0.548718" vertical-offset="920" max-vertical-offset="1530">
               <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
               <folding>
                 <element signature="e#33#47#0" expanded="true" />
@@ -60,19 +62,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5930521" vertical-offset="337" max-vertical-offset="2484">
-              <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="337" max-vertical-offset="2484">
+              <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
               <folding>
                 <element signature="e#71#81#0" expanded="true" />
-                <element signature="e#1263#2089#0" expanded="false" />
-                <element signature="e#2177#2438#0" expanded="false" />
-                <element signature="e#2607#3856#0" expanded="false" />
-                <element signature="e#3901#3973#0" expanded="false" />
-                <element signature="e#4095#5247#0" expanded="false" />
-                <element signature="e#5463#5575#0" expanded="false" />
+                <element signature="e#1251#2077#0" expanded="false" />
+                <element signature="e#2165#2426#0" expanded="false" />
+                <element signature="e#2595#3844#0" expanded="false" />
+                <element signature="e#3889#3961#0" expanded="false" />
+                <element signature="e#4083#5235#0" expanded="false" />
+                <element signature="e#5451#5563#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -977,6 +979,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.050632913" vertical-offset="324" max-vertical-offset="2268">
           <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -991,6 +994,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1962" max-vertical-offset="2988">
           <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1059,16 +1063,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="812" max-vertical-offset="1530">
-          <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
-          <folding>
-            <element signature="e#33#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wechat_django/sdk/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="2466">
@@ -1079,16 +1073,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5930521" vertical-offset="337" max-vertical-offset="2484">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="337" max-vertical-offset="2484">
+          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
           <folding>
             <element signature="e#71#81#0" expanded="true" />
-            <element signature="e#1263#2089#0" expanded="false" />
-            <element signature="e#2177#2438#0" expanded="false" />
-            <element signature="e#2607#3856#0" expanded="false" />
-            <element signature="e#3901#3973#0" expanded="false" />
-            <element signature="e#4095#5247#0" expanded="false" />
-            <element signature="e#5463#5575#0" expanded="false" />
+            <element signature="e#1251#2077#0" expanded="false" />
+            <element signature="e#2165#2426#0" expanded="false" />
+            <element signature="e#2595#3844#0" expanded="false" />
+            <element signature="e#3889#3961#0" expanded="false" />
+            <element signature="e#4083#5235#0" expanded="false" />
+            <element signature="e#5451#5563#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bTree/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.548718" vertical-offset="920" max-vertical-offset="1530">
+          <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
+          <folding>
+            <element signature="e#33#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
