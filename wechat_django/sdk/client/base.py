@@ -29,8 +29,8 @@ class BaseWeChatAPI(object):
             url=url,
             params=kwargs
         )
+        result = res.json()
         return "lqczzz"
-        # result = res.json()
         # # return self._client.get(url, **kwargs)
         # return result['nickname']
 
