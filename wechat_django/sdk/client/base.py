@@ -24,11 +24,12 @@ class BaseWeChatAPI(object):
     def _get(self, url, **kwargs):
         # if getattr(self, 'API_BASE_URL', None):
         #     kwargs['api_base_url'] = self.API_BASE_URL
+
+        res = requests.get(
+            url=url,
+            params=kwargs
+        )
         return "lqczzz"
-        # res = requests.get(
-        #     url=url,
-        #     params=kwargs
-        # )
         # result = res.json()
         # # return self._client.get(url, **kwargs)
         # return result['nickname']
