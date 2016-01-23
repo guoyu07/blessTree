@@ -26,7 +26,7 @@ class WeChatUser(BaseWeChatAPI):
     #             'lang': lang
     #             }
     #     )
-    def get(self, user_id, acc_token, lang='zh_CN'):
+    def get(self, user_id, access_token, lang='zh_CN'):
         """
         获取用户的基本信息
         :param user_id: 用户id
@@ -39,7 +39,7 @@ class WeChatUser(BaseWeChatAPI):
         return self._get(
             'https://api.weixin.qq.com/cgi-bin/user/info',
             params={
-                'access_token': acc_token,
+                'access_token': access_token,
                 'openid': user_id,
                 'lang': lang
                 }
