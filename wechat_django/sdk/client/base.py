@@ -230,8 +230,9 @@ class BaseWeChatClient(object):
             timstamp = time.time()
             if self.expires_at-timstamp > 60:
                 return access_token
-        return 'lqczzz'
+
         self.fetch_access_token()
+        return 'lqczzz'
         return self.session.get(self.access_token_key)
 
 
