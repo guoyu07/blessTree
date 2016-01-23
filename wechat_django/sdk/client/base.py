@@ -206,7 +206,11 @@ class BaseWeChatClient(object):
         if 'expires_in' in result:
             expires_in = result['expires_in']
         self.session.set(
-            result['access_token'],
+            self.access_token_key,
+            result['access_token']
+        )
+        self.session.set(
+            'expires_in',
             expires_in
         )
         return self.session.get(result['access_token'])
@@ -233,7 +237,7 @@ class BaseWeChatClient(object):
                 return access_token
 
         self.fetch_access_token()
-        return self.access_token_key
+        return self.access_token
         # return self.session.get(self.access_token_key)
         # if self.session.get(self.access_token_key)==None:
         #     return "lqczzz"
