@@ -26,7 +26,7 @@ class WeChatUser(BaseWeChatAPI):
     #             'lang': lang
     #             }
     #     )
-    def get(self, user_id, access_token, lang='zh_CN'):
+    def get(self, user_id, acc_token, lang='zh_CN'):
         """
         获取用户的基本信息
         :param user_id: 用户id
@@ -36,15 +36,14 @@ class WeChatUser(BaseWeChatAPI):
         assert lang in ('zh_CN', 'zh_TW', 'en'), 'lang can only be one of \
             zh_CN, zh_TW, en language codes'
 
-        # return self._get(
-        #     'https://api.weixin.qq.com/cgi-bin/user/info',
-        #     params={
-        #         'access_token': access_token,
-        #         'openid': user_id,
-        #         'lang': lang
-        #         }
-        # )
-        return access_token
+        return self._get(
+            'https://api.weixin.qq.com/cgi-bin/user/info',
+            params={
+                'access_token': acc_token,
+                'openid': user_id,
+                'lang': lang
+                }
+        )
 
     def get_followers(self, first_user_id=None):
         """
