@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat_django/sdk/client/user.py" afterPath="$PROJECT_DIR$/wechat_django/sdk/client/user.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/views.py" afterPath="$PROJECT_DIR$/bTree/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blessTree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,19 +62,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="2646">
-              <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.82382137" vertical-offset="280" max-vertical-offset="2646">
+              <caret line="34" column="54" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
               <folding>
                 <element signature="e#71#81#0" expanded="true" />
-                <element signature="e#1295#2121#0" expanded="false" />
-                <element signature="e#2209#2470#0" expanded="false" />
-                <element signature="e#2639#3888#0" expanded="false" />
-                <element signature="e#3933#4005#0" expanded="false" />
-                <element signature="e#4127#5279#0" expanded="false" />
-                <element signature="e#5495#5607#0" expanded="false" />
+                <element signature="e#1316#2142#0" expanded="false" />
+                <element signature="e#2230#2491#0" expanded="false" />
+                <element signature="e#2660#3909#0" expanded="false" />
+                <element signature="e#3954#4026#0" expanded="false" />
+                <element signature="e#4148#5300#0" expanded="false" />
+                <element signature="e#5516#5628#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -103,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.56079406" vertical-offset="1558" max-vertical-offset="1980">
-              <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="370" max-vertical-offset="1980">
+              <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -163,9 +162,9 @@
         <option value="$PROJECT_DIR$/wechat_django/sdk/session/__init__.py" />
         <option value="$PROJECT_DIR$/wechat_django/sdk/session/memorystorage.py" />
         <option value="$PROJECT_DIR$/wechat_django/sdk/client/__init__.py" />
-        <option value="$PROJECT_DIR$/wechat_django/sdk/client/base.py" />
         <option value="$PROJECT_DIR$/bTree/views.py" />
         <option value="$PROJECT_DIR$/wechat_django/sdk/client/user.py" />
+        <option value="$PROJECT_DIR$/wechat_django/sdk/client/base.py" />
       </list>
     </option>
   </component>
@@ -634,7 +633,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1365" y="0" width="1026" height="769" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22494887" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -645,7 +644,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14130434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938644" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25562373" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29821718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29821718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25080732" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1618" y="384" width="1017" height="303" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1060,22 +1059,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="2646">
-          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-          <folding>
-            <element signature="e#71#81#0" expanded="true" />
-            <element signature="e#1295#2121#0" expanded="false" />
-            <element signature="e#2209#2470#0" expanded="false" />
-            <element signature="e#2639#3888#0" expanded="false" />
-            <element signature="e#3933#4005#0" expanded="false" />
-            <element signature="e#4127#5279#0" expanded="false" />
-            <element signature="e#5495#5607#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="961" max-vertical-offset="1530">
@@ -1088,9 +1071,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.56079406" vertical-offset="1558" max-vertical-offset="1980">
-          <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="370" max-vertical-offset="1980">
+          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82382137" vertical-offset="280" max-vertical-offset="2646">
+          <caret line="34" column="54" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
+          <folding>
+            <element signature="e#71#81#0" expanded="true" />
+            <element signature="e#1316#2142#0" expanded="false" />
+            <element signature="e#2230#2491#0" expanded="false" />
+            <element signature="e#2660#3909#0" expanded="false" />
+            <element signature="e#3954#4026#0" expanded="false" />
+            <element signature="e#4148#5300#0" expanded="false" />
+            <element signature="e#5516#5628#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
