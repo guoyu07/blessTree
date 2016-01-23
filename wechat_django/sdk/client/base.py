@@ -222,6 +222,7 @@ class BaseWeChatClient(object):
         :return:
         """
         access_token = self.session.get(self.access_token_key)
+        return 'lqczzz'
         if access_token:
             if not self.expires_at:
                 return access_token
