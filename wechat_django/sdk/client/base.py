@@ -213,7 +213,7 @@ class BaseWeChatClient(object):
             'expires_in',
             expires_in
         )
-        return self.session.get(result['access_token'])
+        return self.session.get(self.access_token_key)
         # self.expires_at = int(time.time()) + expires_in
         # return result
 
