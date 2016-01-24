@@ -18,13 +18,14 @@ class WeChatJSAPI(BaseWeChatAPI):
         :param type:
         :return:返回的json包
         """
-        return self._get(
-            'ticket/getticket',
-            params={'type': type}
-        )
+        return self._get('get_jsapi_ticket')
 
     def get_jsapi_ticket(self):
         """
         获取微信js-sdk的ticket
         :return:ticket
         """
+        ticket = self.session.get('jsapi_ticket')
+        expires_in = self.session.get('jsapi_ticket_expires_at', 0)
+
+

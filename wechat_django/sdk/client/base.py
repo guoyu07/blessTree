@@ -21,20 +21,21 @@ class BaseWeChatAPI(object):
     def __init__(self, client=None):
         self._client = client
 
-    def _get(self, url, params):
-        # if getattr(self, 'API_BASE_URL', None):
-        #     kwargs['api_base_url'] = self.API_BASE_URL
-        # return kwargs['openid']
-        res = requests.get(
-            url=url,
-            params=params
-        )
-        result = res.json()
-        # return "lqczzz"
-        # # return self._client.get(url, **kwargs)
-        return result['nickname'] + result['province']
+    # def _get(self, url, params):
+    #     res = requests.get(
+    #         url=url,
+    #         params=params
+    #     )
+    #     result = res.json()
+    #
+    #     return result['nickname'] + result['province']
 
+    def _get(self, client, url, **kwargs):
+        if getattr(self, 'API_BASE_URL', None):
+            kwargs['api_base_url'] = self.API_BASE_URL
+        return client.get(url, **kwargs)
 
+    # TODO:下面三个方法的修改
     def _post(self, url, **kwargs):
         if getattr(self, 'API_BASE_URL', None):
             kwargs['api_base_url'] = self.API_BASE_URL

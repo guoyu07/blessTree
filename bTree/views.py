@@ -61,10 +61,10 @@ def weixin_main(request):
             elif msg.content == '我':
                 client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
-                user = client.user.get(client.access_token, msg.source)  # TODO：这句话有问题，查看逻辑调用
+                user = client.user.get(client, msg.source)  # TODO：这句话有问题，查看逻辑调用
                 reply.content = user
             elif msg.content == 'test':
-                reply.content = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf0e81c3bee622d60&redirect_uri=http%3A%2F%2Fnba.bluewebgame.com%2Foauth_response.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
+                reply.content = 'test'
             else:
                reply.content = msg.content
 
