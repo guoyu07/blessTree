@@ -62,7 +62,7 @@ def weixin_main(request):
                 client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
                 user = client.user.get(client, msg.source)  # TODO：这句话有问题，查看逻辑调用
-                reply.content = user
+                reply.content = client.access_token()
             elif msg.content == 'test':
                 reply.content = 'test'
             else:
