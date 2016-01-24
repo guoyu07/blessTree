@@ -59,7 +59,7 @@ class WeChatUser(BaseWeChatAPI):
             client,
             'user/info',
             params={
-                'access_token': client.access_token(),
+                # 'access_token': client.access_token(),
                 'openid': user_id,
                 'lang': lang
                 }
