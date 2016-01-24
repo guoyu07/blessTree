@@ -63,6 +63,8 @@ def weixin_main(request):
                 client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
                 user = client.user.get(client.access_token, msg.source)  # TODO：这句话有问题，查看逻辑调用
                 reply.content = user
+            elif msg.content == 'test':
+                reply.content = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx520c15f417810387&redirect_uri=https%3A%2F%2Fchong.qq.com%2Fphp%2Findex.php%3Fd%3D%26c%3DwxAdapter%26m%3DmobileDeal%26showwxpaytitle%3D1%26vb2ctag%3D4_2030_5_1194_60&response_type=code&scope=snsapi_base&state=123#wechat_redirect'
             else:
                reply.content = msg.content
 
