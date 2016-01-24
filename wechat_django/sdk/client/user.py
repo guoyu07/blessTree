@@ -57,7 +57,7 @@ class WeChatUser(BaseWeChatAPI):
         return self._get(
             # 'https://api.weixin.qq.com/cgi-bin/user/info',
             wechat_client,
-            'https://api.weixin.qq.com/cgi-bin/user/info',
+            'user/info',
             params={
                 'access_token': wechat_client.access_token(),
                 'openid': user_id,
