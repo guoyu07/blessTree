@@ -54,17 +54,17 @@ class WeChatUser(BaseWeChatAPI):
         assert lang in ('zh_CN', 'zh_TW', 'en'), 'lang can only be one of \
             zh_CN, zh_TW, en language codes'
 
-        return self._get(
-            # 'https://api.weixin.qq.com/cgi-bin/user/info',
-            wechat_client,
-            'user/info',
-            params={
-                # 'access_token': wechat_client.access_token(),
-                'openid': user_id,
-                'lang': lang
-                }
-        )
-        # return wechat_client.access_token()
+        # return self._get(
+        #     # 'https://api.weixin.qq.com/cgi-bin/user/info',
+        #     wechat_client,
+        #     'user/info',
+        #     params={
+        #         'access_token': wechat_client.access_token(),
+        #         'openid': user_id,
+        #         'lang': lang
+        #         }
+        # )
+        return wechat_client.access_token()
 
     def get_followers(self, access_token, first_user_id=None):
         """
