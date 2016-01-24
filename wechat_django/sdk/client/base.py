@@ -30,7 +30,7 @@ class BaseWeChatAPI(object):
     #
     #     return result['nickname'] + result['province']
 
-    def _get(self, client, url, **kwargs):
+    def _get(self, client, url, kwargs):
         # if getattr(self, 'API_BASE_URL', None):
         #     kwargs['api_base_url'] = self.API_BASE_URL
         # return client.get(url, **kwargs)
