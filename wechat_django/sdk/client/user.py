@@ -55,7 +55,7 @@ class WeChatUser(BaseWeChatAPI):
             zh_CN, zh_TW, en language codes'
         # 'https://api.weixin.qq.com/cgi-bin/user/info',
         return self._get(
-            wechat_client,
+            # wechat_client,
             'user/info',
             params={
                 'access_token': wechat_client.access_token(),
