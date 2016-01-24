@@ -222,7 +222,7 @@ class BaseWeChatClient(object):
     def fetch_access_token(self):
         raise NotImplementedError()
 
-    @property
+    # @property
     def access_token(self):
         """
         wechat access_token

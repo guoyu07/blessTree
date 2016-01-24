@@ -64,7 +64,7 @@ class WeChatUser(BaseWeChatAPI):
         #         'lang': lang
         #         }
         # )
-        return wechat_client.test()
+        return wechat_client.access_token()
 
     def get_followers(self, access_token, first_user_id=None):
         """
