@@ -92,7 +92,7 @@ class BaseWeChatClient(object):
 
         self.session.set(self.access_token_key, access_token)
 
-    # @property
+    @property
     def access_token_key(self):
         return '{0}_access_token'.format(self.appid)
 
@@ -224,7 +224,7 @@ class BaseWeChatClient(object):
     def fetch_access_token(self):
         raise NotImplementedError()
 
-    # @property
+    @property
     def access_token(self):
         """
         wechat access_token
