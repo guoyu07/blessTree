@@ -34,9 +34,7 @@ class BaseWeChatAPI(object):
         if getattr(self, 'API_BASE_URL', None):
             url = self.API_BASE_URL + url
         return wechat_client.get(url, params)
-        # return url
-    # def _get(self):
-    #     return "lqczzz"
+
 
     # TODO:下面三个方法的修改
     def _post(self, url, **kwargs):
@@ -178,13 +176,6 @@ class BaseWeChatClient(object):
 
         return result if not result_process else result_process(result)
 
-    # def get(self, url, **params):
-    #     return self._request(
-    #         method='get',
-    #         url_or_endpoint=url,
-    #         **params
-    #     )
-
     def get(self, url, params):
         res = requests.get(
             url=url,
@@ -193,7 +184,6 @@ class BaseWeChatClient(object):
         result = res.json()
 
         return result['nickname'] + result['province']
-        # return "lqczzz"
 
 
     _get = get

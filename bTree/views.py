@@ -17,6 +17,7 @@ from wechat_django.sdk.utils import check_signature
 from wechat_django.sdk.parser import parse_message
 from wechat_django.sdk.replies import TextReply
 from wechat_django.sdk.client import WeChatClient
+from wechat_django.sdk.oauth import WeChatOAuth
 from wechat_django.sdk.client.user import WeChatUser
 
 from wechat_django.sdk.client.user import WeChatUser
@@ -63,10 +64,15 @@ def weixin_main(request):
                 client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
                 user = client.user.get(client, msg.source)  # TODO：这句话有问题，查看逻辑调用
                 reply.content = user
-            elif msg.content == 'test':
-                reply.content = 'test'
+            elif msg.content == '分享':
+                oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/')
+                reply.content = oauth.authorize_url
             else:
                reply.content = msg.content
+
+        # 用户点击链接获取跳转测试
+        # if msg.type == '':
+        #     test(request)
 
 
             xml = reply.render()
@@ -78,5 +84,6 @@ def main_page(request):
 
 
 def test(request):
-    html = "<p>你好</p>"
-    return HttpResponse(html)
+
+    return render_to_response('hello.html', locals())
+

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn">您好</button>
+<p id="p_you" style="display: none">hello,{% click_user %}</p>
+</body>
+<script>
+    $(function () {
+        $("#btn").on('tap', function () {
+            $("#p_you").show();
+        })
+    })
+</script>
+</html>

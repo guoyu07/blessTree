@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^$', weixin_main),
     url(r'^wechat/', main_page),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^test/', test)
 ]
