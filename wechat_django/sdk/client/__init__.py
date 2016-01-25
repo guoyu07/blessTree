@@ -41,6 +41,3 @@ class WeChatClient(BaseWeChatClient):
                 'secret': self.secret
             }
         )
-
-    def test(self):
-        return "lqczzz"

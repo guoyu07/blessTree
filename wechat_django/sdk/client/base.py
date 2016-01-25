@@ -33,7 +33,7 @@ class BaseWeChatAPI(object):
     def _get(self, wechat_client, url, params):
         if getattr(self, 'API_BASE_URL', None):
             params['api_base_url'] = self.API_BASE_URL
-        return wechat_client.get(url, params)
+        return wechat_client.get(url, **params)
         # return params
     # def _get(self):
     #     return "lqczzz"
@@ -178,11 +178,11 @@ class BaseWeChatClient(object):
 
         return result if not result_process else result_process(result)
 
-    def get(self, url, **kwargs):
+    def get(self, url, **params):
         return self._request(
             method='get',
             url_or_endpoint=url,
-            **kwargs
+            **params
         )
 
     _get = get
