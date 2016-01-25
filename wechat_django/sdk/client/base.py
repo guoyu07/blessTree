@@ -179,11 +179,13 @@ class BaseWeChatClient(object):
         return result if not result_process else result_process(result)
 
     def get(self, url, **params):
-        return self._request(
-            method='get',
-            url_or_endpoint=url,
-            **params
-        )
+        # return self._request(
+        #     method='get',
+        #     url_or_endpoint=url,
+        #     **params
+        # )
+        return "lqczzz"
+
 
     _get = get
 
