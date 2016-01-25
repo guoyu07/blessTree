@@ -84,6 +84,6 @@ def main_page(request):
 
 
 def test(request):
-    if request.
+    # if request.
     return render_to_response('hello.html', locals())
 
