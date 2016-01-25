@@ -81,7 +81,7 @@ class WeChatOAuth(object):
         生成认证链接
         :return:认证链接
         """
-        redirect_uri = six.moves.urllib.parse.quote(self.redirect_uri)
+        redirect_uri = six.moves.urllib.parse.quote_plus(self.redirect_uri)
         url_list = [
             self.OAUTH_BASE_URL,
             'oauth2/authorize?appid=',
@@ -102,7 +102,7 @@ class WeChatOAuth(object):
         产生qrconnect url
         :return:url
         """
-        redirect_uri = six.moves.urllib.parse.quote(self.redirect_uri)
+        redirect_uri = six.moves.urllib.parse.quote_plus(self.redirect_uri)
         url_list = [
             self.OAUTH_BASE_URL,
             'qrconnect?appid=',
