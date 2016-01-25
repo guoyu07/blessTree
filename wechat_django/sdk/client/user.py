@@ -57,11 +57,11 @@ class WeChatUser(BaseWeChatAPI):
         return self._get(
             wechat_client,
             'user/info',
-            # params={
-            #     'access_token': wechat_client.access_token,
-            #     'openid': user_id,
-            #     'lang': lang
-            #     }
+            params={
+                'access_token': wechat_client.access_token,
+                'openid': user_id,
+                'lang': lang
+                }
         )
         # return wechat_client.access_token
 
