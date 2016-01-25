@@ -85,6 +85,6 @@ def main_page(request):
 
 def test(request):
     reply = TextReply()
-    reply.content = request
+    reply.content = request.body
     return HttpResponse(reply.render())
 
