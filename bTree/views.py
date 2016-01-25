@@ -65,7 +65,7 @@ def weixin_main(request):
                 user = client.user.get(client, msg.source)  # TODO：这句话有问题，查看逻辑调用
                 reply.content = user
             elif msg.content == '分享':
-                oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/')
+                oauth = WeChatOAuth(appId, appsecret, 'https://1.blesstree.sinaapp.com/')
                 reply.content = oauth.authorize_url
             else:
                reply.content = msg.content
