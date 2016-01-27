@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-    <title>tree_test</title>
-    <!--css-->
+    <title>主页面</title>
+
+    <!--CSS-->
     <link rel="stylesheet" type="text/css" href="../static/tree/css/main.css">
-    <!--<link rel="stylesheet" type="text/css" href="plugin/jquery-mobile/jquery.mobile-1.4.4.min.css">-->
+
+    <link rel="stylesheet" type="text/css" href="plugin/jquery-mobile/jquery.mobile-1.4.4.min.css">
     <link rel="stylesheet" type="text/css" href="../static/plugin/weui/weui.min.css">
     <link href="//cdn.bootcss.com/pure/0.6.0/pure-min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
@@ -14,181 +16,51 @@
     <!--js-->
     <script src="../static/plugin/jquery/jquery.min.js"></script>
     <script src="../static/plugin/jquery/jquery.color.js"></script>
-    <script src="../static/plugin/jquery/jquery.mobile-1.4.4.min.js"></script>
+    <!--<script src="../static/plugin/jquery/jquery.mobile-1.4.4.min.js"></script>-->
     <script src="../static/tree/js/jquery.lqc.extension.js"></script>
     <script src="../static/tree/js/main.js"></script>
 
 
-
 </head>
-<!--<body class="mybody"></body>-->
-<body class="mybody">
-<div class="menu-top" >
+<body class="my-body">
+<!--顶部-->
+<div class="menu-top">
     <div class="menu-top-con">
-        <div class="top-left pure-u-1-3">
-            <a><img class="my-img" src="../static/image/tilo-avatar.png"></a>
+        <!--头像-->
+        <div class="self-avatar">
+            <a><img class="avatar" src="../static/tree/image/btn/friends.png"></a>
         </div>
-        <div class="top-right pure-u-2-3">
-            <p>lqczzz</p>
-            <button class="account">积分</button>
+        <!--积分条-->
+        <div class="count-progress">
+            <div class="progress">
+                <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>
+            </div>
+            <div class="count-num"><p>积分：25500</p></div>
         </div>
-    </div>
-</div>
-<div class="container pure-g">
-
-    <div class="left-menu pure-u-1-6" >
-        <ul >
-            <li><button class="willing">心愿</button></li>
-            <li><button class="add-friends" id="add_friend">添加朋友</button></li>
-            <li><button class="rank" id="rank">排行</button></li>
-        </ul>
-    </div>
-
-    <div class="main-container pure-u-2-3">
-        <div class="tree-img" style="display: none" >
-            <img src="../static/image/seed.jpg" >
+        <!--排行-->
+        <div class="rank">
+            <a><img class="rank-btn" src="../static/tree/image/btn/rank.png"></a>
         </div>
-        <div>
-            <p class="tree-name-show">绿巨人白客</p>
-        </div>
-        <!--<div class="bless-tucao" style="display: none">-->
-            <!--<button class="bless">祝福</button>-->
-            <!--<button class="tucao">吐槽</button>-->
-        <!--</div>-->
-
-    </div>
-
-    <div class="right-menu pure-u-1-6" >
-        <ul >
-            <li><button class="water-flower" id="water_flower">浇水</button></li>
-            <li><button class="history">历史</button></li>
-            <li><button class="tips">提醒</button></li>
-        </ul>
-    </div>
-</div>
-<div class="footer">power_by 创维俱乐部</div>
-
-<!--以下是小部件-->
-<!--myMask-->
-<div class="weui_mask my_mask" style="display: none;"></div>
-<!--myMask-->
-
-<!--BEGIN dialog-->
-<div class="weui_dialog_confirm" id="dialog1" style="display: none;">
-    <div class="weui_mask"></div>
-    <div class="weui_dialog">
-        <div class="weui_dialog_hd" style="padding-top: 5px"></div>
-        <div class="weui_dialog_bd" style="padding: 0;font-size: 12px"><textarea class="bless-input" style="width: 100%;border: 0px"></textarea></div>
-        <div class="weui_dialog_ft" style="margin: 0;font-size:13px">
-            <a href="#" class="weui_btn_dialog default" >取消</a>
-            <a href="#" class="weui_btn_dialog primary">确定</a>
+        <!--提醒-->
+        <div class="tips">
+            <a><img class="tips-btn" src="../static/tree/image/btn/tips.png"></a>
         </div>
     </div>
 </div>
-<!--END dialog-->
 
-<!--BEGIN list-show-->
-<div class="list-contain" style="display: none">
-    <div class="list-item-hd">
-        <i class="weui_icon_cancel"
-                style="position: fixed;
-                    top: 13%;
-                    border: 0;
-                    border-radius: 10px;
-                    background-color: rgba(255,255,255,0.9);
-                    left: 84%"></i>
-        <button class="list-btn list-btn-bless">祝福</button>
-        <button class="list-btn list-btn-tucao">吐槽</button>
+<!--内容-->
+<div class="main-container">
+    <div class="main-tree pure-u-19-24">
+        <div class="tree-area"><img src="../static/tree/image/others/tree.png"></div>
+        <div class="tree-name">
+            <img src="../static/tree/image/others/name.png">
+            <p class="name">叶良辰的树</p>
+        </div>
     </div>
-    <div class="list-item-bd">
-        <table class="item-con">
-            <tbody>
-            <tr>
-                <td class="item-left">
-                    <img class="history-bless-img" src="../static/image/tilo-avatar.png">
-                    <i class="history-bless-name">lqczzz</i>
-                </td>
-                <td class="item-main">祝你天天开心～</td>
-                <td class="item-right">02.10</td>
-            </tr>
-            </tbody>
-        </table>
-        <hr class="table_line">
-        <table class="item-con">
-            <tbody>
-            <tr>
-                <td class="item-left">
-                    <img class="history-bless-img" src="../static/image/tilo-avatar.png">
-                    <i class="history-bless-name">lqczzz</i>
-                </td>
-                <td class="item-main">祝你天天开心～</td>
-                <td class="item-right">02.10</td>
-            </tr>
-            </tbody>
-        </table>
-        <hr class="table_line">
-        <table class="item-con">
-            <tbody>
-            <tr>
-                <td class="item-left">
-                    <img class="history-bless-img" src="../static/image/tilo-avatar.png">
-                    <i class="history-bless-name">lqczzz</i>
-                </td>
-                <td class="item-main">祝你天天开心～</td>
-                <td class="item-right">02.10</td>
-            </tr>
-            </tbody>
-        </table>
-        <hr class="table_line">
-        <table class="item-con">
-            <tbody>
-            <tr>
-                <td class="item-left">
-                    <img class="history-bless-img" src="../static/image/tilo-avatar.png">
-                    <i class="history-bless-name">lqczzz</i>
-                </td>
-                <td class="item-main">祝你天天开心～</td>
-                <td class="item-right">02.10</td>
-            </tr>
-            </tbody>
-        </table>
-        <hr class="table_line">
-        <table class="item-con">
-            <tbody>
-            <tr>
-                <td class="item-left">
-                    <img class="history-bless-img" src="../static/image/tilo-avatar.png">
-                    <i class="history-bless-name">lqczzz</i>
-                </td>
-                <td class="item-main">祝你天天开心～</td>
-                <td class="item-right">02.10</td>
-            </tr>
-            </tbody>
-        </table>
-        <hr class="table_line">
-        <table class="item-con">
-            <tbody>
-            <tr>
-                <td class="item-left">
-                    <img class="history-bless-img" src="../static/image/tilo-avatar.png">
-                    <i class="history-bless-name">lqczzz</i>
-                </td>
-                <td class="item-main">祝你天天开心～</td>
-                <td class="item-right">02.10</td>
-            </tr>
-            </tbody>
-        </table>
-        <hr class="table_line">
-    </div>
-    <div class="list-item-more" style="text-align: center">
-        <p>加载更多O(∩_∩)O~</p>
-    </div>
+    <div class="main-right pure-u-5-24"></div>
 </div>
-<!--END dialog-->
+
+<!--脚本-->
+<div class="footer"></div>
 </body>
-<script>
-    document.querySelector('body').addEventListener('touchstart', function (ev) {
-        ev.preventDefault();
-    });
-</script>
 </html>
