@@ -140,8 +140,7 @@ ul{
 }
 .tree-name p{
     position: absolute;
-    padding-top: 24%;
-    padding-left: 30%;
+    padding-top: 24%;;
     font-size: 11px;
     line-height: 1;
     color: #FFFFFF;
@@ -164,7 +163,7 @@ ul{
     height: 12%;
 }
 .friends, .water-flower, .history, .willing{
-    /*margin-left:14% ;*/
+    margin-left:20% ;
     margin-bottom: 30%;
     height:100%;
     border-radius: 50%;
