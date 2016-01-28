@@ -35,6 +35,7 @@ ul{
 
 /*头像*/
 .self-avatar{
+    width: 12%;
     height: 47%;
     float: left;
     padding-top: 7%;
@@ -96,6 +97,7 @@ ul{
     padding-left: 4%;
     padding-top: 8%;
     height: 46%;
+    width: 12%;
 }
 .rank-btn, .tips-btn{
     height: 100%;
