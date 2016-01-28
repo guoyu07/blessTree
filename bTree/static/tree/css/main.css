@@ -156,7 +156,7 @@ ul{
 }
 .right-btn{
     padding-top: 0;
-    padding-right: 26%;
+    /*padding-right: 26%;*/
     width: 74%;
     height: 100%;
 }
