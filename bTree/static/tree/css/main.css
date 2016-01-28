@@ -156,7 +156,7 @@ ul{
 }
 .right-btn{
     padding-top: 0;
-    /*padding-right: 26%;*/
+    padding-left: 26%;
     width: 65%;
     /*height: 100%;*/
 }
@@ -169,8 +169,6 @@ ul{
     height: 15%;
 }
 .friends, .water-flower, .history, .willing{
-    margin-left:20% ;
-    margin-bottom: 50%;
     height:100%;
     border-radius: 50%;
 }
