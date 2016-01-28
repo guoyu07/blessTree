@@ -157,10 +157,11 @@ ul{
 .right-btn{
     padding-top: 0;
     padding-right: 26%;
+    width: 72%;
     height: 100%;
 }
 .right-btn ul li{
-    width: 72%;
+    width: 100%;
     height: 12%;
 }
 .friends, .water-flower, .history, .willing{
