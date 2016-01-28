@@ -116,7 +116,6 @@ ul{
 }
 .tree-area{
     position: absolute;
-    /*z-index: 1;*/
     height: 72%;
     padding-top: 16%;
     padding-left: 13%;
@@ -141,8 +140,8 @@ ul{
 }
 .tree-name p{
     position: absolute;
-    padding-top: 17%;
-    padding-left: 20%;
+    padding-top: 20%;
+    padding-left: 22%;
     font-size: 11px;
     line-height: 1;
     color: #FFFFFF;
