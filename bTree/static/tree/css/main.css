@@ -152,6 +152,7 @@ ul{
 }
 /****右边按钮***/
 .main-right{
+    float: left;
     height: 100%;
 }
 .right-btn{
