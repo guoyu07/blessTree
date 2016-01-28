@@ -110,7 +110,6 @@ ul{
 
 /****树木区域***/
 .main-tree{
-    width: 76%;
     position: relative;
     float: left;
     height: 100%;
@@ -152,8 +151,8 @@ ul{
 }
 /****右边按钮***/
 .main-right{
-    width: 24%;
-    float: right;
+
+    position: relative;
     height: 100%;
 }
 .right-btn{
