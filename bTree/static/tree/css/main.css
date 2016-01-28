@@ -43,8 +43,7 @@ ul{
 }
 
 .avatar{
-    width: 47%;
-    width: inherit;
+    /*width: 47%;*/
     height: 100%;
     border: 0;
     border-radius: 50%;
