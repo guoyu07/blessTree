@@ -160,8 +160,10 @@ ul{
     width: 74%;
     height: 100%;
 }
-.right-btn ul li{
+.right-btn ul{
     list-style-type: none;
+}
+.right-btn ul li{
     width: 74%;
     height: 12%;
 }
@@ -169,7 +171,7 @@ ul{
     /*margin-left:14% ;*/
     /*margin-bottom: 30%;*/
     height:100%;
-    width: 72%;
+    /*width: 72%;*/
     border-radius: 50%;
 }
 /**********************小部件**********************/
