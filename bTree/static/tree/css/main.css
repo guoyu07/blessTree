@@ -161,7 +161,8 @@ ul{
     height: 100%;
 }
 .right-btn ul li{
-    width: 72%;
+    list-style-type: none;
+    width: 74%;
     height: 12%;
 }
 .friends, .water-flower, .history, .willing{
