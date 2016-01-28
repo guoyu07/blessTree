@@ -15,6 +15,9 @@ body{
     background:transparent url("../image/others/bg.png") no-repeat;
     background-size: 100%;
 }
+.main-container div{
+    display: inline;
+}
 .footer{
     height: 8%;
 }
