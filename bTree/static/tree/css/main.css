@@ -35,7 +35,7 @@ ul{
 
 /*头像*/
 .self-avatar{
-    width: 12%;
+    /*width: 12%;*/
     height: 47%;
     float: left;
     padding-top: 7%;
