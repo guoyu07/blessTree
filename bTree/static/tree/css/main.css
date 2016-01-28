@@ -166,11 +166,11 @@ ul{
 /*}*/
 .right-btn ul li{
     width: 100%;
-    height: 12%;
+    height: 15%;
 }
 .friends, .water-flower, .history, .willing{
-    margin-left:14% ;
-    margin-bottom: 30%;
+    margin-left:20% ;
+    margin-bottom: 50%;
     height:100%;
     border-radius: 50%;
 }
