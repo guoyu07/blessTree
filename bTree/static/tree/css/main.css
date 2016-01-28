@@ -140,8 +140,8 @@ ul{
 }
 .tree-name p{
     position: relative;
-    padding-top: 50%;
-    padding-left: 22%;
+    padding-top: 17%;
+    padding-left: 20%;
     font-size: 11px;
     line-height: 1;
     color: #FFFFFF;
@@ -156,10 +156,11 @@ ul{
 .right-btn{
     padding-top: 0;
     padding-right: 26%;
+    width: 74%;
     height: 100%;
 }
 .right-btn ul li{
-    width: 72%;
+    width: 100%;
     height: 12%;
 }
 .friends, .water-flower, .history, .willing{
