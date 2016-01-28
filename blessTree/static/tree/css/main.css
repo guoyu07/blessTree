@@ -1,7 +1,7 @@
 /**********************全局**********************/
 html, body{
     height: 100%;
-    margin: 0px;
+    margin: 0;
     position: relative;
 }
 body{
@@ -18,26 +18,32 @@ body{
 .footer{
     height: 8%;
 }
+
+ul{
+    list-style-type: none;
+}
+
 /*去除jquery-mobile加载时候弹出来的loading*/
 .ui-loader-default{ display:none}
 .ui-mobile-viewport{ border:none;}
 .ui-page {padding: 0; margin: 0; outline: 0}
 
-/**********************顶部导航内容**********************/
+/**********************顶部导航内容*********************/
 .menu-top-con{
     height: 100%;
 }
 
 /*头像*/
 .self-avatar{
-    height: 47%;
+    width: 13%;
+    height: 48%;
     float: left;
     padding-top: 7%;
     padding-left: 6%;
 }
 
 .avatar{
-    width: 100%;
+    /*width: 47%;*/
     height: 100%;
     border: 0;
     border-radius: 50%;
@@ -91,6 +97,7 @@ body{
     padding-left: 4%;
     padding-top: 8%;
     height: 46%;
+    width: 12%;
 }
 .rank-btn, .tips-btn{
     height: 100%;
@@ -104,11 +111,11 @@ body{
 /****树木区域***/
 .main-tree{
     position: relative;
+    float: left;
     height: 100%;
 }
 .tree-area{
     position: absolute;
-    /*z-index: 1;*/
     height: 72%;
     padding-top: 16%;
     padding-left: 13%;
@@ -127,14 +134,14 @@ body{
     padding-bottom: 0;
 }
 .tree-name img{
-    position: absolute;
+    position: relative;
     height: 17%;
     width: 100%;
 }
 .tree-name p{
-    position: absolute;
-    padding-top: 17%;
-    padding-left: 20%;
+    position: relative;
+    padding-top: 50%;
+    padding-left: 22%;
     font-size: 11px;
     line-height: 1;
     color: #FFFFFF;
@@ -144,7 +151,35 @@ body{
 }
 /****右边按钮***/
 .main-right{
-    background-color: #09BB07;
+    position: relative;
+    height: 100%;
+}
+.right-btn{
+    padding-top: 0;
+    padding-left: 26%;
+    width: 65%;
+    /*height: 100%;*/
+}
+/*.right-btn ul{*/
+    /*list-style-type: none;*/
+    /*width: 74%;*/
+/*}*/
+.right-btn ul li{
+    width: 100%;
+    height: 15%;
+}
+.friends, .water-flower, .history, .willing{
+    height:100%;
+    border-radius: 50%;
 }
 /**********************小部件**********************/
+
+/*祝福果/吐槽果*/
+.apple-for-bless .apple-for-tucao{
+
+}
+/*浇水效果*/
+
+/*弹出全局遮盖*/
+
 
