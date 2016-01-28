@@ -134,12 +134,10 @@ ul{
     padding-bottom: 0;
 }
 .tree-name img{
-    position: relative;
     height: 17%;
     width: 100%;
 }
 .tree-name p{
-    position: relative;
     padding-top: 17%;
     padding-left: 20%;
     font-size: 11px;
