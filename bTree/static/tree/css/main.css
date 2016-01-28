@@ -1,7 +1,7 @@
 /**********************全局**********************/
 html, body{
     height: 100%;
-    margin: 0px;
+    margin: 0;
     position: relative;
 }
 body{
@@ -18,12 +18,17 @@ body{
 .footer{
     height: 8%;
 }
+
+ul{
+    list-style-type: none;
+}
+
 /*去除jquery-mobile加载时候弹出来的loading*/
 .ui-loader-default{ display:none}
 .ui-mobile-viewport{ border:none;}
 .ui-page {padding: 0; margin: 0; outline: 0}
 
-/**********************顶部导航内容**********************/
+/**********************顶部导航内容*********************/
 .menu-top-con{
     height: 100%;
 }
@@ -104,6 +109,7 @@ body{
 /****树木区域***/
 .main-tree{
     position: relative;
+    float: left;
     height: 100%;
 }
 .tree-area{
@@ -144,6 +150,32 @@ body{
 }
 /****右边按钮***/
 .main-right{
-    background-color: #09BB07;
+    height: 100%;
+}
+.right-btn{
+    padding-top: 0;
+    padding-right: 26%;
+    height: 100%;
+}
+.right-btn ul li{
+    width: 72%;
+    height: 12%;
+}
+.friends, .water-flower, .history, .willing{
+    margin-left:14% ;
+    margin-bottom: 30%;
+    height:100%;
+    width: 72%;
+    border-radius: 50%;
 }
 /**********************小部件**********************/
+
+/*祝福果/吐槽果*/
+.apple-for-bless .apple-for-tucao{
+
+}
+/*浇水效果*/
+
+/*弹出全局遮盖*/
+
+
