@@ -71,23 +71,39 @@ def weixin_main(request):
                 client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()
                 menu = client.menu.create(client, {
-                     "button": [
-                         {
-                              "type":"click",
-                              "name":"今日歌曲",
-                              "key":"V1001_TODAY_MUSIC"
-                         },
-                            {
-                           "name":"菜单",
-                           "sub_button":[
-                           {
-                               "type":"view",
-                               "name":"搜索",
-                               "url":"http://www.soso.com/"
-                            }
-                           ]
-                       }]
-                 }
+                    "button":[
+                        {
+                            "type": "click",
+                            "name": u"今日歌曲",
+                            "key": "V1001_TODAY_MUSIC"
+                        },
+                        {
+                            "type": "click",
+                            "name": u"歌手简介",
+                            "key": "V1001_TODAY_SINGER"
+                        },
+                        {
+                            "name": u"菜单",
+                            "sub_button": [
+                                {
+                                    "type": "view",
+                                    "name": u"搜索",
+                                    "url": "http://www.soso.com/"
+                                },
+                                {
+                                    "type": "view",
+                                    "name": u"视频",
+                                    "url": "http://v.qq.com/"
+                                },
+                                {
+                                    "type": "click",
+                                    "name": u"赞一下我们",
+                                    "key": "V1001_GOOD"
+                                }
+                            ]
+                        }
+                    ]
+                }
                 )
                 reply.content = menu
 
