@@ -5,7 +5,7 @@ import time
 
 from wechat_django.sdk.client.base import BaseWeChatClient
 from wechat_django.sdk.client.user import WeChatUser
-# from wechat_django.sdk.client.menu import WeChatMenu
+from wechat_django.sdk.client.menu import WeChatMenu
 
 
 class WeChatClient(BaseWeChatClient):
