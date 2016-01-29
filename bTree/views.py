@@ -99,6 +99,16 @@ def weixin_main(request):
             xml = reply.render()
             return HttpResponse(xml)
 
+        if msg.type == 'event':
+            reply = TextReply()
+            reply.source = msg.target
+            reply.target = msg.source
+            reply.content = "你点击了种树"
+
+            xml = reply.render()
+            return HttpResponse(xml)
+
+
 
 def main_page(request):
     return render_to_response('main.html', locals())
