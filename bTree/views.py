@@ -76,7 +76,7 @@ def weixin_main(request):
                     "button": [
                         {
                             "type": "view",
-                            "name": u"我要种树".encode('utf-8'),
+                            "name": '\xe6\x88\x91',
                             "url": oauth.authorize_url
                         },
                         {
