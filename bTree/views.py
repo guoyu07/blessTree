@@ -121,7 +121,7 @@ def weixin_main(request):
 @csrf_exempt
 def main_page(request):
     msg = parse_message(request.body)
-    click_user = "test"
+    click_user = msg.source
     return render_to_response('hello.html', locals())
 
 
