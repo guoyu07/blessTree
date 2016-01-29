@@ -20,6 +20,7 @@
 {#</script>#}
 <script>
     $(function () {
+        alert(location.href.split('#')[0]);
         wx.config({
               debug: true,
               appId: '{{ app_id }}',
