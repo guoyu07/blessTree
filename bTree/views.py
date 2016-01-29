@@ -120,8 +120,11 @@ def weixin_main(request):
 
 @csrf_exempt
 def main_page(request):
-    msg = parse_message(request.body)
-    click_user = msg.source
+    if request.method == 'POST':
+        msg = parse_message(request.body)
+        click_user = msg.source
+    else:
+        click_user = 'error'
     return render_to_response('hello.html', locals())
 
 
