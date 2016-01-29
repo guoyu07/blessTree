@@ -74,33 +74,13 @@ def weixin_main(request):
                     "button":[
                         {
                             "type": "click",
-                            "name": u"今日歌曲",
+                            "name": "aaa",
                             "key": "V1001_TODAY_MUSIC"
                         },
                         {
                             "type": "click",
-                            "name": u"歌手简介",
+                            "name": "bbb",
                             "key": "V1001_TODAY_SINGER"
-                        },
-                        {
-                            "name": u"菜单",
-                            "sub_button": [
-                                {
-                                    "type": "view",
-                                    "name": u"搜索",
-                                    "url": "http://www.soso.com/"
-                                },
-                                {
-                                    "type": "view",
-                                    "name": u"视频",
-                                    "url": "http://v.qq.com/"
-                                },
-                                {
-                                    "type": "click",
-                                    "name": u"赞一下我们",
-                                    "key": "V1001_GOOD"
-                                }
-                            ]
                         }
                     ]
                 }
