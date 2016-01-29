@@ -131,7 +131,7 @@ def main_page(request):
     app_id = appId
     timestamp = TIMESTAMP
     noncestr = NONCESTR
-    signature = share('http://1.blesstree.sinaapp.com/wechat/hello.html')
+    signature = share('http://1.blesstree.sinaapp.com/wechat/')
     return render_to_response('hello.html', locals())
 
 
