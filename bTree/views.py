@@ -31,6 +31,8 @@ appId = 'wx96e5255e64f71a4d'
 appsecret = '04c6d39407f0e882bcf87f207758d0d5'
 WEIXIN_TOKEN = 'weixin'
 
+NONCESTR = 'Wm3WZYTPz0wzccnW'
+TIMESTAMP = '1514587457'
 
 @csrf_exempt
 def weixin_main(request):
@@ -126,6 +128,7 @@ def main_page(request):
 
     oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
     click_user = oauth.get_user_info(oauth.open_id, oauth.access_token)['nickname']
+    signature = share('http://1.blesstree.sinaapp.com/wechat/')
     return render_to_response('hello.html', locals())
 
 
@@ -133,4 +136,17 @@ def test(request):
     reply = TextReply()
     reply.content = parse_message(request.body)
     return HttpResponse(reply.render())
+
+
+def share(url):
+    """
+
+    :param url:当前网页的URL，就是要提供分享接口的页面的
+    :return:签名，用于生成页面签名
+    """
+    client = WeChatClient(appId, appsecret)
+    client.fetch_access_token()
+    ticket = client.jsapi.get_jsapi_ticket(client)
+    return client.jsapi.get_jsapi_signature(NONCESTR, ticket, TIMESTAMP, url)
+
 

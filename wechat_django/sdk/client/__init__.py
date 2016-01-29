@@ -6,6 +6,7 @@ import time
 from wechat_django.sdk.client.base import BaseWeChatClient
 from wechat_django.sdk.client.user import WeChatUser
 from wechat_django.sdk.client.menu import WeChatMenu
+from wechat_django.sdk.client.jsapi import WeChatJSAPI
 
 
 class WeChatClient(BaseWeChatClient):
@@ -20,6 +21,7 @@ class WeChatClient(BaseWeChatClient):
 
     user = WeChatUser()
     menu = WeChatMenu()
+    jsapi = WeChatJSAPI()
 
     def __init__(self, appid, secret, access_token=None, session=None, timeout=None):
         super(WeChatClient, self).__init__(
