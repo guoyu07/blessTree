@@ -118,6 +118,7 @@ def weixin_main(request):
             return HttpResponse(xml)
 
 
+@csrf_exempt
 def main_page(request):
     msg = parse_message(request.body)
     click_user = msg.type
