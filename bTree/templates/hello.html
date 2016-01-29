@@ -24,7 +24,7 @@
                 'onMenuShareAppMessage',
               ]
         });
-        $('#btn').onclick(function () {
+        $('#btn').onclick=function () {
             wx.checkJsApi({
               jsApiList: [
                 'getNetworkType',
@@ -34,7 +34,7 @@
                 alert(JSON.stringify(res));
               }
             });
-        })
+        }
     })
 </script>
 </html>
