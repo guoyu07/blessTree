@@ -103,7 +103,7 @@ def weixin_main(request):
             reply = TextReply()
             reply.source = msg.target
             reply.target = msg.source
-            reply.content = "你点击了种树"
+            reply.content = msg
 
             xml = reply.render()
             return HttpResponse(xml)
