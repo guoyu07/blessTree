@@ -75,12 +75,12 @@ def weixin_main(request):
                         {
                             "type": "click",
                             "name": "aaa",
-                            "key": "V1001_TODAY_MUSIC"
+                            "key": "V1001"
                         },
                         {
                             "type": "click",
                             "name": "bbb",
-                            "key": "V1001_TODAY_SINGER"
+                            "key": "V1001"
                         }
                     ]
                 }
