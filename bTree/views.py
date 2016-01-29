@@ -75,12 +75,12 @@ def weixin_main(request):
                     "button": [
                         {
                             "type": "view",
-                            "name": "我要种树",
+                            "name": u"我要种树",
                             "url": oauth.authorize_url
                         },
                         {
                             "type": "click",
-                            "name": "关于俱乐部",
+                            "name": u"关于俱乐部",
                             "key": "v1002"
                         }
                     ]
