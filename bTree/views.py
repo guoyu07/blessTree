@@ -76,7 +76,7 @@ def weixin_main(request):
                         {
                             "type": "view",
                             "name": "plant",
-                            "url": oauth.authorize_url
+                            "url": 'http://1.blesstree.sinaapp.com/wechat/'
                         },
                         {
                             "type": "click",
