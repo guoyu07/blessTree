@@ -35,12 +35,11 @@ class BaseWeChatAPI(object):
             url = self.API_BASE_URL + url
         return wechat_client.get(url, params)
 
-
     # TODO:下面三个方法的修改
-    def _post(self, url, **kwargs):
+    def _post(self, wechat_client, url, params):
         if getattr(self, 'API_BASE_URL', None):
-            kwargs['api_base_url'] = self.API_BASE_URL
-        return self._client.post(url, **kwargs)
+            url = self.API_BASE_URL + url
+        return wechat_client.post(url, params)
 
     @property
     def access_token(self):
@@ -183,17 +182,19 @@ class BaseWeChatClient(object):
         )
         result = res.json()
 
-        return result['nickname'] + result['province']
+        return result
 
 
     _get = get
 
-    def post(self, url, **kwargs):
-        return self._request(
-            method='post',
-            url_or_endpoint=url,
-            **kwargs
+    def post(self, url, params):
+        res = requests.post(
+            url=url,
+            params=params
         )
+        result = res.json()
+        return result
+
     _post = post
 
     def _fetch_access_token(self, url, params):

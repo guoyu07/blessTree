@@ -9,18 +9,18 @@ from wechat_django.sdk.client.base import BaseWeChatAPI
 
 
 class WeChatMenu(BaseWeChatAPI):
-    def get(self):
+    def get(self, client):
         """
-            查询自定义菜单
-            参阅：  http://mp.weixin.qq.com/wiki/16/ff9b7b85220e1396ffa16794a9d95adc.html
+        查询自定义菜单
+        参阅：  http://mp.weixin.qq.com/wiki/16/ff9b7b85220e1396ffa16794a9d95adc.html
         :return:返回的json数据
         """
         try:
-            return self._get('menu/get')
+            return self._get(client, 'menu/get')
         except Exception :
             pass
 
-    def create(self, menu_data):
+    def create(self, client, menu_data):
         """
             创建自定义菜单
             client = WeChatClient("id", "secret")
@@ -65,8 +65,9 @@ class WeChatMenu(BaseWeChatAPI):
         :return:json数据
         """
         return self._post(
+            client,
             'menu/create',
-            data=menu_data
+            params=menu_data
         )
 
     update = create
