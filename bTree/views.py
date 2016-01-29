@@ -71,7 +71,7 @@ def weixin_main(request):
                 client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()
                 menu = client.menu.create(client, {
-                    "button":[
+                    [
                         {
                             "type": "click",
                             "name": "aaa",
