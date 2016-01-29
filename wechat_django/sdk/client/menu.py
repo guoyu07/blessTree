@@ -5,7 +5,7 @@ __author__ = 'albert'
 """
 
 from wechat_django.sdk.client.base import BaseWeChatAPI
-
+import json
 
 class WeChatMenu(BaseWeChatAPI):
     def get(self, client):
@@ -63,11 +63,11 @@ class WeChatMenu(BaseWeChatAPI):
         :param menu_data:python字典，菜单的信息
         :return:json数据
         """
-        # menu_data['access_token'] = client.access_token
+        json_data = json.dumps(menu_data, ensure_ascii=False).encode('utf8')
         return self._post(
             client,
             'menu/create',
-            data=menu_data,
+            data=json_data,
         )
 
 
