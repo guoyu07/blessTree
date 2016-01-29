@@ -85,8 +85,8 @@ def weixin_main(request):
                 #         }
                 #     ]
                 # }
-                )
                 { "button":[ { "name":"我", "sub_button":[ { "name":"绑定身份","type":"click","key":"BINDING" } ] }, { "name":"服务", "sub_button":[ { "name":"新品促销","type":"click","key":"NEW" } ] } , { "name":"生活", "sub_button":[ { "name":"动态","type":"click","key":"ADM" } ] } ]}
+                )
                 reply.content = menu
 
             else:
