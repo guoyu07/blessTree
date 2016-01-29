@@ -24,7 +24,17 @@
                 'onMenuShareAppMessage',
               ]
         });
-        alert("hello");
+        $('#btn').onclick(function () {
+            wx.checkJsApi({
+              jsApiList: [
+                'getNetworkType',
+                'previewImage'
+              ],
+              success: function (res) {
+                alert(JSON.stringify(res));
+              }
+            });
+        })
     })
 </script>
 </html>
