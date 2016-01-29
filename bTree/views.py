@@ -76,12 +76,12 @@ def weixin_main(request):
                     "button": [
                         {
                             "type": "view",
-                            "name": u"&#x6211;&#x8981;&#x79CD;&#x6811;",
+                            "name": u"我要种树".encode('utf-8'),
                             "url": oauth.authorize_url
                         },
                         {
                             "type": "click",
-                            "name": "关于",
+                            "name": "about",
                             "key": "v1002"
                         }
                     ]

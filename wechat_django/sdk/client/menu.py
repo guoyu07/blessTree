@@ -63,11 +63,11 @@ class WeChatMenu(BaseWeChatAPI):
         :param menu_data:python字典，菜单的信息
         :return:json数据
         """
-        json_data = json.dumps(menu_data, ensure_ascii=False).encode('utf-8')
+        # json_data = json.dumps(menu_data, ensure_ascii=False).encode('utf-8')
         return self._post(
             client,
             'menu/create',
-            data=json_data,
+            data=menu_data,
         )
 
 
