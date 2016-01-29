@@ -99,7 +99,7 @@ def weixin_main(request):
             xml = reply.render()
             return HttpResponse(xml)
 
-        if msg.type == 'event':
+        if msg.type == 'event' and msg.event == 'click':
             reply = TextReply()
             reply.source = msg.target
             reply.target = msg.source
