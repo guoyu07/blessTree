@@ -33,8 +33,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.31390134" vertical-offset="1436" max-vertical-offset="2430">
-              <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.57399106" vertical-offset="1274" max-vertical-offset="2430">
+              <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
               <folding>
                 <element signature="e#33#47#0" expanded="true" />
               </folding>
@@ -178,10 +178,10 @@
         <option value="$PROJECT_DIR$/bTree/templates/test.php.html" />
         <option value="$PROJECT_DIR$/bTree/templates/main.html" />
         <option value="$PROJECT_DIR$/bTree/static/tree/css/main.css" />
-        <option value="$PROJECT_DIR$/bTree/views.py" />
         <option value="$PROJECT_DIR$/wechat_django/sdk/client/__init__.py" />
         <option value="$PROJECT_DIR$/wechat_django/sdk/client/menu.py" />
         <option value="$PROJECT_DIR$/wechat_django/sdk/client/base.py" />
+        <option value="$PROJECT_DIR$/bTree/views.py" />
       </list>
     </option>
   </component>
@@ -1105,8 +1105,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.31390134" vertical-offset="1436" max-vertical-offset="2430">
-          <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.57399106" vertical-offset="1274" max-vertical-offset="2430">
+          <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
           <folding>
             <element signature="e#33#47#0" expanded="true" />
           </folding>
