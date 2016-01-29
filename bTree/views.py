@@ -104,6 +104,7 @@ def weixin_main(request):
                         }
                     ]
                 })
+                reply.content = menu
 
             else:
                reply.content = msg.content
