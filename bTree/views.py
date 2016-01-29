@@ -123,7 +123,8 @@ def main_page(request):
     code = request.GET.get('code')
     oauth = oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/')
 
-    click_user = oauth.fetch_access_token(code)['openid']
+    oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
+    click_user = oauth.get_user_info(oauth.open_id, oauth.access_token)['nickname']
     return render_to_response('hello.html', locals())
 
 
