@@ -3,7 +3,6 @@ __author__ = 'albert'
 """
     自定义菜单创建删除等的类
 """
-from __future__ import absolute_import, unicode_literals
 
 from wechat_django.sdk.client.base import BaseWeChatAPI
 
