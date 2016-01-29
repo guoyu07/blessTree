@@ -77,11 +77,11 @@ def weixin_main(request):
                             "name": "今日歌曲",
                             "key": "V1001_TODAY_MUSIC"
                         },
-                        {
-                            "type": "click",
-                            "name": "歌手简介",
-                            "key": "V1001_TODAY_SINGER"
-                        },
+                        # {
+                        #     "type": "click",
+                        #     "name": "歌手简介",
+                        #     "key": "V1001_TODAY_SINGER"
+                        # },
                         {
                             "name": "菜单",
                             "sub_button": [
