@@ -99,11 +99,20 @@ def weixin_main(request):
             xml = reply.render()
             return HttpResponse(xml)
 
-        if msg.type == 'event' and msg.event == 'view':
+        if msg.type == 'event' and msg.event == 'subscribe':
             reply = TextReply()
             reply.source = msg.target
             reply.target = msg.source
-            reply.content = msg.type
+            reply.content = "欢迎关注华工创维俱乐部，我们将不定期推送新鲜有趣的福利哦～"
+
+            xml = reply.render()
+            return HttpResponse(xml)
+
+        if msg.type == 'event' and msg.event == 'click':
+            reply = TextReply()
+            reply.source = msg.target
+            reply.target = msg.source
+            reply.content = "睡个过冬眠～"
 
             xml = reply.render()
             return HttpResponse(xml)
