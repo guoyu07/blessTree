@@ -26,8 +26,6 @@ from wechat_django.sdk.utils import to_text
 
 import json
 
-import sys
-sys.setdefaultencoding('utf-8')
 
 appId = 'wx96e5255e64f71a4d'
 appsecret = '04c6d39407f0e882bcf87f207758d0d5'
