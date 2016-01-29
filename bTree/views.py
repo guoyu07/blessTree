@@ -70,13 +70,13 @@ def weixin_main(request):
             elif msg.content == "创建":
                 client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()
-                oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/', "snsapi_userinfo")
+                oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/')
                 menu = client.menu.create(client, {
                     "button": [
                         {
                             "type": "view",
                             "name": "plant",
-                            "url": 'http://1.blesstree.sinaapp.com/wechat/'
+                            "url": oauth.authorize_url
                         },
                         {
                             "type": "click",
