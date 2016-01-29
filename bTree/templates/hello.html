@@ -11,6 +11,7 @@
 <p>hello,{{ click_user }}</p>
 <p>ticket:{{ tick }}</p>
 <p>signature:{{ signature }}</p>
+<p id="href-p"></p>
 </body>
 {#<script>#}
 {#    $(function () {#}
@@ -20,7 +21,7 @@
 {#</script>#}
 <script>
     $(function () {
-        alert(location.href.split('#')[0]);
+        $("#href-p").html(location.href.split('#')[0])
         wx.config({
               debug: true,
               appId: '{{ app_id }}',
