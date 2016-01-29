@@ -63,12 +63,12 @@ class WeChatMenu(BaseWeChatAPI):
         :param menu_data:python字典，菜单的信息
         :return:json数据
         """
-        # return self._post(
-        #     client,
-        #     'menu/create',
-        #     params=menu_data
-        # )
-        return "lqczzz"
+        return self._post(
+            client,
+            'menu/create',
+            params=menu_data
+        )
+
 
     update = create
 
