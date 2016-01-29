@@ -69,6 +69,7 @@ class WeChatMenu(BaseWeChatAPI):
             'menu/create',
             # params=menu_data,
             {
+                "access_token":client.access_token,
                 "test": "lala",
                 "lala": "test"
             }
