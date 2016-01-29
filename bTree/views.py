@@ -84,17 +84,8 @@ def weixin_main(request):
                                "type":"view",
                                "name":"搜索",
                                "url":"http://www.soso.com/"
-                            },
-                            {
-                               "type":"view",
-                               "name":"视频",
-                               "url":"http://v.qq.com/"
-                            },
-                            {
-                               "type":"click",
-                               "name":"赞一下我们",
-                               "key":"V1001_GOOD"
-                            }]
+                            }
+                           ]
                        }]
                  }
                 )
