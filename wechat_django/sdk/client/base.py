@@ -38,7 +38,7 @@ class BaseWeChatAPI(object):
     # TODO:下面三个方法的修改
     def _post(self, wechat_client, url, params):
         if getattr(self, 'API_BASE_URL', None):
-            url = self.API_BASE_URL + url + '?access_token=' + wechat_client.access_token
+            url = self.API_BASE_URL + url
         return wechat_client.post(url, params)
 
     @property
