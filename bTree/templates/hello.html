@@ -2,17 +2,25 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <script src="../static/plugin/wechat-jssdk/weixin-1.0.0.js"></script>
+    <title>test</title>
 </head>
 <body>
 <button id="btn">您好</button>
 <p >hello,{{ click_user }}</p>
 </body>
-{#<script>#}
-{#    $(function () {#}
-{#        $("#btn").on('tap', function () {#}
-{#            $("#p_you").show();#}
-{#        })#}
-{#    })#}
-{#</script>#}
+<script>
+    wx.config({
+      debug: false,
+      appId: 'wxf8b4f85f3a794e77',
+      timestamp: 1420774989,
+      nonceStr: '2nDgiWM7gCxhL8v0',
+      signature: '1f8a6552c1c99991fc8bb4e2a818fe54b2ce7687',
+      jsApiList: [
+        'checkJsApi',
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage',
+      ]
+  });
+</script>
 </html>
