@@ -63,7 +63,7 @@ class WeChatMenu(BaseWeChatAPI):
         :param menu_data:python字典，菜单的信息
         :return:json数据
         """
-        menu_data['access_token'] = client.access_token
+        # menu_data['access_token'] = client.access_token
         return self._post(
             client,
             'menu/create',
