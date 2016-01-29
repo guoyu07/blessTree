@@ -128,7 +128,7 @@ def main_page(request):
 
     oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
     # click_user = oauth.get_user_info(oauth.open_id, oauth.access_token)['nickname']
-    click_user = 'http://1.blesstree.sinaapp.com/wechat/'+'?code='+code+'$state='
+    click_user = 'http://1.blesstree.sinaapp.com/wechat/'+'?code='+code+'&state='
     app_id = appId
     timestamp = TIMESTAMP
     noncestr = NONCESTR
