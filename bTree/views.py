@@ -150,6 +150,7 @@ def share(url):
     client = WeChatClient(appId, appsecret)
     client.fetch_access_token()
     ticket = client.jsapi.get_jsapi_ticket(client)
-    return client.jsapi.get_jsapi_signature(NONCESTR, ticket, TIMESTAMP, url)
+    # return client.jsapi.get_jsapi_signature(NONCESTR, ticket, TIMESTAMP, url)
+    return ticket
 
 
