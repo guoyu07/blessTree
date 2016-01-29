@@ -120,7 +120,10 @@ def weixin_main(request):
 
 @csrf_exempt
 def main_page(request):
-    click_user = request.GET.get('code')
+    code = request.GET.get('code')
+    oauth = oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/')
+
+    click_user = oauth.fetch_access_token(code)['openid']
     return render_to_response('hello.html', locals())
 
 
