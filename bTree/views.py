@@ -75,7 +75,7 @@ def weixin_main(request):
                     "button": [
                         {
                             "type": "view",
-                            "name": u"我要种树树",
+                            "name": "plant",
                             "url": oauth.authorize_url
                         },
                         {
