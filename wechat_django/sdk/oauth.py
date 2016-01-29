@@ -32,48 +32,48 @@ class WeChatOAuth(object):
         self.scope = scope
         self.state = state
 
-    def _request(self, method, url_or_endpoint, **kwargs):
-        """
-        封装原始的requests库中的方法的
-        :param method:
-        :param url_or_endpoint:
-        :param kwargs:
-        :return:
-        """
-        if not url_or_endpoint.startswith('https://', 'http://'):
-            url = '{base}{endpoint}'.format(
-                base=self.API_BASE_URL,
-                endpoint=url_or_endpoint
-            )
-        else:
-            url = url_or_endpoint
+    # def _request(self, method, url_or_endpoint, **kwargs):
+    #     """
+    #     封装原始的requests库中的方法的
+    #     :param method:
+    #     :param url_or_endpoint:
+    #     :param kwargs:
+    #     :return:
+    #     """
+    #     if not url_or_endpoint.startswith('https://', 'http://'):
+    #         url = '{base}{endpoint}'.format(
+    #             base=self.API_BASE_URL,
+    #             endpoint=url_or_endpoint
+    #         )
+    #     else:
+    #         url = url_or_endpoint
+    #
+    #     if isinstance(kwargs.get('data', ''), dict):
+    #         body = json.dumps(kwargs['data'], ensure_ascii=False)
+    #         body = body.encode('utf-8')
+    #         kwargs['data'] = body
+    #
+    #     res = requests.request(
+    #         method=method,
+    #         url=url,
+    #         **kwargs
+    #     )
+    #
+    #     res.encoding = 'utf-8'
+    #     result = res.json()
+    #
+    #     if 'errcode' in result and result['errcode'] != 0:
+    #         errcode = result['errcode']
+    #         errmsg = result['errmsg']
+    #
+    #     return result
 
-        if isinstance(kwargs.get('data', ''), dict):
-            body = json.dumps(kwargs['data'], ensure_ascii=False)
-            body = body.encode('utf-8')
-            kwargs['data'] = body
-
-        res = requests.request(
-            method=method,
-            url=url,
-            **kwargs
+    def _get(self, url, params):
+        res = requests.get(
+            url=self.API_BASE_URL + url,
+            params=params
         )
-
-        res.encoding = 'utf-8'
-        result = res.json()
-
-        if 'errcode' in result and result['errcode'] != 0:
-            errcode = result['errcode']
-            errmsg = result['errmsg']
-
-        return result
-
-    def _get(self, url, **kwargs):
-        return self._request(
-            method='get',
-            url_or_endpoint=url,
-            **kwargs
-        )
+        return res.json()
 
     @property
     def authorize_url(self):
