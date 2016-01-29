@@ -120,7 +120,11 @@ def weixin_main(request):
 
 
 def main_page(request):
-    return render_to_response('main.html', locals())
+    xml = request.body
+    reply = TextReply()
+    reply.content = xml
+    return HttpResponse(reply.render())
+    # return render_to_response('main.html', locals())
 
 
 def test(request):
