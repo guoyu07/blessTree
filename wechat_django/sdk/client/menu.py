@@ -67,12 +67,7 @@ class WeChatMenu(BaseWeChatAPI):
         return self._post(
             client,
             'menu/create',
-            # params=menu_data,
-            {
-                "access_token":client.access_token,
-                "test": "lala",
-                "lala": "test"
-            }
+            data=menu_data,
         )
 
 
