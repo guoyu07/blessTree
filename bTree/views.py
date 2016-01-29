@@ -131,7 +131,10 @@ def main_page(request):
     app_id = appId
     timestamp = TIMESTAMP
     noncestr = NONCESTR
-    signature = share('http://1.blesstree.sinaapp.com/wechat/'+'?code='+code+'$state=')
+    tickk = share('http://1.blesstree.sinaapp.com/wechat/'+'?code='+code+'$state=')
+    tick = tickk['second']
+    signature = tickk['first']
+    # signature = share('http://1.blesstree.sinaapp.com/wechat/'+'?code='+code+'$state=')
     return render_to_response('hello.html', locals())
 
 
@@ -150,7 +153,6 @@ def share(url):
     client = WeChatClient(appId, appsecret)
     client.fetch_access_token()
     ticket = client.jsapi.get_jsapi_ticket(client)
-    return client.jsapi.get_jsapi_signature(NONCESTR, ticket, TIMESTAMP, url)
-    # return ticket
+    return {'first': client.jsapi.get_jsapi_signature(NONCESTR, ticket, TIMESTAMP, url), 'second': ticket}
 
 
