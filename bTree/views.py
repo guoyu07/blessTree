@@ -120,7 +120,7 @@ def weixin_main(request):
 
 def main_page(request):
     msg = parse_message(request.body)
-    click_user = msg.content
+    click_user = msg.type
     return render_to_response('hello.html', locals())
 
 
