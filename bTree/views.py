@@ -80,7 +80,7 @@ def weixin_main(request):
                         {
                             "type": "click",
                             "name": "bbb",
-                            "key": "v1001"
+                            "key": "v1002"
                         }
                     ]
                 }
