@@ -56,5 +56,5 @@ class Tree(models.Model):
     content = models.CharField(max_length=300)  # 主要是祝福吐槽的内容
 
     class Meta:
-        ordering = ['-action_time']  # 默认互动信息从最新开始排
+        ordering = ['-action_time']  # 默认互动信息从最新开始
         verbose_name_plural = verbose_name = u"用户"
