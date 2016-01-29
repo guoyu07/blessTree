@@ -121,7 +121,7 @@ def weixin_main(request):
 @csrf_exempt
 def main_page(request):
     click_user = request.GET.get('code')
-    return render_to_response('main.html', locals())
+    return render_to_response('hello.html', locals())
 
 
 def test(request):
