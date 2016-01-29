@@ -75,7 +75,7 @@ def weixin_main(request):
                     "button": [
                         {
                             "type": "view",
-                            "name": u"\u6211\u8981\u79cd\u6811\u000d\u000a",
+                            "name": "&#x6211;&#x8981;&#x79CD;&#x6811;",
                             "url": oauth.authorize_url
                         },
                         {
