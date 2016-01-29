@@ -127,11 +127,12 @@ def main_page(request):
     oauth = oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/')
 
     oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
-    click_user = oauth.get_user_info(oauth.open_id, oauth.access_token)['nickname']
+    # click_user = oauth.get_user_info(oauth.open_id, oauth.access_token)['nickname']
+    click_user = 'http://1.blesstree.sinaapp.com/wechat/'+'?code='+code+'$state='
     app_id = appId
     timestamp = TIMESTAMP
     noncestr = NONCESTR
-    tickk = share('http://1.blesstree.sinaapp.com/wechat/'+'?code='+code+'$state=')
+    tickk = share(click_user)
     tick = tickk['second']
     signature = tickk['first']
     # signature = share('http://1.blesstree.sinaapp.com/wechat/'+'?code='+code+'$state=')
