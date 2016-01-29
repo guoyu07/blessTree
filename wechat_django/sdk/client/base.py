@@ -193,7 +193,8 @@ class BaseWeChatClient(object):
             data=data
         )
         result = res.json()
-        return result
+        # return result
+        return data
 
     _post = post
 

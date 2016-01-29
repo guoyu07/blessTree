@@ -70,22 +70,20 @@ def weixin_main(request):
             elif msg.content == "创建":
                 client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()
-                menu = client.menu.create(client,
-                # {
-                #     "button": [
-                #         {
-                #             "type": "click",
-                #             "name": "aaa",
-                #             "key": "v1001"
-                #         },
-                #         {
-                #             "type": "click",
-                #             "name": "bbb",
-                #             "key": "v1001"
-                #         }
-                #     ]
-                # }
-                { "button":[ { "name":"我", "sub_button":[ { "name":"绑定身份","type":"click","key":"BINDING" } ] }, { "name":"服务", "sub_button":[ { "name":"新品促销","type":"click","key":"NEW" } ] } , { "name":"生活", "sub_button":[ { "name":"动态","type":"click","key":"ADM" } ] } ]}
+                menu = client.menu.create(client, {
+                    "button": [
+                        {
+                            "type": "click",
+                            "name": "aaa",
+                            "key": "v1001"
+                        },
+                        {
+                            "type": "click",
+                            "name": "bbb",
+                            "key": "v1001"
+                        }
+                    ]
+                }
                 )
                 reply.content = menu
 
