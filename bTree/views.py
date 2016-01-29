@@ -80,7 +80,7 @@ def weixin_main(request):
                         },
                         {
                             "type": "click",
-                            "name": "关于俱乐部",
+                            "name": "about",
                             "key": "v1002"
                         }
                     ]
