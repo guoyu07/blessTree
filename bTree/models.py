@@ -19,17 +19,17 @@ class User(models.Model):
     用户类，主要是用户是否种树等，还有朋友关系
     """
     # 用户openid/头像/昵称/加入时间
-    openid = models.CharField(max_length=100)
-    nickname = models.CharField(max_length=40)
-    avatar = models.ImageField()
-    create_time = models.DateTimeField()  # 待定
+    openid = models.CharField(max_length=50)  # 实际长为28
+    nickname = models.CharField(max_length=20)  # 实际长为7个中文字符
+    avatar = models.ImageField(upload_to='avatar/')
+    create_time = models.DateTimeField(auto_now_add=True)  # 待定
 
     # 用户积分相关，方便逻辑判断
-    if_plant = models.BooleanField()
+    # if_plant = models.BooleanField(default=)  # 没有种树就不要记录就好
     tree_name = models.CharField(max_length=40)
-    if_share = models.BooleanField()
-    willing = models.CharField(max_length=300, default='none')
-    count = models.IntegerField()  # 积分
+    if_share = models.BooleanField(default=False)
+    willing = models.CharField(max_length=300, default='none')  # 如果为none则没有填写willing，可以去填写啦啦啦
+    count = models.IntegerField(default=0)  # 积分
 
     # 用户关系
     friends = models.ManyToManyField("self")  # 朋友
@@ -46,11 +46,11 @@ class Tree(models.Model):
     # 基本信息
     owner = models.OneToOneField(User)
     tree_name = models.CharField(max_length=40)
-    count = models.IntegerField()
+    count = models.IntegerField(default=0)
 
     # 互动信息保存
     type = models.IntegerField(choices=TYPE.items(), verbose_name=u'操作类型')
-    action_time = models.DateTimeField()
+    action_time = models.DateTimeField(auto_now_add=True)
     read = models.BooleanField(default=False)  # 消息是否已读，默认还没有
     source_id = models.CharField(default='na', max_length=100)  # 默认na,匿名的意思
     content = models.CharField(max_length=300)  # 主要是祝福吐槽的内容

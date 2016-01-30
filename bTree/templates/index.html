@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>index</title>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="../static/tree/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../static/plugin/weui/weui.min.css">
+
+    <!--js-->
+    <script src="../static/plugin/jquery/jquery.min.js"></script>
+    <script src="../static/plugin/jquery/jquery.color.js"></script>
+    <script src="../static/plugin/jquery/jquery.mobile-events.min.js"></script>
+    <script src="../static/tree/js/jquery.lqc.extension.js"></script>
+    <script src="../static/tree/js/index.js"></script>
+</head>
+<body>
+<!--标题-->
+<div class="index-title" id="pg_11-title">
+    <img src="../static/tree/image/others/index-title.png">
+</div>
+<!--树-->
+<div class="index-tree" id="pg_11-tree">
+    <img src="../static/tree/image/others/index-tree.png">
+</div>
+<!--按钮-->
+<div class="index-btn">
+    <button class="plant-tree" id="pg_11-plant" data-role="none">我要种树</button>
+    <button class="reject-to-plant" id="pg_11-rej" data-role="none">不玩</button>
+</div>
+
+<!--隐藏逻辑小部件-->
+<div class="weui_mask" id="black-mask" style="display: none"></div>
+<div class="tips-container" id="tips-container" style="display: none;">
+    <div class="tips-title">
+        <img src="../static/tree/image/others/ku.png" style="float:left;">
+        <p style="float: left">客官真的要走了吗</p>
+    </div>
+    <div class="tips-selected">
+        <button class="selected-sure" id="selected-sure">确定</button>
+        <button class="selected-not" id="selected-not">再去看看</button>
+    </div>
+</div>
+
+</body>
+</html>

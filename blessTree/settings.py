@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
+# import qiniustorage
 import sys
 
 reload(sys)
@@ -34,6 +34,7 @@ SECRET_KEY = '2w%+23)d-xu*#12^1rewlbj=&d_-!ncq*t=2-g@$2^80wro&q+'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [
+    # '127.0.0.1',
     '.sinaapp.com',
     '.blesstree.sinaapp.com',
     '1.blesstree.sinaapp.com'
@@ -80,6 +81,14 @@ EMAIL_HOST_PASSWORD = 'password'
 EMAIL_USE_TLS = True
 SERVER_EMAIL = DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+
+# 七牛云配置
+
+DEFAULT_FILE_STORAGE = 'qiniustorage.backends.QiniuStorage'
+QINIU_ACCESS_KEY = 'kCFPPR633H8ZlPCzdoDfBchG0oHyrEU1H7PEhpRC'
+QINIU_SECRET_KEY = '-j2OxSCP3_qmyctsYQ6qo2_paVDnFdGoHLi5bxbW'
+QINIU_BUCKET_NAME = 'blessTree'
+QINIU_BUCKET_DOMAIN = '7xqm62.com1.z0.glb.clouddn.com'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
