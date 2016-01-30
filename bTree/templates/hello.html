@@ -7,81 +7,70 @@
     <title>test</title>
 </head>
 <body>
-<button class="onMenuShareTimeline" id="onMenuShareTimeline" style="height: 50px;width: 100%">您好</button>
-<p>hello,{{ click_user }}</p>
-<p>ticket:{{ tick }}</p>
+<p>hello,{{ user }}</p>
+<p>timestamp {{ timestamp }}</p>
+<p>noncestr {{ noncestr }}</p>
 <p>signature:{{ signature }}</p>
+<p>{{ name }}</p>
+<p>ticket:{{ ticket }}</p>
 <p id="href-p"></p>
 </body>
-{#<script>#}
-{#    $(function () {#}
-{#        alert(location.href.split('#')[0]);#}
-{#        alert("{{ signature }}")#}
-{#    })#}
-{#</script>#}
 <script>
     $(function () {
-        $("#href-p").html(location.href.split('#')[0])
-        wx.config({
-              debug: true,
-              appId: '{{ app_id }}',
-              timestamp: {{ timestamp }},
-              nonceStr: '{{ noncestr }}',
-              signature: '{{ signature }}',
-              jsApiList: [
-                'checkJsApi',
-                'onMenuShareTimeline',
-                'onMenuShareAppMessage',
-              ]
-        });
-        wx.ready(function () {
-            // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
-                wx.checkJsApi({
-                    jsApiList: [
-                        'getNetworkType',
-                        'previewImage'
-                    ],
-                    success: function (res) {
-                        alert(JSON.stringify(res));
-                    }
-                });
-
-                wx.onMenuShareAppMessage({
-                    title: '互联网之子 方倍工作室',
-                    desc: '在长大的过程中，我才慢慢发现，我身边的所有事，别人跟我说的所有事，那些所谓本来如此，注定如此的事，它们其实没有非得如此，事情是可以改变的。更重要的是，有些事既然错了，那就该做出改变。',
-                    link: 'http://movie.douban.com/subject/25785114/',
-                    imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg',
-{#                    trigger: function (res) {#}
-{#                        alert('用户点击发送给朋友');#}
-{#                    },#}
-{#                    success: function (res) {#}
-{#                        alert('已分享');#}
-{#                    },#}
-{#                    cancel: function (res) {#}
-{#                        alert('已取消');#}
-{#                    },#}
-{#                    fail: function (res) {#}
-{#                        alert(JSON.stringify(res));#}
-{#                    }#}
-                })
-                wx.onMenuShareTimeline({
-                      title: '互联网之子 方倍工作室',
-                      link: 'http://movie.douban.com/subject/25785114/',
-                      imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg',
-                      trigger: function (res) {
-                        alert('用户点击分享到朋友圈');
-                      },
-                      success: function (res) {
-                        alert('已分享');
-                      },
-                      cancel: function (res) {
-                        alert('已取消');
-                      },
-                      fail: function (res) {
-                        alert(JSON.stringify(res));
-                      }
-                });
-        })
+        alert("lqczzz")
     })
 </script>
+{#<script>#}
+{#    $(function () {#}
+{#        $("#href-p").html(location.href.split('#')[0]);#}
+{#        wx.config({#}
+{#              debug: true,#}
+{#              appId: '{{ app_id }}',#}
+{#              timestamp: {{ timestamp }},#}
+{#              nonceStr: '{{ noncestr }}',#}
+{#              signature: '{{ signature }}',#}
+{#              jsApiList: [#}
+{#                'checkJsApi',#}
+{#                'onMenuShareTimeline',#}
+{#                'onMenuShareAppMessage',#}
+{#              ]#}
+{#        });#}
+{#        wx.ready(function () {#}
+{#            // 1 判断当前版本是否支持指定 JS 接口，支持批量判断#}
+{#                wx.checkJsApi({#}
+{#                    jsApiList: [#}
+{#                        'getNetworkType',#}
+{#                        'previewImage'#}
+{#                    ],#}
+{#                    success: function (res) {#}
+{#                        alert(JSON.stringify(res));#}
+{#                    }#}
+{#                });#}
+{##}
+{#                wx.onMenuShareAppMessage({#}
+{#                    title: '互联网之子 方倍工作室',#}
+{#                    desc: '在长大的过程中，我才慢慢发现，我身边的所有事，别人跟我说的所有事，那些所谓本来如此，注定如此的事，它们其实没有非得如此，事情是可以改变的。更重要的是，有些事既然错了，那就该做出改变。',#}
+{#                    link: 'http://movie.douban.com/subject/25785114/',#}
+{#                    imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg',#}
+{#                })#}
+{#                wx.onMenuShareTimeline({#}
+{#                      title: '互联网之子 方倍工作室',#}
+{#                      link: 'http://movie.douban.com/subject/25785114/',#}
+{#                      imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg',#}
+{#                      trigger: function (res) {#}
+{#                        alert('用户点击分享到朋友圈');#}
+{#                      },#}
+{#                      success: function (res) {#}
+{#                        alert('已分享');#}
+{#                      },#}
+{#                      cancel: function (res) {#}
+{#                        alert('已取消');#}
+{#                      },#}
+{#                      fail: function (res) {#}
+{#                        alert(JSON.stringify(res));#}
+{#                      }#}
+{#                });#}
+{#        })#}
+{#    })#}
+{#</script>#}
 </html>
