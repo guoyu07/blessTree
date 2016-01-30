@@ -164,21 +164,4 @@ def share(url):
     return {"first": client.jsapi.get_jsapi_signature(NONCESTR, ticket, TIMESTAMP, url), "second": ticket}
 
 
-# @csrf_exempt
-# def main_page(request):
-#     code = request.GET.get('code')
-#     oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/')
-#
-#     oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
-#     # click_user = oauth.get_user_info(oauth.open_id, oauth.access_token)['nickname']
-#     click_user = 'http://1.blesstree.sinaapp.com/wechat/'+'?code='+code+'&state='
-#     app_id = appId
-#     timestamp = TIMESTAMP
-#     noncestr = NONCESTR
-#     tickk = share(click_user)
-#     tick = tickk['second']
-#     signature = tickk['first']
-#     # signature = share('http://1.blesstree.sinaapp.com/wechat/'+'?code='+code+'$state=')
-#     return render_to_response('hello.html', locals())
-
 
