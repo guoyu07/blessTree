@@ -18,8 +18,8 @@ class BaseWeChatAPI(object):
 
     API_BASE_URL = 'https://api.weixin.qq.com/cgi-bin/'
 
-    # def __init__(self, client=None):
-    #     self._client = client
+    def __init__(self, client=None):
+        self._client = client
 
     # def _get(self, url, params):
     #     res = requests.get(
