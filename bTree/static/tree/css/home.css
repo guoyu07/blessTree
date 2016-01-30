@@ -105,7 +105,9 @@ ul{
     border: 0;
     border-radius: 50%;
 }
-
+.rank-btn:hover, .tips-btn:hover{
+    box-shadow: 0px 2px 2px grey;
+}
 /**********************内容区域**********************/
 
 /****树木区域***/
@@ -155,7 +157,7 @@ ul{
 }
 .right-btn{
     padding-top: 0;
-    padding-right: 20%;
+    padding-right: 18%;
     width: 74%;
     height: 100%;
 }
@@ -164,12 +166,168 @@ ul{
     height: 12%;
 }
 .friends, .water-flower, .history, .willing{
-    margin-left:20% ;
+    margin-left:23% ;
     margin-bottom: 30%;
     height:100%;
     border-radius: 50%;
 }
+.friends:hover, .water-flower:hover, .history:hover, .willing:hover{
+    box-shadow: 0px 2px 2px grey;
+}
 /**********************小部件**********************/
+
+/*规则页面*/
+.rule{
+    position: fixed;
+    width: 70%;
+    height: 62%;
+    z-index: 13;
+    left: 15%;
+    top: 15%;
+    border-radius: 7px;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+.rule-title{
+    margin-top: 6%;
+    margin-bottom: 6%;
+    text-align: center;
+}
+.rule-title p{
+    font-size: 120%;
+    color: #c75c5d;
+
+}
+.rule-list{
+    text-align: left;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.rule-list ul li{
+    position: relative;
+    height: 5%;
+    margin-bottom: 5%;
+    /*width: 90%;*/
+}
+.p-float{
+    float: right;
+}
+.rule-list p{
+    line-height: 1;
+    padding-top: 3%;
+    font-size: 80%;
+    display: inline;
+    color: #474343;
+}
+.rule-list img{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-buttom: 5%;
+    width: 15%;
+    display: inline;
+    /*float: left;*/
+}
+.rule-end{
+    width: 80%;
+    text-align: left;
+    margin-left: 10%;
+}
+.rule-end p{
+    font-size: 90%;
+    color: #474343;
+}
+.rule-btn{
+    float: right;
+    margin-right: 10%;
+}
+.rule-btn p{
+    font-size: 80%;
+    color: #55b599;
+}
+
+/*取名字与填写名字,浇水与浇水成功*/
+.tips-quming, .fill-in-name, .water-tips, .water-success{
+    position: fixed;
+    width: 60%;
+    height: 20%;
+    z-index: 13;
+    left: 20%;
+    top: 35%;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+.tips-quming p{
+    text-indent:2em
+    margin-top: 14%;
+    margin-left:15%;
+    width: 70%;
+    font-size: 90%;
+    text-align: left;
+    color: #2f3130;
+}
+.tips-quming button{
+    background-color: #FFFFFF;
+    color:#55b698 ;
+    font-size: 90%;
+    float: right;
+    margin-right: 10%;
+    border: none;
+}
+.fill-in-name form{
+    margin-top: 15%;
+    margin-left: 15%;
+}
+.fill-in-name input{
+    width: 80%;
+    display: block;
+    -moz-box-shadow:5px 5px 5px #999 inset;               /* For Firefox3.6+ */
+    -webkit-box-shadow:5px 5px 5px #999 inset;            /* For Chrome5+, Safari5+ */
+    box-shadow:5px 5px 5px #999 inset;                    /* For Latest Opera */
+}
+.fill-btn{
+    float: right;
+    margin-top: 10%;
+    margin-right: 10%;
+    color: #55b698;
+}
+/*浇水提醒*/
+.water-tips img{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-buttom: 5%;
+    width: 13%;
+    display: inline;
+}
+.water-tips p, .water-success p{
+    text-indent:2em;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 5%;
+    text-align: left;
+    font-size: 90%;
+    color: #2f3130;
+}
+.water-tips button{
+    border: none;
+    background-color: #FFFFFF;
+    color: #55b698;
+    float: right;
+    margin-right: 10%;
+    margin-top: 5%;
+    font-size: 90%;
+}
+.water-success button{
+    /*position: absolute;*/
+    border: none;
+    background-color: #FFFFFF;
+    color: #55b698;
+    float: right;
+    margin-right: 10%;
+    margin-top: 2%;
+    font-size: 90%;
+}
+
 
 /*祝福果/吐槽果*/
 .apple-for-bless .apple-for-tucao{
