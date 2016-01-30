@@ -21,7 +21,6 @@ class User(models.Model):
     # 用户openid/头像/昵称/加入时间
     openid = models.CharField(max_length=50)  # 实际长为28
     nickname = models.CharField(max_length=20)  # 实际长为7个中文字符
-    avatar = models.ImageField(upload_to='avatar/')
     create_time = models.DateTimeField(auto_now_add=True)  # 待定
 
     # 用户积分相关，方便逻辑判断

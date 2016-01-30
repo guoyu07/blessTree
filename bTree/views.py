@@ -125,7 +125,7 @@ def home(request):
     count = '5000'
     avatar_addr = user_info['headimgurl']
     share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
-    return render_to_response('home.html', locals())
+    return render_to_response('index.html', locals())
 
 
 @csrf_exempt
