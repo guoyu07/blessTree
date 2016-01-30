@@ -59,10 +59,3 @@ class Tree(models.Model):
         verbose_name_plural = verbose_name = u"用户"
 
 
-class Access_token(models.Model):
-    """
-    用来保存access_token
-    """
-    content = models.CharField(max_length=100)
-    create_time = models.DateTimeField(auto_now_add=True)
-

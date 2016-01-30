@@ -6,19 +6,20 @@ import json
 import time
 
 # Django 库文件
-from django.utils.encoding import smart_str
-from django.views.decorators.csrf import csrf_exempt
-from django.shortcuts import render,HttpResponse
-from django.shortcuts import render_to_response, get_object_or_404
-from django.http import Http404
 
+from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import HttpResponse
+from django.shortcuts import render_to_response
+from django.core.exceptions import ObjectDoesNotExist
 # 我的wechat_django库
 from wechat_django.sdk.utils import check_signature
 from wechat_django.sdk.parser import parse_message
 from wechat_django.sdk.replies import TextReply
 from wechat_django.sdk.client import WeChatClient
 from wechat_django.sdk.oauth import WeChatOAuth
+
 from bTree.access import appId, appsecret, WEIXIN_TOKEN, NONCESTR, TIMESTAMP
+from bTree.models import User, Tree
 
 client = WeChatClient(appId, appsecret)
 
@@ -53,10 +54,6 @@ def weixin_main(request):
                 user = client.user.get(client, msg.source)
                 reply.content = user['nickname']
 
-
-            # elif msg.content == '分享':
-            #     oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/', "snsapi_userinfo")
-            #     reply.content = oauth.authorize_url
             elif msg.content == "李启成爱地球":
                 # client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()
@@ -78,7 +75,7 @@ def weixin_main(request):
                 )
                 reply.content = menu
             else:
-               reply.content = msg.content
+                reply.content = msg.content
             xml = reply.render()
             return HttpResponse(xml)
         # 事件处理：关注事件|点击按钮推送|
@@ -95,7 +92,7 @@ def weixin_main(request):
             reply = TextReply()
             reply.source = msg.target
             reply.target = msg.source
-            reply.content = "睡个过冬眠～"
+            reply.content = "小编冬眠ing～"
 
             xml = reply.render()
             return HttpResponse(xml)
@@ -111,21 +108,35 @@ def home(request):
     oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
     code = request.GET.get('code')  # 通过认证的code获取openid
     oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
-    user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
-    # 以下信息是为了分享接口而使用的
-    app_id = appId
-    timestamp = TIMESTAMP
-    noncestr = NONCESTR
-    signature = share(user)['first']
-    ticket = share(user)['second']
+    try:
+        user_db = User.objects.get(openid=oauth.open_id)
+    except ObjectDoesNotExist:
+        user_db = 0
+    # 如果数据库没有该open_id的记录的话
+    if user_db == 0:
+        first_auth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home'+'?first=yes')
+        first_plant_url = first_auth.authorize_url
+        return render_to_response('index.html', locals())
+    else:
+        user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
+        # 以下信息是为了分享接口而使用的
+        app_id = appId
+        timestamp = TIMESTAMP
+        noncestr = NONCESTR
+        signature = share(user)['first']
+        ticket = share(user)['second']
 
-    # user_info = oauth.get_user_info(oauth.open_id) 这个是得不到user_info的，需要snsapi_userinfo才可以，尼玛
-    user_info = client.user.get(client, oauth.open_id)
-    name = user_info['nickname']
-    count = '5000'
-    avatar_addr = user_info['headimgurl']
-    share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
-    return render_to_response('index.html', locals())
+        # user_info = oauth.get_user_info(oauth.open_id) 这个是得不到user_info的，需要snsapi_userinfo才可以，尼玛
+        user_info = client.user.get(client, oauth.open_id)
+        name = user_info['nickname']
+        count = '5000'
+        avatar_addr = user_info['headimgurl']
+        share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
+
+        # 是否第一次种树的判断
+        if 'first' in request.GET.get:
+            pass  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
+        return render_to_response('home.html', locals())
 
 
 @csrf_exempt

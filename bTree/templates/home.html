@@ -21,8 +21,11 @@
     <script src="{% static "plugin/jquery/jquery.mobile-events.min.js" %}"></script>
     <script src="{% static "plugin/wechat-jssdk/weixin-1.0.0.js" %}"></script>
     <script src="{% static "tree/js/jquery.lqc.extension.js" %}"></script>
-    <script src="{% static "tree/js/home.js" %}"></script>
-
+    {% if first_time %}
+        <script src="{% static "tree/js/home.js" %}"></script>
+    {% else %}
+        <script src="{% static "tree/js/home_first.js" %}"></script>
+    {% endif %}
 
 </head>
 <body class="my-body">
@@ -77,6 +80,51 @@
 
 <!--脚本-->
 <div class="footer"></div>
+
+{% if first_time %}
+<!--begin 小部件-->
+<!--mask-->
+<div class="weui_mask" id="black-mask" style="display: none"></div>
+<!--规则-->
+<div class="rule" id="rule" style="display: none;">
+    <div class="rule-title"><p>游戏规则</p></div>
+    <div class="rule-list">
+        <ul>
+            <li><p style="width:15%">点击</p><img style="width: 15%" src="../static/tree/image/btn/water.png" ><p class="p-float" style="width:66% ">浇水一次得1000积分</p></li>
+            <li><p style="width:15%">点击</p><img style="width: 15%" src="../static/tree/image/btn/willing.png"><p class="p-float" style="width:66%">添加新年愿望得20000积分</p></li>
+            <li><p style="width:15%">点击</p><img style="width:15%" src="../static/tree/image/btn/friends.png"><p class="p-float" style="width:66%">并分享到朋友圈得5000积分，成功添加一位好友得3000积分</p></li>
+            <li><p style="width:15%">点击</p><img style="width:15%" src="../static/tree/image/btn/rank.png"><p class="p-float" style="width:66%">访问好友并互动(祝福或吐槽)得5000积分</p></li>
+        </ul>
+    </div>
+    <div class="rule-end"><p>当积分达到300000有特别的惊喜等你哦</p></div>
+    <div class="rule-btn">
+        <p class="rule-next">下一步</p>
+    </div>
+</div>
+<!--取名字-->
+<div class="tips-quming" id="tips-quming" style="display: none">
+    <p>小树苗出生了，快给它取个名字吧！</p>
+    <button class="quming-btn">下一步</button>
+</div>
+<!--填写名字-->
+<div class="fill-in-name" id="fill-in-name" style="display: none">
+    <form class="fill-form">
+        <input type="text" name="tree-name" placeholder="输入祝福树名字">
+        <p class="fill-btn">确定</p>
+    </form>
+</div>
+<!--浇水提醒-->
+<div class="water-tips" id="water-tips" style="display: none;">
+    <p>点击<img src="../static/tree/image/btn/water.png">&nbsp&nbsp给小树苗浇水，可以帮助它长成大树哦</p>
+    <button class="water-tips-btn">去浇水<img src="../static/tree/image/btn/goto.png"></button>
+</div>
+<!--浇水成功-->
+<div class="water-success" id="water-success" style="display: none;">
+    <p>浇水成功，积分达到1000，小树苗变成大树啦！每隔10分钟可以浇一次水哦</p>
+    <button>我知道啦</button>
+</div>
+
+{% endif %}
 </body>
 <script>
     $(function () {
