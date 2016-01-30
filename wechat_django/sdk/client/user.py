@@ -63,7 +63,7 @@ class WeChatUser(BaseWeChatAPI):
         #         'lang': lang
         #         }
         # )
-        return "lqczzz"
+        return wechat_client.access_token
 
 
         # return wechat_client.access_token()
