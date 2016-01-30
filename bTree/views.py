@@ -78,7 +78,6 @@ def weixin_main(request):
                 }
                 )
                 reply.content = menu
-                reply.content = 'whywhywhy'
             else:
                reply.content = msg.content
             xml = reply.render()
