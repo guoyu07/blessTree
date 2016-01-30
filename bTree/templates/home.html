@@ -31,8 +31,8 @@
     <div class="menu-top-con">
         <!--头像-->
         <div class="self-avatar">
-{#            TODO:头像保存问题仍待解决，所以先不管 #}
-            <a><img class="avatar" src="{% static "tree/image/btn/friends.png" %}" style="width: inherit"></a>
+{#            TODO:头像保存问题仍待解决，所以先不管 {% static "tree/image/btn/friends.png" %} #}
+            <a><img class="avatar" src="{{ avatar_addr }}" style="width: inherit"></a>
         </div>
         <!--积分条-->
         <div class="count-progress">
@@ -98,10 +98,7 @@
                     jsApiList: [
                         'getNetworkType',
                         'previewImage'
-                    ],
-                    success: function (res) {
-                        alert(JSON.stringify(res));
-                    }
+                    ]
                 });
 
                 wx.onMenuShareAppMessage({
