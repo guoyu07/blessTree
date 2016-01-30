@@ -106,7 +106,7 @@ class WeChatOAuth(object):
                 'grant_type': 'authorization_code'
             }
         )
-        expires_in = 72000
+        expires_in = 7200
         if 'expires_in' in res:
             expires_in = res['expires_in']
         self.session.set(
