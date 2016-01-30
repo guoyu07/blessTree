@@ -225,8 +225,8 @@ class BaseWeChatClient(object):
         self.expires_at = int(time.time()) + expires_in
         # return result
 
-    def fetch_access_token(self):
-        raise NotImplementedError()
+    # def fetch_access_token(self):
+    #     raise NotImplementedError()
 
     def access_token(self, url, params):
         """
