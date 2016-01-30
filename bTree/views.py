@@ -68,7 +68,7 @@ def weixin_main(request):
             elif msg.content == "李启成爱地球":
                 client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()
-                oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
+                oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/')
                 menu = client.menu.create(client, {
                     "button": [
                         {
@@ -151,6 +151,23 @@ def test2(request):
     openid = request.GET['openid']
     return render_to_response('test2.html', locals())
 
+
+@csrf_exempt
+def main_page(request):
+    code = request.GET.get('code')
+    oauth = oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/')
+
+    oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
+    # click_user = oauth.get_user_info(oauth.open_id, oauth.access_token)['nickname']
+    click_user = 'http://1.blesstree.sinaapp.com/wechat/'+'?code='+code+'&state='
+    app_id = appId
+    timestamp = TIMESTAMP
+    noncestr = NONCESTR
+    tickk = share(click_user)
+    tick = tickk['second']
+    signature = tickk['first']
+    # signature = share('http://1.blesstree.sinaapp.com/wechat/'+'?code='+code+'$state=')
+    return render_to_response('hello.html', locals())
 
 def share(url):
     """
