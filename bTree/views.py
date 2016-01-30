@@ -153,7 +153,6 @@ def share(url):
     :return:签名，用于生成页面签名
     """
     # client = WeChatClient(appId, appsecret)
-    client.access_token()
     client.fetch_access_token()
     ticket = client.jsapi.get_jsapi_ticket(client)
     return {"first": client.jsapi.get_jsapi_signature(NONCESTR, ticket, TIMESTAMP, url), "second": ticket}
