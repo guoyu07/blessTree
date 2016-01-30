@@ -126,7 +126,8 @@ def home(request):
     app_id = appId
     timestamp = TIMESTAMP
     noncestr = NONCESTR
-    signature = share(user)
+    signature = share(user)['first']
+    ticket = share(user)['second']
 
     user_info = oauth.get_user_info(oauth.open_id, oauth.access_token)
     name = user_info['nickname']
@@ -162,7 +163,7 @@ def share(url):
     client = WeChatClient(appId, appsecret)
     client.fetch_access_token()
     ticket = client.jsapi.get_jsapi_ticket(client)
-    return client.jsapi.get_jsapi_signature(NONCESTR, ticket, TIMESTAMP, url)
+    return {"first": client.jsapi.get_jsapi_signature(NONCESTR, ticket, TIMESTAMP, url), "second": ticket}
 
 
 # @csrf_exempt
