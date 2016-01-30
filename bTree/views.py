@@ -21,7 +21,7 @@ from wechat_django.sdk.oauth import WeChatOAuth
 from bTree.access import appId, appsecret, WEIXIN_TOKEN, NONCESTR, TIMESTAMP
 
 client = WeChatClient(appId, appsecret)
-
+oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
 
 @csrf_exempt
 def weixin_main(request):
@@ -61,7 +61,6 @@ def weixin_main(request):
             elif msg.content == "李启成爱地球":
                 # client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()
-                oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
                 menu = client.menu.create(client, {
                     "button": [
                         {
@@ -110,7 +109,6 @@ def home(request):
     :return:
     """
     code = request.GET.get('code')  # 通过认证的code获取openid
-    oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
     oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
     user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
     # 以下信息是为了分享接口而使用的
