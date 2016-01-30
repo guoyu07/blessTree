@@ -84,11 +84,11 @@ SERVER_EMAIL = DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # 七牛云配置
 
-DEFAULT_FILE_STORAGE = 'qiniustorage.backends.QiniuStorage'
-QINIU_ACCESS_KEY = 'kCFPPR633H8ZlPCzdoDfBchG0oHyrEU1H7PEhpRC'
-QINIU_SECRET_KEY = '-j2OxSCP3_qmyctsYQ6qo2_paVDnFdGoHLi5bxbW'
-QINIU_BUCKET_NAME = 'blessTree'
-QINIU_BUCKET_DOMAIN = '7xqm62.com1.z0.glb.clouddn.com'
+# DEFAULT_FILE_STORAGE = 'qiniustorage.backends.QiniuStorage'
+# QINIU_ACCESS_KEY = 'kCFPPR633H8ZlPCzdoDfBchG0oHyrEU1H7PEhpRC'
+# QINIU_SECRET_KEY = '-j2OxSCP3_qmyctsYQ6qo2_paVDnFdGoHLi5bxbW'
+# QINIU_BUCKET_NAME = 'blessTree'
+# QINIU_BUCKET_DOMAIN = '7xqm62.com1.z0.glb.clouddn.com'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
