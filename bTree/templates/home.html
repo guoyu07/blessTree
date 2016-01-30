@@ -81,7 +81,7 @@
 <script>
     $(function () {
         wx.config({
-              debug: true,
+              debug: false,
               appId: '{{ app_id }}',
               timestamp: {{ timestamp }},
               nonceStr: '{{ noncestr }}',
@@ -105,23 +105,29 @@
                 });
 
                 wx.onMenuShareAppMessage({
-                    title: '快来和我种下幸福吧',
-                    desc: '在长大的过程中我才慢慢发现',
-                    link: 'http://movie.douban.com/subject/25785114/',
-                    imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg',
-                })
-                wx.onMenuShareTimeline({
-                      title: '互联网之子 方倍工作室',
-                      link: 'http://movie.douban.com/subject/25785114/',
-                      imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg',
-                      trigger: function (res) {
-                        alert('用户点击分享到朋友圈');
-                      },
-                      success: function (res) {
-                        alert('已分享');
+                    title: '帅的人都点进去咯',
+                    desc: '求新年红包？求约炮？多喝水，多看报；少吃零食，多睡觉，除了帅你也没啥优点了',
+                    link: '{{ share_url }}',
+                    imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg' ,
+                    success: function (res) {
+                        alert('分享成功，积分已奉上');
                       },
                       cancel: function (res) {
-                        alert('已取消');
+                        alert('分享一次，据说会有桃花运哦～');
+                      },
+                      fail: function (res) {
+                        alert(JSON.stringify(res));
+                      }
+                })
+                wx.onMenuShareTimeline({
+                      title: '帅的人都点进去咯',
+                      link: '{{ share_url }}',
+                      imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg' ,
+                      success: function (res) {
+                        alert('分享成功，积分已奉上');
+                      },
+                      cancel: function (res) {
+                        alert('分享一次，据说会有桃花运哦～');
                       },
                       fail: function (res) {
                         alert(JSON.stringify(res));
