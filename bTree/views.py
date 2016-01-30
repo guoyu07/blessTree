@@ -3,6 +3,7 @@
 # Create your views here.
 import hashlib
 import json
+import time
 
 # Django 库文件
 from django.utils.encoding import smart_str
@@ -20,15 +21,10 @@ from wechat_django.sdk.oauth import WeChatOAuth
 from wechat_django.sdk.client.user import WeChatUser
 from wechat_django.sdk.client.user import WeChatUser
 from wechat_django.sdk.utils import to_text
+from bTree.access import appId, appsecret, WEIXIN_TOKEN, NONCESTR, TIMESTAMP
+from bTree.models import Access_token
 
-
-# 全局变量
-appId = 'wx96e5255e64f71a4d'
-appsecret = '04c6d39407f0e882bcf87f207758d0d5'
-WEIXIN_TOKEN = 'weixin'
-
-NONCESTR = 'Wm3WZYTPz0wzccnW'
-TIMESTAMP = '1514587457'
+client = WeChatClient(appId, appsecret)
 
 
 @csrf_exempt
@@ -58,15 +54,16 @@ def weixin_main(request):
             reply.target = msg.source
             # 消息自动回复
             if msg.content == '我':
-                client = WeChatClient(appId, appsecret)
-                client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
+                # client = WeChatClient(appId, appsecret)
+                client.access_token()  # 这句话必须有，先获取接口api调用权限
                 user = client.user.get(client, msg.source)
                 reply.content = user['nickname']
+
             # elif msg.content == '分享':
             #     oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/', "snsapi_userinfo")
             #     reply.content = oauth.authorize_url
             elif msg.content == "李启成爱地球":
-                client = WeChatClient(appId, appsecret)
+                # client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()
                 oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
                 menu = client.menu.create(client, {
@@ -159,7 +156,8 @@ def share(url):
     :param url:当前网页的URL，就是要提供分享接口的页面的
     :return:签名，用于生成页面签名
     """
-    client = WeChatClient(appId, appsecret)
+    # client = WeChatClient(appId, appsecret)
+    client.access_token()
     client.fetch_access_token()
     ticket = client.jsapi.get_jsapi_ticket(client)
     return {"first": client.jsapi.get_jsapi_signature(NONCESTR, ticket, TIMESTAMP, url), "second": ticket}
