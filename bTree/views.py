@@ -57,9 +57,7 @@ def weixin_main(request):
             reply.source = msg.target
             reply.target = msg.source
             # 消息自动回复
-            if msg.content == '分享':
-                reply.content = 'http://demo.open.weixin.qq.com/jssdk/js/api-6.1.js?ts=1420774989'
-            elif msg.content == '我':
+            if msg.content == '我':
                 client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
                 user = client.user.get(client, msg.source)
