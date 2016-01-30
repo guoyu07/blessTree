@@ -18,8 +18,8 @@ class BaseWeChatAPI(object):
 
     API_BASE_URL = 'https://api.weixin.qq.com/cgi-bin/'
 
-    def __init__(self, client=None):
-        self._client = client
+    # def __init__(self, client=None):
+    #     self._client = client
 
     # def _get(self, url, params):
     #     res = requests.get(
@@ -42,13 +42,13 @@ class BaseWeChatAPI(object):
             url = self.API_BASE_URL + url + "?access_token=" + wechat_client.access_token
         return wechat_client.post(url, data)
 
-    @property
-    def access_token(self):
-        return self._client.access_token
-
-    @property
-    def session(self):
-        return self._client.session
+    # @property
+    # def access_token(self):
+    #     return self._client.access_token
+    #
+    # @property
+    # def session(self):
+    #     return self._client.session
 
 
 def _is_api_endpoint(obj):
