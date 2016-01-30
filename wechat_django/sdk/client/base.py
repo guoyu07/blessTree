@@ -33,6 +33,7 @@ class BaseWeChatAPI(object):
     def _get(self, wechat_client, url, params):
         if getattr(self, 'API_BASE_URL', None):
             url = self.API_BASE_URL + url
+        self._client = wechat_client
         return wechat_client.get(url, params)
 
     # TODO:下面三个方法的修改
