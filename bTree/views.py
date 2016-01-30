@@ -131,7 +131,7 @@ def home(request):
 
     user_info = oauth.get_user_info(oauth.open_id, oauth.access_token)
     name = user_info['nickname']
-    return render_to_response('home.html', locals())
+    return render_to_response('hello.html', locals())
 
 
 @csrf_exempt
