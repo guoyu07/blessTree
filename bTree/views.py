@@ -55,7 +55,7 @@ def weixin_main(request):
             # 消息自动回复
             if msg.content == '我':
                 # client = WeChatClient(appId, appsecret)
-                client.access_token()  # 这句话必须有，先获取接口api调用权限
+                client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
                 user = client.user.get(client, msg.source)
                 reply.content = user['nickname']
 
