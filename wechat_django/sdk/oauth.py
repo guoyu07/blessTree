@@ -18,7 +18,26 @@ class WeChatOAuth(object):
     API_BASE_URL = 'https://api.weixin.qq.com/'
     OAUTH_BASE_URL = 'https://open.weixin.qq.com/connect/'
 
-    def __init__(self, app_id, secret, redirect_uri, scope='snsapi_base', state='', session=None, access_token=None, expires_at=None):
+    # def __init__(self, app_id, secret, redirect_uri, scope='snsapi_base', state='', session=None, access_token=None, expires_at=None):
+    #     """
+    #     参阅：http://mp.weixin.qq.com/wiki/4/9ac2e7b1f1d22e9e57260f6553822520.html
+    #     :param app_id:公众号的唯一标志
+    #     :param secret: 这个是认证用的，获取网页授权的access_token
+    #     :param redirect_uri:授权后重定向的回调链接
+    #     :param scope:应用授权作用域
+    #     :param state:重定向后带上的参数
+    #     :return:
+    #     """
+    #     self.app_id = app_id
+    #     self.secret = secret
+    #     self.redirect_uri = redirect_uri
+    #     self.scope = scope
+    #     self.state = state
+    #     self.expires_at = expires_at
+    #     self.session = session or MemoryStorage()
+    #
+    #     self.session.set(self.access_token_key, None)
+    def __init__(self, app_id, secret, redirect_uri, scope='snsapi_base', state=''):
         """
         参阅：http://mp.weixin.qq.com/wiki/4/9ac2e7b1f1d22e9e57260f6553822520.html
         :param app_id:公众号的唯一标志
@@ -33,10 +52,6 @@ class WeChatOAuth(object):
         self.redirect_uri = redirect_uri
         self.scope = scope
         self.state = state
-        self.expires_at = expires_at
-        self.session = session or MemoryStorage()
-
-        self.session.set(self.access_token_key, None)
 
     def _get(self, url, params):
         res = requests.get(
@@ -106,37 +121,57 @@ class WeChatOAuth(object):
                 'grant_type': 'authorization_code'
             }
         )
-        expires_in = 7200
-        if 'expires_in' in res:
-            expires_in = res['expires_in']
-        self.session.set(self.access_token_key, res['access_token'])
-        self.session.set('expires_in', expires_in)
-        self.session.set('reflesh_token', res['refresh_token'])
-        self.session.set('open_id', res['openid'])
 
-        self.expires_at = int(time.time()) + expires_in
-        # self.access_token = res['access_token']
+        self.access_token = res['access_token']
         self.open_id = res['openid']
-        # self.refresh_token = res['refresh_token']
-        # self.expires_in = res['expires_in']
-        # return res
+        self.refresh_token = res['refresh_token']
+        self.expires_in = res['expires_in']
+        return res
+
+
+        # res = self._get(
+        #     'sns/oauth2/access_token',
+        #     params={
+        #         'appid': self.app_id,
+        #         'secret': self.secret,
+        #         'code': code,
+        #         'grant_type': 'authorization_code'
+        #     }
+        # )
+        # expires_in = 7200
+        # if 'expires_in' in res:
+        #     expires_in = res['expires_in']
+        # self.session.set(self.access_token_key, res['access_token'])
+        # self.session.set('expires_in', expires_in)
+        # self.session.set('reflesh_token', res['refresh_token'])
+        # self.session.set('open_id', res['openid'])
+        #
+        # self.expires_at = int(time.time()) + expires_in
+        # # self.access_token = res['access_token']
+        # self.open_id = res['openid']
+        # # self.refresh_token = res['refresh_token']
+        # # self.expires_in = res['expires_in']
+        # # return res
 
     def fetch_access_token(self, code):
         """
         对外接口
         :return:
         """
-        access_token = self.session.get(self.access_token_key)
-        if access_token:
-            if not self.expires_at:
-                return access_token
+        # access_token = self.session.get(self.access_token_key)
+        # if access_token:
+        #     if not self.expires_at:
+        #         return access_token
+        #
+        #     timestamp = time.time()
+        #     if self.expires_at-timestamp > 60:
+        #         return access_token
+        #
+        # self._fetch_access_token(code)
+        # return self.session.get(self.access_token_key)
 
-            timestamp = time.time()
-            if self.expires_at-timestamp > 60:
-                return access_token
+        return self._fetch_access_token(code)
 
-        self._fetch_access_token(code)
-        return self.session.get(self.access_token_key)
 
     def refresh_access_token(self, refresh_token):
         """
@@ -166,8 +201,19 @@ class WeChatOAuth(object):
         :param lang:
         :return:
         """
+        # openid = openid or self.open_id
+        # access_token = access_token or self.session.get(self.access_token_key)
+        # return self._get(
+        #     'sns/userinfo',
+        #     params={
+        #         'access_token': access_token,
+        #         'openid': openid,
+        #         'lang': lang
+        #     }
+        # )
         openid = openid or self.open_id
-        access_token = access_token or self.session.get(self.access_token_key)
+        # access_token = access_token or self.session.get(self.access_token_key)
+        access_token = access_token or self.access_token
         return self._get(
             'sns/userinfo',
             params={
