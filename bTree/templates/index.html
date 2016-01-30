@@ -39,7 +39,7 @@
 <div class="tips-container" id="tips-container" style="display: none;">
     <div class="tips-title">
         <img src="{% static "tree/image/others/ku.png" %}" style="float:left;">
-        <p style="float: left">{{ first_plant_url }}</p>
+        <p style="float: left">客官真的要走了吗</p>
     </div>
     <div class="tips-selected">
         <button class="selected-sure" id="selected-sure">确定</button>
@@ -50,6 +50,7 @@
 </body>
 <script>
     $(function () {
+        alert("{{ first_plant_url }}")
 
     //玩?
     $("#pg_11-rej").on('tap', function () {
