@@ -109,16 +109,11 @@ class WeChatOAuth(object):
         expires_in = 7200
         if 'expires_in' in res:
             expires_in = res['expires_in']
-        self.session.set(
-            self.access_token_key,
-            res['access_token']
-        )
-        self.session.set(
-            'expires_in',
-            expires_in
-        )
+        self.session.set(self.access_token_key, res['access_token'])
+        self.session.set('expires_in', expires_in)
         self.session.set('reflesh_token', res['refresh_token'])
         self.session.set('open_id', res['openid'])
+
         self.expires_at = int(time.time()) + expires_in
         # self.access_token = res['access_token']
         self.open_id = res['openid']
