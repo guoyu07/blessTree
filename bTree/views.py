@@ -123,6 +123,7 @@ def home(request):
     user_info = client.user.get(client, oauth.open_id)
     name = user_info['nickname']
     count = '5000'
+    share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
     return render_to_response('home.html', locals())
 
 
