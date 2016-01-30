@@ -90,8 +90,8 @@
       <file leaf-file-name="hello.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/templates/hello.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71653545" vertical-offset="33" max-vertical-offset="1368">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="69" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.8503937" vertical-offset="126" max-vertical-offset="1368">
+              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -1204,8 +1204,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree/templates/hello.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71653545" vertical-offset="33" max-vertical-offset="1368">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="69" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.8503937" vertical-offset="126" max-vertical-offset="1368">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding />
         </state>
       </provider>
