@@ -34,7 +34,7 @@ SECRET_KEY = '2w%+23)d-xu*#12^1rewlbj=&d_-!ncq*t=2-g@$2^80wro&q+'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [
-    '127.0.0.1',
+    # '127.0.0.1',
     '.sinaapp.com',
     '.blesstree.sinaapp.com',
     '1.blesstree.sinaapp.com'
@@ -122,14 +122,14 @@ STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static')
 if 'SERVER_SOFTWARE' in os.environ:
     import sae.const
     from sae.const import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
-    DEBUG = True
+    DEBUG = False
 else:
     MYSQL_HOST = 'localhost'
     MYSQL_PORT = '3306'
     MYSQL_USER = 'root'
     MYSQL_PASS = '185313'  # 本地环境下配置数据库账号密码
     MYSQL_DB = 'app_blessTree'
-    DEBUG = False
+    DEBUG = True
 
 DATABASES = {
     'default': {

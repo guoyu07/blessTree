@@ -1,6 +1,6 @@
 # -*-coding:utf-8 -*-
 from django.db import models
-
+import time
 # Create your models here.
 
 TYPE = {
@@ -21,9 +21,9 @@ class User(models.Model):
     # 用户openid/头像/昵称/加入时间
     openid = models.CharField(max_length=50)  # 实际长为28
     nickname = models.CharField(max_length=20)  # 实际长为7个中文字符
-    create_time = models.DateTimeField(auto_now_add=True)  # 待定
+    time_stamp = models.DateTimeField(auto_now_add=True)  # 待定
 
-    # 用户积分相关，方便逻辑判断
+    # 用户积分相关，方便逻辑判断exit
     # if_plant = models.BooleanField(default=)  # 没有种树就不要记录就好
     tree_name = models.CharField(max_length=40)
     if_share = models.BooleanField(default=False)
