@@ -114,7 +114,7 @@ def home(request):
         user_db = 0
     # 如果数据库没有该open_id的记录的话
     if user_db == 0:
-        first_auth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home', state=1)
+        first_auth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
         first_plant_url = first_auth.authorize_url
         return render_to_response('index.html', locals())
     else:
@@ -134,7 +134,7 @@ def home(request):
         share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
 
         # 是否第一次种树的判断
-        if request.GET.get('state') == 1:
+        if request.GET.get('state') == 123:
               first_time = 1# 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
         return render_to_response('home.html', locals())
 
