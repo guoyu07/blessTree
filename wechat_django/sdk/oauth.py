@@ -127,7 +127,7 @@ class WeChatOAuth(object):
         :return:
         """
         self.access_token = self.session.get(self.access_token_key)
-        if True:
+        if self.access_toke:
             if not self.expires_at:
                 return self.access_token
 
