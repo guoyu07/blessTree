@@ -36,8 +36,7 @@ class WeChatClient(BaseWeChatClient):
         http://mp.weixin.qq.com/wiki/14/9f9c82c1af308e3b14ba9b973f99a8ba.html
         :return:json数据包
         """
-
-        return self._fetch_access_token(
+        return self.access_token(
             url='https://api.weixin.qq.com/cgi-bin/token',
             params={
                 'grant_type': 'client_credential',
