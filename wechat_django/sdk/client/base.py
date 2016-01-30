@@ -199,7 +199,7 @@ class BaseWeChatClient(object):
 
     _post = post
 
-    def access_token(self, url, params):
+    def _fetch_access_token(self, url, params):
         """
         获取access_token 的方法
         :param url:
@@ -228,7 +228,8 @@ class BaseWeChatClient(object):
     def fetch_access_token(self):
         raise NotImplementedError()
 
-    def _fetch_access_token(self, url, params):
+    @property
+    def access_token(self):
         """
         wechat access_token
         :return:
@@ -243,8 +244,8 @@ class BaseWeChatClient(object):
             if self.expires_at-timstamp > 60:
                 return access_token
 
-        # self.access_token(url, params)
-        return self.access_token(url, params)
+        self._fetch_access_token()
+        return self.access_token
         # return self.session.get(self.access_token_key)
         # if self.session.get(self.access_token_key)==None:
         #     return "lqczzz"
