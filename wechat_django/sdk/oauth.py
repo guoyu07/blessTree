@@ -18,7 +18,7 @@ class WeChatOAuth(object):
     API_BASE_URL = 'https://api.weixin.qq.com/'
     OAUTH_BASE_URL = 'https://open.weixin.qq.com/connect/'
 
-    def __init__(self, app_id, secret, redirect_uri, scope='snsapi_base', state='', session=None, access_token=None, expires_at=None, openid=None):
+    def __init__(self, app_id, secret, redirect_uri, scope='snsapi_base', state='', session=None, access_token=None, expires_at=None):
         """
         参阅：http://mp.weixin.qq.com/wiki/4/9ac2e7b1f1d22e9e57260f6553822520.html
         :param app_id:公众号的唯一标志
@@ -28,7 +28,6 @@ class WeChatOAuth(object):
         :param state:重定向后带上的参数
         :return:
         """
-        self.open_id = openid
         self.app_id = app_id
         self.secret = secret
         self.redirect_uri = redirect_uri
@@ -120,10 +119,9 @@ class WeChatOAuth(object):
         )
         self.session.set('reflesh_token', res['refresh_token'])
         self.session.set('open_id', res['openid'])
-        self.open_id = res['openid']
         self.expires_at = int(time.time()) + expires_in
         # self.access_token = res['access_token']
-        # self.open_id = res['openid']
+        self.open_id = res['openid']
         # self.refresh_token = res['refresh_token']
         # self.expires_in = res['expires_in']
         # return res
