@@ -28,85 +28,85 @@ client = WeChatClient(appId, appsecret)
 
 
 @csrf_exempt
-def weixin_main(request):
-    """
-        微信接入验证(GET)
-        微信正常接收信息(POST)
-    """
-    # 中文编码问题
-    import sys
-    reload(sys)
-    sys.setdefaultencoding('utf-8')
-
-    if request.method == 'GET':
-        signature = request.GET.get("signature", None)
-        timestamp = request.GET.get("timestamp", None)
-        nonce = request.GET.get("nonce", None)
-        echostr = request.GET.get("echostr", None)
-        token = WEIXIN_TOKEN
-        if check_signature(token, signature, timestamp, nonce):
-            return HttpResponse(echostr)
-    else:
-        msg = parse_message(request.body)  # request.body就是post的xml格式文件
-        if msg.type == 'text':
-            reply = TextReply()
-            reply.source = msg.target
-            reply.target = msg.source
-            # 消息自动回复
-            if msg.content == '我':
-                # client = WeChatClient(appId, appsecret)
-                # reply.content = client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
-                # user = client.user.get(client, msg.source)
-                # reply.content = user
-                pass
-
-
-
-            # elif msg.content == '分享':
-            #     oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/', "snsapi_userinfo")
-            #     reply.content = oauth.authorize_url
-            elif msg.content == "李启成爱地球":
-                # client = WeChatClient(appId, appsecret)
-                client.fetch_access_token()
-                oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
-                menu = client.menu.create(client, {
-                    "button": [
-                        {
-                            "type": "view",
-                            "name": 'plant',
-                            "url": oauth.authorize_url
-                        },
-                        {
-                            "type": "click",
-                            "name": "about",
-                            "key": "v1002"
-                        }
-                    ]
-                }
-                )
-                reply.content = menu
-            else:
-               reply.content = msg.content
-            xml = reply.render()
-            return HttpResponse(xml)
-        # 事件处理：关注事件|点击按钮推送|
-        if msg.type == 'event' and msg.event == 'subscribe':
-            reply = TextReply()
-            reply.source = msg.target
-            reply.target = msg.source
-            reply.content = "欢迎关注华工创维俱乐部，我们将不定期推送新鲜有趣的福利哦～"
-
-            xml = reply.render()
-            return HttpResponse(xml)
-
-        if msg.type == 'event' and msg.event == 'click':
-            reply = TextReply()
-            reply.source = msg.target
-            reply.target = msg.source
-            reply.content = "睡个过冬眠～"
-
-            xml = reply.render()
-            return HttpResponse(xml)
+# def weixin_main(request):
+#     """
+#         微信接入验证(GET)
+#         微信正常接收信息(POST)
+#     """
+#     # 中文编码问题
+#     import sys
+#     reload(sys)
+#     sys.setdefaultencoding('utf-8')
+#
+#     if request.method == 'GET':
+#         signature = request.GET.get("signature", None)
+#         timestamp = request.GET.get("timestamp", None)
+#         nonce = request.GET.get("nonce", None)
+#         echostr = request.GET.get("echostr", None)
+#         token = WEIXIN_TOKEN
+#         if check_signature(token, signature, timestamp, nonce):
+#             return HttpResponse(echostr)
+#     else:
+#         msg = parse_message(request.body)  # request.body就是post的xml格式文件
+#         if msg.type == 'text':
+#             reply = TextReply()
+#             reply.source = msg.target
+#             reply.target = msg.source
+#             # 消息自动回复
+#             if msg.content == '我':
+#                 # client = WeChatClient(appId, appsecret)
+#                 # reply.content = client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
+#                 # user = client.user.get(client, msg.source)
+#                 # reply.content = user
+#                 pass
+#
+#
+#
+#             # elif msg.content == '分享':
+#             #     oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/', "snsapi_userinfo")
+#             #     reply.content = oauth.authorize_url
+#             elif msg.content == "李启成爱地球":
+#                 # client = WeChatClient(appId, appsecret)
+#                 client.fetch_access_token()
+#                 oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
+#                 menu = client.menu.create(client, {
+#                     "button": [
+#                         {
+#                             "type": "view",
+#                             "name": 'plant',
+#                             "url": oauth.authorize_url
+#                         },
+#                         {
+#                             "type": "click",
+#                             "name": "about",
+#                             "key": "v1002"
+#                         }
+#                     ]
+#                 }
+#                 )
+#                 reply.content = menu
+#             else:
+#                reply.content = msg.content
+#             xml = reply.render()
+#             return HttpResponse(xml)
+#         # 事件处理：关注事件|点击按钮推送|
+#         if msg.type == 'event' and msg.event == 'subscribe':
+#             reply = TextReply()
+#             reply.source = msg.target
+#             reply.target = msg.source
+#             reply.content = "欢迎关注华工创维俱乐部，我们将不定期推送新鲜有趣的福利哦～"
+#
+#             xml = reply.render()
+#             return HttpResponse(xml)
+#
+#         if msg.type == 'event' and msg.event == 'click':
+#             reply = TextReply()
+#             reply.source = msg.target
+#             reply.target = msg.source
+#             reply.content = "睡个过冬眠～"
+#
+#             xml = reply.render()
+#             return HttpResponse(xml)
 
 
 @csrf_exempt
