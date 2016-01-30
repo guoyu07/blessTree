@@ -7,6 +7,8 @@ __author__ = 'albert'
 import json
 import six
 import requests
+import time
+from wechat_django.sdk.session.memorystorage import MemoryStorage
 
 
 class WeChatOAuth(object):
@@ -16,7 +18,7 @@ class WeChatOAuth(object):
     API_BASE_URL = 'https://api.weixin.qq.com/'
     OAUTH_BASE_URL = 'https://open.weixin.qq.com/connect/'
 
-    def __init__(self, app_id, secret, redirect_uri, scope='snsapi_base', state=''):
+    def __init__(self, app_id, secret, redirect_uri, scope='snsapi_base', state='', session=None, access_token=None, expires_at = None):
         """
         参阅：http://mp.weixin.qq.com/wiki/4/9ac2e7b1f1d22e9e57260f6553822520.html
         :param app_id:公众号的唯一标志
@@ -31,42 +33,10 @@ class WeChatOAuth(object):
         self.redirect_uri = redirect_uri
         self.scope = scope
         self.state = state
+        self.expires_at = expires_at
+        self.session = session or MemoryStorage()
 
-    # def _request(self, method, url_or_endpoint, **kwargs):
-    #     """
-    #     封装原始的requests库中的方法的
-    #     :param method:
-    #     :param url_or_endpoint:
-    #     :param kwargs:
-    #     :return:
-    #     """
-    #     if not url_or_endpoint.startswith('https://', 'http://'):
-    #         url = '{base}{endpoint}'.format(
-    #             base=self.API_BASE_URL,
-    #             endpoint=url_or_endpoint
-    #         )
-    #     else:
-    #         url = url_or_endpoint
-    #
-    #     if isinstance(kwargs.get('data', ''), dict):
-    #         body = json.dumps(kwargs['data'], ensure_ascii=False)
-    #         body = body.encode('utf-8')
-    #         kwargs['data'] = body
-    #
-    #     res = requests.request(
-    #         method=method,
-    #         url=url,
-    #         **kwargs
-    #     )
-    #
-    #     res.encoding = 'utf-8'
-    #     result = res.json()
-    #
-    #     if 'errcode' in result and result['errcode'] != 0:
-    #         errcode = result['errcode']
-    #         errmsg = result['errmsg']
-    #
-    #     return result
+        self.session.set(self.access_token_key, access_token)
 
     def _get(self, url, params):
         res = requests.get(
@@ -117,6 +87,10 @@ class WeChatOAuth(object):
         url_list.append('#wechat_redirect')
         return ''.join(url_list)
 
+    @property
+    def access_token_key(self):
+        return '{0}_access_token_key'.format(self.app_id)
+
     def fetch_access_token(self, code):
         """
         获取网页oauth的access_token
@@ -132,11 +106,43 @@ class WeChatOAuth(object):
                 'grant_type': 'authorization_code'
             }
         )
-        self.access_token = res['access_token']
-        self.open_id = res['openid']
-        self.refresh_token = res['refresh_token']
-        self.expires_in = res['expires_in']
-        return res
+        expires_in = 72000
+        if 'expires_in' in res:
+            expires_in = res['expires_in']
+        self.session.set(
+            self.access_token_key,
+            res['access_token']
+        )
+        self.session.set(
+            'expires_in',
+            expires_in
+        )
+        self.session.set('reflesh_token', res['refresh_token'])
+        self.session.set('open_id', res['openid'])
+
+        self.expires_at = int(time.time()) + expires_in
+        # self.access_token = res['access_token']
+        # self.open_id = res['openid']
+        # self.refresh_token = res['refresh_token']
+        # self.expires_in = res['expires_in']
+        # return res
+
+    def access_token(self, code):
+        """
+        对外接口
+        :return:
+        """
+        self.access_token = self.session.get(self.access_token_key)
+        if self.access_token:
+            if not self.expires_at:
+                return self.access_token
+
+            timestamp = time.time()
+            if self.expires_at-timestamp > 60:
+                return self.access_token
+
+        self.fetch_access_token(code)
+        return self.access_token
 
     def refresh_access_token(self, refresh_token):
         """
