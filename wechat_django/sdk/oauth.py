@@ -126,17 +126,17 @@ class WeChatOAuth(object):
         对外接口
         :return:
         """
-        self.access_token = self.session.get(self.access_token_key)
-        if self.access_token:
+        access_token = self.session.get(self.access_token_key)
+        if access_token:
             if not self.expires_at:
-                return self.access_token
+                return access_token
 
             timestamp = time.time()
             if self.expires_at-timestamp > 60:
-                return self.access_token
+                return access_token
 
         self.fetch_access_token(code)
-        return self.access_token
+        return self.session.get(self.access_token_key)
 
     def refresh_access_token(self, refresh_token):
         """
