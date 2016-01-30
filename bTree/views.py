@@ -50,9 +50,9 @@ def weixin_main(request):
             reply.target = msg.source
             # 消息自动回复
             if msg.content == '我':
-                reply.content = client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
+                client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
                 user = client.user.get(client, msg.source)
-                reply.content = user
+                reply.content = user['nickname']
 
 
             # elif msg.content == '分享':
