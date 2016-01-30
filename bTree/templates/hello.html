@@ -13,15 +13,14 @@
 <p>{{ name }}</p>
 <p id="href-p"></p>
 </body>
-{#<script>#}
-{#    $(function () {#}
-{#        alert(location.href.split('#')[0]);#}
-{#        alert("{{ signature }}")#}
-{#    })#}
-{#</script>#}
 <script>
     $(function () {
-        $("#href-p").html(location.href.split('#')[0])
+        alert(location.href.split('#')[0]);
+    })
+</script>
+{#<script>#}
+{#    $(function () {#}
+{#        $("#href-p").html(location.href.split('#')[0])#}
 {#        wx.config({#}
 {#              debug: true,#}
 {#              appId: '{{ app_id }}',#}
@@ -70,6 +69,6 @@
 {#                      }#}
 {#                });#}
 {#        })#}
-    })
-</script>
+{#    })#}
+{#</script>#}
 </html>
