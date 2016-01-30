@@ -137,6 +137,8 @@ def home(request):
         if request.GET.get('state') == '1':
             first_time = True  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
             return render_to_response('home.html', locals())
+        else:
+            return render_to_response('hello.html', locals())
 
 
 @csrf_exempt
