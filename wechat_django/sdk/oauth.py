@@ -171,8 +171,8 @@ class WeChatOAuth(object):
         :param lang:
         :return:
         """
-        # openid = openid or self.open_id
-        # access_token = access_token or self.access_token
+        openid = openid or self.open_id
+        access_token = access_token or self.access_token
         # return self._get(
         #     'sns/userinfo',
         #     params={
