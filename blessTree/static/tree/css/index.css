@@ -52,7 +52,7 @@ body{
 .plant-tree{
     background-color: #c75c5c;
 }
-.reject-plant{
+.reject-to-plant{
     background-color: #76c5ad;
 }
 
@@ -79,6 +79,7 @@ body{
     background-color: #FFFFFF;
 }
 .tips-title{
+    text-align: center;
     padding-top: 16%;
     /*height: 50%;*/
 }
@@ -86,8 +87,8 @@ body{
     height: 90%;
     width: 16%;
     margin-top: 2%;
-    margin-left: 9%;
-    margin-right: 5px;
+    /*margin-left: 9%;*/
+    /*margin-right: 5px;*/
 }
 .tips-title p{
     font-size: medium;
@@ -105,5 +106,5 @@ body{
 }
 .selected-not{
     color: #c75c5c;
-    margin-left: 10%;
+    padding-left: 8%;
 }
