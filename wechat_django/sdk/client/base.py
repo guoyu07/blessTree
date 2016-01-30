@@ -199,7 +199,7 @@ class BaseWeChatClient(object):
 
     _post = post
 
-    def _fetch_access_token(self, url, params):
+    def access_token(self, url, params):
         """
         获取access_token 的方法
         :param url:
@@ -228,8 +228,7 @@ class BaseWeChatClient(object):
     def fetch_access_token(self):
         raise NotImplementedError()
 
-    @property
-    def access_token(self):
+    def _fetch_access_token(self, url, params):
         """
         wechat access_token
         :return:
@@ -244,12 +243,11 @@ class BaseWeChatClient(object):
             if self.expires_at-timstamp > 60:
                 return access_token
 
-        self._fetch_access_token()
-        return self.access_token
+        # self.access_token(url, params)
+        return self.access_token(url, params)
         # return self.session.get(self.access_token_key)
         # if self.session.get(self.access_token_key)==None:
         #     return "lqczzz"
-
 
         # TODO session改为使用django自带的session来实现，暂时采用自己实现的session
 
