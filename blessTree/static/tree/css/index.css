@@ -87,8 +87,8 @@ body{
     height: 90%;
     width: 16%;
     margin-top: 2%;
-    /*margin-left: 9%;*/
-    /*margin-right: 5px;*/
+    margin-left: 9%;
+    margin-right: 5px;
 }
 .tips-title p{
     font-size: medium;
