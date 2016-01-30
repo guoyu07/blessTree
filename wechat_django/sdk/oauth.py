@@ -91,7 +91,7 @@ class WeChatOAuth(object):
     def access_token_key(self):
         return '{0}_access_token_key'.format(self.app_id)
 
-    def fetch_access_token(self, code):
+    def _fetch_access_token(self, code):
         """
         获取网页oauth的access_token
         :param code: url的参数
@@ -121,7 +121,7 @@ class WeChatOAuth(object):
         # self.expires_in = res['expires_in']
         # return res
 
-    def access_token(self, code):
+    def fetch_access_token(self, code):
         """
         对外接口
         :return:
@@ -135,7 +135,7 @@ class WeChatOAuth(object):
             if self.expires_at-timestamp > 60:
                 return access_token
 
-        self.fetch_access_token(code)
+        self._fetch_access_token(code)
         return self.session.get(self.access_token_key)
 
     def refresh_access_token(self, refresh_token):

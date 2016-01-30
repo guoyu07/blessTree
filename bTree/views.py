@@ -111,7 +111,7 @@ def home(request):
     """
     code = request.GET.get('code')  # 通过认证的code获取openid
     oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
-    oauth.access_token(code)  # 包含获取用户信息的所有条件
+    oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
     user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
     # 以下信息是为了分享接口而使用的
     app_id = appId
