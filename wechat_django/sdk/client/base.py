@@ -244,7 +244,7 @@ class BaseWeChatClient(object):
                 return access_token
 
         self._fetch_access_token(url, params)
-        return self.access_token
+        return self.session.get(self.access_token_key)
         # return self.session.get(self.access_token_key)
         # if self.session.get(self.access_token_key)==None:
 
