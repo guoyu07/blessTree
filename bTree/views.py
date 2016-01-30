@@ -60,24 +60,24 @@ def weixin_main(request):
             #     reply.content = oauth.authorize_url
             elif msg.content == "李启成爱地球":
                 # client = WeChatClient(appId, appsecret)
-                # client.fetch_access_token()
+                client.fetch_access_token()
                 oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
-                # menu = client.menu.create(client, {
-                #     "button": [
-                #         {
-                #             "type": "view",
-                #             "name": 'plant',
-                #             "url": oauth.authorize_url
-                #         },
-                #         {
-                #             "type": "click",
-                #             "name": "about",
-                #             "key": "v1002"
-                #         }
-                #     ]
-                # }
-                # )
-                # reply.content = menu
+                menu = client.menu.create(client, {
+                    "button": [
+                        {
+                            "type": "view",
+                            "name": 'plant',
+                            "url": oauth.authorize_url
+                        },
+                        {
+                            "type": "click",
+                            "name": "about",
+                            "key": "v1002"
+                        }
+                    ]
+                }
+                )
+                reply.content = menu
                 reply.content = 'whywhywhy'
             else:
                reply.content = msg.content
