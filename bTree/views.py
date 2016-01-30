@@ -133,10 +133,6 @@ def home(request):
     return render_to_response('hello.html', locals())
 
 
-
-
-
-
 @csrf_exempt
 def visit(request):
     """
@@ -155,6 +151,7 @@ def test(request, params):
 def test2(request):
     openid = request.GET['openid']
     return render_to_response('test2.html', locals())
+
 
 def share(url):
     """

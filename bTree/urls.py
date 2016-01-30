@@ -3,7 +3,7 @@ __author__ = 'albert'
 
 from django.conf.urls import include, url
 from django.contrib import admin
-from bTree.views import test, weixin_main, main_page, home, visit, test2
+from bTree.views import test, weixin_main, home, visit, test2
 
 
 urlpatterns = [
@@ -13,7 +13,6 @@ urlpatterns = [
 
 
     url(r'^admin/', include(admin.site.urls)),
-    # url(r'^wechat/', main_page),
 
     url(r'^test/', test),
     url(r'^pipei/', test2),
