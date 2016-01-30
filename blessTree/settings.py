@@ -34,7 +34,7 @@ SECRET_KEY = '2w%+23)d-xu*#12^1rewlbj=&d_-!ncq*t=2-g@$2^80wro&q+'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [
-    # '127.0.0.1',
+    '127.0.0.1',
     '.sinaapp.com',
     '.blesstree.sinaapp.com',
     '1.blesstree.sinaapp.com'
@@ -69,17 +69,17 @@ DEFAULT_FILE_STORAGE = 'sae.ext.django.storage.backend.Storage'
 # 使用media这个bucket
 STORAGE_BUCKET_NAME = 'media'
 # ref: https://docs.djangoproject.com/en/dev/topics/files/
-ADMINS = (
-    ('administrator', 'administrator@gmail.com'),
-)
-# ref: https://docs.djangoproject.com/en/dev/ref/settings/#email
-EMAIL_BACKEND = 'sae.ext.django.mail.backend.EmailBackend'
-EMAIL_HOST = 'smtp.example.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'sender@gmail.com'
-EMAIL_HOST_PASSWORD = 'password'
-EMAIL_USE_TLS = True
-SERVER_EMAIL = DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# ADMINS = (
+#     ('administrator', 'administrator@gmail.com'),
+# )
+# # ref: https://docs.djangoproject.com/en/dev/ref/settings/#email
+# EMAIL_BACKEND = 'sae.ext.django.mail.backend.EmailBackend'
+# EMAIL_HOST = 'smtp.example.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'sender@gmail.com'
+# EMAIL_HOST_PASSWORD = 'password'
+# EMAIL_USE_TLS = True
+# SERVER_EMAIL = DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 # 七牛云配置
