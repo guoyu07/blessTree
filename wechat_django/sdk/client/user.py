@@ -53,17 +53,17 @@ class WeChatUser(BaseWeChatAPI):
         """
         assert lang in ('zh_CN', 'zh_TW', 'en'), 'lang can only be one of \
             zh_CN, zh_TW, en language codes'
-        # 'https://api.weixin.qq.com/cgi-bin/user/info',
-        # return self._get(
-        #     wechat_client,
-        #     'user/info',
-        #     params={
-        #         'access_token': wechat_client.access_token,
-        #         'openid': user_id,
-        #         'lang': lang
-        #         }
-        # )
-        return wechat_client.access_token
+        'https://api.weixin.qq.com/cgi-bin/user/info',
+        return self._get(
+            wechat_client,
+            'user/info',
+            params={
+                'access_token': wechat_client.access_token,
+                'openid': user_id,
+                'lang': lang
+                }
+        )
+        # return wechat_client.access_token
 
 
         # return wechat_client.access_token()
