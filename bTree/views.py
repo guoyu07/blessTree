@@ -112,6 +112,17 @@ def home(request):
         user_db = User.objects.get(openid=oauth.open_id)
     except ObjectDoesNotExist:
         user_db = 0
+
+    if request.GET.get('state') == '1':
+        user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
+        # 以下信息是为了分享接口而使用的
+        app_id = appId
+        timestamp = TIMESTAMP
+        noncestr = NONCESTR
+        signature = share(user)['first']
+        ticket = share(user)['second']
+        return render_to_response('hello.html', locals())
+
     # 如果数据库没有该open_id的记录的话
     if user_db == 0:
         first_auth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home', state='1')
