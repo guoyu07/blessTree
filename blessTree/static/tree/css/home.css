@@ -1,0 +1,182 @@
+/**********************全局**********************/
+html, body{
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+body{
+    background-color: #54b698;
+}
+.menu-top{
+    height: 16%;
+}
+.main-container{
+    height: 76%;
+    background:transparent url("../image/others/bg.png") no-repeat;
+    background-size: 100%;
+}
+.footer{
+    height: 8%;
+}
+
+ul{
+    list-style-type: none;
+}
+
+/*去除jquery-mobile加载时候弹出来的loading*/
+.ui-loader-default{ display:none}
+.ui-mobile-viewport{ border:none;}
+.ui-page {padding: 0; margin: 0; outline: 0}
+
+/**********************顶部导航内容*********************/
+.menu-top-con{
+    height: 100%;
+}
+
+/*头像*/
+.self-avatar{
+    width: 13%;
+    height: 48%;
+    float: left;
+    padding-top: 7%;
+    padding-left: 6%;
+}
+
+.avatar{
+    /*width: 47%;*/
+    height: 100%;
+    border: 0;
+    border-radius: 50%;
+}
+
+/*进度条*/
+.count-progress{
+    padding-left: 4%;
+    width: 40%;
+    padding-top: 9%;
+    float: left;
+    position: relative;
+}
+.progress{
+    width: 100%;
+
+}
+.progress-bar {
+    display: block;
+    overflow: hidden;
+    height: 10px;
+    margin: 0;
+    background: #ffffff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0,0.6);
+    box-shadow: 0 2px 5px rgba(0, 0, 0,0.6);
+
+}
+
+.progress-in {
+    display: block;
+    min-width: 8px;
+    height: 10px;
+    background: #c75d5c;
+    border-radius: 4px;
+}
+
+.count-num{
+    float: left;
+    font-family: Microsoft YaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    margin-top: 3%;
+    margin-left: 15%;
+}
+
+/*好友排行与消息提醒按钮*/
+.rank,.tips{
+    float: left;
+    padding-left: 4%;
+    padding-top: 8%;
+    height: 46%;
+    width: 12%;
+}
+.rank-btn, .tips-btn{
+    height: 100%;
+    width: 100%;
+    border: 0;
+    border-radius: 50%;
+}
+
+/**********************内容区域**********************/
+
+/****树木区域***/
+.main-tree{
+    position: relative;
+    float: left;
+    height: 100%;
+}
+.tree-area{
+    position: absolute;
+    height: 72%;
+    padding-top: 16%;
+    padding-left: 13%;
+    padding-bottom: 14%;
+}
+.tree-area img{
+    height: 100%;
+    width: 100%;
+}
+
+.tree-name{
+    position: absolute;
+    padding-left: 24%;
+    padding-top: 122%;
+    height: 17%;
+    padding-bottom: 0;
+}
+.tree-name img{
+    position: absolute;
+    height: 17%;
+    width: 100%;
+}
+.tree-name p{
+    position: absolute;
+    /*padding-top: 20%;*/
+    /*padding-left: 25%;*/
+    font-size: 11px;
+    line-height: 1;
+    color: #FFFFFF;
+    text-align: center;
+    height: auto;
+    width: 60%;
+}
+/****右边按钮***/
+.main-right{
+    height: 100%;
+}
+.right-btn{
+    padding-top: 0;
+    padding-right: 20%;
+    width: 74%;
+    height: 100%;
+}
+.right-btn ul li{
+    width: 100%;
+    height: 12%;
+}
+.friends, .water-flower, .history, .willing{
+    margin-left:20% ;
+    margin-bottom: 30%;
+    height:100%;
+    border-radius: 50%;
+}
+/**********************小部件**********************/
+
+/*祝福果/吐槽果*/
+.apple-for-bless .apple-for-tucao{
+
+}
+/*浇水效果*/
+
+/*弹出全局遮盖*/
+
+
