@@ -22,7 +22,7 @@ class WeChatJSAPI(BaseWeChatAPI):
             wechat_client,
             'ticket/getticket',
             params={
-                'access_token': wechat_client.access_token,
+                'access_token': wechat_client.fetch_access_token(),
                 'type': type
             }
         )
