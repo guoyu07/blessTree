@@ -173,18 +173,15 @@ class WeChatOAuth(object):
         """
         openid = openid or self.open_id
         access_token = access_token or self.session.get(self.access_token_key)
-        # return self._get(
-        #     'sns/userinfo',
-        #     params={
-        #         'access_token': access_token,
-        #         'openid': openid,
-        #         'lang': lang
-        #     }
-        # )
-        if access_token != None:
-            return access_token
-        else:
-            return "lqczzz"
+        return self._get(
+            'sns/userinfo',
+            params={
+                'access_token': access_token,
+                'openid': openid,
+                'lang': lang
+            }
+        )
+
 
     def check_access_token(self, openid=None, access_token=None):
         """
