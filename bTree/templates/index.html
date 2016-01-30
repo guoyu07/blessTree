@@ -8,24 +8,25 @@
     <title>index</title>
 
     <!--css-->
-    <link rel="stylesheet" type="text/css" href="../static/tree/css/index.css">
-    <link rel="stylesheet" type="text/css" href="../static/plugin/weui/weui.min.css">
+     {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static "tree/css/index.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "plugin/weui/weui.min.css" %}">
 
     <!--js-->
-    <script src="../static/plugin/jquery/jquery.min.js"></script>
-    <script src="../static/plugin/jquery/jquery.color.js"></script>
-    <script src="../static/plugin/jquery/jquery.mobile-events.min.js"></script>
-    <script src="../static/tree/js/jquery.lqc.extension.js"></script>
-    <script src="../static/tree/js/index.js"></script>
+    <script src="{% static "plugin/jquery/jquery.min.js" %}"></script>
+    <script src="{% static "plugin/jquery/jquery.color.js" %}"></script>
+    <script src="{% static "plugin/jquery/jquery.mobile-events.min.js" %}"></script>
+    <script src="{% static "tree/js/jquery.lqc.extension.js" %}"></script>
+    <script src="{% static "tree/js/index.js" %}"></script>
 </head>
 <body>
 <!--标题-->
 <div class="index-title" id="pg_11-title">
-    <img src="../static/tree/image/others/index-title.png">
+    <img src="{% static "tree/image/others/index-title.png" %}">
 </div>
 <!--树-->
 <div class="index-tree" id="pg_11-tree">
-    <img src="../static/tree/image/others/index-tree.png">
+    <img src="{% static "tree/image/others/index-tree.png" %}">
 </div>
 <!--按钮-->
 <div class="index-btn">

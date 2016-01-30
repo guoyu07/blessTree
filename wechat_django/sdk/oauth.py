@@ -171,16 +171,20 @@ class WeChatOAuth(object):
         :param lang:
         :return:
         """
-        openid = openid or self.open_id
-        access_token = access_token or self.access_token
-        return self._get(
-            'sns/userinfo',
-            params={
-                'access_token': access_token,
-                'openid': openid,
-                'lang': lang
-            }
-        )
+        # openid = openid or self.open_id
+        # access_token = access_token or self.access_token
+        # return self._get(
+        #     'sns/userinfo',
+        #     params={
+        #         'access_token': access_token,
+        #         'openid': openid,
+        #         'lang': lang
+        #     }
+        # )
+        if access_token != None:
+            return access_token
+        else:
+            return "lqczzz"
 
     def check_access_token(self, openid=None, access_token=None):
         """
