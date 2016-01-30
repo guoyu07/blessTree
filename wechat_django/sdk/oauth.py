@@ -36,7 +36,7 @@ class WeChatOAuth(object):
         self.expires_at = expires_at
         self.session = session or MemoryStorage()
 
-        self.session.set(self.access_token_key, access_token)
+        self.session.set(self.access_token_key, None)
 
     def _get(self, url, params):
         res = requests.get(
