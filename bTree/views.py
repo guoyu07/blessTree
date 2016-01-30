@@ -121,7 +121,7 @@ def home(request):
     ticket = share(user)['second']
 
     user_info = oauth.get_user_info(oauth.open_id, oauth.access_token)
-    name = user_info['nickname']
+    name = user_info
     count = '5000'
     return render_to_response('home.html', locals())
 
