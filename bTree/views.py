@@ -150,6 +150,7 @@ def home(request):
 
 
 # TODO:跳转链接生成失败原因
+@csrf_exempt
 def first(request):
     oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
     code = request.GET.get('code')  # 通过认证的code获取openid
@@ -186,6 +187,7 @@ def visit(request):
     pass
 
 
+@csrf_exempt
 def ajax_handle(request):
     return 'lqczzz'
 
