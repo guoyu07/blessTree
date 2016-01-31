@@ -71,7 +71,7 @@ def weixin_main(request):
                         },
                         {
                             "type": "click",
-                            "name": "about",
+                            "name": u"关于".encode('utf-8'),
                             "key": "v1002"
                         }
                     ]
@@ -116,7 +116,6 @@ def home(request):
         user_db = User.objects.get(openid=oauth.open_id)
     except ObjectDoesNotExist:
         user_db = 0
-
 
     # 如果数据库没有该open_id的记录的话
     if user_db == 0:
