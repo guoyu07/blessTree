@@ -191,8 +191,17 @@ def visit(request):
 
 @ensure_csrf_cookie
 def ajax_handle(request):
-    # ajax_return_content = 'success'
-    return render(request, 'ajax_ret.html', {'ajax_return_content': 'success'})
+    response = HttpResponse()
+    response['Content-Type'] = 'text/javascript'
+    user_id = request.POST.get('openid', '')
+    user_name = request.POST.get('nickname', '')
+    ret = '0'
+    if user_id and user_name:
+        ret = '1'
+    else:
+        ret = '2'
+    response.write(ret)
+    return response
 
 
 def test(request, params):
