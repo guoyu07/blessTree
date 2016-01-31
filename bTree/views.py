@@ -9,7 +9,7 @@ import time
 
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import HttpResponse
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
 from django.core.exceptions import ObjectDoesNotExist
 from django.views.decorators.csrf import ensure_csrf_cookie
 
@@ -191,8 +191,8 @@ def visit(request):
 
 @ensure_csrf_cookie
 def ajax_handle(request):
-    ajax_return_content = 'success'
-    return render_to_response('ajax_ret.html', locals())
+    # ajax_return_content = 'success'
+    return render('ajax_ret.html', {'ajax_return_content': 'success'})
 
 
 def test(request, params):
