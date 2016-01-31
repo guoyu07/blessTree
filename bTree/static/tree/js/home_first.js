@@ -7,19 +7,35 @@
 
 $(function () {
 
+    /********************
+     * 初始化
+     * */
     init_main();
     
     /********************
-     * 按钮绑定事件
+     * 引导按钮绑定事件
      * */
+    //看完规则后按钮
+    $('#rule-next').on('tap', function () {
+        $('#rule').hide();
+        $('#tips-quming').show();
+    })
 
-    //排行按钮
-    $('#rank').on('tap', function () {
-        alert("you click it")
+    //提醒取名字
+    $('quming-btn').on('tap', function () {
+        $('#tips-quming').hide();
+        $("#fill-in-name").show();
+    })
+
+    //填写完树名字之后ajax提交到服务器的按钮
+    $('#fill-btn').on('tap', function () {
+        alert("you click it");
+        tree_name = $("#text_id").val();  //获取树的名字
         $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
             {
-                'openid':'openid',
-                'nickname':'nickname'
+                'openid': $("#user_message_openid").text(),
+                'nickname':$("user_message_nickname").text(),
+                'tree_name': tree_name
             },
             function(ret) {
                 if (ret == '1') {
@@ -30,16 +46,21 @@ $(function () {
                     alert("系统错误！");
                 }
             })
+        $("#fill-in-name").hide();
+        $("#black-mask").hide();
+        $("#tips-water").show();
     })
+
+    $("#water-tips-btn").on('tap', function () {
+        $("#tips-water").hide();
+    })
+
+    /********************
+     * 页面按钮绑定事件
+     * */
 
     //心愿按钮
-    
 
-    //下一步按钮
-    $('#rule-next').on('tap', function () {
-        $('#rule').hide();
-        $('#black-mask').hide();
-    })
 
     /********************
      * 一些函数

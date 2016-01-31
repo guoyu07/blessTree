@@ -81,7 +81,10 @@
 
 <!--脚本-->
 <div class="footer"></div>
-
+<div class="user_message" id="user_message" style="display: none;">
+    <p id="user_message_openid">{{ user_openid }}</p>
+    <p id="user_message_nickname">{{ name }}</p>
+</div>
 {% if first_time %}
 <!--begin 小部件-->
 <!--mask-->
@@ -110,14 +113,14 @@
 <!--填写名字-->
 <div class="fill-in-name" id="fill-in-name" style="display: none">
     <form class="fill-form">
-        <input type="text" name="tree-name" placeholder="输入祝福树名字">
-        <p class="fill-btn">确定</p>
+        <input id="text_id" type="text" name="tree-name" placeholder="输入祝福树名字">
+        <p class="fill-btn" id="fill-btn">确定</p>
     </form>
 </div>
 <!--浇水提醒-->
-<div class="water-tips" id="water-tips" style="display: none;">
+<div class="water-tips" id="tips-water" style="display: none;">
     <p>点击<img src="../static/tree/image/btn/water.png">&nbsp&nbsp给小树苗浇水，可以帮助它长成大树哦</p>
-    <button class="water-tips-btn">去浇水<img src="../static/tree/image/btn/goto.png"></button>
+    <button class="water-tips-btn" id="water-tips-btn">去浇水<img src="../static/tree/image/btn/goto.png"></button>
 </div>
 <!--浇水成功-->
 <div class="water-success" id="water-success" style="display: none;">

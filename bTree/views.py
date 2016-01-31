@@ -143,6 +143,7 @@ def home(request):
 
         # user_info = oauth.get_user_info(oauth.open_id) 这个是得不到user_info的，需要snsapi_userinfo才可以，尼玛
         user_info = client.user.get(client, oauth.open_id)
+        user_openid = oauth.open_id
         name = user_info['nickname']
         count = '0'
         avatar_addr = user_info['headimgurl']
@@ -168,16 +169,15 @@ def first(request):
 
     # user_info = oauth.get_user_info(oauth.open_id) 这个是得不到user_info的，需要snsapi_userinfo才可以，尼玛
     user_info = client.user.get(client, oauth.open_id)
+    user_openid = oauth.open_id
     name = user_info['nickname']
     count = ''
     avatar_addr = user_info['headimgurl']
     # 保存用户信息使用ajax异步发送过去
     # user_save = User(openid=user_info['openid'], nickname=user_info['nickname'], timestamp=time.time(), )
     share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
-
     first_time = True  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
     return render_to_response('home.html', locals())
-
 
 
 def visit(request):
@@ -197,7 +197,7 @@ def ajax_handle(request):
     user_name = request.POST.get('nickname', '')
     ret = '0'
     if user_id and user_name:
-        user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name='test' )
+        user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name='test')
         user.save()
         ret = '1'
     else:
