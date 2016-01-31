@@ -176,7 +176,7 @@ def first(request):
         user_db = 0
 
     if user_db is not 0:
-        first_time = True  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
+        first_time = False  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
     return render_to_response('home.html', locals())
 
 
