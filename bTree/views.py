@@ -75,7 +75,7 @@ def weixin_main(request):
                             "key": "v1002"
                         }
                     ]
-                }
+                }.encode('utf-8')
                 )
                 reply.content = menu
             else:
