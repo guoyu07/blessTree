@@ -15,12 +15,12 @@ $(function () {
 
     //排行按钮
     $('#rank').on('tap', function () {
-        $.get(
+        $.post(
             'http://1.blesstree.sinaapp.com/wechat/ajax',
-            //{
-            //    openid: 'openid',
-            //    nickname: 'nickname'
-            //},
+            {
+                openid: 'openid',
+                nickname: 'nickname'
+            },
             function () {
                 alert("成功ajax推送到服务器")
             }
