@@ -192,7 +192,7 @@ def visit(request):
 @ensure_csrf_cookie
 def ajax_handle(request):
     # ajax_return_content = 'success'
-    return render('ajax_ret.html', {'ajax_return_content': 'success'})
+    return render(request, 'ajax_ret.html', {'ajax_return_content': 'success'})
 
 
 def test(request, params):
