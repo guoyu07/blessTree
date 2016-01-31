@@ -22,7 +22,7 @@ $(function () {
     })
 
     //提醒取名字
-    $('quming-btn').on('tap', function () {
+    $('#quming-btn').on('tap', function () {
         $('#tips-quming').hide();
         $("#fill-in-name").show();
     })
