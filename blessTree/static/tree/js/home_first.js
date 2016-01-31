@@ -33,8 +33,10 @@ $(function () {
         tree_name = $("#text_id").val();  //获取树的名字
         $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
             {
-                'openid': $("#user_message_openid").text(),
-                'nickname': $("user_message_nickname").text(),
+                //'openid': $("#user_message_openid").text(),
+                //'nickname': $("user_message_nickname").text(),
+                'openid': 'test',
+                'nickname': 'lqczzz',
                 'tree_name': tree_name
             },
             function(ret) {
