@@ -42,7 +42,7 @@
             <div class="progress">
                 <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>
             </div>
-            <div class="count-num"><p>积分：{{ count|default_if_none: '0' }}</p></div>
+            <div class="count-num"><p>积分：{{ count|default: '0' }}</p></div>
         </div>
         <!--排行-->
         <div class="rank">
