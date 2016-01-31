@@ -54,7 +54,7 @@ def weixin_main(request):
                 user = client.user.get(client, msg.source)
                 reply.content = user['nickname']
             elif msg.content == '分享':
-                oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
+                oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/first')
                 reply.content = oauth.authorize_url
             elif msg.content == "李启成爱地球":
                 # client = WeChatClient(appId, appsecret)
@@ -127,9 +127,9 @@ def home(request):
 
     # 如果数据库没有该open_id的记录的话
     if user_db == 0:
-        # first_outh = WeChatOAuth(appId, appsecret, "http://1.blesstree.sinaapp.com/wechat/first")
-        # first_plant_url = first_outh.authorize_url
-        first_plant_url = 'http://1.blesstree.sinaapp.com/wechat/first'
+        first_outh = WeChatOAuth(appId, appsecret, "http://1.blesstree.sinaapp.com/wechat/first")
+        first_plant_url = first_outh.authorize_url
+        # first_plant_url = 'http://1.blesstree.sinaapp.com/wechat/first'
         return render_to_response('index.html', locals())
     else:
         user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
