@@ -35,15 +35,14 @@ def format_header_param(name, value):
     if not any(ch in value for ch in '"\\\r\n'):
         result = '%s="%s"' % (name, value)
         try:
-            result.encode('ascii')
+            result.encode('utf-8')
         except UnicodeEncodeError:
             pass
         else:
             return result
     if not six.PY3:  # Python 2:
         value = value.encode('utf-8')
-    # value = email.utils.encode_rfc2231(value, 'utf-8')
-    value = '%s="%s"' % (name, value.decode('utf-8'))
+    value = email.utils.encode_rfc2231(value, 'utf-8')
     value = '%s*=%s' % (name, value)
     return value
 
