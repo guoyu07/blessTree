@@ -71,7 +71,7 @@ def weixin_main(request):
                         },
                         {
                             "type": "click",
-                            "name": 'click-me',
+                            "name": '点击我',
                             "key": "v1002"
                         }
                     ]
