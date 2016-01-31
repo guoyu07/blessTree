@@ -40,7 +40,7 @@ $(function () {
             function(ret) {
                 if (ret == '1') {
                     alert("提交成功！");
-                    $("#whos_tree").html(tree_name)
+                    $("#whos_tree").html(tree_name);
                 } else if (ret == "2") {
                     alert("请输入标题和内容！");
                 } else {

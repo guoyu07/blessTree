@@ -138,6 +138,8 @@ def home(request):
         name = user_info['nickname']
         count = '0'
         avatar_addr = user_info['headimgurl']
+        # 分享的链接生成，别人点进去是一个get方法，同时，这个是经过转化的，就是加入认证的链接
+
         share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
 
         return render_to_response('home.html', locals())
@@ -191,6 +193,11 @@ def visit(request):
 
 @ensure_csrf_cookie
 def ajax_handle(request):
+    """
+    处理所有ajax请求的函数
+    :param request: 含有ajax请求数据的请求对象
+    :return:response，含有一个ret值
+    """
     response = HttpResponse()
     response['Content-Type'] = 'text/javascript'
     user_id = request.POST.get('openid', '')
@@ -205,16 +212,6 @@ def ajax_handle(request):
         ret = '2'
     response.write(ret)
     return response
-
-
-def test(request, params):
-    test_p = params['openid']
-    return render_to_response('test.html', locals())
-
-
-def test2(request):
-    openid = request.GET['openid']
-    return render_to_response('test2.html', locals())
 
 
 def share(url):
