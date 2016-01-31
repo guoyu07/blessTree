@@ -65,13 +65,14 @@ class WeChatMenu(BaseWeChatAPI):
         :return:json数据
         """
         menu_data = simplejson.dumps(menu_data, ensure_ascii=False)#.encode('utf-8')
+        return menu_data
 
         # json_data = json.dumps(menu_data, ensure_ascii=False).encode('utf-8')
-        return self._post(
-            client,
-            'menu/create',
-            data=menu_data,
-        )
+        # return self._post(
+        #     client,
+        #     'menu/create',
+        #     data=menu_data,
+        # )
 
 
     update = create
