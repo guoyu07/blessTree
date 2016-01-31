@@ -142,7 +142,7 @@ def home(request):
         # user_info = oauth.get_user_info(oauth.open_id) 这个是得不到user_info的，需要snsapi_userinfo才可以，尼玛
         user_info = client.user.get(client, oauth.open_id)
         name = user_info['nickname']
-        count = '5000'
+        count = '0'
         avatar_addr = user_info['headimgurl']
         share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
 
@@ -166,7 +166,7 @@ def first(request):
     # user_info = oauth.get_user_info(oauth.open_id) 这个是得不到user_info的，需要snsapi_userinfo才可以，尼玛
     user_info = client.user.get(client, oauth.open_id)
     name = user_info['nickname']
-    count = False
+    count = ''
     avatar_addr = user_info['headimgurl']
     # 保存用户信息使用ajax异步发送过去
     # user_save = User(openid=user_info['openid'], nickname=user_info['nickname'], timestamp=time.time(), )
