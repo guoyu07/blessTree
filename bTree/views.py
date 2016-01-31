@@ -127,8 +127,9 @@ def home(request):
 
     # 如果数据库没有该open_id的记录的话
     if user_db == 0:
-        first_outh = WeChatOAuth(appId, appsecret, "http://1.blesstree.sinaapp.com/wechat/first")
-        first_plant_url = first_outh.authorize_url
+        # first_outh = WeChatOAuth(appId, appsecret, "http://1.blesstree.sinaapp.com/wechat/first")
+        # first_plant_url = first_outh.authorize_url
+        first_plant_url = 'http://1.blesstree.sinaapp.com/wechat/first'
         return render_to_response('index.html', locals())
     else:
         user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
@@ -149,25 +150,26 @@ def home(request):
         return render_to_response('hello.html', locals())
 
 
+# TODO:跳转链接生成失败原因
 def first(request):
-    oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
-    code = request.GET.get('code')  # 通过认证的code获取openid
-    oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
-
-    user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
-    # 以下信息是为了分享接口而使用的
-    app_id = appId
-    timestamp = TIMESTAMP
-    noncestr = NONCESTR
-    signature = share(user)['first']
-    ticket = share(user)['second']
-
-    # user_info = oauth.get_user_info(oauth.open_id) 这个是得不到user_info的，需要snsapi_userinfo才可以，尼玛
-    user_info = client.user.get(client, oauth.open_id)
-    name = user_info['nickname']
-    count = '5000'
-    avatar_addr = user_info['headimgurl']
-    share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
+    # oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
+    # code = request.GET.get('code')  # 通过认证的code获取openid
+    # oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
+    #
+    # user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
+    # # 以下信息是为了分享接口而使用的
+    # app_id = appId
+    # timestamp = TIMESTAMP
+    # noncestr = NONCESTR
+    # signature = share(user)['first']
+    # ticket = share(user)['second']
+    #
+    # # user_info = oauth.get_user_info(oauth.open_id) 这个是得不到user_info的，需要snsapi_userinfo才可以，尼玛
+    # user_info = client.user.get(client, oauth.open_id)
+    # name = user_info['nickname']
+    # count = '5000'
+    # avatar_addr = user_info['headimgurl']
+    # share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
 
     first_time = True  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
     return render_to_response('home.html', locals())

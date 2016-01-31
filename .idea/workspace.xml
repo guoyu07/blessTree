@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/views.py" afterPath="$PROJECT_DIR$/bTree/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blessTree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,8 +34,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.1276102" vertical-offset="2143" max-vertical-offset="3510">
-              <caret line="116" column="8" selection-start-line="116" selection-start-column="10" selection-end-line="122" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.83294666" vertical-offset="2341" max-vertical-offset="3852">
+              <caret line="150" column="17" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="17" />
               <folding>
                 <element signature="e#48#62#0" expanded="true" />
               </folding>
@@ -87,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/bTree/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
-              <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+              <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -193,8 +193,8 @@
         <option value="$PROJECT_DIR$/bTree/templates/index.html" />
         <option value="$PROJECT_DIR$/bTree/templates/home.html" />
         <option value="$PROJECT_DIR$/blessTree/settings.py" />
-        <option value="$PROJECT_DIR$/bTree/urls.py" />
         <option value="$PROJECT_DIR$/bTree/templates/hello.html" />
+        <option value="$PROJECT_DIR$/bTree/urls.py" />
         <option value="$PROJECT_DIR$/bTree/views.py" />
       </list>
     </option>
@@ -739,7 +739,13 @@
       <option name="project" value="LOCAL" />
       <updated>1454190319638</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="combine html/css/js and wechat api and databse ,runs on sae">
+      <created>1454200331432</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1454200331432</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -763,7 +769,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="769" extended-state="7" />
+    <frame x="-1" y="0" width="1368" height="769" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -776,7 +782,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14130434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25562373" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23176661" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23176661" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25080732" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1618" y="384" width="1017" height="303" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1212,14 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
-          <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/templates/test2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="378">
@@ -1236,10 +1234,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bTree/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
+          <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.1276102" vertical-offset="2143" max-vertical-offset="3510">
-          <caret line="116" column="8" selection-start-line="116" selection-start-column="10" selection-end-line="122" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.83294666" vertical-offset="2341" max-vertical-offset="3852">
+          <caret line="150" column="17" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="17" />
           <folding>
             <element signature="e#48#62#0" expanded="true" />
           </folding>
