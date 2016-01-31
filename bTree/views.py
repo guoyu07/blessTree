@@ -71,7 +71,7 @@ def weixin_main(request):
                         },
                         {
                             "type": "click",
-                            "name": u"关于",
+                            "name": u"关于".encode('utf-8'),
                             "key": "v1002"
                         }
                     ]
