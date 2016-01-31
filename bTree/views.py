@@ -113,7 +113,7 @@ def home(request):
     except ObjectDoesNotExist:
         user_db = 0
 
-    if request.GET.get('openid') != None:
+    if request.GET.get('state') == '1':
         user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
         # 以下信息是为了分享接口而使用的
         app_id = appId
@@ -125,8 +125,8 @@ def home(request):
 
     # 如果数据库没有该open_id的记录的话
     if user_db == 0:
-
-        first_plant_url = 'http://1.blesstree.sinaapp.com/wechat/home?openid='+oauth.open_id
+        first_outh = WeChatOAuth(appId, appsecret, "http://1.blesstree.sinaapp.com/wechat/home", state='1')
+        first_plant_url = first_outh.authorize_url
         return render_to_response('index.html', locals())
     else:
         user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
@@ -150,6 +150,8 @@ def home(request):
             return render_to_response('home.html', locals())
         else:
             return render_to_response('hello.html', locals())
+
+
 
 
 @csrf_exempt

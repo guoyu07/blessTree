@@ -11,7 +11,6 @@ urlpatterns = [
     url(r'^wechat/home/', home),  # 回到自己的主页或者第一次引导种树
     url(r'^wechat/visit', visit),  # 访问别人的主页链接方式
 
-
     url(r'^admin/', include(admin.site.urls)),
 
 ]
