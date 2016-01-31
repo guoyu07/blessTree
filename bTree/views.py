@@ -117,15 +117,6 @@ def home(request):
     except ObjectDoesNotExist:
         user_db = 0
 
-    # if request.GET.get('state') == '1':
-    #     # user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
-    #     # # 以下信息是为了分享接口而使用的
-    #     # app_id = appId
-    #     # timestamp = TIMESTAMP
-    #     # noncestr = NONCESTR
-    #     # signature = share(user)['first']
-    #     # ticket = share(user)['second']
-    #     return render_to_response('hello.html', locals())
 
     # 如果数据库没有该open_id的记录的话
     if user_db == 0:
@@ -172,11 +163,20 @@ def first(request):
     user_openid = oauth.open_id
     name = user_info['nickname']
     count = ''
-    avatar_addr = user_info['headimgurl']
-    # 保存用户信息使用ajax异步发送过去
-    # user_save = User(openid=user_info['openid'], nickname=user_info['nickname'], timestamp=time.time(), )
-    share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
     first_time = True  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
+    avatar_addr = user_info['headimgurl']
+    share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
+
+    #  用户第一次进去种树了，返回去的时候会返回到前面的页面，所以需要再判断一次,如果已经点进去还点进去，需要修改条件
+    try:
+        user_db = User.objects.get(openid=oauth.open_id)
+        count = user_db.count
+        first_time = False  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
+    except ObjectDoesNotExist:
+        user_db = 0
+
+    if user_db is not 0:
+        first_time = True  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
     return render_to_response('home.html', locals())
 
 
