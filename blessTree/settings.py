@@ -91,6 +91,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.csrf.CsrfResponseMiddleware',
 )
 
 ROOT_URLCONF = 'blessTree.urls'
