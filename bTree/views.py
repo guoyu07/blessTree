@@ -71,7 +71,7 @@ def weixin_main(request):
                         },
                         {
                             "type": "click",
-                            "name": '\xe6\x8c\x89\xe9\x92\xae',
+                            "name": 'click-me',
                             "key": "v1002"
                         }
                     ]
