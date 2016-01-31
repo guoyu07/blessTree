@@ -57,7 +57,8 @@
         $("#tips-container").show();
     })
     $("#pg_11-plant").on('tap', function () {
-        location.href="{{ first_plant_url|safe }}"
+        window.open("{{ first_plant_url|safe }}")
+{#        location.href=""#}
         //alert("success");
     })
 
