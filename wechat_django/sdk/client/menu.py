@@ -68,13 +68,13 @@ class WeChatMenu(BaseWeChatAPI):
 
         # return menu_data
 
-        json_data = json.dumps(menu_data, ensure_ascii=False)
-        return json_data
-        # return self._post(
-        #     client,
-        #     'menu/create',
-        #     data=menu_data,
-        # )
+        menu_data = json.dumps(menu_data, ensure_ascii=False)
+        # return json_data
+        return self._post(
+            client,
+            'menu/create',
+            data=menu_data,
+        )
 
 
     update = create
