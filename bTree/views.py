@@ -127,9 +127,8 @@ def home(request):
 
     # 如果数据库没有该open_id的记录的话
     if user_db == 0:
-        # first_outh = WeChatOAuth(appId, appsecret, "http://1.blesstree.sinaapp.com/wechat/first")
-        # first_plant_url = first_outh.authorize_url
-        first_plant_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx520c15f417810387&redirect_uri=http%3A%2F%2F1.blesstree.sinaapp.com%2Fwechat%2Ffirst&response_type=code&scope=snsapi_base&state=123#wechat_redirect'
+        first_outh = WeChatOAuth(appId, appsecret, "http://1.blesstree.sinaapp.com/wechat/first")
+        first_plant_url = first_outh.authorize_url
         return render_to_response('index.html', locals())
     else:
         user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
