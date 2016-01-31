@@ -7,6 +7,8 @@
 
 $(function () {
 
+    alert("success")
+
     init_main();
     
     /********************
