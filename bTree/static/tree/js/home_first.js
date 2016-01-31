@@ -16,16 +16,16 @@ $(function () {
     //排行按钮
     $('#rank').on('tap', function () {
         alert("you click it")
-        //$.post(
-        //    'http://1.blesstree.sinaapp.com/wechat/ajax',
-        //    {
-        //        openid: 'openid',
-        //        nickname: 'nickname'
-        //    },
-        //    function () {
-        //        alert("成功ajax推送到服务器")
-        //    }
-        //)
+        $.post(
+            'http://1.blesstree.sinaapp.com/wechat/ajax',
+            {
+                openid: 'openid',
+                nickname: 'nickname'
+            },
+            function () {
+                alert("成功ajax推送到服务器")
+            }
+        )
     })
 
     //心愿按钮
