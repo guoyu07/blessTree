@@ -197,8 +197,8 @@ def ajax_handle(request):
     user_name = request.POST.get('nickname', '')
     tree_name = request.POST.get('tree_name', '')
     ret = '0'
-    if user_id and user_name:
-        user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name='test')
+    if user_id and user_name and tree_name:
+        user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name=tree_name)
         user.save()
         ret = '1'
     else:
