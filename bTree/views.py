@@ -11,6 +11,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import HttpResponse
 from django.shortcuts import render_to_response
 from django.core.exceptions import ObjectDoesNotExist
+from django.views.decorators.csrf import ensure_csrf_cookie
+
 # 我的wechat_django库
 from wechat_django.sdk.utils import check_signature
 from wechat_django.sdk.parser import parse_message
@@ -150,7 +152,7 @@ def home(request):
 
 
 # TODO:跳转链接生成失败原因
-@csrf_exempt
+@ensure_csrf_cookie
 def first(request):
     oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
     code = request.GET.get('code')  # 通过认证的code获取openid
@@ -177,7 +179,7 @@ def first(request):
     return render_to_response('home.html', locals())
 
 
-@csrf_exempt
+
 def visit(request):
     """
     处理访问别人的主页的逻辑
