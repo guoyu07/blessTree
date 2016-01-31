@@ -34,7 +34,7 @@ $(function () {
         $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
             {
                 'openid': $("#user_message_openid").text(),
-                'nickname':$("user_message_nickname").text(),
+                'nickname': $("user_message_nickname").text(),
                 'tree_name': tree_name
             },
             function(ret) {

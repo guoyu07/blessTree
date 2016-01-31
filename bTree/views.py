@@ -195,6 +195,7 @@ def ajax_handle(request):
     response['Content-Type'] = 'text/javascript'
     user_id = request.POST.get('openid', '')
     user_name = request.POST.get('nickname', '')
+    tree_name = request.POST.get('tree_name', '')
     ret = '0'
     if user_id and user_name:
         user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name='test')
