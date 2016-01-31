@@ -15,6 +15,7 @@ $(function () {
 
     //排行按钮
     $('#rank').on('tap', function () {
+        alert("you click it")
         $.post(
             'http://1.blesstree.sinaapp.com/wechat/ajax',
             {
