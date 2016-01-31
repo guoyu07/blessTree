@@ -146,7 +146,7 @@ def home(request):
         avatar_addr = user_info['headimgurl']
         share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
 
-        return render_to_response('hello.html', locals())
+        return render_to_response('home.html', locals())
 
 
 # TODO:跳转链接生成失败原因
@@ -168,6 +168,8 @@ def first(request):
     name = user_info['nickname']
     count = '5000'
     avatar_addr = user_info['headimgurl']
+    # 保存用户信息使用ajax异步发送过去
+    # user_save = User(openid=user_info['openid'], nickname=user_info['nickname'], timestamp=time.time(), )
     share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
 
     first_time = True  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
@@ -182,6 +184,10 @@ def visit(request):
     :return:
     """
     pass
+
+
+def ajax_handle(request):
+    return 'lqczzz'
 
 
 def test(request, params):
@@ -200,7 +206,6 @@ def share(url):
     :param url:当前网页的URL，就是要提供分享接口的页面的
     :return:签名，用于生成页面签名
     """
-    # client = WeChatClient(appId, appsecret)
     client.fetch_access_token()
     ticket = client.jsapi.get_jsapi_ticket(client)
     return {"first": client.jsapi.get_jsapi_signature(NONCESTR, ticket, TIMESTAMP, url), "second": ticket}

@@ -3,7 +3,7 @@ __author__ = 'albert'
 
 from django.conf.urls import include, url
 from django.contrib import admin
-from bTree.views import weixin_main, home, visit, first
+from bTree.views import weixin_main, home, visit, first, ajax_handle
 
 
 urlpatterns = [
@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^wechat/home/', home),  # 回到自己的主页或者第一次引导种树
     url(r'^wechat/visit', visit),  # 访问别人的主页链接方式
     url(r'wechat/first', first),
+    url(r'wechat/ajax', ajax_handle),
     url(r'^admin/', include(admin.site.urls)),
 
 ]
