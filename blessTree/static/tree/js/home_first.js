@@ -17,17 +17,19 @@ $(function () {
     $('#rank').on('tap', function () {
         alert("you click it")
         $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
-            {'openid':'openid','nickname':'nickname'},
+            {
+                'openid':'openid',
+                'nickname':'nickname'
+            },
             function(ret) {
-                if(ret=='1'){
-                alert("提交成功！");
-            }
-            else if(ret=="2"){
-               alert("请输入标题和内容！");
-            }
-            else{
-               alert("系统错误！");
-            }
+                if (ret == '1') {
+                    alert("提交成功！");
+                } else if (ret == "2") {
+                    alert("请输入标题和内容！");
+                } else {
+                    alert("系统错误！");
+                }
+            })
     })
 
     //心愿按钮
