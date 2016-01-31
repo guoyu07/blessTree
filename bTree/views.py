@@ -189,7 +189,7 @@ def visit(request):
     pass
 
 
-@csrf_exempt
+@ensure_csrf_cookie
 def ajax_handle(request):
     ajax_return_content = 'success'
     return render_to_response('ajax_ret.html', locals())
