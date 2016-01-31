@@ -7,8 +7,6 @@
 
 $(function () {
 
-    alert("success")
-
     init_main();
     
     /********************
@@ -35,6 +33,7 @@ $(function () {
     //下一步按钮
     $('#rule-next').on('tap', function () {
         $('#rule').hide();
+        $('#black-mask').hide();
     })
 
     /********************
@@ -44,5 +43,6 @@ $(function () {
     //初始化事件
      function init_main(){
         $('#black-mask').show();
+        $('#rule').show();
     };
 })
