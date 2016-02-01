@@ -42,9 +42,9 @@ $(function () {
                     alert("提交成功！");
                     $("#whos_tree").html(tree_name);
                 } else if (ret == "2") {
-                    alert("请输入标题和内容！");
+                    alert("您的网络有问题，请再试一下哦～");
                 } else {
-                    alert("系统错误！");
+                    alert("网络不太好，请再试一下哦～");
                 }
             })
         $("#fill-in-name").hide();

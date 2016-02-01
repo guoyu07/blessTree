@@ -246,7 +246,7 @@ ul{
 }
 
 /*取名字与填写名字,浇水与浇水成功*/
-.tips-quming, .fill-in-name, .water-tips, .water-success{
+.tips-quming, .fill-in-name, .water-tips, .water-success, .add-friend-widget, .count-enough{
     position: fixed;
     width: 60%;
     height: 20%;
@@ -257,7 +257,7 @@ ul{
     text-align: center;
     background-color: #FFFFFF;
 }
-.tips-quming p{
+.tips-quming p, .add-friend-widget p, .count-enough p{
     text-indent:2em
     margin-top: 14%;
     margin-left:15%;
@@ -266,7 +266,7 @@ ul{
     text-align: left;
     color: #2f3130;
 }
-.tips-quming button{
+.tips-quming button, .add-friend-widget button, .count-enough button{
     background-color: #FFFFFF;
     color:#55b698 ;
     font-size: 90%;
@@ -327,14 +327,211 @@ ul{
     margin-top: 2%;
     font-size: 90%;
 }
+/*************
+**这里是常用的
+**/
 
+/*消息*/
+.message-widget, .willing-widget, .history-widget, .rank-widget{
+    border-radius: 1%;
+    position: fixed;
+    z-index: 13;
+    width: 80%;
+    height: 68%;
+    left: 10%;
+    top: 12%;
+    background-color: rgba(255,255,255,0.7);
+}
+.message-top, .willing-top, .rank-top{
+    height: 24%;
+    width: 100%;
+    text-align: center;
+}
+.message-top img, .willing-top img, .rank-top img{
+    height: 52%;
+    margin-top: 5%;
+}
+.message-top a, .willing-top a, .rank-top a{
+    position: fixed;
+    float: right;
+    text-align: center;
+    background-color: #000;
+    color: #FFFFFF;
+    margin-left: 25%;
+    margin-top: 2%;
+    width: 6%;
+    height: 3%;
+    padding-bottom: 1%;
+    border-radius: 50%;
+}
+.message-content, .willing-content, .history-content, .rank-content{
+    height: 75%;
+    margin-bottom: 3%;
+}
+.message-list, .history-list, .rank-list{
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+}
+.willing-list{
+    overflow: scroll;
+    height: 70%;
+    width: 100%;
+}
+.message-list li, .willing-list li{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%;
+    height: 17%;
+}
+.message-list div, .rank-list div{
+    margin: 0;
+    height: 100%;
+}
 
-/*祝福果/吐槽果*/
-.apple-for-bless .apple-for-tucao{
+/*心愿*/
+.willing-add{
+    font-size: large;
+    position: fixed;
+    top: 70%;
+    left: 45%;
+    width: 11%;
+    color: #FFFFFF;
+    background-color: #54b698;
+    height: 7%;
+    border: none;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.6);
+    border-radius: 50%;
+}
+/*填写心愿*/
+
+.fill-willing{
+    position: fixed;
+    width: 60%;
+    height: 20%;
+    z-index: 13;
+    left: 20%;
+    top: 35%;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+.fill-form{
+    margin-top: 10%;
+}
+.fill-form textarea{
+    font-size: small;
+    color: gray;
+    height: 80%;
+    width: 80%;
+}
+.fill-form p{
+    margin-top: 10%;
+    margin-right: 10%;
+    float: right;
+    color: #54b698;;
+}
+/*祝福吐槽历史*/
+.history-top{
+    height: 24%;
+    width: 100%;
+    text-align: center;
+}
+.history-bless{
+    position: fixed;
+    top: 17%;
+    left: 32%;
+    font-size: larger;
+    width: 16%;
+    height: 8%;
+    border-radius: 50%;
+    padding-top: 3%;
+}
+.history-tucao{
+    position: fixed;
+    top: 17%;
+    left: 55%;
+    width: 16%;
+    border-radius: 50%;
+    font-size: larger;
+    border-radius: 50%;
+    height: 8%;
+    padding-top: 3%;
+}
+.history-list div{
+    height: 80%;
+}
+.history-list li{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 4%;
+    height: 20%;
+}
+.history-tucao:hover, .history-bless:hover{
+    background-color: #54b698;
+}
+.history-close{
+    position: fixed;
+    float: right;
+    text-align: center;
+    background-color: #000;
+    color: #FFFFFF;
+    margin-left: 32%;
+    margin-top: 2%;
+    width: 6%;
+    height: 3%;
+    padding-bottom: 1%;
+    border-radius: 50%;
+}
+/*排行榜*/
+.rank-count-num{
+    font-family: Microsoft YaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-size: 80%;
+    color: black;
+    margin-top: 3%;
+    margin-left: 15%;
+}
+.rank-progress-con{
+    height: 50%;
+}
+.rank-progress{
+    height: 100%;
+    width: 100%;
 
 }
-/*浇水效果*/
-
-/*弹出全局遮盖*/
-
-
+.rank-list li{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 13%;
+    height: 17%;
+}
+.rank-visit{
+    margin-top: 2%;
+    float: right;
+    text-align:center;
+    padding-top:19%;
+    padding-left:3%;
+    width:80%;
+    height:60%;
+    font-size: 90%;
+    color: #FFFFFF;;
+    background-color:#3f8f6f;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.6);
+    border-radius:50%
+}
+/*加好友*/
+/*积分达到上限*/
+/*新年快乐*/
+.happy-newyear{
+    position: fixed;width: 100%;height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding-top: 40%;
+    background-color: rgba(255,255,255, 0.7);
+}
+.happy-newyear img{
+    width: 40%;
+}
+/*积分上限后分享的内容：做一个类似微信年会的东西*/

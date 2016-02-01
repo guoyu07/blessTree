@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=no" />
@@ -81,9 +80,227 @@
 
 <!--脚本-->
 <div class="footer"></div>
+
+{#保存一些需要js用的东西#}
 <div class="user_message" id="user_message" style="display: none;">
     <p id="user_message_openid">{{ user_openid }}</p>
     <p id="user_message_nickname">{{ name }}</p>
+{#    TODO：过多的在服务器端访问数据库然后再生成html发送过去可能会导致打开过慢，一些初始化的东西可以在前端发送ajax请求更新#}
+{#    传原始的时间#}
+    <p id="user_message_water_time">{{ water_time }}</p>
+</div>
+
+<!--消息-->
+<div class="message-widget" style="display: none;">
+    <div class="message-top">
+        <img src="{% static "tree/image/btn/tips.png" %}">
+        <a class="message-close">X</a>
+        <p style="font-size: 80%">消息</p>
+    </div>
+    <hr style="background-color: rgba(0,0,0,0.6)">
+    <div class="message-content">
+        <ul class="message-list">
+            {% if message_list %}
+                {% for nickname, avatar_addr, msg_type, msg_time in msg_list %}
+                    <li>
+                        <div class="pure-u-5-24" style="float:left;">
+                            <img src="{{ avatar_addr }}" style="height: 70%;padding-left: 5%">
+                            <p style="font-size: 50%;color: rgba(0,0,0,0.8)">{{ nickname }}</p>
+                        </div>
+
+                        <div class="pure-u-19-24" style="float:left;">
+    {#                        根据消息类型来做不同的提醒#}
+                            {% if msg_type == 3 %}
+                                <p style="padding-top:3%; font-size: 90%">{{ nickname }}给你浇了一次水</p>
+                            {% elif msg_type == 5%}
+                                <p style="padding-top:3%; font-size: 90%">{{ nickname }}给你写了祝福</p>
+                            {% elif msg_type == 6 %}
+                                <p style="padding-top:3%; font-size: 90%">{{ nickname }}吐槽了你</p>
+                            {% endif %}
+                            <p style="font-size: 70%; color: grey">{{ msg_time }}分钟前</p>
+
+                        </div>
+
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li>
+                    <div class="pure-u-5-24" style="float:left;">
+                        <p style="font-size: 100%;color: rgba(0,0,0,0.8)">您的消息空空如也，赶紧和小伙伴互动起来吧～</p>
+                    </div>
+                </li>
+            {% endif %}
+        </ul>
+
+
+    </div>
+</div>
+<!--心愿-->
+<div class="willing-widget" style="display: none">
+    <div class="willing-top">
+        <img src="{% static "tree/image/btn/willing.png" %}">
+        <a class="willing-close">X</a>
+        <p style="font-size: 80%">心愿</p>
+    </div>
+    <hr style="background-color: rgba(0,0,0,0.6)">
+    <div class="willing-content">
+        <ul class="willing-list">
+            {% if willing_list %}
+                {% for will_time, will_con in willing_list %}
+                    <li>
+                        <a style="float: left;width: 20%;font-size: 80%; text-align: center">{{ will_time }}</a>
+                        <a style="float:left;margin-left: 20%">{{ will_con }}</a>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li>
+                    <a>您的愿望空空如也，快快说出来吧～</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+    <button class="willing-add">+</button>
+</div>
+<!--填写心愿-->
+<div class="fill-willing" id="fill-willing" style="display: none;">
+    <form class="fill-form">
+        <textarea placeholder="大声说出愿望，没准实现了呢"></textarea>
+        <p class="fill-willing-btn" id="fill-willing-btn">确定</p>
+    </form>
+</div>
+<!--祝福吐槽历史-->
+<div class="history-widget" style="display: none">
+    <div class="history-top">
+        <a class="history-bless" >祝福</a>
+        <a class="history-tucao" >吐槽</a>
+        <a class="history-close">X</a>
+    </div>
+    <hr style="background-color: rgba(0,0,0,0.6)">
+    <div class="history-content">
+        <ul class="history-list">
+{#            加载祝福，默认显示#}
+            {% if bless_list %}
+                {% for nickname, avatar_addr, bless_con, bless_time in bless_list %}
+                    <li>
+                        <div style="float:left;"class="pure-u-5-24">
+                            <img src="{{ avatar_addr }}" style="height: 75%;padding-left: 5%">
+                            <p style="font-size: 40%;color:grey;;">{{ nickname }}</p>
+                        </div>
+                        <div style="float: left" class="pure-u-15-24">
+                            <a style="font-size: 100%;">{{ bless_con }}</a>
+                        </div>
+                        <div style="float: left" class="pure-u-4-24">
+                            <a style="float: right;font-size: 60%;color: grey">{{ bless_time }}前</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li>
+                   <p>没有收到小伙伴的祝福哦，赶紧分享互动起来吧～</p>
+                </li>
+            {% endif %}
+
+{#            加载吐槽，默认隐藏#}
+            {% if tucao_list %}
+                {% for nickname, avatar_addr, tucao_con, tucao_time in tucao_list %}
+                    <li>
+                        <div style="float:left;"class="pure-u-5-24">
+                            <img src="{{ avatar_addr }}" style="height: 75%;padding-left: 5%">
+                            <p style="font-size: 40%;color:grey;;">{{ nickname }}</p>
+                        </div>
+                        <div style="float: left" class="pure-u-15-24">
+                            <a style="font-size: 100%;">{{ tucao_con }}</a>
+                        </div>
+                        <div style="float: left" class="pure-u-4-24">
+                            <a style="float: right;font-size: 60%;color: grey">{{ tucao_time }}前</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li>
+                   <p>没有收到小伙伴的吐槽哦，小编都妒忌了～</p>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+<!--排行榜-->
+<div class="rank-widget" style="display: none;">
+    <div class="rank-top">
+        <img src="{% static "tree/image/btn/rank.png" %}">
+        <a class="rank-close">X</a>
+        <p style="font-size: 80%">排行榜</p>
+    </div>
+    <hr style="background-color: rgba(0,0,0,0.6)">
+    <div class="rank-content">
+        <ul class="rank-list">
+            {% if rank_list %}
+                {% for nickname, avatar_addr, count, nickname_home in rank_list %}
+                    <li>
+                        <div class="pure-u-5-24" style="float: left">
+                            <img src="{{ avatar_addr }}" style="height: 90%;padding-left: 5%">
+                            <p style="font-size: 50%">{{ nickname }}</p>
+                        </div>
+                        <div class="pure-u-15-24" style="float:left;text-align: center">
+                            <p style="height: 45%;width: 14%;margin-left: 43%;border-radius: 50%;background-color: red">1</p>
+                            <div class="rank-progress-con" style="height: 20%;margin-top: 2%">
+                                <div class="rank-progress">
+                                    <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>
+                                </div>
+                                <div class="rank-count-num"><p>积分：{{ count }}</p></div>
+                            </div>
+                        </div>
+                        <div style="float: left" class="pure-u-4-24">
+                            <a class="rank-visit" href="{{ nickname_home }}">参观</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            {% else %}
+            {% endif %}
+            <li>
+                <div class="pure-u-5-24" style="float: left">
+                    <img src="../static/tree/image/btn/tips.png" style="height: 90%;padding-left: 5%">
+                    <p style="font-size: 50%">耶耶耶不想上学</p>
+                </div>
+                <div class="pure-u-15-24" style="float:left;text-align: center">
+                    <p style="height: 45%;width: 14%;margin-left: 43%;border-radius: 50%;background-color: red">1</p>
+                    <div class="rank-progress-con" style="height: 20%;margin-top: 2%">
+                        <div class="rank-progress">
+                            <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>
+                        </div>
+                        <div class="rank-count-num"><p>积分：25500</p></div>
+                    </div>
+                </div>
+                <div style="float: left" class="pure-u-4-24">
+                    <a class="rank-visit">参观</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--加好友-->
+<div class="add-friend-widget" style="padding-top: 5%;display: none;">
+    <p>点击右上方按钮，分享给朋友，可以添加好友以及得积分哦</p>
+    <button> 我知道啦～ </button>
+</div>
+
+<!--积分到达上限-->
+<div class="count-enough" style="padding-top: 5%;display: none;">
+    <p>积分到达300000啦，会有什么惊喜呢，赶快看一下吧～</p>
+    <button class="count-enough-btn">点我有惊喜</button>
+</div>
+<!--恭喜新年快乐-->
+<div class="happy-newyear" style="">
+    <img src="{% static "tree/image/others/monkey.png" %}">
+    <p style="font-size: 160%;margin-top: 0%;color: red">给大家拜年啦</p>
+    <p style="margin-top: 5%">赶快分享到朋友圈炫耀一下吧～</p>
+</div>
+<!--分享到朋友圈是什么内容呢-->
+<!--平常的浇水提示，类的花就不管了，反正跟加好友一样-->
+<div class="add-friend-widget" id="time-to-water" style="display: none;">
+    <p>点击&nbsp&nbsp树儿渴的花儿都谢啦，虽然我没有花～～</p>
+    <button id="time-water-btn">我知道啦～</button>
 </div>
 {% if first_time %}
 <!--begin 小部件-->
@@ -94,10 +311,10 @@
     <div class="rule-title"><p>游戏规则</p></div>
     <div class="rule-list">
         <ul>
-            <li><p style="width:15%">点击</p><img style="width: 15%" src="../static/tree/image/btn/water.png" ><p class="p-float" style="width:66% ">浇水一次得1000积分</p></li>
-            <li><p style="width:15%">点击</p><img style="width: 15%" src="../static/tree/image/btn/willing.png"><p class="p-float" style="width:66%">添加新年愿望得20000积分</p></li>
-            <li><p style="width:15%">点击</p><img style="width:15%" src="../static/tree/image/btn/friends.png"><p class="p-float" style="width:66%">并分享到朋友圈得5000积分，成功添加一位好友得3000积分</p></li>
-            <li><p style="width:15%">点击</p><img style="width:15%" src="../static/tree/image/btn/rank.png"><p class="p-float" style="width:66%">访问好友并互动(祝福或吐槽)得5000积分</p></li>
+            <li><p style="width:15%">点击</p><img style="width: 15%" src="{% static "tree/image/btn/water.png" %}" ><p class="p-float" style="width:66% ">浇水一次得1000积分</p></li>
+            <li><p style="width:15%">点击</p><img style="width: 15%" src="{% static "tree/image/btn/willing.png" %}"><p class="p-float" style="width:66%">添加新年愿望得20000积分</p></li>
+            <li><p style="width:15%">点击</p><img style="width:15%" src="{% static "tree/image/btn/friends.png" %}"><p class="p-float" style="width:66%">并分享到朋友圈得5000积分，成功添加一位好友得3000积分</p></li>
+            <li><p style="width:15%">点击</p><img style="width:15%" src="{% static "tree/image/btn/rank.png" %}"><p class="p-float" style="width:66%">访问好友并互动(祝福或吐槽)得5000积分</p></li>
         </ul>
     </div>
     <div class="rule-end"><p>当积分达到300000有特别的惊喜等你哦</p></div>
@@ -120,7 +337,7 @@
 <!--浇水提醒-->
 <div class="water-tips" id="tips-water" style="display: none;">
     <p>点击<img src="../static/tree/image/btn/water.png">&nbsp&nbsp给小树苗浇水，可以帮助它长成大树哦</p>
-    <button class="water-tips-btn" id="water-tips-btn">去浇水<img src="../static/tree/image/btn/goto.png"></button>
+    <button class="water-tips-btn" id="water-tips-btn">去浇水<img src="{% static "tree/image/btn/goto.png" %}"></button>
 </div>
 <!--浇水成功-->
 <div class="water-success" id="water-success" style="display: none;">
@@ -129,6 +346,8 @@
 </div>
 
 {% endif %}
+
+
 </body>
 <script>
     $(function () {
@@ -154,10 +373,10 @@
                 });
 
                 wx.onMenuShareAppMessage({
-                    title: '帅的人都点进去咯',
-                    desc: '求新年红包？求约炮？多喝水，多看报；少吃零食，多睡觉，除了帅你也没啥优点了',
+                    title: '帅的人都点进去了哦',
+                    desc: '新年什么有趣？抢红包？不不不！！老司机带你寻找新鲜刺激的游戏，快和大家一起玩吧～',
                     link: '{{ share_url|safe }}',
-                    imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg' ,
+                    imgUrl: 'http://pan.baidu.com/s/1bnPGtif' ,
                     success: function (res) {
                         alert('分享成功，积分已奉上');
                       },
@@ -165,21 +384,21 @@
                         alert('分享一次，据说会有桃花运哦～');
                       },
                       fail: function (res) {
-                        alert(JSON.stringify(res));
+                        alert('系统出错，程序猿正手不停蹄的赶来维修～');
                       }
                 })
                 wx.onMenuShareTimeline({
-                      title: '帅的人都点进去咯',
+                      title: '快快点进去祝(吐)福(槽)我吧',
                       link: '{{ share_url|safe }}',
-                      imgUrl: 'http://img3.douban.com/view/movie_poster_cover/spst/public/p2166127561.jpg' ,
+                      imgUrl: 'http://pan.baidu.com/s/1bnPGtif' ,
                       success: function (res) {
-                        alert('分享成功，积分已奉上');
+                        alert('分享成功，一(没有个)大波小伙伴正赶来围观～');
                       },
                       cancel: function (res) {
                         alert('分享一次，据说会有桃花运哦～');
                       },
                       fail: function (res) {
-                        alert(JSON.stringify(res));
+                        alert('系统出错，程序猿正手不停蹄的赶来维修～');
                       }
                 })
         })

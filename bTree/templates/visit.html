@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=no" />
-    <title>主页面</title>
+    <title>{{ owner }}的空间</title>
 
     <!--CSS-->
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static "tree/css/visit.css" %}">
+
     <link rel="stylesheet" type="text/css" href="{% static "plugin/weui/weui.min.css" %}">
     <link href="//cdn.bootcss.com/pure/0.6.0/pure-min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
@@ -18,7 +19,7 @@
     <!--js-->
     <script src="{% static "plugin/jquery/jquery.min.js" %}"></script>
     <script src="{% static "plugin/jquery/jquery.color.js" %}"></script>
-    <script src="{% static "plugin/jquery/jquery.mobile-1.4.4.min.js" %}"></script>
+    <script src="{% static "plugin/jquery/jquery.mobile-events.min.js" %}"></script>
     <script src="{% static "tree/js/jquery.lqc.extension.js" %}"></script>
     <script src="{% static "tree/js/visit.js" %}"></script>
 
@@ -30,51 +31,105 @@
     <div class="menu-top-con">
         <!--头像-->
         <div class="self-avatar">
-{#            TODO:头像保存问题仍待解决，所以先不管 #}
-            <a><img class="avatar" src="{% static "tree/image/btn/friends.png" %}" style="width: inherit"></a>
+            <a><img class="avatar" src="{{ avatar }}" style="width: inherit"></a>
         </div>
         <!--积分条-->
         <div class="count-progress">
             <div class="progress">
-                <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>
+                <span class="progress-bar"><span class="progress-in"></span></span>
             </div>
             <div class="count-num"><p>积分：{{ count }}</p></div>
         </div>
-        <!--排行-->
-        <div class="rank">
-            <a><img class="rank-btn" src="{% static "tree/image/btn/rank.png" %}" style="width: inherit"></a>
+        <!--历史-->
+        <div class="history">
+            <a><img class="history-btn" src="{% static "tree/image/btn/history.png" %}" style="width: inherit"></a>
         </div>
-        <!--提醒-->
-        <div class="tips">
-            <a><img class="tips-btn" src="{% static "tree/image/btn/tips.png" %}" style="width: inherit"></a>
+        <!--我的主页-->
+        <div class="zone">
+            <a><img class="zone-btn" src="{% static "tree/image/btn/zone.png" %}" style="width: inherit"></a>
         </div>
     </div>
 </div>
 
 <!--内容-->
 <div class="main-container">
-    <div class="main-tree pure-u-19-24" style="float: left;">
-        <div class="tree-area"><img src="{% static "tree/image/others/tree.png" %}"></div>
-        <div class="tree-name">
-            <img src="{% static "tree/image/others/name.png" %}">
-            <p class="name" style="margin-top: 19%;margin-left: 23%;">{{ user }}的树</p>
+    <!--上面两个菜单-->
+    <div class="main-top">
+        <div class="willing">
+            <a><img class="willing-btn" src="{% static "tree/image/btn/willing.png" %}" style="width: inherit"></a>
+        </div>
+        <div class="water-flower">
+            <a><img class="water-btn" src="{% static "tree/image/btn/water.png" %}" style="width: inherit"></a>
         </div>
     </div>
-    <div class="main-right pure-u-5-24" style="float:left">
-        <ul class="right-btn" style="list-style-type: none">
-            <!--朋友-->
-            <li><img class="friends" src="{% static "tree/image/btn/friends.png" %}" style="width: 74%"></li>
-            <!--浇水-->
-            <li><img class="water-flower" src="{% static "tree/image/btn/water.png" %}" style="width: 74%"></li>
-            <!--历史-->
-            <li><img class="history" src="{% static "tree/image/btn/history.png" %}" style="width: 74%"></li>
-            <!--心愿-->
-            <li><img class="willing" src="{% static "tree/image/btn/willing.png" %}" style="width: 74%"></li>
-        </ul>
+    <div class="main-area">
+        <!--树木区域-->
+        <div class="main-tree pure-u-19-24" style="float: left;">
+            <div class="tree-area"><img src="{% static "tree/image/others/tree.png" %}"></div>
+            <div class="tree-name">
+                <img src="{% static "tree/image/others/name.png" %}">
+                <p class="name" style="margin-top: 19%;margin-left: 23%;">{{ tree_name }}</p>
+            </div>
+        </div>
+        <div class="main-right pure-u-5-24" style="float:left">
+            <ul class="right-btn" style="list-style-type: none">
+                <!--吐槽-->
+                <li><img class="tucao" src="{% static "tree/image/btn/tucao.png" %}" style="width: 74%"></li>
+                <!--祝福-->
+                <li><img class="bless" src="{% static "tree/image/btn/bless.png" %}" style="width: 74%"></li>
+            </ul>
+        </div>
     </div>
 </div>
 
 <!--脚本-->
 <div class="footer"></div>
+
+<!--begin 小部件-->
+<!--mask-->
+<div class="weui_mask" id="black-mask" style="display: none"></div>
+<!--祝福与吐槽-->
+<div class="tucao-widget">
+    <div class="tucao-widget-top">
+        <img src="{% static "tree/image/btn/tucao.png" %} }}">
+        <p>吐槽</p>
+        <a class="tucao-close" id="tucao-close">X</a>
+    </div>
+    <div class="tucao-form-con">
+        <div class="tucao-form">
+            <textarea style="font-size: small" placeholder="我知道你想骂我很久了，没关系，让暴风雨来得更猛烈些吧"></textarea>
+            <label style="display: block;"><input name="na" type="checkbox" value="" />匿名 </label>
+            <a style="font-size: 80%">{{ rand_tucao_1 }}</a><a style="font-size: 80%">{{ rand_tocao_2 }}</a>
+            <button class="tucao-confirm">确定</button>
+        </div>
+    </div>
+</div>
+
+<div class="bless-widget" style="display: none;">
+    <div class="bless-widget-top">
+        <img src="{% static "tree/image/btn/bless.png" %}">
+        <p>祝福</p>
+        <a class="bless-close" id="bless-close">X</a>
+    </div>
+    <div class="bless-form-con">
+        <div class="bless-form">
+            <textarea style="font-size: small" placeholder="我知道你很欣赏我，我也很欣赏你的诚实"></textarea>
+            <label style="display: block"><input name="na" type="checkbox" value="" />匿名 </label>
+            <a style="font-size: 80%">{{ rand_bless_1 }}</a><a style="font-size: 80%">{{ rand_bless_2 }}</a>
+            <button class="tucao-confirm">确定</button>
+        </div>
+    </div>
+</div>
+
+<!--浇水提醒-->
+<div class="water-tips" id="water-tips" style="display: none;">
+    <p>点击<img src="{% static "tree/image/btn/water.png" %}">&nbsp&nbsp给小树苗浇水，可以帮助它长成大树哦</p>
+    <button class="water-tips-btn">去浇水<img src="{% static "tree/image/btn/goto.png" %}"></button>
+</div>
+<!--浇水成功-->
+<div class="water-success" id="water-success" style="display: none;">
+    <p>浇水成功，积分达到1000，小树苗变成大树啦！每隔10分钟可以浇一次水哦</p>
+    <button>我知道啦</button>
+</div>
 </body>
 </html>

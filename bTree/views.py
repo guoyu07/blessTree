@@ -25,6 +25,7 @@ from bTree.models import User, Tree
 
 client = WeChatClient(appId, appsecret)
 
+
 @csrf_exempt
 def weixin_main(request):
     """
