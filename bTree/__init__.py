@@ -1,5 +1,6 @@
 # -*-coding:utf-8 -*-
 from wechat_django.sdk.client import WeChatClient
+from wechat_django.sdk.oauth import WeChatOAuth
 
 
 # 全局变量
@@ -12,3 +13,4 @@ TIMESTAMP = '1514587457'
 
 # 获取access_token，定时刷新
 client = WeChatClient(appId, appsecret)
+oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')

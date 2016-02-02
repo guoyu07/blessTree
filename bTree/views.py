@@ -20,7 +20,7 @@ from wechat_django.sdk.replies import TextReply
 from wechat_django.sdk.client import WeChatClient
 from wechat_django.sdk.oauth import WeChatOAuth
 
-from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, TIMESTAMP, client
+from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, TIMESTAMP, client, oauth
 from bTree.models import User, Tree
 from bTree.ajax_process import ajax_1, ajax_2, ajax_3, ajax_4, ajax_5, ajax_6, ajax_7, ajax_8, ajax_9, ajax_10, ajax_11
 
@@ -58,12 +58,12 @@ def weixin_main(request):
                 user = client.user.get(client, msg.source)
                 reply.content = user['nickname']
             elif msg.content == '分享':
-                oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/first')
-                reply.content = oauth.authorize_url
+                oauth_fir = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/first')
+                reply.content = oauth_fir.authorize_url
             elif msg.content == "李启成爱地球":
                 # client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()
-                oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
+                # oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
                 menu = client.menu.create(client, {
                     "button": [
                         {
@@ -111,7 +111,7 @@ def home(request):
     :param request:
     :return:
     """
-    oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
+    # oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
     code = request.GET.get('code')  # 通过认证的code获取openid
     visit_index = request.GET.get('visit_index')
     return_openid = request.GET.get('return_openid')
@@ -158,7 +158,7 @@ def home(request):
 
 @csrf_exempt
 def first(request):
-    oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
+    # oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
     code = request.GET.get('code')  # 通过认证的code获取openid
     oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
 
@@ -200,7 +200,7 @@ def visit(request):
     :return:
     """
     sourceid = request.GET.get('openid', '')
-    oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+sourceid)
+    oauth_vis = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+sourceid)
     owner_info = client.user.get(client, sourceid)
     owner = owner_info['nickname']
     avatar = owner_info['headimgurl']
@@ -209,9 +209,9 @@ def visit(request):
     tree_name = owner_db.tree_name
 
     code = request.GET.get('code', '')
-    oauth.fetch_access_token(code)
+    oauth_vis.fetch_access_token(code)
 
-    flip_id = openid = oauth.open_id
+    flip_id = openid = oauth_vis.open_id
     try:
         user = User.objects.filter(openid=openid, is_plant=True)
     except ObjectDoesNotExist:
