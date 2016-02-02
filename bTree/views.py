@@ -113,9 +113,11 @@ def home(request):
     """
     oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
     code = request.GET.get('code')  # 通过认证的code获取openid
+    visit_index = request.GET.get('visit_index')
+    return_openid = request.GET.get('return_openid')
     oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
     try:
-        user_db = User.objects.get(openid=oauth.open_id)
+        user_db = User.objects.get(openid=oauth.open_id, is_plant=True)
     except ObjectDoesNotExist:
         user_db = 0
 
@@ -123,6 +125,9 @@ def home(request):
     if user_db == 0:
         first_outh = WeChatOAuth(appId, appsecret, "http://1.blesstree.sinaapp.com/wechat/first")
         first_plant_url = first_outh.authorize_url
+        if visit_index and return_openid:
+            visit = True
+            return_url = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+return_openid)
         return render_to_response('index.html', locals())
     else:
         user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
@@ -140,14 +145,17 @@ def home(request):
         name = user_info['nickname']
         count = '0'
         avatar_addr = user_info['headimgurl']
+        water_time = Tree.objects.filter(openid=user_openid, type=0 or 3).order_by('-action_time')[:1]
         # 分享的链接生成，别人点进去是一个get方法，同时，这个是经过转化的，就是加入认证的链接
 
-        share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
+        share_url = WeChatOAuth(appId, appsecret,
+                                'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id)
+        add_friend_url = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id)\
+            .authorize_url()
 
         return render_to_response('home.html', locals())
 
 
-# TODO:跳转链接生成失败原因
 @csrf_exempt
 def first(request):
     oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
@@ -191,7 +199,33 @@ def visit(request):
     :param request:
     :return:
     """
-    pass
+    sourceid = request.GET.get('openid', '')
+    oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+sourceid)
+    owner_info = client.user.get(client, sourceid)
+    owner = owner_info['nickname']
+    avatar = owner_info['headimgurl']
+    owner_db = User.objects.get(openid=sourceid)
+    count = owner_db.count
+    tree_name = owner_db.tree_name
+
+    code = request.GET.get('code', '')
+    oauth.fetch_access_token(code)
+
+    flip_id = openid = oauth.open_id
+    try:
+        user = User.objects.filter(openid=openid, is_plant=True)
+    except ObjectDoesNotExist:
+        user = 0
+
+    if user is not 0:
+        # 用户已经注册中过树，因为只有关注用户才能种树，不关注用户只能评论吐槽
+        my_zone_url = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home/').authorize_url
+        return render_to_response('visit.html', locals())
+
+    # 用户没有注册,点击按钮都会跳到认证链接来获取信息，获取的信息要保存
+    my_zone_url = WeChatOAuth(appId, appsecret,
+                              'http://1.blesstree.sinaapp.com/wechat/home/'+"?visit_index='123'"+'return_openid'+sourceid)
+    return render_to_response('visit.html', locals())
 
 
 @ensure_csrf_cookie

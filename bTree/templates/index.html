@@ -61,18 +61,28 @@
 {#        location.href=""#}
         //alert("success");
     })
-
-    //不玩时候
-    $("#selected-sure").on('tap', function () {
-        alert("happy new year");
-        $("#black-mask").hide();
-        $("#tips-container").hide();
-    })
-    $("#selected-not").on('tap', function(){
-        $("#black-mask").hide();
-        $("#tips-container").hide();
-    })
-
+        {% if visit %}
+            //不玩时候
+            $("#selected-sure").on('tap', function () {
+                alert("泪别~~~~(>_<)~~~~ ");
+                window.open('{{ return_url|safe }}')
+            })
+            $("#selected-not").on('tap', function(){
+                $("#black-mask").hide();
+                $("#tips-container").hide();
+            })
+        {% else %}
+            //不玩时候
+            $("#selected-sure").on('tap', function () {
+                alert("happy new year");
+                $("#black-mask").hide();
+                $("#tips-container").hide();
+            })
+            $("#selected-not").on('tap', function(){
+                $("#black-mask").hide();
+                $("#tips-container").hide();
+            })
+        {% endif %}
 })
 </script>
 </html>

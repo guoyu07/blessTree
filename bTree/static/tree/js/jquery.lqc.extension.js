@@ -43,5 +43,10 @@
         }
     }
 
+    //生成随机数 范围：0-n
+    $.lqcRandGenerator = function (n) {
+        parseInt((n-1)*Math.random())
+    }
+
     //
 })(jQuery)

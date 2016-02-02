@@ -35,6 +35,7 @@ $(function () {
     //浇水
     $("#water-flower").on('tap', function () {
         $("#water-widget").show();
+        $("user_message_water_time").text(myDate.getDate())
         //TODO：这里加入浇水的动态特效，翻转啊啥的
     })
     //历史
@@ -192,9 +193,9 @@ $(function () {
 
         //初始化积分进度条,在html文件里面
 
-        //TODO：刚刚进入提示浇水，注意数据库查询不到water_time的时候在渲染模板的时候传来一个0值
+        //TODO：刚刚进入提示浇水，注意数据库查询不到water_time的时候在渲染模板的时候传来一个0值,模板渲染时候python的时间应该*1000
         var water_time = $("#user_message_water_time").text();
-        if((myDate.getTime()-water_time*1000)/(1000*60)>10){
+        if((myDate.getTime()-water_time)/(1000*60)>10){
             $("#time-water-btn").show();
         }
         //定时器事件,用于定时提醒浇水

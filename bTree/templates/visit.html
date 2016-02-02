@@ -36,17 +36,17 @@
         <!--积分条-->
         <div class="count-progress">
             <div class="progress">
-                <span class="progress-bar"><span class="progress-in"></span></span>
+                <span class="progress-bar"><span class="progress-in" id="progress-in"></span></span>
             </div>
             <div class="count-num"><p>积分：{{ count }}</p></div>
         </div>
         <!--历史-->
         <div class="history">
-            <a><img class="history-btn" src="{% static "tree/image/btn/history.png" %}" style="width: inherit"></a>
+            <a id="history"><img class="history-btn" src="{% static "tree/image/btn/history.png" %}" style="width: inherit"></a>
         </div>
         <!--我的主页-->
         <div class="zone">
-            <a><img class="zone-btn" src="{% static "tree/image/btn/zone.png" %}" style="width: inherit"></a>
+            <a id="zone"><img class="zone-btn" src="{% static "tree/image/btn/zone.png" %}" style="width: inherit"></a>
         </div>
     </div>
 </div>
@@ -56,10 +56,10 @@
     <!--上面两个菜单-->
     <div class="main-top">
         <div class="willing">
-            <a><img class="willing-btn" src="{% static "tree/image/btn/willing.png" %}" style="width: inherit"></a>
+            <a id="willing"><img class="willing-btn" src="{% static "tree/image/btn/willing.png" %}" style="width: inherit"></a>
         </div>
         <div class="water-flower">
-            <a><img class="water-btn" src="{% static "tree/image/btn/water.png" %}" style="width: inherit"></a>
+            <a id="water-flower"><img class="water-btn" src="{% static "tree/image/btn/water.png" %}" style="width: inherit"></a>
         </div>
     </div>
     <div class="main-area">
@@ -74,9 +74,9 @@
         <div class="main-right pure-u-5-24" style="float:left">
             <ul class="right-btn" style="list-style-type: none">
                 <!--吐槽-->
-                <li><img class="tucao" src="{% static "tree/image/btn/tucao.png" %}" style="width: 74%"></li>
+                <li id="tucao-btn"><img class="tucao" src="{% static "tree/image/btn/tucao.png" %}" style="width: 74%"></li>
                 <!--祝福-->
-                <li><img class="bless" src="{% static "tree/image/btn/bless.png" %}" style="width: 74%"></li>
+                <li id="bless-btn"><img class="bless" src="{% static "tree/image/btn/bless.png" %}" style="width: 74%"></li>
             </ul>
         </div>
     </div>
@@ -89,7 +89,7 @@
 <!--mask-->
 <div class="weui_mask" id="black-mask" style="display: none"></div>
 <!--祝福与吐槽-->
-<div class="tucao-widget">
+<div class="tucao-widget" id="tucao-widget" style="display: none">
     <div class="tucao-widget-top">
         <img src="{% static "tree/image/btn/tucao.png" %} }}">
         <p>吐槽</p>
@@ -97,15 +97,15 @@
     </div>
     <div class="tucao-form-con">
         <div class="tucao-form">
-            <textarea style="font-size: small" placeholder="我知道你想骂我很久了，没关系，让暴风雨来得更猛烈些吧"></textarea>
-            <label style="display: block;"><input name="na" type="checkbox" value="" />匿名 </label>
-            <a style="font-size: 80%">{{ rand_tucao_1 }}</a><a style="font-size: 80%">{{ rand_tocao_2 }}</a>
-            <button class="tucao-confirm">确定</button>
+            <textarea id="tucao-area" style="font-size: small" placeholder="我知道你想骂我很久了，没关系，让暴风雨来得更猛烈些吧"></textarea>
+            <label style="display: block;"><input id="tucao-na" name="na" type="checkbox" value="" />匿名 </label>
+            <a id="rand_tucao_1" style="font-size: 80%"></a><a id="rand_tucao_2" style="font-size: 80%"></a>
+            <button class="tucao-confirm" id="tucao_confirm">确定</button>
         </div>
     </div>
 </div>
 
-<div class="bless-widget" style="display: none;">
+<div class="bless-widget" id="bless-widget" style="display: none;">
     <div class="bless-widget-top">
         <img src="{% static "tree/image/btn/bless.png" %}">
         <p>祝福</p>
@@ -113,10 +113,10 @@
     </div>
     <div class="bless-form-con">
         <div class="bless-form">
-            <textarea style="font-size: small" placeholder="我知道你很欣赏我，我也很欣赏你的诚实"></textarea>
-            <label style="display: block"><input name="na" type="checkbox" value="" />匿名 </label>
-            <a style="font-size: 80%">{{ rand_bless_1 }}</a><a style="font-size: 80%">{{ rand_bless_2 }}</a>
-            <button class="tucao-confirm">确定</button>
+            <textarea id="bless-area" style="font-size: small" placeholder="我知道你很欣赏我，我也很欣赏你的诚实"></textarea>
+            <label style="display: block"><input id="bless-na" name="na" type="checkbox" value="" />匿名 </label>
+            <a id='rand_bless_1' style="font-size: 80%"></a><a id="rand_bless_2" style="font-size: 80%"></a>
+            <button id="bless_confirm" class="bless-confirm">确定</button>
         </div>
     </div>
 </div>
@@ -128,8 +128,30 @@
 </div>
 <!--浇水成功-->
 <div class="water-success" id="water-success" style="display: none;">
-    <p>浇水成功，积分达到1000，小树苗变成大树啦！每隔10分钟可以浇一次水哦</p>
+    <p>浇水成功，不愧是我的真爱粉～~\(≧▽≦)/~</p>
     <button>我知道啦</button>
 </div>
 </body>
+<script>
+    $(function () {
+        //我的主页
+        $("#zone").on('tap', function () {
+            window.open({{ my_zone_url|safe }})
+        })
+
+        //发送ajax
+         $('#tucao_confirm').on('tap', function () {
+            var tucao_con = $('#tucao-area').val();
+            var na = $("#tucao-na").is(':checked') //是否匿名
+            source_id = {{ flip_id }}
+
+        })
+        $('#bless_confirm').on('tap', function () {
+            var tucao_con = $('#bless-area').val();
+            var na = $("#bless-na").is(':checked') //是否匿名
+            source_id = {{ flip_id }}
+
+        })
+    })
+</script>
 </html>

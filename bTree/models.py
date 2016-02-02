@@ -23,6 +23,7 @@ class User(models.Model):
     openid = models.CharField(max_length=50)  # 实际长为28
     nickname = models.CharField(max_length=20)  # 实际长为7个中文字符
     time_stamp = models.DateTimeField(auto_now_add=True)  # 待定
+    avatar_url = models.CharField(max_length=300, blank=True)  # 这个只保存没有关注的用户的信息
 
     # 用户积分相关，方便逻辑判断exit
     # if_plant = models.BooleanField(default=)  # 没有种树就不要记录就好

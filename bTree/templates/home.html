@@ -84,7 +84,6 @@
 <div class="user_message" id="user_message" style="display: none;">
     <p id="user_message_openid">{{ user_openid }}</p>
     <p id="user_message_nickname">{{ name }}</p>
-{#    TODO：过多的在服务器端访问数据库然后再生成html发送过去可能会导致打开过慢，一些初始化的东西可以在前端发送ajax请求更新#}
 {#    传原始的时间#}
     <p id="user_message_water_time">{{ water_time }}</p>
 </div>
@@ -99,36 +98,36 @@
     <hr style="background-color: rgba(0,0,0,0.6)">
     <div class="message-content">
         <ul class="message-list">
-            {% if message_list %}
-                {% for nickname, avatar_addr, msg_type, msg_time in msg_list %}
-                    <li>
-                        <div class="pure-u-5-24" style="float:left;">
-                            <img src="{{ avatar_addr }}" style="height: 70%;padding-left: 5%">
-                            <p style="font-size: 50%;color: rgba(0,0,0,0.8)">{{ nickname }}</p>
-                        </div>
-
-                        <div class="pure-u-19-24" style="float:left;">
+{#            {% if message_list %}#}
+{#                {% for nickname, avatar_addr, msg_type, msg_time in msg_list %}#}
+{#                    <li>#}
+{#                        <div class="pure-u-5-24" style="float:left;">#}
+{#                            <img src="{{ avatar_addr }}" style="height: 70%;padding-left: 5%">#}
+{#                            <p style="font-size: 50%;color: rgba(0,0,0,0.8)">{{ nickname }}</p>#}
+{#                        </div>#}
+{##}
+{#                        <div class="pure-u-19-24" style="float:left;">#}
     {#                        根据消息类型来做不同的提醒#}
-                            {% if msg_type == 3 %}
-                                <p style="padding-top:3%; font-size: 90%">{{ nickname }}给你浇了一次水</p>
-                            {% elif msg_type == 5%}
-                                <p style="padding-top:3%; font-size: 90%">{{ nickname }}给你写了祝福</p>
-                            {% elif msg_type == 6 %}
-                                <p style="padding-top:3%; font-size: 90%">{{ nickname }}吐槽了你</p>
-                            {% endif %}
-                            <p style="font-size: 70%; color: grey">{{ msg_time }}分钟前</p>
-
-                        </div>
-
-                    </li>
-                {% endfor %}
-            {% else %}
-                <li>
-                    <div class="pure-u-5-24" style="float:left;">
-                        <p style="font-size: 100%;color: rgba(0,0,0,0.8)">您的消息空空如也，赶紧和小伙伴互动起来吧～</p>
-                    </div>
-                </li>
-            {% endif %}
+{#                            {% if msg_type == 3 %}#}
+{#                                <p style="padding-top:3%; font-size: 90%">{{ nickname }}给你浇了一次水</p>#}
+{#                            {% elif msg_type == 5%}#}
+{#                                <p style="padding-top:3%; font-size: 90%">{{ nickname }}给你写了祝福</p>#}
+{#                            {% elif msg_type == 6 %}#}
+{#                                <p style="padding-top:3%; font-size: 90%">{{ nickname }}吐槽了你</p>#}
+{#                            {% endif %}#}
+{#                            <p style="font-size: 70%; color: grey">{{ msg_time }}分钟前</p>#}
+{##}
+{#                        </div>#}
+{##}
+{#                    </li>#}
+{#                {% endfor %}#}
+{#            {% else %}#}
+{#                <li>#}
+{#                    <div class="pure-u-5-24" style="float:left;">#}
+{#                        <p style="font-size: 100%;color: rgba(0,0,0,0.8)">您的消息空空如也，赶紧和小伙伴互动起来吧～</p>#}
+{#                    </div>#}
+{#                </li>#}
+{#            {% endif %}#}
         </ul>
 
 
@@ -144,19 +143,19 @@
     <hr style="background-color: rgba(0,0,0,0.6)">
     <div class="willing-content">
         <ul class="willing-list" id="willing-list">
-            {% if willing_list %}
-                {% for will_time, will_con in willing_list %}
-                    <li>
-                        <a style="float: left;width: 20%;font-size: 80%; text-align: center">{{ will_time }}</a>
-                        <a style="float:left;margin-left: 20%">{{ will_con }}</a>
-                    </li>
-                {% endfor %}
-                <li><a>点我加载更多哦</a></li>
-            {% else %}
-                <li>
-                    <a>您的愿望空空如也，快快说出来吧～</a>
-                </li>
-            {% endif %}
+{#            {% if willing_list %}#}
+{#                {% for will_time, will_con in willing_list %}#}
+{#                    <li>#}
+{#                        <a style="float: left;width: 20%;font-size: 80%; text-align: center">{{ will_time }}</a>#}
+{#                        <a style="float:left;margin-left: 20%">{{ will_con }}</a>#}
+{#                    </li>#}
+{#                {% endfor %}#}
+{#                <li><a>点我加载更多哦</a></li>#}
+{#            {% else %}#}
+{#                <li>#}
+{#                    <a>您的愿望空空如也，快快说出来吧～</a>#}
+{#                </li>#}
+{#            {% endif %}#}
         </ul>
     </div>
     <button class="willing-add" id="willing-add">+</button>
@@ -180,49 +179,49 @@
     <div class="history-content">
         <ul class="history-list" id="history-bless-list">
 {#            加载祝福，默认显示#}
-            {% if bless_list %}
-                {% for nickname, avatar_addr, bless_con, bless_time in bless_list %}
-                    <li>
-                        <div style="float:left;"class="pure-u-5-24">
-                            <img src="{{ avatar_addr }}" style="height: 75%;padding-left: 5%">
-                            <p style="font-size: 40%;color:grey;;">{{ nickname }}</p>
-                        </div>
-                        <div style="float: left" class="pure-u-15-24">
-                            <a style="font-size: 100%;">{{ bless_con }}</a>
-                        </div>
-                        <div style="float: left" class="pure-u-4-24">
-                            <a style="float: right;font-size: 60%;color: grey">{{ bless_time }}前</a>
-                        </div>
-                    </li>
-                {% endfor %}
-            {% else %}
-                <li>
-                   <p>没有收到小伙伴的祝福哦，赶紧分享互动起来吧～</p>
-                </li>
-            {% endif %}
+{#            {% if bless_list %}#}
+{#                {% for nickname, avatar_addr, bless_con, bless_time in bless_list %}#}
+{#                    <li>#}
+{#                        <div style="float:left;"class="pure-u-5-24">#}
+{#                            <img src="{{ avatar_addr }}" style="height: 75%;padding-left: 5%">#}
+{#                            <p style="font-size: 40%;color:grey;;">{{ nickname }}</p>#}
+{#                        </div>#}
+{#                        <div style="float: left" class="pure-u-15-24">#}
+{#                            <a style="font-size: 100%;">{{ bless_con }}</a>#}
+{#                        </div>#}
+{#                        <div style="float: left" class="pure-u-4-24">#}
+{#                            <a style="float: right;font-size: 60%;color: grey">{{ bless_time }}前</a>#}
+{#                        </div>#}
+{#                    </li>#}
+{#                {% endfor %}#}
+{#            {% else %}#}
+{#                <li>#}
+{#                   <p>没有收到小伙伴的祝福哦，赶紧分享互动起来吧～</p>#}
+{#                </li>#}
+{#            {% endif %}#}
         </ul>
         <ul class="history-list" id="history-tucao-list" style="display: none">
 {#            加载吐槽，默认隐藏#}
-            {% if tucao_list %}
-                {% for nickname, avatar_addr, tucao_con, tucao_time in tucao_list %}
-                    <li>
-                        <div style="float:left;"class="pure-u-5-24">
-                            <img src="{{ avatar_addr }}" style="height: 75%;padding-left: 5%">
-                            <p style="font-size: 40%;color:grey;;">{{ nickname }}</p>
-                        </div>
-                        <div style="float: left" class="pure-u-15-24">
-                            <a style="font-size: 100%;">{{ tucao_con }}</a>
-                        </div>
-                        <div style="float: left" class="pure-u-4-24">
-                            <a style="float: right;font-size: 60%;color: grey">{{ tucao_time }}前</a>
-                        </div>
-                    </li>
-                {% endfor %}
-            {% else %}
-                <li>
-                   <p>没有收到小伙伴的吐槽哦，小编都妒忌了～</p>
-                </li>
-            {% endif %}
+{#            {% if tucao_list %}#}
+{#                {% for nickname, avatar_addr, tucao_con, tucao_time in tucao_list %}#}
+{#                    <li>#}
+{#                        <div style="float:left;"class="pure-u-5-24">#}
+{#                            <img src="{{ avatar_addr }}" style="height: 75%;padding-left: 5%">#}
+{#                            <p style="font-size: 40%;color:grey;;">{{ nickname }}</p>#}
+{#                        </div>#}
+{#                        <div style="float: left" class="pure-u-15-24">#}
+{#                            <a style="font-size: 100%;">{{ tucao_con }}</a>#}
+{#                        </div>#}
+{#                        <div style="float: left" class="pure-u-4-24">#}
+{#                            <a style="float: right;font-size: 60%;color: grey">{{ tucao_time }}前</a>#}
+{#                        </div>#}
+{#                    </li>#}
+{#                {% endfor %}#}
+{#            {% else %}#}
+{#                <li>#}
+{#                   <p>没有收到小伙伴的吐槽哦，小编都妒忌了～</p>#}
+{#                </li>#}
+{#            {% endif %}#}
         </ul>
     </div>
 </div>
@@ -236,29 +235,29 @@
     <hr style="background-color: rgba(0,0,0,0.6)">
     <div class="rank-content">
         <ul class="rank-list">
-            {% if rank_list %}
-                {% for nickname, avatar_addr, count, nickname_home in rank_list %}
-                    <li>
-                        <div class="pure-u-5-24" style="float: left">
-                            <img src="{{ avatar_addr }}" style="height: 90%;padding-left: 5%">
-                            <p style="font-size: 50%">{{ nickname }}</p>
-                        </div>
-                        <div class="pure-u-15-24" style="float:left;text-align: center">
-                            <p style="height: 45%;width: 14%;margin-left: 43%;border-radius: 50%;background-color: red">1</p>
-                            <div class="rank-progress-con" style="height: 20%;margin-top: 2%">
-                                <div class="rank-progress">
-                                    <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>
-                                </div>
-                                <div class="rank-count-num"><p>积分：{{ count }}</p></div>
-                            </div>
-                        </div>
-                        <div style="float: left" class="pure-u-4-24">
-                            <a class="rank-visit" href="{{ nickname_home }}">参观</a>
-                        </div>
-                    </li>
-                {% endfor %}
-            {% else %}
-            {% endif %}
+{#            {% if rank_list %}#}
+{#                {% for nickname, avatar_addr, count, nickname_home in rank_list %}#}
+{#                    <li>#}
+{#                        <div class="pure-u-5-24" style="float: left">#}
+{#                            <img src="{{ avatar_addr }}" style="height: 90%;padding-left: 5%">#}
+{#                            <p style="font-size: 50%">{{ nickname }}</p>#}
+{#                        </div>#}
+{#                        <div class="pure-u-15-24" style="float:left;text-align: center">#}
+{#                            <p style="height: 45%;width: 14%;margin-left: 43%;border-radius: 50%;background-color: red">1</p>#}
+{#                            <div class="rank-progress-con" style="height: 20%;margin-top: 2%">#}
+{#                                <div class="rank-progress">#}
+{#                                    <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>#}
+{#                                </div>#}
+{#                                <div class="rank-count-num"><p>积分：{{ count }}</p></div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div style="float: left" class="pure-u-4-24">#}
+{#                            <a class="rank-visit" href="{{ nickname_home }}">参观</a>#}
+{#                        </div>#}
+{#                    </li>#}
+{#                {% endfor %}#}
+{#            {% else %}#}
+{#            {% endif %}#}
         </ul>
     </div>
 </div>
@@ -368,7 +367,7 @@
                 wx.onMenuShareAppMessage({
                     title: '帅的人都点进去了哦',
                     desc: '新年什么有趣？抢红包？不不不！！老司机带你寻找新鲜刺激的游戏，快和大家一起玩吧～',
-                    link: '{{ share_url|safe }}',
+                    link: '{{ add_friend_url|safe }}',
                     imgUrl: 'http://pan.baidu.com/s/1bnPGtif' ,
                     success: function (res) {
                         alert('分享成功，积分已奉上');

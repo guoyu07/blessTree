@@ -259,8 +259,8 @@ def ajax_8(request):
 
 def ajax_9(request):
     """
-    给别人祝福
     :param request:
+        给别人祝福,注意此处的_sourceid是推送的人的id，就是谁触发事件的
     :return:
     """
     response = HttpResponse()
@@ -290,6 +290,7 @@ def ajax_10(request):
     """
     给别人吐槽
     :param request:
+        注意此处的source_id是推送的人的id，就是谁触发事件的
     :return:
     """
     response = HttpResponse()
