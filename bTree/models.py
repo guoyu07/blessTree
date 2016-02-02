@@ -10,7 +10,8 @@ TYPE = {
     3: u'别人浇水',
     4: u'成功添加一位好友',
     5: u'祝福',
-    6: u'吐槽'
+    6: u'吐槽',
+    7: u'创建树木'
 }
 
 
@@ -26,6 +27,7 @@ class User(models.Model):
     # 用户积分相关，方便逻辑判断exit
     # if_plant = models.BooleanField(default=)  # 没有种树就不要记录就好
     tree_name = models.CharField(max_length=40)
+    is_plant = models.BooleanField(default=True)
     if_share = models.BooleanField(default=False)
     willing = models.CharField(max_length=300, default='none')  # 如果为none则没有填写willing，可以去填写啦啦啦
     count = models.IntegerField(default=0)  # 积分
@@ -40,19 +42,19 @@ class User(models.Model):
 
 class Tree(models.Model):
     """
-    树表，主要是保存树的名字，
+    互动信息表，主要是保存互动信息，
     """
     # 基本信息
     owner = models.OneToOneField(User)
     tree_name = models.CharField(max_length=40)
-    count = models.IntegerField(default=0)
+    count = models.IntegerField(default=0)  # 这几积分没有用了
 
     # 互动信息保存
     type = models.IntegerField(choices=TYPE.items(), verbose_name=u'操作类型')
     action_time = models.DateTimeField(auto_now_add=True)
     read = models.BooleanField(default=False)  # 消息是否已读，默认还没有
     source_id = models.CharField(default='na', max_length=100)  # 默认na,匿名的意思
-    content = models.CharField(max_length=300)  # 主要是祝福吐槽的内容
+    content = models.CharField(max_length=300, blank=True)  # 主要是祝福吐槽的内容
 
     class Meta:
         ordering = ['-action_time']  # 默认互动信息从最新开始

@@ -9,7 +9,7 @@ import time
 
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import HttpResponse
-from django.shortcuts import render_to_response, render
+from django.shortcuts import render_to_response
 from django.core.exceptions import ObjectDoesNotExist
 from django.views.decorators.csrf import ensure_csrf_cookie
 
@@ -20,10 +20,11 @@ from wechat_django.sdk.replies import TextReply
 from wechat_django.sdk.client import WeChatClient
 from wechat_django.sdk.oauth import WeChatOAuth
 
-from bTree.access import appId, appsecret, WEIXIN_TOKEN, NONCESTR, TIMESTAMP
+from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, TIMESTAMP, client
 from bTree.models import User, Tree
+from bTree.ajax_process import ajax_1, ajax_2, ajax_3, ajax_4, ajax_5, ajax_6, ajax_7, ajax_8, ajax_9, ajax_10, ajax_11
 
-client = WeChatClient(appId, appsecret)
+# client = WeChatClient(appId, appsecret)
 
 
 @csrf_exempt
@@ -133,6 +134,7 @@ def home(request):
         ticket = share(user)['second']
 
         # user_info = oauth.get_user_info(oauth.open_id) 这个是得不到user_info的，需要snsapi_userinfo才可以，尼玛
+        client.fetch_access_token()
         user_info = client.user.get(client, oauth.open_id)
         user_openid = oauth.open_id
         name = user_info['nickname']
@@ -161,6 +163,7 @@ def first(request):
     ticket = share(user)['second']
 
     # user_info = oauth.get_user_info(oauth.open_id) 这个是得不到user_info的，需要snsapi_userinfo才可以，尼玛
+    # client.fetch_access_token()调用share()函数已经使用过，不会出现access_token非法的情况
     user_info = client.user.get(client, oauth.open_id)
     user_openid = oauth.open_id
     name = user_info['nickname']
@@ -192,28 +195,54 @@ def visit(request):
 
 
 @ensure_csrf_cookie
-def ajax_handle(request):
+def ajax_distribute(request):
     """
-    处理所有ajax请求的函数
+    分发所有ajax请求的函数
+    请求码类型：
+    ajax_type{
+        '1': 第一次种树填入树名字时候保存到数据库
+        '2': 主页面， 请求刷新排行榜的时候
+        '3': 主页面， 请求刷新消息的时候
+        '4': 请求提交浇水获取的积分的时候
+        '5': 主页面和访问页面 请求刷新祝福的时候
+        '6': 主页面和访问页面 请求刷新吐槽的时候
+        '7': 主页面和访问页面 请求刷新心愿的时候
+        '8': 主页面， 请求提交输入心愿的时候
+        '9': 访问页面， 祝福提交请求
+        '10': 访问页面， 吐槽提交请求
+        '11': 第一次分享朋友圈增加积分的请求，添加好友不需要ajax请求增加积分
+              因为会在对方注册使用的时候发送一个json来同时增加双方的分数与建立朋友关系
+        '12'： 预留备用的
+
+    }
     :param request: 含有ajax请求数据的请求对象
     :return:response，含有一个ret值
+    ret值声明：1--成功 2--失败
     """
-    response = HttpResponse()
-    response['Content-Type'] = 'text/javascript'
-    user_id = request.POST.get('openid', '')
-    user_name = request.POST.get('nickname', '')
-    tree_name = request.POST.get('tree_name', '')
-    ret = '0'
-    if user_id and user_name and tree_name:
-        user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name=tree_name)
-        user.save()
-        ret = '1'
-    else:
-        ret = '2'
-    response.write(ret)
-    return response
+    ajax_type = request.POST.get('ajax_type', '')
+    try:
+        {
+            '1': ajax_1,
+            '2': ajax_2,
+            '3': ajax_3,
+            '4': ajax_4,
+            '5': ajax_5,
+            '6': ajax_6,
+            '7': ajax_7,
+            '8': ajax_8,
+            '9': ajax_9,
+            '10': ajax_10,
+            '11': ajax_11,
+        }[ajax_type](request)
+    except KeyError:
+        response = HttpResponse()
+        response['Content-Type'] = 'text/javascript'
+        ret = '2'  # 返回错误码
+        response.write(ret)
+        return response
 
 
+# 一些实用的方法
 def share(url):
     """
 

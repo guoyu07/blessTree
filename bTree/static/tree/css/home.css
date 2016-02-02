@@ -470,7 +470,7 @@ ul{
 .history-tucao:hover, .history-bless:hover{
     background-color: #54b698;
 }
-.history-close{
+.history-close, .fill-willing-close{
     position: fixed;
     float: right;
     text-align: center;

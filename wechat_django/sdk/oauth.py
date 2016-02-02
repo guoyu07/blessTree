@@ -10,6 +10,8 @@ import requests
 import time
 from wechat_django.sdk.session.memorystorage import MemoryStorage
 
+from  wechat_django.sdk import global_code
+
 
 class WeChatOAuth(object):
     """
@@ -18,25 +20,6 @@ class WeChatOAuth(object):
     API_BASE_URL = 'https://api.weixin.qq.com/'
     OAUTH_BASE_URL = 'https://open.weixin.qq.com/connect/'
 
-    # def __init__(self, app_id, secret, redirect_uri, scope='snsapi_base', state='', session=None, access_token=None, expires_at=None):
-    #     """
-    #     参阅：http://mp.weixin.qq.com/wiki/4/9ac2e7b1f1d22e9e57260f6553822520.html
-    #     :param app_id:公众号的唯一标志
-    #     :param secret: 这个是认证用的，获取网页授权的access_token
-    #     :param redirect_uri:授权后重定向的回调链接
-    #     :param scope:应用授权作用域
-    #     :param state:重定向后带上的参数
-    #     :return:
-    #     """
-    #     self.app_id = app_id
-    #     self.secret = secret
-    #     self.redirect_uri = redirect_uri
-    #     self.scope = scope
-    #     self.state = state
-    #     self.expires_at = expires_at
-    #     self.session = session or MemoryStorage()
-    #
-    #     self.session.set(self.access_token_key, None)
     def __init__(self, app_id, secret, redirect_uri, scope='snsapi_base', state=''):
         """
         参阅：http://mp.weixin.qq.com/wiki/4/9ac2e7b1f1d22e9e57260f6553822520.html
@@ -129,48 +112,20 @@ class WeChatOAuth(object):
         return res
 
 
-        # res = self._get(
-        #     'sns/oauth2/access_token',
-        #     params={
-        #         'appid': self.app_id,
-        #         'secret': self.secret,
-        #         'code': code,
-        #         'grant_type': 'authorization_code'
-        #     }
-        # )
-        # expires_in = 7200
-        # if 'expires_in' in res:
-        #     expires_in = res['expires_in']
-        # self.session.set(self.access_token_key, res['access_token'])
-        # self.session.set('expires_in', expires_in)
-        # self.session.set('reflesh_token', res['refresh_token'])
-        # self.session.set('open_id', res['openid'])
-        #
-        # self.expires_at = int(time.time()) + expires_in
-        # # self.access_token = res['access_token']
-        # self.open_id = res['openid']
-        # # self.refresh_token = res['refresh_token']
-        # # self.expires_in = res['expires_in']
-        # # return res
-
     def fetch_access_token(self, code):
         """
         对外接口
         :return:
         """
-        # access_token = self.session.get(self.access_token_key)
-        # if access_token:
-        #     if not self.expires_at:
-        #         return access_token
-        #
-        #     timestamp = time.time()
-        #     if self.expires_at-timestamp > 60:
-        #         return access_token
-        #
-        # self._fetch_access_token(code)
-        # return self.session.get(self.access_token_key)
-
-        return self._fetch_access_token(code)
+        # 防止微信客户端重复多次使用code导致的bug
+        if code in global_code:
+            if global_code[code] > 0:
+                return self.access_token
+            else:
+                del global_code[code]
+        else:
+            global_code[code] = 7
+            return self._fetch_access_token(code)
 
 
     def refresh_access_token(self, refresh_token):
