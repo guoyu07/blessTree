@@ -28,5 +28,25 @@
         return null;
     }
 
+    //格式化时间处理
+    $.lqcGetTimeInteval = function (time) {
+        var myDate = new Date();
+        inteval = (myDate-time)/1000
+        if(inteval>3600*24){
+            return (inteval/(3600*24)).toString()+'天前'
+        }else if(inteval>3600){
+            return (inteval/3600).toString()+'小时前'
+        }else if(inteval>60){
+            return (inteval/60).toString()+'分钟前'
+        }else{
+            return '刚刚'
+        }
+    }
+
+    //生成随机数 范围：0-n
+    $.lqcRandGenerator = function (n) {
+        parseInt((n-1)*Math.random())
+    }
+
     //
 })(jQuery)
