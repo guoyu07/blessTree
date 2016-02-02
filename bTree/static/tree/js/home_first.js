@@ -133,7 +133,7 @@ $(function () {
     $("#willing-add").on('tap', function () {
         $('#fill-willing').show();
     })
-    //填写心愿弹出框
+    //填写心愿
     $("#fill-willing-close").on('tap', function(){
         $('#fill-willing').hide();
     })
