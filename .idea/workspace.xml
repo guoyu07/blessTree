@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/templates/home.html" afterPath="$PROJECT_DIR$/bTree/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/static/tree/js/home.js" afterPath="$PROJECT_DIR$/bTree/static/tree/js/home.js" />
     </list>
     <ignored path="blessTree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,8 +56,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.09832134" vertical-offset="3983" max-vertical-offset="6966">
-              <caret line="244" column="30" selection-start-line="244" selection-start-column="30" selection-end-line="244" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.91366905" vertical-offset="4083" max-vertical-offset="7704">
+              <caret line="273" column="0" selection-start-line="273" selection-start-column="0" selection-end-line="273" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -120,7 +119,7 @@
         <entry file="file://$PROJECT_DIR$/bTree/static/tree/js/home.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="4158">
-              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="28" selection-end-column="7" />
               <folding>
                 <element signature="e#1372#1416#0" expanded="false" />
               </folding>
@@ -913,7 +912,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="769" extended-state="7" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23560606" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -924,7 +923,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14130434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25562373" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16045381" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16045381" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25080732" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1618" y="384" width="1017" height="303" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1389,7 +1388,7 @@
     <entry file="file://$PROJECT_DIR$/bTree/static/tree/js/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="4158">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="28" selection-end-column="7" />
           <folding>
             <element signature="e#1372#1416#0" expanded="false" />
           </folding>
@@ -1398,8 +1397,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.09832134" vertical-offset="3983" max-vertical-offset="6966">
-          <caret line="244" column="30" selection-start-line="244" selection-start-column="30" selection-end-line="244" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.91366905" vertical-offset="4083" max-vertical-offset="7704">
+          <caret line="273" column="0" selection-start-line="273" selection-start-column="0" selection-end-line="273" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
