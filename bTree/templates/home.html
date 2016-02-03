@@ -268,7 +268,12 @@
     <button id="add-friend-widget-btn"> 我知道啦～ </button>
 </div>
 <!--浇水-->
-<div class="water-widget" id="water-widget" style="display: none;width: 30%">
+<div class="water-widget" id="water-widget" style="display: none;width: 30%;position: fixed;
+    z-index: 13;
+    width: 25%;
+    left: 50%;
+    height: auto;
+    top: 50%;">
     <img src="{% static "tree/image/others/water-tree.png" %}" style="width: 100%;height: auto">
 </div>
 <!--积分到达上限-->
