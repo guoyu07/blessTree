@@ -258,7 +258,7 @@ def visit(request):
 
     # 用户没有注册,点击按钮都会跳到认证链接来获取信息，获取的信息要保存
     my_zone_url = WeChatOAuth(appId, appsecret,
-                              'http://1.blesstree.sinaapp.com/wechat/home/'+"?visit_index='123'"+'return_openid'+sourceid)
+                              'http://1.blesstree.sinaapp.com/wechat/home/'+"?visit_index='123'"+'return_openid'+sourceid).authorize_url
     return render_to_response('visit.html', locals())
 
 
