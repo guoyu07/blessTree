@@ -353,6 +353,14 @@
         //进度条宽度百分比设置
         $("#count-progress-in").css("width", "{{ count }}%");
 
+        $("#rank-btn").on('tap', function () {
+        $("#black-mask").show()
+        $("#rank-widget").show();
+        })
+        $('#black-mask').on('tap',function(){
+            $('#black-mask').fadeOut(200);
+            $('#rank-widget').hide()
+        });
 
         $("#rank-widget").on("scrollstop",function(){
           alert("结束滚动！");
