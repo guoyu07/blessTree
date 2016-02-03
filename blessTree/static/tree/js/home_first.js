@@ -47,6 +47,7 @@ $(function () {
                 if (ret == '1') {
                     alert("提交成功！");
                     $("#whos_tree").html(tree_name);
+                    $("#count-progress-in").css("width", "{{ count }}%");
                 } else if (ret == "2") {
                     alert("您的网络有问题，请再试一下哦～");
                 } else {
