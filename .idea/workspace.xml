@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/ajax_process.py" afterPath="$PROJECT_DIR$/bTree/ajax_process.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/views.py" afterPath="$PROJECT_DIR$/bTree/views.py" />
-    </list>
+    <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="" />
     <ignored path="blessTree.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -35,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/bTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-9.354838" vertical-offset="826" max-vertical-offset="3924">
-              <caret line="138" column="40" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
+              <caret line="138" column="41" selection-start-line="138" selection-start-column="41" selection-end-line="138" selection-end-column="41" />
               <folding>
                 <element signature="e#48#62#0" expanded="true" />
                 <element signature="e#1019#3869#0" expanded="false" />
@@ -104,21 +101,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.lqc.extension.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bTree/static/tree/js/jquery.lqc.extension.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bTree/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-              <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.7849162" vertical-offset="907" max-vertical-offset="1710">
+              <caret line="66" column="37" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bTree/templates/index.html">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wechat_django/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76349616" vertical-offset="873" max-vertical-offset="1674">
-              <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="162">
+              <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -191,7 +188,6 @@
         <option value="$PROJECT_DIR$/bTree/urls.py" />
         <option value="$PROJECT_DIR$/bTree/static/tree/css/home.css" />
         <option value="$PROJECT_DIR$/bTree/static/tree/js/jquery.lqc.extension.js" />
-        <option value="$PROJECT_DIR$/bTree/templates/index.html" />
         <option value="$PROJECT_DIR$/bTree/static/tree/js/home.js" />
         <option value="$PROJECT_DIR$/bTree/models.py" />
         <option value="$PROJECT_DIR$/bTree/__init__.py" />
@@ -205,6 +201,7 @@
         <option value="$PROJECT_DIR$/bTree/static/tree/js/home_first.js" />
         <option value="$PROJECT_DIR$/bTree/ajax_process.py" />
         <option value="$PROJECT_DIR$/bTree/views.py" />
+        <option value="$PROJECT_DIR$/bTree/templates/index.html" />
       </list>
     </option>
   </component>
@@ -1222,14 +1219,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wechat_django/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="162">
-          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/static/tree/js/jquery.lqc.extension.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="990">
@@ -1305,10 +1294,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wechat_django/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="162">
+          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.354838" vertical-offset="826" max-vertical-offset="3924">
-          <caret line="138" column="40" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
+          <caret line="138" column="41" selection-start-line="138" selection-start-column="41" selection-end-line="138" selection-end-column="41" />
           <folding>
             <element signature="e#48#62#0" expanded="true" />
             <element signature="e#1019#3869#0" expanded="false" />
@@ -1319,8 +1316,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76349616" vertical-offset="873" max-vertical-offset="1674">
-          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.7849162" vertical-offset="907" max-vertical-offset="1710">
+          <caret line="66" column="37" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="37" />
           <folding />
         </state>
       </provider>
