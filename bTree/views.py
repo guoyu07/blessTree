@@ -265,49 +265,28 @@ def ajax_distribute(request):
     ret值声明：1--成功 2--失败
     """
     ajax_type = request.POST.get('ajax_type', '')
-    # try:
-    #     {
-    #         '1': ajax_1,
-    #         '2': ajax_2,
-    #         '3': ajax_3,
-    #         '4': ajax_4,
-    #         '5': ajax_5,
-    #         '6': ajax_6,
-    #         '7': ajax_7,
-    #         '8': ajax_8,
-    #         '9': ajax_9,
-    #         '10': ajax_10,
-    #         '11': ajax_11,
-    #     }[ajax_type](request)
-    # except KeyError:
-    #     response = HttpResponse()
-    #     response['Content-Type'] = 'text/javascript'
-    #     ret = '2'  # 返回错误码
-    #     response.write(ret)
-    #     return response
-    if ajax_type == '1':
+    try:
+        {
+            '1': ajax_1,
+            '2': ajax_2,
+            '3': ajax_3,
+            '4': ajax_4,
+            '5': ajax_5,
+            '6': ajax_6,
+            '7': ajax_7,
+            '8': ajax_8,
+            '9': ajax_9,
+            '10': ajax_10,
+            '11': ajax_11,
+        }[ajax_type](request)
+    except KeyError:
         response = HttpResponse()
         response['Content-Type'] = 'text/javascript'
-        user_id = request.POST.get('openid', '')
-        user_name = request.POST.get('nickname', '')
-        tree_name = request.POST.get('tree_name', '')
-        if user_id and user_name and tree_name:
-            user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name=tree_name)
-            user.save()
-            tree = Tree(owner=user, tree_name=tree_name, type=7, action_time=time.time(), read=True, source_id=user_id,
-                        content=u'创建了祝福树')
-            tree.save()
-            ret = '1'
-        else:
-            ret = '2'
+        ret = '2'  # 返回错误码
         response.write(ret)
         return response
-    else:
-        response = HttpResponse()
-        response['Content-Type'] = 'text/javascript'
-        ret = '1'  # 返回错误码
-        response.write(ret)
-        return response
+
+
 # 一些实用的方法
 def share(url):
     """
