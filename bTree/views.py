@@ -94,6 +94,9 @@ def weixin_main(request):
             xml = reply.render()
             return HttpResponse(xml)
 
+        if msg.type == 'event' and msg.event == 'unsubscribe':
+            User.objects.get(openid=msg.source).is_plant = False  # 取消关注等于没有种树了
+
         if msg.type == 'event' and msg.event == 'click':
             reply = TextReply()
             reply.source = msg.target
@@ -213,13 +216,16 @@ def visit(request):
     """
     sourceid = request.GET.get('openid', '')
     oauth_vis = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+sourceid)
-    owner_info = client.user.get(client, sourceid)
-    owner = owner_info['nickname']
-    avatar = owner_info['headimgurl']
-    owner_db = User.objects.get(openid=sourceid)
-    count = owner_db.count
-    tree_name = owner_db.tree_name
-
+    error = False
+    try:
+        owner_info = client.user.get(client, sourceid)
+        owner = owner_info['nickname']
+        avatar = owner_info['headimgurl']
+        owner_db = User.objects.get(openid=sourceid)
+        count = owner_db.count
+        tree_name = owner_db.tree_name
+    except KeyError:
+        error = True
     code = request.GET.get('code', '')
     oauth_vis.fetch_access_token(code)
 

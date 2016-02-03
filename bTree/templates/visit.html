@@ -26,6 +26,8 @@
 
 </head>
 <body class="my-body">
+{% if error %}
+{% else %}
 <!--顶部-->
 <div class="menu-top">
     <div class="menu-top-con">
@@ -131,8 +133,15 @@
     <p>浇水成功，不愧是我的真爱粉～~\(≧▽≦)/~</p>
     <button>我知道啦</button>
 </div>
+
+{% endif %}
 </body>
 <script>
+    {% if error %}
+    $(function () {
+        alert("调皮～该用户尚未种树，不能访问哟～～")
+    })
+    {% else %}
     $(function () {
         //我的主页
         $("#zone").on('tap', function () {
@@ -153,5 +162,6 @@
 
         })
     })
+    {% endif %}
 </script>
 </html>

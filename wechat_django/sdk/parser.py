@@ -30,7 +30,7 @@ def parse_message(xml):
 
         if message_type =='device_event':  # 设备事件
             event_type ='device_{event}'.format(event=event_type)
-        if event_type == 'subscribe' and message.get('EventKey'):
+        if event_type == 'subscribe' and message.get('EventKey'):  # 关注事件
             event_type = 'subscribe_scan'
             message['Event'] = event_type
             message['EventKey'] = message['EventKey'].replace('qrscene_', '')
