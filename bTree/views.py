@@ -123,6 +123,7 @@ def home(request):
         oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
     except KeyError:
         oauth.access_token = code_access_token[code]['access_token']
+        oauth.open_id = code_access_token[code]['openid']
     try:
         user_db = User.objects.get(openid=oauth.open_id, is_plant=True)
     except ObjectDoesNotExist:
@@ -172,6 +173,7 @@ def first(request):
         oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
     except KeyError:
         oauth.access_token = code_access_token[code]['access_token']
+        oauth.open_id = code_access_token[code]['openid']
 
     user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
     # 以下信息是为了分享接口而使用的
@@ -238,6 +240,7 @@ def visit(request):
         oauth_vis.fetch_access_token(code)
     except KeyError:
         oauth_vis.access_token = code_access_token[code]['access_token']
+        oauth_vis.open_id = code_access_token[code]['openid']
     try:
         flip_id = openid = oauth_vis.open_id
     except AttributeError:
