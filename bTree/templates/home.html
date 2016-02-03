@@ -243,34 +243,6 @@
     <hr style="background-color: rgba(0,0,0,0.6)">
     <div class="rank-content">
         <ul class="rank-list">
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
-            <li>dihd</li>
 {#            {% if rank_list %}#}
 {#                {% for nickname, avatar_addr, count, nickname_home in rank_list %}#}
 {#                    <li>#}
@@ -382,9 +354,37 @@
         $("#count-progress-in").css("width", "{{ count }}%");
 
         $("#rank-btn").on('tap', function () {
-        $("#black-mask").show()
-        $("#rank-widget").show();
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                data:{
+                    ajax_type = '2',
+                    openid = $("#user_message_openid").text(),
+                    load_begin = 0
+                },
+                beforeSend: LoadFunction, //加载执行方法
+                error: erryFunction,  //错误执行方法
+                success: succFunction //成功执行方法
+
+            })
+            $("#black-mask").show()
+            $("#rank-widget").show();
         })
+        function LoadFunction(){
+            alert('请求数据中')
+        }
+        function erryFunction(){
+            alert('数据请求异常')
+        }
+        function succFunction(ret){
+            var json = eval(ret);
+            $.each(json, function(index, items){
+                alert('请求成功返回数据')
+            })
+        }
+
+
         $('#black-mask').on('tap',function(){
             $('#black-mask').fadeOut(200);
             $('#rank-widget').hide()
