@@ -22,7 +22,7 @@ from wechat_django.sdk.oauth import WeChatOAuth
 
 from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, TIMESTAMP, client, oauth
 from bTree.models import User, Tree
-from bTree.ajax_process import ajax_2, ajax_3, ajax_4, ajax_5, ajax_6, ajax_7, ajax_8, ajax_9, ajax_10, ajax_11
+from bTree.ajax_process import ajax_1, ajax_2, ajax_3, ajax_4, ajax_5, ajax_6, ajax_7, ajax_8, ajax_9, ajax_10, ajax_11
 
 # client = WeChatClient(appId, appsecret)
 
@@ -238,30 +238,6 @@ def visit(request):
                               'http://1.blesstree.sinaapp.com/wechat/home/'+"?visit_index='123'"+'return_openid'+sourceid)
     return render_to_response('visit.html', locals())
 
-@property
-def ajax_1(request):
-    """
-    ajax_type='1': 第一次种树填入树名字时候保存到数据库
-    :param request:
-    :return:
-    """
-    response = HttpResponse()
-    response['Content-Type'] = 'text/javascript'
-    user_id = request.POST.get('openid', '')
-    user_name = request.POST.get('nickname', '')
-    tree_name = request.POST.get('tree_name', '')
-    if user_id and user_name and tree_name:
-        user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name=tree_name)
-        tree = Tree(owner=user, tree_name=tree_name, type=7, action_time=time.time(), read=True, source_id=user_id,
-                    content=u'创建了祝福树')
-        user.save()
-        tree.save()
-        ret = '1'
-    else:
-        ret = '2'
-    response.write(ret)
-    return response
-
 
 @ensure_csrf_cookie
 def ajax_distribute(request):
@@ -291,7 +267,7 @@ def ajax_distribute(request):
     ajax_type = request.POST.get('ajax_type', '')
     try:
         {
-            '1': ajax_1,
+            # '1': ajax_1,
             '2': ajax_2,
             '3': ajax_3,
             '4': ajax_4,
