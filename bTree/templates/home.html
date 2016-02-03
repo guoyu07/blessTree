@@ -387,8 +387,44 @@
 
         $("#rank-btn").on('tap', function () {
             $("#rank-widget").show();
-            $("body,html").css({"position":"fixed"});
         })
+        var startX, startY;
+
+        $('#rank-widget').on('touchstart', function(e){
+            startX = e.changedTouches[0].pageX;
+            startY = e.changedTouches[0].pageY;
+        });
+
+        // 仿innerScroll方法
+        $('#rank-widget').on('touchmove', function(e){
+            e.stopPropagation();
+
+            var deltaX = e.changedTouches[0].pageX - startX;
+            var deltaY = e.changedTouches[0].pageY - startY;
+
+            // 只能纵向滚
+            if(Math.abs(deltaY) < Math.abs(deltaX)){
+                e.preventDefault();
+                return false;
+            }
+
+            var box = $(this).get(0);
+
+            if($(box).height() + box.scrollTop >= box.scrollHeight){
+                if(deltaY < 0) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+            if(box.scrollTop === 0){
+                if(deltaY > 0) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+            // 会阻止原生滚动
+            // return false;
+        });
         //微信分享接口设置
         wx.config({
               debug: false,
