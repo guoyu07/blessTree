@@ -180,7 +180,10 @@ def first(request):
     avatar_addr = user_info['headimgurl']
     # share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
 
-    water_time = Tree.objects.filter(openid=user_openid, type=0 or 3).order_by('-action_time')[:1]
+    try:
+        water_time = Tree.objects.filter(openid=user_openid, type=0 or 3).order_by('-action_time')[:1]
+    except ObjectDoesNotExist:
+        water_time = 0
     share_url = WeChatOAuth(appId, appsecret,
                                  'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id).authorize_url
     add_friend_url = WeChatOAuth(appId, appsecret,
