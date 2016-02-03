@@ -264,7 +264,6 @@ def ajax_distribute(request):
     :return:response，含有一个ret值
     ret值声明：1--成功 2--失败
     """
-    request = request
     ajax_type = request.POST.get('ajax_type', '')
     # try:
     #     {
@@ -287,7 +286,7 @@ def ajax_distribute(request):
     #     response.write(ret)
     #     return response
     if ajax_type == '1':
-        ajax_1(request)
+        ajax_1(ajax_type)
     else:
         response = HttpResponse()
         response['Content-Type'] = 'text/javascript'

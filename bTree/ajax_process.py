@@ -38,34 +38,36 @@ from django.core.exceptions import ObjectDoesNotExist
     注意，获取数据时候，json为空的时候一定是拉取完了所有的内容
  """
 
+#
+# def ajax_1(request):
+#     """
+#     ajax_type='1': 第一次种树填入树名字时候保存到数据库
+#     :param request:
+#     :return:
+#     """
+#     response = HttpResponse()
+#     response['Content-Type'] = 'text/javascript'
+#     user_id = request.POST.get('openid', '')
+#     user_name = request.POST.get('nickname', '')
+#     tree_name = request.POST.get('tree_name', '')
+#     if user_id and user_name and tree_name:
+#         user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name=tree_name)
+#         tree = Tree(owner=user, tree_name=tree_name, type=7, action_time=time.time(), read=True, source_id=user_id,
+#                     content=u'创建了祝福树')
+#         user.save()
+#         tree.save()
+#         ret = '1'
+#     else:
+#         ret = '2'
+#     response.write(ret)
+#     return response
 
-def ajax_1(request):
-    """
-    ajax_type='1': 第一次种树填入树名字时候保存到数据库
-    :param request:
-    :return:
-    """
+def ajax_1(ajax_type):
     response = HttpResponse()
     response['Content-Type'] = 'text/javascript'
-    user_id = request.POST.get('openid', '')
-    user_name = request.POST.get('nickname', '')
-    tree_name = request.POST.get('tree_name', '')
-    if user_id and user_name and tree_name:
-        user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name=tree_name)
-        tree = Tree(owner=user, tree_name=tree_name, type=7, action_time=time.time(), read=True, source_id=user_id,
-                    content=u'创建了祝福树')
-        user.save()
-        tree.save()
-        ret = '1'
-    else:
-        ret = '2'
+    ret = ajax_type  # 返回错误码
     response.write(ret)
     return response
-    # response = HttpResponse()
-    # response['Content-Type'] = 'text/javascript'
-    # ret = '2'  # 返回错误码
-    # response.write(ret)
-    # return response
 
 
 def ajax_2(request):
