@@ -177,7 +177,7 @@ def first(request):
         oauth.access_token = code_access_token[code]['access_token']
         oauth.open_id = code_access_token[code]['openid']
 
-    user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
+    user = 'http://1.blesstree.sinaapp.com/wechat/first/'+'?code='+code+'&state='
     # 以下信息是为了分享接口而使用的
     app_id = appId
     timestamp = int(time.time())
