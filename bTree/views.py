@@ -119,7 +119,10 @@ def home(request):
     code = request.GET.get('code')  # 通过认证的code获取openid
     visit_index = request.GET.get('visit_index')
     return_openid = request.GET.get('return_openid')
-    oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
+    try:
+        oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
+    except KeyError:
+        oauth.access_token = code_access_token[code]['access_token']
     try:
         user_db = User.objects.get(openid=oauth.open_id, is_plant=True)
     except ObjectDoesNotExist:
@@ -165,7 +168,10 @@ def home(request):
 def first(request):
     # oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
     code = request.GET.get('code')  # 通过认证的code获取openid
-    oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
+    try:
+        oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
+    except KeyError:
+        oauth.access_token = code_access_token[code]['access_token']
 
     user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
     # 以下信息是为了分享接口而使用的
