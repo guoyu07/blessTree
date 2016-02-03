@@ -67,12 +67,12 @@ $(function () {
      * 页面按钮绑定事件
      * */
     // 排行
-    $("#rank-btn").on('tap', function () {
+    $("#rank").on('tap', function () {
         $("#rank-widget").show();
     })
 
     // 提醒
-    $("#tips-btn").on('tap', function () {
+    $("#tips").on('tap', function () {
         $("#message-widget").show();
     })
 
