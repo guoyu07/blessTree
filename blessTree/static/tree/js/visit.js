@@ -30,11 +30,6 @@ $(function () {
     })
 
 
-    //历史按钮
-    $("#history").on('tap', function () {
-
-    })
-
     //浇水按钮
     $("#water-flower").on('tap', function () {
 

@@ -60,7 +60,7 @@
         <div class="tree-area"><img src="{% static "tree/image/others/tree.png" %}"></div>
         <div class="tree-name">
             <img src="{% static "tree/image/others/name.png" %}">
-            <p class="name" id="whos_tree" style="margin-top: 19%;margin-left: 23%;">{{ name }}的树</p>
+            <p class="name" id="whos_tree" style="margin-top: 19%;margin-left: 23%;">{{ tree_name }}</p>
         </div>
     </div>
     <div class="main-right pure-u-5-24" style="float:left">
@@ -342,7 +342,6 @@
         $("#count-progress-in").css("width", "{{ count }}%");
         $("#fill-in-name").hide();
         $("#black-mask").hide();
-        $("#tips-water").show();
 
         //微信分享接口设置
         wx.config({
