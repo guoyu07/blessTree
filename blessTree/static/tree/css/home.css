@@ -327,6 +327,19 @@ ul{
     margin-top: 2%;
     font-size: 90%;
 }
+
+/**************
+**这里是浇水特效
+*/
+.water-widget{
+    position: fixed;
+    z-index: 13;
+    width: 25%;
+    left: 50%;
+    height: auto;
+    top: 50%;
+}
+
 /*************
 **这里是常用的
 **/

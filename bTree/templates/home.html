@@ -268,7 +268,7 @@
     <button id="add-friend-widget-btn"> 我知道啦～ </button>
 </div>
 <!--浇水-->
-<div class="water-widget" id="water-widget" style="display: none;;width: 30%">
+<div class="water-widget" id="water-widget" style="display: none;width: 30%">
     <img src="{% static "tree/image/others/water-tree.png" %}" style="width: 100%;height: auto">
 </div>
 <!--积分到达上限-->
@@ -343,7 +343,7 @@
 
         //微信分享接口设置
         wx.config({
-              debug: true,
+              debug: false,
               appId: '{{ app_id }}',
               timestamp: {{ timestamp }},
               nonceStr: '{{ noncestr }}',
@@ -354,7 +354,6 @@
                     'onMenuShareAppMessage',
               ]
         });
-        alert(location.href.split('#')[0])
         wx.ready(function () {
             // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
                 wx.checkJsApi({
