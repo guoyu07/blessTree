@@ -238,7 +238,7 @@ def visit(request):
                               'http://1.blesstree.sinaapp.com/wechat/home/'+"?visit_index='123'"+'return_openid'+sourceid)
     return render_to_response('visit.html', locals())
 
-
+@property
 def ajax_1(request):
     """
     ajax_type='1': 第一次种树填入树名字时候保存到数据库
@@ -291,7 +291,7 @@ def ajax_distribute(request):
     ajax_type = request.POST.get('ajax_type', '')
     try:
         {
-            # '1': ajax_1,
+            '1': ajax_1,
             '2': ajax_2,
             '3': ajax_3,
             '4': ajax_4,
