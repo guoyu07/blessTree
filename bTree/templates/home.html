@@ -354,7 +354,20 @@
         $("#count-progress-in").css("width", "{{ count }}%");
 
         $("#tips").on('tap', function () {
-            alert('click tips')
+            alert('cg')
+            $.post(
+                        'http://1.blesstree.sinaapp.com/wechat/ajax',
+                        {
+                            ajax_type = '2',
+                            openid = $("#user_message_openid").text(),
+                            load_begin = 0
+                        },
+                        function (ret) {
+                            if(ret==2){
+                                alert("msg-error")
+                            }
+                        }
+            )
 {#            $.ajax({#}
 {#                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
 {#                type: 'POST',#}
