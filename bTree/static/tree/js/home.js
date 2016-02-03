@@ -21,6 +21,7 @@ $(function () {
     // 排行
     $("#rank-btn").on('tap', function () {
         $("#rank-widget").show();
+        $("body,html").css({"overflow":"hidden"});
     })
 
     // 提醒
