@@ -136,7 +136,7 @@ def home(request):
         if visit_index and return_openid:
             visit = True
             return_url = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+return_openid)
-        return render_to_response('index.html', locals())
+            return render_to_response('index.html', locals())
     else:
         user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
         # 以下信息是为了分享接口而使用的
