@@ -10,15 +10,15 @@ $(function () {
     var tucao_ran = ['你好丑', '我爱你', '大粗腿', '吨位重', '脚气重']
     var bless_ran = ['你好帅', '真男人', '性感', '四好青年', '怎么吐槽在这？']
 
-    //var ran1= $.lqcGetUrlParam(5)
-    //var ran2 = $.lqcRandGenerator(5)
-    //while(ran1==ran2){
-    //    ran2 = $.lqcRandGenerator(5)
-    //}
-    //$("#rand_bless_1").text(bless_ran[ran1]);
-    //$("#rand_tucao_1").text(tucao_ran[ran1]);
-    //$("#rand_tucao_2").text(tucao_ran[ran2]);
-    //$("#rand_bless_2").text(bless_ran[ran2])
+    var ran1= $.lqcRandGenerator(5)
+    var ran2 = $.lqcRandGenerator(5)
+    while(ran1==ran2){
+        ran2 = $.lqcRandGenerator(5)
+    }
+    $("#rand_bless_1").text(bless_ran[ran1]);
+    $("#rand_tucao_1").text(tucao_ran[ran1]);
+    $("#rand_tucao_2").text(tucao_ran[ran2]);
+    $("#rand_bless_2").text(bless_ran[ran2])
 
 
     /****************
