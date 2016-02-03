@@ -290,7 +290,7 @@ def ajax_distribute(request):
     else:
         response = HttpResponse()
         response['Content-Type'] = 'text/javascript'
-        ret = '2'  # 返回错误码
+        ret = '1'  # 返回错误码
         response.write(ret)
         return response
 # 一些实用的方法
