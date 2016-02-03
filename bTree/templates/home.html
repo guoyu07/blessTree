@@ -89,6 +89,14 @@
     <p id="user_message_water_time">{{ water_time }}</p>
 </div>
 
+<!--mask-->
+    <div class="overlay" id="black-mask" style="display: none;position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.7);"></div>
+
 <!--消息-->
 <div class="message-widget" id="message-widget" style="display: none;">
     <div class="message-top">
@@ -335,13 +343,7 @@
 </div>
 {% if first_time %}
 <!--begin 小部件-->
-<!--mask-->
-    <div class="overlay" id="black-mask" style="display: none;position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,.8);"></div>
+
 <!--规则-->
 <div class="rule" id="rule" style="display:none">
     <div class="rule-title"><p>游戏规则</p></div>
