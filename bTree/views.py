@@ -285,7 +285,7 @@ def ajax_distribute(request):
     #     ret = '2'  # 返回错误码
     #     response.write(ret)
     #     return response
-    if ajax_1 == '1':
+    if ajax_type == '1':
         ajax_1(request)
     else:
         response = HttpResponse()
