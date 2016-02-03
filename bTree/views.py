@@ -21,7 +21,7 @@ from wechat_django.sdk.client import WeChatClient
 from wechat_django.sdk.oauth import WeChatOAuth
 from wechat_django.sdk import code_access_token, global_code
 
-from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, client, oauth
+from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, client, oauth, jsapi_ticket
 from bTree.models import User, Tree
 from bTree.ajax_process import ajax_1, ajax_2, ajax_3, ajax_4, ajax_5, ajax_6, ajax_7, ajax_8, ajax_9, ajax_10, ajax_11
 
@@ -326,7 +326,12 @@ def share(url, timstamp):
     :return:签名，用于生成页面签名
     """
     client.fetch_access_token()
-    ticket = client.jsapi.get_jsapi_ticket(client)
+    if timstamp-int(jsapi_ticket['expires_in']) > 7000:
+        ticket = client.jsapi.get_jsapi_ticket(client)
+        jsapi_ticket['expires_in'] = time.time()
+        jsapi_ticket['ticket'] = ticket
+    else:
+        ticket = jsapi_ticket['ticket']
     return {"first": client.jsapi.get_jsapi_signature(NONCESTR, ticket, timestamp=timstamp, url=url), "second": ticket}
 
 
