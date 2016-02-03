@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/templates/home.html" afterPath="$PROJECT_DIR$/bTree/templates/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/static/tree/js/home.js" afterPath="$PROJECT_DIR$/bTree/static/tree/js/home.js" />
     </list>
     <ignored path="blessTree.iws" />
@@ -56,8 +57,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.81294966" vertical-offset="6429" max-vertical-offset="8064">
-              <caret line="390" column="10" selection-start-line="390" selection-start-column="10" selection-end-line="390" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.76978415" vertical-offset="6429" max-vertical-offset="8064">
+              <caret line="389" column="47" selection-start-line="389" selection-start-column="47" selection-end-line="389" selection-end-column="47" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -166,8 +167,8 @@
         <option value="$PROJECT_DIR$/bTree/static/plugin/move/move.min.js" />
         <option value="$PROJECT_DIR$/bTree/templates/visit.html" />
         <option value="$PROJECT_DIR$/bTree/views.py" />
-        <option value="$PROJECT_DIR$/bTree/templates/home.html" />
         <option value="$PROJECT_DIR$/bTree/static/tree/js/home.js" />
+        <option value="$PROJECT_DIR$/bTree/templates/home.html" />
       </list>
     </option>
   </component>
@@ -894,7 +895,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="769" extended-state="7" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23560606" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -905,7 +906,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14130434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25562373" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16045381" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16045381" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25080732" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1618" y="384" width="1017" height="303" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1379,8 +1380,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81294966" vertical-offset="6429" max-vertical-offset="8064">
-          <caret line="390" column="10" selection-start-line="390" selection-start-column="10" selection-end-line="390" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.76978415" vertical-offset="6429" max-vertical-offset="8064">
+          <caret line="389" column="47" selection-start-line="389" selection-start-column="47" selection-end-line="389" selection-end-column="47" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
