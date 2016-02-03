@@ -160,7 +160,8 @@ def home(request):
 
         share_url = WeChatOAuth(appId, appsecret,
                                 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id).authorize_url
-        add_friend_url = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id)\
+        add_friend_url = WeChatOAuth(appId, appsecret,
+                                     'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id+'&add=yes')\
             .authorize_url
 
         return render_to_response('home.html', locals())
@@ -252,13 +253,19 @@ def visit(request):
         user = 0
 
     if user is not 0:
-        # 用户已经注册中过树，因为只有关注用户才能种树，不关注用户只能评论吐槽
+        # 用户已经中树，因为只有关注用户才能种树，不关注用户只能评论吐槽
         my_zone_url = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home/').authorize_url
         return render_to_response('visit.html', locals())
 
-    # 用户没有注册,点击按钮都会跳到认证链接来获取信息，获取的信息要保存
+    # 用户没有种树,点击按钮都会跳到认证链接来获取信息，获取的信息要保存
     my_zone_url = WeChatOAuth(appId, appsecret,
-                              'http://1.blesstree.sinaapp.com/wechat/home/'+"?visit_index='123'"+'return_openid'+sourceid).authorize_url
+                              'http://1.blesstree.sinaapp.com/wechat/home/'+"?visit_index='123'"+'return_openid'+sourceid)\
+        .authorize_url
+    if request.GET.get('add'):
+        friendship = User(openid=oauth_vis, nickname='na', time_stamp=time.time(), tree_name='na', is_plant=False)
+        source_fr = User.objects.get(openid=sourceid)
+        friendship.friends.add(source_fr)  # 保存朋友关系，只是此时保存的关系的友人尚未种树
+        friendship.save()
     return render_to_response('visit.html', locals())
 
 

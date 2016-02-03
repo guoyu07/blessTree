@@ -56,12 +56,11 @@
         $("#black-mask").show();
         $("#tips-container").show();
     })
-    $("#pg_11-plant").on('tap', function () {
-        window.open("{{ first_plant_url|safe }}")
-{#        location.href=""#}
-        //alert("success");
-    })
+
         {% if visit %}
+            $("#pg_11-plant").on('tap', function () {
+                alert('关注公众号--“华工创维”，就能与小伙伴们一起愉快的勾搭啦～～')
+            })
             //不玩时候
             $("#selected-sure").on('tap', function () {
                 alert("泪别~~~~(>_<)~~~~ ");
@@ -72,6 +71,9 @@
                 $("#tips-container").hide();
             })
         {% else %}
+            $("#pg_11-plant").on('tap', function () {
+                window.open("{{ first_plant_url|safe }}")
+            })
             //不玩时候
             $("#selected-sure").on('tap', function () {
                 alert("happy new year");
