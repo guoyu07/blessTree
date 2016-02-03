@@ -96,7 +96,9 @@ def weixin_main(request):
             return HttpResponse(xml)
 
         if msg.type == 'event' and msg.event == 'unsubscribe':
-            User.objects.get(openid=msg.source).is_plant = False  # 取消关注等于没有种树了
+            user = User.objects.get(openid=msg.source)
+            user.is_plant = False  # 取消关注等于没有种树了
+            user.save()
 
         if msg.type == 'event' and msg.event == 'click':
             reply = TextReply()

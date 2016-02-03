@@ -145,32 +145,32 @@
         })
 
     })
-{#    {% if error %}#}
-{#    $(function () {#}
-{#        alert("调皮～该用户尚未种树，不能访问哟～～")#}
-{#    })#}
-{#    {% else %}#}
-{#    $(function () {#}
-{#        //我的主页#}
-{#        $("#zone").on('tap', function () {#}
-{#            alert('click success')#}
-{#            window.open({{ my_zone_url|safe }})#}
-{#        })#}
-{##}
-{#        //发送ajax#}
-{#         $('#tucao_confirm').on('tap', function () {#}
-{#            var tucao_con = $('#tucao-area').val();#}
-{#            var na = $("#tucao-na").is(':checked') //是否匿名#}
-{#            source_id = {{ flip_id }}#}
-{##}
-{#        })#}
-{#        $('#bless_confirm').on('tap', function () {#}
-{#            var tucao_con = $('#bless-area').val();#}
-{#            var na = $("#bless-na").is(':checked') //是否匿名#}
-{#            source_id = {{ flip_id }}#}
-{##}
-{#        })#}
-{#    })#}
-{#    {% endif %}#}
+    {% if error %}
+    $(function () {
+        alert("调皮～该用户尚未种树，不能访问哟～～")
+    })
+    {% else %}
+    $(function () {
+        //我的主页
+        $("#zone").on('tap', function () {
+            alert('click success')
+            window.open({{ my_zone_url|safe }})
+        })
+
+        //发送ajax
+         $('#tucao_confirm').on('tap', function () {
+            var tucao_con = $('#tucao-area').val();
+            var na = $("#tucao-na").is(':checked') //是否匿名
+            source_id = {{ flip_id }}
+
+        })
+        $('#bless_confirm').on('tap', function () {
+            var tucao_con = $('#bless-area').val();
+            var na = $("#bless-na").is(':checked') //是否匿名
+            source_id = {{ flip_id }}
+
+        })
+    })
+    {% endif %}
 </script>
 </html>
