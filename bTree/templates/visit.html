@@ -45,7 +45,7 @@
         </div>
         <!--历史-->
         <div class="history">
-            <a id="history"><img class="history-btn" src="{% static "tree/image/btn/history.png" %}" style="width: inherit"></a>
+            <a id="history"><img class="history-btn" src="{% static "tree/image/btn/history.png" %}"></a>
         </div>
         <!--我的主页-->
         <div class="zone" id="zone">
@@ -144,8 +144,9 @@
     })
     {% else %}
     $(function () {
+        alert("load success")
         //我的主页
-        $("#zone-btn").on('tap', function () {
+        $("#zone").on('tap', function () {
             alert('click success')
             window.open({{ my_zone_url|safe }})
         })
