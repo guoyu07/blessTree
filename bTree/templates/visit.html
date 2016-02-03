@@ -26,9 +26,9 @@
 
 </head>
 <body class="my-body">
-{#{% if error %}#}
-{#    <p>我知道这是你最讨厌的页面404～～，赶紧邀请他参加吧～～</p>#}
-{#{% else %}#}
+{% if error %}
+    <p>我知道这是你最讨厌的页面404～～，赶紧邀请他参加吧～～</p>
+{% else %}
 <!--顶部-->
 <div class="menu-top">
     <div class="menu-top-con">
@@ -48,8 +48,8 @@
             <a id="history"><img class="history-btn" src="{% static "tree/image/btn/history.png" %}" style="width: inherit"></a>
         </div>
         <!--我的主页-->
-        <div class="zone">
-            <a id="zone"><img class="zone-btn" src="{% static "tree/image/btn/zone.png" %}" style="width: inherit"></a>
+        <div class="zone" id="zone">
+            <a ><img class="zone-btn" src="{% static "tree/image/btn/zone.png" %}" style="width: inherit"></a>
         </div>
     </div>
 </div>
@@ -135,14 +135,14 @@
     <button>我知道啦</button>
 </div>
 
-{#{% endif %}#}
+{% endif %}
 </body>
 <script>
-{#    {% if error %}#}
-{#    $(function () {#}
-{#        alert("调皮～该用户尚未种树，不能访问哟～～")#}
-{#    })#}
-{#    {% else %}#}
+    {% if error %}
+    $(function () {
+        alert("调皮～该用户尚未种树，不能访问哟～～")
+    })
+    {% else %}
     $(function () {
         //我的主页
         $("#zone").on('tap', function () {
@@ -163,6 +163,6 @@
 
         })
     })
-{#    {% endif %}#}
+    {% endif %}
 </script>
 </html>
