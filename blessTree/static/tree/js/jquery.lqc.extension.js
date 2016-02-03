@@ -45,7 +45,11 @@
 
     //生成随机数 范围：0-n
     $.lqcRandGenerator = function (n) {
-        parseInt((n-1)*Math.random())
+        rand = parseInt((10)*Math.random());
+        if(rand>n){
+            rand = rand - 5;
+        }
+        return rand
     }
 
     //
