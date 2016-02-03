@@ -147,8 +147,10 @@
         alert("load success")
         //我的主页
         $("#zone").on('tap', function () {
-            alert('click success')
-            window.open({{ my_zone_url|safe }})
+            $('#zone').on('click', function () {
+                alert('click success')
+                window.open({{ my_zone_url|safe }})
+            })
         })
 
         //发送ajax
