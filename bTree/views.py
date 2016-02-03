@@ -298,31 +298,31 @@ def ajax_distribute(request):
     ret值声明：1--成功 2--失败
     """
     ajax_type = request.POST.get('ajax_type', '')
-    # try:
-    #     {
-    #         '1': ajax_1,
-    #         '2': ajax_2,
-    #         '3': ajax_3,
-    #         '4': ajax_4,
-    #         '5': ajax_5,
-    #         '6': ajax_6,
-    #         '7': ajax_7,
-    #         '8': ajax_8,
-    #         '9': ajax_9,
-    #         '10': ajax_10,
-    #         '11': ajax_11,
-    #     }[ajax_type](request)
-    # except KeyError:
-    #     response = HttpResponse()
-    #     response['Content-Type'] = 'text/javascript'
-    #     ret = '2'  # 返回错误码
-    #     response.write(ret)
-    #     return response
-    response = HttpResponse()
-    response['Content-Type'] = 'text/javascript'
-    ret = '2'  # 返回错误码
-    response.write(ret)
-    return response
+    try:
+        {
+            '1': ajax_1,
+            '2': ajax_2,
+            '3': ajax_3,
+            '4': ajax_4,
+            '5': ajax_5,
+            '6': ajax_6,
+            '7': ajax_7,
+            '8': ajax_8,
+            '9': ajax_9,
+            '10': ajax_10,
+            '11': ajax_11,
+        }[ajax_type](request)
+    except KeyError:
+        response = HttpResponse()
+        response['Content-Type'] = 'text/javascript'
+        ret = '2'  # 返回错误码
+        response.write(ret)
+        return response
+    # response = HttpResponse()
+    # response['Content-Type'] = 'text/javascript'
+    # ret = '2'  # 返回错误码
+    # response.write(ret)
+    # return response
 
 
 # 一些实用的方法
