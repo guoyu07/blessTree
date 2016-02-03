@@ -19,7 +19,7 @@ from wechat_django.sdk.parser import parse_message
 from wechat_django.sdk.replies import TextReply
 from wechat_django.sdk.client import WeChatClient
 from wechat_django.sdk.oauth import WeChatOAuth
-from wechat_django.sdk import code_access_token
+from wechat_django.sdk import code_access_token, global_code
 
 from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, TIMESTAMP, client, oauth
 from bTree.models import User, Tree
@@ -124,6 +124,8 @@ def home(request):
     except KeyError:
         oauth.access_token = code_access_token[code]['access_token']
         oauth.open_id = code_access_token[code]['openid']
+        del code_access_token[code]
+        del global_code[code]
     try:
         user_db = User.objects.get(openid=oauth.open_id, is_plant=True)
     except ObjectDoesNotExist:
@@ -174,6 +176,8 @@ def first(request):
     except KeyError:
         oauth.access_token = code_access_token[code]['access_token']
         oauth.open_id = code_access_token[code]['openid']
+        del code_access_token[code]
+        del global_code[code]
 
     user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
     # 以下信息是为了分享接口而使用的
@@ -241,6 +245,8 @@ def visit(request):
     except KeyError:
         oauth_vis.access_token = code_access_token[code]['access_token']
         oauth_vis.open_id = code_access_token[code]['openid']
+        del code_access_token[code]
+        del global_code[code]
     try:
         flip_id = openid = oauth_vis.open_id
     except AttributeError:
