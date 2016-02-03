@@ -178,7 +178,13 @@ def first(request):
     count = ''
     first_time = True  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
     avatar_addr = user_info['headimgurl']
-    share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
+    # share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
+
+    water_time = Tree.objects.filter(openid=user_openid, type=0 or 3).order_by('-action_time')[:1]
+    share_url = WeChatOAuth(appId, appsecret,
+                                 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id).authorize_url
+    add_friend_url = WeChatOAuth(appId, appsecret,
+                                 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id).authorize_url
 
     #  用户第一次进去种树了，返回去的时候会返回到前面的页面，所以需要再判断一次,如果已经点进去还点进去，需要修改条件
     try:
