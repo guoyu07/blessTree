@@ -395,9 +395,7 @@
             $("#rank-widget").show();
         })
         $('.overlay').on('tap',function(){
-            $('.overlay').fadeOut(200,function(){
-                $(this).removeAttr('style');
-            });
+            $('.overlay').fadeOut(200);
             $('#rank-widget').hide()
         });
         //微信分享接口设置
