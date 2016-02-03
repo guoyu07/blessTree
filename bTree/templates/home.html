@@ -340,8 +340,6 @@
     $(function () {
         //进度条宽度百分比设置
         $("#count-progress-in").css("width", "{{ count }}%");
-
-        alert($("#user_message_openid").text()+$("#user_message_nickname").text());
         $("#fill-in-name").hide();
         $("#black-mask").hide();
         $("#tips-water").show();
@@ -372,7 +370,7 @@
                     title: '帅的人都点进去了哦',
                     desc: '新年什么有趣？抢红包？不不不！！老司机带你寻找新鲜刺激的游戏，快和大家一起玩吧～',
                     link: '{{ add_friend_url|safe }}',
-                    imgUrl: 'http://pan.baidu.com/s/1bnPGtif' ,
+                    imgUrl: '{{ imgUrl|safe }}' ,
                     success: function (res) {
                         alert('分享成功，积分已奉上');
                       },
