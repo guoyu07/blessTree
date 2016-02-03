@@ -105,7 +105,8 @@ class WeChatOAuth(object):
             }
         )
 
-        code_access_token[code] = self.access_token = res['access_token']
+        code_access_token[code] = res
+        self.access_token = res['access_token']
         self.open_id = res['openid']
         self.refresh_token = res['refresh_token']
         self.expires_in = res['expires_in']
@@ -124,7 +125,7 @@ class WeChatOAuth(object):
                 return code_access_token[code]
             else:
                 del global_code[code]
-                del code_access_token[code]
+                del code_access_token[code]['access_token']
         else:
             global_code[code] = 300
             return self._fetch_access_token(code)

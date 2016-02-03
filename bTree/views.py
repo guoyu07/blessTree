@@ -19,6 +19,7 @@ from wechat_django.sdk.parser import parse_message
 from wechat_django.sdk.replies import TextReply
 from wechat_django.sdk.client import WeChatClient
 from wechat_django.sdk.oauth import WeChatOAuth
+from wechat_django.sdk import code_access_token
 
 from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, TIMESTAMP, client, oauth
 from bTree.models import User, Tree
@@ -228,8 +229,10 @@ def visit(request):
         error = True
     code = request.GET.get('code', '')
     oauth_vis.fetch_access_token(code)
-
-    flip_id = openid = oauth_vis.open_id
+    try:
+        flip_id = openid = oauth_vis.open_id
+    except AttributeError:
+        flip_id = openid = code_access_token[code]['openid']
     try:
         user = User.objects.get(openid=openid, is_plant=True)
     except ObjectDoesNotExist:
