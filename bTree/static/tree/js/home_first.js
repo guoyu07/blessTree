@@ -35,7 +35,6 @@ $(function () {
 
     //填写完树名字之后ajax提交到服务器的按钮
     $('#fill-btn').on('tap', function () {
-        alert("you click it");
         tree_name = $("#text_id").val();  //获取树的名字
         $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
             {
@@ -54,6 +53,7 @@ $(function () {
                     alert("网络不太好，请再试一下哦～");
                 }
             })
+        alert(tree_name+$("#user_message_openid").text()+$("#user_message_nickname").text());
         $("#fill-in-name").hide();
         $("#black-mask").hide();
         $("#tips-water").show();
