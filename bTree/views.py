@@ -259,7 +259,7 @@ def visit(request):
 
     # 用户没有种树,点击按钮都会跳到认证链接来获取信息，获取的信息要保存
     my_zone_url = WeChatOAuth(appId, appsecret,
-                              'http://1.blesstree.sinaapp.com/wechat/home/'+"?visit_index='123'"+'$return_openid'+sourceid)\
+                              'http://1.blesstree.sinaapp.com/wechat/home/'+"?visit_index='123'"+'&return_openid'+sourceid)\
         .authorize_url
     if request.GET.get('add'):
         friendship = User(openid=oauth_vis, nickname='na', time_stamp=time.time(), tree_name='na', is_plant=False)
