@@ -33,31 +33,31 @@ $(function () {
         $("#fill-in-name").show();
     })
 
-    //填写完树名字之后ajax提交到服务器的按钮
-    $('#fill-btn').on('tap', function () {
-        tree_name = $("#text_id").val();  //获取树的名字
-        $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
-            {
-                'ajax_type': '1',
-                'openid': $("#user_message_openid").text(),
-                'nickname': $("#user_message_nickname").text(),
-                'tree_name': tree_name
-            },
-            function(ret) {
-                if (ret == '1') {
-                    alert("提交成功！");
-                    $("#whos_tree").html(tree_name);
-                } else if (ret == "2") {
-                    alert("您的网络有问题，请再试一下哦～");
-                } else {
-                    alert("网络不太好，请再试一下哦～");
-                }
-            })
-        alert(tree_name+$("#user_message_openid").text()+$("#user_message_nickname").text());
-        $("#fill-in-name").hide();
-        $("#black-mask").hide();
-        $("#tips-water").show();
-    })
+    ////填写完树名字之后ajax提交到服务器的按钮
+    //$('#fill-btn').on('tap', function () {
+    //    tree_name = $("#text_id").val();  //获取树的名字
+    //    $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
+    //        {
+    //            'ajax_type': '1',
+    //            'openid': $("#user_message_openid").text(),
+    //            'nickname': $("#user_message_nickname").text(),
+    //            'tree_name': tree_name
+    //        },
+    //        function(ret) {
+    //            if (ret == '1') {
+    //                alert("提交成功！");
+    //                $("#whos_tree").html(tree_name);
+    //            } else if (ret == "2") {
+    //                alert("您的网络有问题，请再试一下哦～");
+    //            } else {
+    //                alert("网络不太好，请再试一下哦～");
+    //            }
+    //        })
+    //    alert(tree_name+$("#user_message_openid").text()+$("#user_message_nickname").text());
+    //    $("#fill-in-name").hide();
+    //    $("#black-mask").hide();
+    //    $("#tips-water").show();
+    //})
 
     $("#water-tips-btn").on('tap', function () {
         $("#tips-water").hide();
