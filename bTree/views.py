@@ -203,9 +203,10 @@ def first(request):
         water_time = 0
 
     share_url = WeChatOAuth(appId, appsecret,
-                                 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id).authorize_url
+                                'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id).authorize_url
     add_friend_url = WeChatOAuth(appId, appsecret,
-                                 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id).authorize_url
+                                     'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id+'&add=yes')\
+        .authorize_url
 
     #  用户第一次进去种树了，返回去的时候会返回到前面的页面，所以需要再判断一次,如果已经点进去还点进去，需要修改条件
     try:
