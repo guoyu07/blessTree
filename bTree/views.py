@@ -194,14 +194,14 @@ def first(request):
     user_openid = oauth.open_id
     name = user_info['nickname']
     tree_name = name+'的树'
-    count = ''
+    count = '0'
     first_time = True  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
     imgUrl = avatar_addr = user_info['headimgurl']
     # share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
     try:
         owner = User.objects.get(openid=user_openid)
         tree = Tree.objects.filter(owner=owner, type=0 or 3).order_by('-action_time')
-        water_time = tree[:1]
+        water_time = tree[:1]*1000
     except ObjectDoesNotExist:
         water_time = 0
 
