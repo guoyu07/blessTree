@@ -264,6 +264,7 @@ def ajax_distribute(request):
     :return:response，含有一个ret值
     ret值声明：1--成功 2--失败
     """
+    request = request
     ajax_type = request.POST.get('ajax_type', '')
     # try:
     #     {
