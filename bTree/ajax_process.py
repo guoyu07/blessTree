@@ -92,8 +92,6 @@ def ajax_2(request):
             dict_user['user_home'].append("test")  # TODO:去别人家的链接还没弄
         json_rank = json.dumps(dict_user, ensure_ascii=False)
         response.write(json_rank)
-        ret = '1'
-        response.write(ret)
         # 注意成功不反悔ret1，省去处理的麻烦
     else:
         ret = '2'
