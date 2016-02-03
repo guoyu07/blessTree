@@ -133,7 +133,7 @@ def home(request):
     if user_db == 0:
         first_outh = WeChatOAuth(appId, appsecret, "http://1.blesstree.sinaapp.com/wechat/first")
         first_plant_url = first_outh.authorize_url
-        if visit_index and return_openid:
+        if visit_index :
             visit = True
             return_url = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+return_openid).authorize_url
         return render_to_response('index.html', locals())
