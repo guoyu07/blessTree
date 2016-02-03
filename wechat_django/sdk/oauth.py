@@ -9,8 +9,8 @@ import six
 import requests
 import time
 from wechat_django.sdk.session.memorystorage import MemoryStorage
-
-from  wechat_django.sdk import global_code
+from wechat_django.sdk import code_access_token
+from wechat_django.sdk import global_code, code_access_token
 
 
 class WeChatOAuth(object):
@@ -105,7 +105,7 @@ class WeChatOAuth(object):
             }
         )
 
-        self.access_token = res['access_token']
+        code_access_token[code] = self.access_token = res['access_token']
         self.open_id = res['openid']
         self.refresh_token = res['refresh_token']
         self.expires_in = res['expires_in']
@@ -121,11 +121,12 @@ class WeChatOAuth(object):
         if code in global_code:
             if global_code[code] > 0:
                 global_code[code] = global_code[code]-1
-                return self.access_token
+                return code_access_token[code]
             else:
                 del global_code[code]
+                del code_access_token[code]
         else:
-            global_code[code] = 3000
+            global_code[code] = 300
             return self._fetch_access_token(code)
 
 
