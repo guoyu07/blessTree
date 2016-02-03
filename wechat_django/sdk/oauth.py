@@ -120,11 +120,12 @@ class WeChatOAuth(object):
         # 防止微信客户端重复多次使用code导致的bug
         if code in global_code:
             if global_code[code] > 0:
+                global_code[code] = global_code[code]-1
                 return self.access_token
             else:
                 del global_code[code]
         else:
-            global_code[code] = 170
+            global_code[code] = 311
             return self._fetch_access_token(code)
 
 

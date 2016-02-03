@@ -149,9 +149,9 @@ def home(request):
         # 分享的链接生成，别人点进去是一个get方法，同时，这个是经过转化的，就是加入认证的链接
 
         share_url = WeChatOAuth(appId, appsecret,
-                                'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id)
+                                'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id).authorize_url
         add_friend_url = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id)\
-            .authorize_url()
+            .authorize_url
 
         return render_to_response('home.html', locals())
 
