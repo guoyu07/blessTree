@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat_django/sdk/parser.py" afterPath="$PROJECT_DIR$/wechat_django/sdk/parser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="" />
     <ignored path="blessTree.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -31,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.290322" vertical-offset="594" max-vertical-offset="5562">
-              <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.5602537" vertical-offset="3821" max-vertical-offset="5670">
+              <caret line="227" column="8" selection-start-line="227" selection-start-column="8" selection-end-line="227" selection-end-column="8" />
               <folding>
                 <element signature="e#48#62#0" expanded="true" />
               </folding>
@@ -43,11 +40,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parser.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="visit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bTree/templates/visit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.6666667" vertical-offset="1503" max-vertical-offset="2196">
+              <caret line="139" column="12" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="12" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat_django/sdk/parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5473888" vertical-offset="221" max-vertical-offset="738">
+            <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="738">
               <caret line="32" column="73" selection-start-line="32" selection-start-column="73" selection-end-line="32" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="events.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wechat_django/sdk/events.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="662" max-vertical-offset="1836">
+              <caret line="58" column="24" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -97,33 +117,6 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="2098" max-vertical-offset="4896">
               <caret line="166" column="21" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="21" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.lqc.extension.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bTree/static/tree/js/jquery.lqc.extension.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="990">
-              <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home_first.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blessTree/static/tree/js/home_first.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="4896">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1454492203157" expanded="true" signature="829:1042" placeholder="{&quot;ajax_type&quot;: '1'...}" />
-                <marker date="1454492203157" expanded="true" signature="1083:1382" placeholder="{...}" />
-                <marker date="1454492203157" expanded="true" signature="1123:1238" placeholder="{...}" />
-                <marker date="1454492203157" expanded="true" signature="1260:1309" placeholder="{...}" />
-                <marker date="1454492203157" expanded="true" signature="1315:1369" placeholder="{...}" />
-                <marker date="1454492203157" expanded="true" signature="1769:1806" placeholder="{...}" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -201,17 +194,17 @@
         <option value="$PROJECT_DIR$/bTree/static/tree/css/home.css" />
         <option value="$PROJECT_DIR$/bTree/static/tree/js/jquery.lqc.extension.js" />
         <option value="$PROJECT_DIR$/bTree/static/tree/js/visit.js" />
-        <option value="$PROJECT_DIR$/bTree/templates/visit.html" />
         <option value="$PROJECT_DIR$/bTree/templates/index.html" />
         <option value="$PROJECT_DIR$/bTree/static/tree/js/home.js" />
         <option value="$PROJECT_DIR$/bTree/models.py" />
         <option value="$PROJECT_DIR$/bTree/__init__.py" />
         <option value="$PROJECT_DIR$/wechat_django/sdk/oauth.py" />
         <option value="$PROJECT_DIR$/bTree/static/tree/js/home_first.js" />
-        <option value="$PROJECT_DIR$/bTree/views.py" />
         <option value="$PROJECT_DIR$/bTree/templates/home.html" />
         <option value="$PROJECT_DIR$/bTree/ajax_process.py" />
         <option value="$PROJECT_DIR$/wechat_django/sdk/parser.py" />
+        <option value="$PROJECT_DIR$/bTree/views.py" />
+        <option value="$PROJECT_DIR$/bTree/templates/visit.html" />
       </list>
     </option>
   </component>
@@ -366,32 +359,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blessTree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blessTree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bTree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -923,12 +890,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="4896">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1454492203157" expanded="true" signature="829:1042" placeholder="{&quot;ajax_type&quot;: '1'...}" />
-            <marker date="1454492203157" expanded="true" signature="1083:1382" placeholder="{...}" />
-            <marker date="1454492203157" expanded="true" signature="1123:1238" placeholder="{...}" />
-            <marker date="1454492203157" expanded="true" signature="1260:1309" placeholder="{...}" />
-            <marker date="1454492203157" expanded="true" signature="1315:1369" placeholder="{...}" />
-            <marker date="1454492203157" expanded="true" signature="1769:1806" placeholder="{...}" />
+            <marker date="1454492203157" expanded="true" signature="-1:-1" placeholder="{&quot;ajax_type&quot;: '1'...}" />
+            <marker date="1454492203157" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1454492203157" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1454492203157" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1454492203157" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1454492203157" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -956,13 +923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="457" max-vertical-offset="1296">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wechat_django/sdk/events.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="986" max-vertical-offset="1836">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1188,14 +1148,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/templates/visit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.074074" vertical-offset="2230" max-vertical-offset="2916">
-          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
@@ -1245,12 +1197,12 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="4896">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1454492203157" expanded="true" signature="829:1042" placeholder="{&quot;ajax_type&quot;: '1'...}" />
-            <marker date="1454492203157" expanded="true" signature="1083:1382" placeholder="{...}" />
-            <marker date="1454492203157" expanded="true" signature="1123:1238" placeholder="{...}" />
-            <marker date="1454492203157" expanded="true" signature="1260:1309" placeholder="{...}" />
-            <marker date="1454492203157" expanded="true" signature="1315:1369" placeholder="{...}" />
-            <marker date="1454492203157" expanded="true" signature="1769:1806" placeholder="{...}" />
+            <marker date="1454492203157" expanded="true" signature="-1:-1" placeholder="{&quot;ajax_type&quot;: '1'...}" />
+            <marker date="1454492203157" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1454492203157" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1454492203157" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1454492203157" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1454492203157" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1316,21 +1268,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/views.py">
+    <entry file="file://$PROJECT_DIR$/wechat_django/sdk/parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.290322" vertical-offset="594" max-vertical-offset="5562">
-          <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="738">
+          <caret line="32" column="73" selection-start-line="32" selection-start-column="73" selection-end-line="32" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat_django/sdk/events.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="662" max-vertical-offset="1836">
+          <caret line="58" column="24" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bTree/templates/visit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6666667" vertical-offset="1503" max-vertical-offset="2196">
+          <caret line="139" column="12" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="12" />
           <folding>
-            <element signature="e#48#62#0" expanded="true" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wechat_django/sdk/parser.py">
+    <entry file="file://$PROJECT_DIR$/bTree/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5473888" vertical-offset="221" max-vertical-offset="738">
-          <caret line="32" column="73" selection-start-line="32" selection-start-column="73" selection-end-line="32" selection-end-column="73" />
-          <folding />
+        <state vertical-scroll-proportion="0.5602537" vertical-offset="3821" max-vertical-offset="5670">
+          <caret line="227" column="8" selection-start-line="227" selection-start-column="8" selection-end-line="227" selection-end-column="8" />
+          <folding>
+            <element signature="e#48#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
