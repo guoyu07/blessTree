@@ -355,21 +355,21 @@
 
         $("#tips").on('tap', function () {
             alert('click tips')
-            $.ajax({
-                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-                type: 'POST',
-                timeout: 1000,
-                data:{
-                    ajax_type = '2',
-                    openid = $("#user_message_openid").text(),
-                    load_begin = 0
-                },
-                beforeSend: LoadFunction, //加载执行方法
-                error: erryFunction,  //错误执行方法
-                success: succFunction //成功执行方法
-            })
-            $("#black-mask").show()
-            $("#rank-widget").show();
+{#            $.ajax({#}
+{#                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
+{#                type: 'POST',#}
+{#                timeout: 1000,#}
+{#                data:{#}
+{#                    ajax_type = '2',#}
+{#                    openid = $("#user_message_openid").text(),#}
+{#                    load_begin = 0#}
+{#                },#}
+{#                beforeSend: LoadFunction, //加载执行方法#}
+{#                error: erryFunction,  //错误执行方法#}
+{#                success: succFunction //成功执行方法#}
+{#            })#}
+{#            $("#black-mask").show()#}
+{#            $("#rank-widget").show();#}
         })
         function LoadFunction(){
             alert('请求数据中')
