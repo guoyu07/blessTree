@@ -218,6 +218,7 @@ def visit(request):
     oauth_vis = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+sourceid)
     # error = False
     # try:
+
     owner_info = client.user.get(client, sourceid)
     owner = owner_info['nickname']
     avatar = owner_info['headimgurl']
@@ -231,7 +232,7 @@ def visit(request):
 
     flip_id = openid = oauth_vis.open_id
     try:
-        user = User.objects.filter(openid=openid, is_plant=True)
+        user = User.objects.get(openid=openid, is_plant=True)
     except ObjectDoesNotExist:
         user = 0
 
