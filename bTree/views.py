@@ -145,7 +145,8 @@ def home(request):
         name = user_info['nickname']
         count = '0'
         avatar_addr = user_info['headimgurl']
-        water_time = Tree.objects.filter(openid=user_openid, type=0 or 3).order_by('-action_time')[:1]
+        owner = User.objects.get(openid=user_openid)
+        water_time = Tree.objects.filter(owner=owner, type=0 or 3).order_by('-action_time')[:1]
         # 分享的链接生成，别人点进去是一个get方法，同时，这个是经过转化的，就是加入认证的链接
 
         share_url = WeChatOAuth(appId, appsecret,
@@ -179,13 +180,13 @@ def first(request):
     first_time = True  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
     avatar_addr = user_info['headimgurl']
     # share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
+    owner = User.objects.get(openid=user_openid)
+    try:
+        tree = Tree.objects.filter(owner=owner, type=0 or 3).order_by('-action_time')
+        water_time = tree[:1]
+    except ObjectDoesNotExist:
+        water_time = 0
 
-    # try:
-    #     tree = Tree.objects.filter(openid=user_openid, type=0 or 3).order_by('-action_time')
-    #     water_time = tree[:1]
-    # except ObjectDoesNotExist:
-    #     water_time = 0
-    water_time = 0
     share_url = WeChatOAuth(appId, appsecret,
                                  'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id).authorize_url
     add_friend_url = WeChatOAuth(appId, appsecret,
