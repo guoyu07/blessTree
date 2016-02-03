@@ -196,8 +196,8 @@ def first(request):
     first_time = True  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
     imgUrl = avatar_addr = user_info['headimgurl']
     # share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
-    owner = User.objects.get(openid=user_openid)
     try:
+        owner = User.objects.get(openid=user_openid)
         tree = Tree.objects.filter(owner=owner, type=0 or 3).order_by('-action_time')
         water_time = tree[:1]
     except ObjectDoesNotExist:
