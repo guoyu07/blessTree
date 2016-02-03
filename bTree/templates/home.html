@@ -336,7 +336,12 @@
 {% if first_time %}
 <!--begin 小部件-->
 <!--mask-->
-<div class="weui_mask" id="black-mask" style="display: none"></div>
+    <div class="overlay" id="black-mask" style="display: none;position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.8);"></div>
 <!--规则-->
 <div class="rule" id="rule" style="display:none">
     <div class="rule-title"><p>游戏规则</p></div>
@@ -377,12 +382,7 @@
 </div>
 
 {% endif %}
-<div class="overlay" style="display: none;position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,.8);"></div>
+
 
 </body>
 <script>
@@ -391,11 +391,11 @@
         $("#count-progress-in").css("width", "{{ count }}%");
 
         $("#tips").on('tap', function () {
-            $(".overlay").show()
+            $("#black-mask").show()
             $("#rank-widget").show();
         })
-        $('.overlay').on('tap',function(){
-            $('.overlay').fadeOut(200);
+        $('#black-mask').on('tap',function(){
+            $('#black-mask').fadeOut(200);
             $('#rank-widget').hide()
         });
         //微信分享接口设置
