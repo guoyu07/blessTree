@@ -94,7 +94,7 @@
 <!--祝福与吐槽-->
 <div class="tucao-widget" id="tucao-widget" style="display: none">
     <div class="tucao-widget-top">
-        <img src="{% static "tree/image/btn/tucao.png" %} }}">
+        <img src="{% static "tree/image/btn/tucao.png" %}">
         <p>吐槽</p>
         <a class="tucao-close" id="tucao-close">X</a>
     </div>
@@ -146,6 +146,7 @@
     $(function () {
         //我的主页
         $("#zone-btn").on('tap', function () {
+            alert('click success')
             window.open({{ my_zone_url|safe }})
         })
 
