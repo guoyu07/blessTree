@@ -181,7 +181,8 @@ def first(request):
     # share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
 
     try:
-        water_time = Tree.objects.filter(openid=user_openid, type=0 or 3).order_by('-action_time')[:1]
+        tree = Tree.objects.filter(openid=user_openid, type=0 or 3).order_by('-action_time')
+        water_time = tree[:1]
     except ObjectDoesNotExist:
         water_time = 0
     share_url = WeChatOAuth(appId, appsecret,
