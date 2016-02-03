@@ -327,7 +327,7 @@ def share(url, timstamp):
     """
     client.fetch_access_token()
     ticket = client.jsapi.get_jsapi_ticket(client)
-    return {"first": client.jsapi.get_jsapi_signature(NONCESTR, ticket, timestamp=timstamp, url), "second": ticket}
+    return {"first": client.jsapi.get_jsapi_signature(NONCESTR, ticket, timestamp=timstamp, url=url), "second": ticket}
 
 
 
