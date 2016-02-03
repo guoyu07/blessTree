@@ -372,7 +372,7 @@
                     link: '{{ add_friend_url|safe }}',
                     imgUrl: '{{ imgUrl|safe }}' ,
                     success: function (res) {
-                        alert('分享成功，积分已奉上');
+                        alert('分享成功，成功添加好友后积分给您奉上哦～');
                       },
                       cancel: function (res) {
                         alert('分享一次，据说会有桃花运哦～');
@@ -384,7 +384,7 @@
                 wx.onMenuShareTimeline({
                       title: '快快点进去祝(吐)福(槽)我吧',
                       link: '{{ share_url|safe }}',
-                      imgUrl: 'http://pan.baidu.com/s/1bnPGtif' ,
+                      imgUrl: '{{ imgUrl|safe }}' ,
                       success: function (res) {
                         alert('分享成功，一(没有个)大波小伙伴正赶来围观～');
                       },
