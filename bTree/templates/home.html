@@ -354,6 +354,7 @@
         $("#count-progress-in").css("width", "{{ count }}%");
 
         $("#tips").on('tap', function () {
+            alert('click tips')
             $.ajax({
                 url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
                 type: 'POST',
