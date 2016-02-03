@@ -293,9 +293,9 @@ def ajax_distribute(request):
         tree_name = request.POST.get('tree_name', '')
         if user_id and user_name and tree_name:
             user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name=tree_name)
-            tree = Tree(owner=user, tree_name=tree_name, type=7, action_time=time.time(), read=True, source_id=user_id,
-                        content=u'创建了祝福树')
-            tree.save()
+            # tree = Tree(owner=user, tree_name=tree_name, type=7, action_time=time.time(), read=True, source_id=user_id,
+            #             content=u'创建了祝福树')
+            # tree.save()
             user.save()
             ret = '1'
         else:
