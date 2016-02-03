@@ -267,7 +267,7 @@ def ajax_distribute(request):
     ajax_type = request.POST.get('ajax_type', '')
     try:
         {
-            # '1': ajax_1,
+            '1': ajax_1,
             '2': ajax_2,
             '3': ajax_3,
             '4': ajax_4,
