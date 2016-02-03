@@ -21,7 +21,7 @@ from wechat_django.sdk.client import WeChatClient
 from wechat_django.sdk.oauth import WeChatOAuth
 from wechat_django.sdk import code_access_token, global_code
 
-from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, TIMESTAMP, client, oauth
+from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, client, oauth
 from bTree.models import User, Tree
 from bTree.ajax_process import ajax_1, ajax_2, ajax_3, ajax_4, ajax_5, ajax_6, ajax_7, ajax_8, ajax_9, ajax_10, ajax_11
 
@@ -141,10 +141,10 @@ def home(request):
         user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
         # 以下信息是为了分享接口而使用的
         app_id = appId
-        timestamp = TIMESTAMP
+        timestamp = int(time.time())
         noncestr = NONCESTR
-        signature = share(user)['first']
-        ticket = share(user)['second']
+        signature = share(user, timestamp)['first']
+        ticket = share(user, timestamp)['second']
 
         # user_info = oauth.get_user_info(oauth.open_id) 这个是得不到user_info的，需要snsapi_userinfo才可以，尼玛
         client.fetch_access_token()
@@ -180,10 +180,10 @@ def first(request):
     user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
     # 以下信息是为了分享接口而使用的
     app_id = appId
-    timestamp = TIMESTAMP
+    timestamp = int(time.time())
     noncestr = NONCESTR
-    signature = share(user)['first']
-    ticket = share(user)['second']
+    signature = share(user, timestamp)['first']
+    ticket = share(user, timestamp)['second']
 
     # user_info = oauth.get_user_info(oauth.open_id) 这个是得不到user_info的，需要snsapi_userinfo才可以，尼玛
     # client.fetch_access_token()调用share()函数已经使用过，不会出现access_token非法的情况
@@ -319,7 +319,7 @@ def ajax_distribute(request):
 
 
 # 一些实用的方法
-def share(url):
+def share(url, timstamp):
     """
 
     :param url:当前网页的URL，就是要提供分享接口的页面的
@@ -327,7 +327,7 @@ def share(url):
     """
     client.fetch_access_token()
     ticket = client.jsapi.get_jsapi_ticket(client)
-    return {"first": client.jsapi.get_jsapi_signature(NONCESTR, ticket, TIMESTAMP, url), "second": ticket}
+    return {"first": client.jsapi.get_jsapi_signature(NONCESTR, ticket, timestamp=timstamp, url), "second": ticket}
 
 
 

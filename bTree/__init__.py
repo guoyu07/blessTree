@@ -9,7 +9,6 @@ appsecret = '04c6d39407f0e882bcf87f207758d0d5'
 WEIXIN_TOKEN = 'weixin'
 
 NONCESTR = 'Wm3WZYTPz0wzccnW'
-TIMESTAMP = '1514587457'
 
 # 获取access_token，定时刷新
 client = WeChatClient(appId, appsecret)
