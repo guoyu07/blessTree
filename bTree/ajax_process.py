@@ -101,7 +101,8 @@ def ajax_3(request):
     load_begin = request.POST.get('load_begin', '')
     client.fetch_access_token()
     if user_id and load_begin:
-        msg_list = Tree.objects.filter(user_id=user_id, read=False).order_by('-action_time')[load_begin:load_begin+4]
+        owner = User.objects.get(openid=user_id)
+        msg_list = Tree.objects.filter(owner=owner, read=False).order_by('-action_time')[load_begin:load_begin+4]
         dict_msg = {'msg_nick': [], 'msg_avatar': [], 'msg_type': [], 'msg_time': []}
         for msg in msg_list:
             user_info = client.user.get(client, msg.owner.openid)
@@ -160,7 +161,8 @@ def ajax_5(request):
     client.fetch_access_token()
     ret = '0'
     if user_id and load_begin:
-        bless_list = Tree.objects.filter(user_id=user_id, type=5).order_by('-action_time')[load_begin:load_begin+4]
+        owner = User.objects.get(openid=user_id)
+        bless_list = Tree.objects.filter(owner=owner, type=5).order_by('-action_time')[load_begin:load_begin+4]
         dict_bless = {'bless_nick': [], 'bless_avatar': [], 'bless_con': [], 'bless_time': []}
         for bless in bless_list:
             user_info = client.user.get(client, bless.owner.openid)
@@ -189,7 +191,8 @@ def ajax_6(request):
     client.fetch_access_token()
     ret = '0'
     if user_id and load_begin:
-        tucao_list = Tree.objects.filter(user_id=user_id, type=6).order_by('-action_time')[load_begin:load_begin+4]
+        owner = User.objects.get(openid=user_id)
+        tucao_list = Tree.objects.filter(owner=owner, type=6).order_by('-action_time')[load_begin:load_begin+4]
         dict_tucao = {'tucao_nick': [], 'tucao_avatar': [], 'tucao_con': [], 'tucao_time': []}
         for tucao in tucao_list:
             user_info = client.user.get(client, tucao.owner.openid)
@@ -218,7 +221,8 @@ def ajax_7(request):
     client.fetch_access_token()
     ret = '0'
     if user_id and load_begin:
-        will_list = Tree.objects.filter(user_id=user_id, type=2).order_by('-action_time')[load_begin:load_begin+4]
+        owner = User.objects.get(openid=user_id)
+        will_list = Tree.objects.filter(owner=owner, type=2).order_by('-action_time')[load_begin:load_begin+4]
         dict_will = {'will_con': [], 'will_time': []}
         for will in will_list:
             dict_will['bless_con'].append(will.type)
