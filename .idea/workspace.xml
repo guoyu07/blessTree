@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/__init__.py" afterPath="$PROJECT_DIR$/bTree/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/views.py" afterPath="$PROJECT_DIR$/bTree/views.py" />
     </list>
     <ignored path="blessTree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,8 +33,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5792208" vertical-offset="3575" max-vertical-offset="3996">
-              <caret line="331" column="22" selection-start-line="331" selection-start-column="22" selection-end-line="331" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.6727273" vertical-offset="3575" max-vertical-offset="4032">
+              <caret line="333" column="39" selection-start-line="333" selection-start-column="39" selection-end-line="333" selection-end-column="39" />
               <folding>
                 <element signature="e#48#62#0" expanded="true" />
                 <element signature="e#1022#3872#0" expanded="false" />
@@ -48,8 +47,8 @@
       <file leaf-file-name="jsapi.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/jsapi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="325" max-vertical-offset="1098">
-              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="649" max-vertical-offset="1098">
+              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -71,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/bTree/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+              <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -134,8 +133,8 @@
         <option value="$PROJECT_DIR$/bTree/ajax_process.py" />
         <option value="$PROJECT_DIR$/bTree/templates/index.html" />
         <option value="$PROJECT_DIR$/bTree/templates/home.html" />
-        <option value="$PROJECT_DIR$/bTree/__init__.py" />
         <option value="$PROJECT_DIR$/bTree/views.py" />
+        <option value="$PROJECT_DIR$/bTree/__init__.py" />
       </list>
     </option>
   </component>
@@ -762,7 +761,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="769" extended-state="7" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23560606" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -773,7 +772,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14130434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25562373" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2560778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2560778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25080732" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1618" y="384" width="1017" height="303" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1232,8 +1231,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/jsapi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="433" max-vertical-offset="1098">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="649" max-vertical-offset="1098">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1241,15 +1240,15 @@
     <entry file="file://$PROJECT_DIR$/bTree/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5792208" vertical-offset="3575" max-vertical-offset="3996">
-          <caret line="331" column="22" selection-start-line="331" selection-start-column="22" selection-end-line="331" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.6727273" vertical-offset="3575" max-vertical-offset="4032">
+          <caret line="333" column="39" selection-start-line="333" selection-start-column="39" selection-end-line="333" selection-end-column="39" />
           <folding>
             <element signature="e#48#62#0" expanded="true" />
             <element signature="e#1022#3872#0" expanded="false" />

@@ -12,5 +12,5 @@ NONCESTR = 'Wm3WZYTPz0wzccnW'
 
 # 获取access_token，定时刷新
 client = WeChatClient(appId, appsecret)
-jsapi_ticket = {'expires_in': 0, 'ticket': 'ticket'}
+jsapi_ticket = {'expires_in': 0}
 oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
