@@ -228,7 +228,10 @@ def visit(request):
     except KeyError:
         error = True
     code = request.GET.get('code', '')
-    oauth_vis.fetch_access_token(code)
+    try:
+        oauth_vis.fetch_access_token(code)
+    except KeyError:
+        oauth_vis.access_token = code_access_token[code]['access_token']
     try:
         flip_id = openid = oauth_vis.open_id
     except AttributeError:
