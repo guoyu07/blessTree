@@ -19,9 +19,14 @@ $(function () {
      * 页面按钮绑定事件
      * */
     // 排行
-    //$("#rank-btn").on('tap', function () {
-    //    $("#rank-widget").show();
-    //})
+    $("#rank-btn").on('tap', function () {
+        $("#black-mask").show()
+        $("#rank-widget").show();
+    })
+    $('#black-mask').on('tap',function(){
+        $('#black-mask').fadeOut(200);
+        $('#rank-widget').hide()
+    });
 
     // 提醒
     $("#tips-btn").on('tap', function () {

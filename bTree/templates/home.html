@@ -238,50 +238,11 @@
 <div class="rank-widget" id="rank-widget" style="display: none;">
     <div class="rank-top">
         <img src="{% static "tree/image/btn/rank.png" %}">
-        <a class="rank-close" id="rank-close">X</a>
         <p style="font-size: 80%">排行榜</p>
     </div>
     <hr style="background-color: rgba(0,0,0,0.6)">
     <div class="rank-content">
         <ul class="rank-list">
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
-            <li><p>test</p></li>
 {#            {% if rank_list %}#}
 {#                {% for nickname, avatar_addr, count, nickname_home in rank_list %}#}
 {#                    <li>#}
@@ -392,14 +353,11 @@
         //进度条宽度百分比设置
         $("#count-progress-in").css("width", "{{ count }}%");
 
-        $("#tips").on('tap', function () {
-            $("#black-mask").show()
-            $("#rank-widget").show();
-        })
-        $('#black-mask').on('tap',function(){
-            $('#black-mask').fadeOut(200);
-            $('#rank-widget').hide()
+
+        $("#rank-widget").on("scrollstop",function(){
+          alert("结束滚动！");
         });
+
         //微信分享接口设置
         wx.config({
               debug: false,
