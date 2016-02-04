@@ -330,13 +330,13 @@ def ajax_distribute(request):
     #     response.write(ret)
     #     return response
     if ajax_type == '2':
-        ajax_2(request)
-    else:
-        response = HttpResponse()
-        response['Content-Type'] = 'text/javascript'
-        ret = ajax_type  # 返回错误码
-        response.write(ret)
-        return response
+    #     ajax_2(request)
+    # else:
+    response = HttpResponse()
+    response['Content-Type'] = 'text/javascript'
+    ret = ajax_type  # 返回错误码
+    response.write(ret)
+    return response
 
 
 
