@@ -201,8 +201,12 @@
 
     //吐槽
     $("#tucao-btn").on('tap', function () {
-        $("#black-mask").show();
         $("#tucao-widget").show();
+        $("#black-mask").show()
+                .on('tap', function () {
+                    $("#bless-widget").hide()
+                    $("#black-mask").hide()
+                })
     })
     //$("#tucao-close").on('tap', function () {
     //    $("tucao-widget").hide();
@@ -216,15 +220,14 @@
     })
     //祝福
     $("#bless-btn").on('tap', function () {
-        $("#black-mask").show();
+        $("#black-mask").show()
+                .on('tap', function () {
+                    $("#bless-widget").hide()
+                    $("#black-mask").hide()
+                })
         $("#bless-widget").show();
     })
-    $("#black-mask").on('tap', function () {
-        $("#bless-widget").hide()
-        $("#tucao-widget").hide()
-        $("#black-mask").hide()
 
-    })
     //$("#bless-close").on('tap', function () {
     //    $("#bless-widget").hide();
     //})
