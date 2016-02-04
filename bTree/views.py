@@ -339,7 +339,7 @@ def ajax_distribute(request):
     #     ret = '2'  # 返回错误码
     #     response.write(ret)
     # return response
-    name_dict = {'twz': 'Love python and Django', 'zqxt': 'I am teaching Django'}
+    name_dict = {"twz": "Love python and Django", "zqxt": "I am teaching Django"}
     return JsonResponse(name_dict)
 
 
