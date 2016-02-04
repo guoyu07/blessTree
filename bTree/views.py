@@ -332,8 +332,8 @@ def ajax_distribute(request):
     #     return response
 
     if ajax_type == '2':
-        ajax_2(request)
-    else:
+    #     ajax_2(request)
+    # else:
         response = HttpResponse()
         response['Content-Type'] = 'text/javascript'
         ret = '2'  # 返回错误码
