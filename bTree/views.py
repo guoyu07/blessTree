@@ -24,7 +24,7 @@ from wechat_django.sdk import code_access_token, global_code
 
 from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, client, oauth, jsapi_ticket
 from bTree.models import User, Tree
-from bTree.ajax_process import ajax_1, ajax_3, ajax_4, ajax_5, ajax_6, ajax_7, ajax_8, ajax_9, ajax_10, ajax_11
+from bTree.ajax_process import ajax_1, ajax_2, ajax_3, ajax_4, ajax_5, ajax_6, ajax_7, ajax_8, ajax_9, ajax_10, ajax_11
 
 # client = WeChatClient(appId, appsecret)
 
@@ -272,17 +272,6 @@ def visit(request):
         friendship.save()
     return render_to_response('visit.html', locals())
 
-
-def ajax_2(request):
-    """
-    :param request:
-    :return:
-    """
-    response = HttpResponse()
-    response['Content-Type'] = 'text/javascript'
-    ret = '2'
-    response.write(ret)
-    return response
 
 @ensure_csrf_cookie
 def ajax_distribute(request):
