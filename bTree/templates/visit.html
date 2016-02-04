@@ -178,16 +178,17 @@
             var bless_con = $('#bless-area').val();
             var na = $("#bless-na").is(':checked') //是否匿名
             if(na==true){
-                alert('匿名')
+                var source_id = "na"
+            }else{
+                var source_id = "{{ flip_id }}"  //这个是发送消息的id，也就是谁祝福的
             }
-            var source_id = "{{ flip_id }}"  //这个是发送消息的id，也就是谁祝福的
             var openid = "{{ sourceid }}"  //这个sourceid是谁的主页的id
             alert(na+source_id)
             $.ajax({
                 url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
                 type: 'POST',
                 timeout: 1000,
-                dataType: 'json',
+{#                dataType: 'json',#}
                 encoding:'utf-8',
                 data:{
                     'ajax_type' : '9',
@@ -210,7 +211,7 @@
             alert('数据请求异常')
         }
         function succFunction(ret){
-            alert(ret[1].name)
+            alert(ret)
         }
 
         /****************
