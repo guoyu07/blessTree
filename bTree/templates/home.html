@@ -371,43 +371,42 @@
 {#            )#}
 {#                    .success(alert('success'))#}
 {#                    .error(alert('error'))#}
-            $.getJSON("http://1.blesstree.sinaapp.com/wechat/ajax",function(ret){
-                //返回值 ret 在这里是一个列表
-                for (var i = ret.length - 1; i >= 0; i--) {
+{#            $.getJSON("http://1.blesstree.sinaapp.com/wechat/ajax",function(ret){#}
+{#                //返回值 ret 在这里是一个列表#}
+{#                for (var i = ret.length - 1; i >= 0; i--) {#}
+{#                  // 把 ret 的每一项显示在网页上#}
+{#                  alert(ret.i)#}
+{#                };#}
+{#              })#}
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                async:false,
+                data:{
+                    'ajax_type' : '2',
+                    'openid' : $("#user_message_openid").text(),
+                    'load_begin' : '0'
+                },
+                beforeSend: LoadFunction, //加载执行方法
+                error: erryFunction,  //错误执行方法
+                success: succFunction //成功执行方法
+            })
+            $("#black-mask").show()
+            $("#rank-widget").show();
+        })
+        function LoadFunction(){
+            alert('请求数据中')
+        }
+        function erryFunction(){
+            alert('数据请求异常')
+        }
+        function succFunction(ret){
+            for (var i = ret.length - 1; i >= 0; i--) {
                   // 把 ret 的每一项显示在网页上
                   alert(ret.i)
                 };
-              })
-{#            $.ajax({#}
-{#                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
-{#                type: 'POST',#}
-{#                timeout: 1000,#}
-{#                async:false,#}
-{#                data:{#}
-{#                    'ajax_type' : '2',#}
-{#                    'openid' : $("#user_message_openid").text(),#}
-{#                    'load_begin' : '0'#}
-{#                },#}
-{#                beforeSend: LoadFunction, //加载执行方法#}
-{#                error: erryFunction,  //错误执行方法#}
-{#                success: succFunction //成功执行方法#}
-{#            })#}
-{#            $("#black-mask").show()#}
-{#            $("#rank-widget").show();#}
-{#        })#}
-{#        function LoadFunction(){#}
-{#            alert('请求数据中')#}
-{#        }#}
-{#        function erryFunction(){#}
-{#            alert('数据请求异常')#}
-{#        }#}
-{#        function succFunction(ret){#}
-{#            var json = eval(ret);#}
-{#            $.each(json, function(index, items){#}
-{#                alert('请求成功返回数据')#}
-{#            })#}
-{#            alert(ret)#}
-{#        }#}
+        }
 
 
         $('#black-mask').on('tap',function(){
