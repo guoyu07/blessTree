@@ -180,22 +180,22 @@
             var source_id = "{{ flip_id }}"  //这个是发送消息的id，也就是谁祝福的
             var openid = "{{ sourceid }}"  //这个sourceid是谁的主页的id
             alert(na+source_id)
-            $.ajax({
-                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-                type: 'POST',
-                timeout: 1000,
-                dataType: 'json',
-                encoding:'utf-8',
-                data:{
-                    'ajax_type' : '9',
-                    'openid' : openid,
-                    'source_id': source_id
-                    'bless_con' : bless_con
-                },
-                beforeSend: LoadFunction, //加载执行方法
-                error: erryFunction,  //错误执行方法
-                success: succFunction //成功执行方法
-            })
+{#            $.ajax({#}
+{#                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
+{#                type: 'POST',#}
+{#                timeout: 1000,#}
+{#                dataType: 'json',#}
+{#                encoding:'utf-8',#}
+{#                data:{#}
+{#                    'ajax_type' : '9',#}
+{#                    'openid' : openid,#}
+{#                    'source_id': source_id#}
+{#                    'bless_con' : bless_con#}
+{#                },#}
+{#                beforeSend: LoadFunction, //加载执行方法#}
+{#                error: erryFunction,  //错误执行方法#}
+{#                success: succFunction //成功执行方法#}
+{#            })#}
             $("#black-mask").hide()
             $("#bless-widget").hide();
 
