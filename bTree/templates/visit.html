@@ -167,9 +167,11 @@
         $('#bless_confirm').on('tap', function () {
             var tucao_con = $('#bless-area').val();
             var na = $("#bless-na").is(':checked') //是否匿名
-            source_id = {{ flip_id }}
+            var source_id = {{ flip_id }}
+            alert(na+source_id)
 
         })
+
     })
     {% endif %}
 </script>

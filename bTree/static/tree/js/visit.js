@@ -66,6 +66,7 @@ $(function () {
     $('#bless_confirm').on('tap', function () {
         var tucao_con = $('#bless-area').val();
         var na = $("#bless-na").is(':checked') //是否匿名
+        alert(na)
 
     })
 })
