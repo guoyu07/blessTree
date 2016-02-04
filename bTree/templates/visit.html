@@ -167,9 +167,9 @@
         })
 
         //发送ajax
-         $('#tucao_confirm').on('tap', function () {
+        $('#tucao_confirm').on('tap', function () {
             var tucao_con = $('#tucao-area').val();
-            if(bless_con=''){
+            if(tucao_con=''){
                 alert('亲还什么都没写呢～')
             }else {
                 var na = $("#tucao-na").is(':checked') //是否匿名
@@ -272,12 +272,12 @@
 
     //吐槽
     $("#tucao-btn").on('tap', function () {
-        $("#tucao-widget").show();
         $("#black-mask").show()
                 .on('tap', function () {
                     $("#tucao-widget").hide()
                     $("#black-mask").hide()
                 })
+        $("#tucao-widget").show()
     })
     //$("#tucao-close").on('tap', function () {
     //    $("tucao-widget").hide();
