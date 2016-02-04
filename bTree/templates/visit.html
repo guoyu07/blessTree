@@ -183,7 +183,6 @@
                 var source_id = "{{ flip_id }}"  //这个是发送消息的id，也就是谁祝福的
             }
             var openid = "{{ sourceid }}"  //这个sourceid是谁的主页的id
-            alert(na+source_id+openid+bless_con)
             $.ajax({
                 url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
                 type: 'POST',
@@ -197,7 +196,7 @@
                     'bless_con' : bless_con
                 },
                 beforeSend: function () {
-                    alert('正在发送数据中')
+                    alert(na+source_id+openid+bless_con)
                 }, //加载执行方法
                 error: function () {
                     alert('您的网络似乎不稳定，请重新尝试一下哦～')
