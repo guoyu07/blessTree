@@ -302,7 +302,7 @@ def ajax_9(request):
         # source_user = User.objects.get(openid=source_id)
         # source_user.count = source_user.count + 5000
         # source_user.save()
-        ret = '1'+user_id
+        ret = '1'+source_id
     else:
         ret = '2'
     response.write(ret)
