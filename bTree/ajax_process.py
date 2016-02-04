@@ -300,12 +300,12 @@ def ajax_9(request):
         #              content=bless_con)
         bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(),
                        read=False, source_id=source_id, content=bless_con)
-        bless.save()
+        # bless.save()
         # source_user = User.objects.get(openid=source_id)
         # source_user.count = source_user.count + 5000
         # source_user.save()
         ret = '1'
-        name_dict = [{"name": user.tree_name}, {'name': user_id}, {'name': bless_con}]
+        name_dict = [{"name": bless}, {'name': user_id}, {'name': bless_con}]
         json_dict = json.dumps(name_dict)
         response['Content-Type'] = 'application/json'
         response.write(json_dict)
