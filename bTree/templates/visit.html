@@ -191,9 +191,9 @@
                 encoding:'utf-8',
                 data:{
                     'ajax_type' : '9',
-                    'openid' : '{{ sourceid }}',
-                    'source_id': '{{ flip_id }}',
-                    'bless_con' : '随便什么啦'
+                    'openid' : openid,
+                    'source_id': source_id,
+                    'bless_con' : bless_con
                 },
                 beforeSend: function () {
                     alert(na+source_id+openid+bless_con)

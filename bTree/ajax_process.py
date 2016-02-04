@@ -290,9 +290,9 @@ def ajax_9(request):
     """
     response = HttpResponse()
     response['Content-Type'] = 'text/javascript'
-    user_id = request.POST.get('openid', '')
-    source_id = request.POST.get('source_id', '')
-    bless_con = request.POST.get('bless_con', '')
+    user_id = request.POST.get('openid', '').encode('utf-8')
+    source_id = request.POST.get('source_id', '').encode('utf-8')
+    bless_con = request.POST.get('bless_con', '').encode('utf-8')
     ret = '0'
     if user_id and source_id and bless_con:
         user = User.objects.get(openid=user_id)
