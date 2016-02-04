@@ -395,10 +395,11 @@
             alert('数据请求异常')
         }
         function succFunction(ret){
-            var json = eval(ret);
-            $.each(json, function(index, items){
-                alert('请求成功返回数据')
-            })
+{#            var json = eval(ret);#}
+{#            $.each(json, function(index, items){#}
+{#                alert('请求成功返回数据')#}
+{#            })#}
+            alert(ret)
         }
 
 
