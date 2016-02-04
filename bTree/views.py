@@ -301,7 +301,7 @@ def ajax_distribute(request):
     try:
         {
             '1': ajax_1,
-            # '2': ajax_2,
+            '2': ajax_2,
             '3': ajax_3,
             '4': ajax_4,
             '5': ajax_5,
