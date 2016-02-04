@@ -150,20 +150,15 @@
 {% endif %}
 </body>
 <script>
-    $(function () {
-
-{#        //我的主页#}
-{#        $("#zone").on('tap', function () {#}
-{#            window.open("{{ my_zone_url|safe }}")#}
-{#        })#}
-
-    })
     {% if error %}
     $(function () {
         alert("调皮～该用户尚未种树，不能访问哟～～")
     })
     {% else %}
     $(function () {
+        //进度条宽度百分比设置
+        $("#count-progress-in").css("width", "{{ count }}%");
+
         //我的主页
         $("#zone").on('tap', function () {
             alert('click success')
