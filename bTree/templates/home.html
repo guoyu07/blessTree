@@ -355,35 +355,35 @@
 
         $("#tips").on('tap', function () {
 {#            alert('cg')#}
-            var test = $.post(
-                'http://1.blesstree.sinaapp.com/wechat/ajax',
-                {
-                    'ajax_type' : '2',
-                    'openid' : $("#user_message_openid").text(),
-                    'load_begin' : '0'
-                },
-                function (ret) {
+{#            var test = $.post(#}
+{#                'http://1.blesstree.sinaapp.com/wechat/ajax',#}
+{#                {#}
+{#                    'ajax_type' : '2',#}
+{#                    'openid' : $("#user_message_openid").text(),#}
+{#                    'load_begin' : '0'#}
+{#                },#}
+{#                function (ret) {#}
 {#                    if(ret=='1'){#}
 {#                        alert("msg-error")#}
 {#                    }#}
-                    alert(ret)
-                }
-            )
+{#                    alert(ret)#}
+{#                }#}
+{#            )#}
 {#                    .success(alert('success'))#}
-                    .error(alert('error'))
-{#            $.ajax({#}
-{#                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
-{#                type: 'POST',#}
-{#                timeout: 1000,#}
-{#                data:{#}
-{#                    ajax_type = '2',#}
-{#                    openid = $("#user_message_openid").text(),#}
-{#                    load_begin = 0#}
-{#                },#}
-{#                beforeSend: LoadFunction, //加载执行方法#}
-{#                error: erryFunction,  //错误执行方法#}
-{#                success: succFunction //成功执行方法#}
-{#            })#}
+{#                    .error(alert('error'))#}
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                data:{
+                    'ajax_type' : '2',
+                    'openid' : $("#user_message_openid").text(),
+                    'load_begin' : 0
+                },
+                beforeSend: LoadFunction, //加载执行方法
+                error: erryFunction,  //错误执行方法
+                success: succFunction //成功执行方法
+            })
 {#            $("#black-mask").show()#}
 {#            $("#rank-widget").show();#}
         })
