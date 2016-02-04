@@ -248,8 +248,8 @@
                         $("#black-mask").hide()
                         $("#bless-widget").hide();
                         // 积分与进度条变化
-                        var val = $("#count-num").val()
-                        $("#count-num").val(val-8000)
+                        var val = parseInt($("#count-num").text())
+                        $("#count-num").text((val+8000).toString())
                         var css_width = parseInt($("#progress-bar").css("width"));
                         $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.17).toString())
                     }
