@@ -96,7 +96,7 @@
     <div class="tucao-widget-top">
         <img src="{% static "tree/image/btn/tucao.png" %}">
         <p>吐槽</p>
-        <a class="tucao-close" id="tucao-close">X</a>
+{#        <a class="tucao-close" id="tucao-close">X</a>#}
     </div>
     <div class="tucao-form-con">
         <div class="tucao-form">
@@ -112,7 +112,7 @@
     <div class="bless-widget-top">
         <img src="{% static "tree/image/btn/bless.png" %}">
         <p>祝福</p>
-        <a class="bless-close" id="bless-close">X</a>
+{#        <a class="bless-close" id="bless-close">X</a>#}
     </div>
     <div class="bless-form-con">
         <div class="bless-form">
@@ -123,7 +123,15 @@
         </div>
     </div>
 </div>
-
+    <!--浇水图片样例-->
+<div class="water-widget" id="water-widget" style="display: none;width: 30%;position: fixed;
+    z-index: 13;
+    width: 25%;
+    left: 50%;
+    height: auto;
+    top: 50%;">
+    <img src="{% static "tree/image/others/water-tree.png" %}" style="width: 100%;height: auto">
+</div>
 <!--浇水提醒-->
 <div class="water-tips" id="water-tips" style="display: none;">
     <p>点击<img src="{% static "tree/image/btn/water.png" %}">&nbsp&nbsp给小树苗浇水，可以帮助它长成大树哦</p>
@@ -169,13 +177,13 @@
             source_id = {{ flip_id }}
 
         })
-{#        $('#bless_confirm').on('tap', function () {#}
-{#            var tucao_con = $('#bless-area').val();#}
-{#            var na = $("#bless-na").is(':checked') //是否匿名#}
-{#            var source_id = {{ flip_id }}#}
-{#            alert(na+source_id)#}
-{##}
-{#        })#}
+        $('#bless_confirm').on('tap', function () {
+            var tucao_con = $('#bless-area').val();
+            var na = $("#bless-na").is(':checked') //是否匿名
+            var source_id = {{ flip_id }}
+            alert(na+source_id)
+
+        })
 
     })
     {% endif %}

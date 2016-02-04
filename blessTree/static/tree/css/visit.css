@@ -203,6 +203,19 @@ ul{
     box-shadow: 0px 2px 2px grey;
 }
 /**********************小部件**********************/
+
+/**************
+**这里是浇水特效
+*/
+.water-widget{
+    position: fixed;
+    z-index: 13;
+    width: 25%;
+    left: 50%;
+    height: auto;
+    top: 50%;
+}
+
 /*祝福或者吐槽*/
 .tucao-widget, .bless-widget{
     position: fixed;

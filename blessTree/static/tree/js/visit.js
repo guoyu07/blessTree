@@ -32,16 +32,17 @@ $(function () {
 
     //浇水按钮
     $("#water-flower").on('tap', function () {
-
+        $("#water-")
     })
 
     //吐槽
     $("#tucao-btn").on('tap', function () {
+        $("#black-mask").show();
         $("#tucao-widget").show();
     })
-    $("#tucao-close").on('tap', function () {
-        $("tucao-widget").hide();
-    })
+    //$("#tucao-close").on('tap', function () {
+    //    $("tucao-widget").hide();
+    //})
 
     $("#rand_tucao_1").on('tap', function () {
         $("#tucao-area").val($('#rand_tucao_1').text())
@@ -51,11 +52,18 @@ $(function () {
     })
     //祝福
     $("#bless-btn").on('tap', function () {
+        $("#black-mask").show();
         $("#bless-widget").show();
     })
-    $("#bless-close").on('tap', function () {
-        $("#bless-widget").hide();
+    $("#black-mask").on('tap', function () {
+        $("#bless-widget").hide()
+        $("#tucao-widget").hide()
+        $("#black-mask").hide()
+
     })
+    //$("#bless-close").on('tap', function () {
+    //    $("#bless-widget").hide();
+    //})
 
     $("#rand_bless_1").on('tap', function () {
         $("#bless-area").val($('#rand_bless_1').text())
@@ -66,6 +74,7 @@ $(function () {
     $('#bless_confirm').on('tap', function () {
         var tucao_con = $('#bless-area').val();
         var na = $("#bless-na").is(':checked') //是否匿名
+        alert(na)
 
     })
 })
