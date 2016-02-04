@@ -330,12 +330,32 @@ def ajax_distribute(request):
     #     ret = '2'  # 返回错误码
     #     response.write(ret)
     #     return response
+
+    # 最不情愿写的代码
     if ajax_type == '1':
         return ajax_1(request)
     elif ajax_type == '2':
         return ajax_2(request)
     elif ajax_type == '3':
         return ajax_3(request)
+    elif ajax_type == '3':
+        return ajax_4(request)
+    elif ajax_type == '4':
+        return ajax_4(request)
+    elif ajax_type == '5':
+        return ajax_5(request)
+    elif ajax_type == '6':
+        return ajax_6(request)
+    elif ajax_type == '7':
+        return ajax_7(request)
+    elif ajax_type == '8':
+        return ajax_8(request)
+    elif ajax_type == '9':
+        return ajax_9(request)
+    elif ajax_type == '10':
+        return ajax_10(request)
+    elif ajax_type == '11':
+        return ajax_11(request)
     else:
         response = HttpResponse()
         response['Content-Type'] = 'text/javascript'
