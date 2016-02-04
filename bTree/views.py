@@ -273,7 +273,7 @@ def visit(request):
     return render_to_response('visit.html', locals())
 
 
-def ajax_2(request):
+def ajax_2():
     """
     :param request:
     :return:
@@ -332,11 +332,11 @@ def ajax_distribute(request):
     #     return response
 
     if ajax_type == '2':
-    #     ajax_2(request)
-    # else:
+        ajax_2()
+    else:
         response = HttpResponse()
         response['Content-Type'] = 'text/javascript'
-        ret = '2'  # 返回错误码
+        ret = '4'  # 返回错误码
         response.write(ret)
     return response
     # name_dict = {"twz": "Love python and Django", "zqxt": "I am teaching Django"}
