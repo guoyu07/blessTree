@@ -296,22 +296,14 @@ def ajax_9(request):
     ret = '0'
     if user_id and source_id and bless_con:
         user = User.objects.get(openid=user_id)
+        user.count = user.count + 5000
+        user.save()
         # bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(), source_id=source_id,
         #              content=bless_con)
         bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(),
                        read=False, source_id=source_id, content=bless_con)
         bless.save()
-        # user.tree_set.add(bless)
-        # user.save()
-
-        # source_user = User.objects.get(openid=source_id)
-        # source_user.count = source_user.count + 5000
-        # source_user.save()
         ret = '1'
-        name_dict = [{"name": bless}, {'name': source_id}, {'name': bless_con}]
-        json_dict = json.dumps(name_dict)
-        response['Content-Type'] = 'application/json'
-        response.write(json_dict)
     else:
         ret = '2'
         response.write(ret)
