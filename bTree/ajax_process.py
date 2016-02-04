@@ -57,14 +57,14 @@ def ajax_1(request):
             user.is_plant = True
             user.friends.count = user.friends.count + 20000
             user.save()
-            msg = Tree(owner=user.friends, tree_name=user.friends.tree_name, type=4, action_time=time.time(), read=True,
-                       source_id=user_id, content=u'创建了祝福树')
+            msg = Tree(owner=user.friends, tree_name=user.friends.tree_name, type=4, action_time=time.time(),
+                       read=False, source_id=user_id, content='创建了祝福树')
             msg.save()
         except ObjectDoesNotExist:
             user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name=tree_name)
             user.save()
         tree = Tree(owner=user, tree_name=tree_name, type=7, action_time=time.time(), read=True, source_id=user_id,
-                    content=u'创建了祝福树')
+                    content='创建了祝福树')
         tree.save()
         ret = '1'
     else:
@@ -296,8 +296,8 @@ def ajax_9(request):
     ret = '0'
     if user_id and source_id and bless_con:
         user = User.objects.get(openid=user_id)
-        bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(), read=False,
-                     source_id=source_id, content=bless_con)
+        bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(), source_id=source_id,
+                     content=bless_con)
         bless.save()
         # source_user = User.objects.get(openid=source_id)
         # source_user.count = source_user.count + 5000
