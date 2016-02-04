@@ -355,7 +355,7 @@
 
         $("#tips").on('tap', function () {
 {#            alert('cg')#}
-            $.post(
+            var test = $.post(
                 'http://1.blesstree.sinaapp.com/wechat/ajax',
                 {
                     'ajax_type' : '2',
@@ -369,6 +369,8 @@
                     alert(ret)
                 }
             )
+                    .success(alert('success'))
+                    .error(alert('error'))
 {#            $.ajax({#}
 {#                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
 {#                type: 'POST',#}
