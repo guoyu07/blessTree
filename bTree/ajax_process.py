@@ -298,9 +298,7 @@ def ajax_9(request):
         user = User.objects.get(openid=user_id)
         bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(), read=False,
                      source_id=source_id, content=bless_con)
-        # user.willing = 'yes'
-        # user.save()
-        # bless.save()
+        bless.save()
         # source_user = User.objects.get(openid=source_id)
         # source_user.count = source_user.count + 5000
         # source_user.save()
