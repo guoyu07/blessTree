@@ -300,7 +300,7 @@ def ajax_2(request):
 
     response = HttpResponse()
     response['Content-Type'] = 'text/javascript'
-    ret = '1'  # 返回错误码
+    ret = request.GET.get('ajax_type', '')  # 返回错误码
     response.write(ret)
     return response
 
