@@ -236,6 +236,7 @@ def visit(request):
         avatar = owner_info['headimgurl']
         owner_db = User.objects.get(openid=sourceid)
         count = owner_db.count
+        count_bar = count/300000*100
         tree_name = owner_db.tree_name
     except KeyError:
         error = True

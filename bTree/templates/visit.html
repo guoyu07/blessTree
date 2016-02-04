@@ -39,9 +39,9 @@
         <!--积分条-->
         <div class="count-progress">
             <div class="progress">
-                <span class="progress-bar"><span class="progress-in" id="progress-in"></span></span>
+                <span class="progress-bar" id="progress-bar"><span class="progress-in" id="progress-in"></span></span>
             </div>
-            <div class="count-num"><p>积分：{{ count }}</p></div>
+            <div class="count-num" id="count-num"><p>积分：{{ count }}</p></div>
         </div>
         <!--历史-->
         <div class="history">
@@ -157,7 +157,7 @@
     {% else %}
     $(function () {
         //进度条宽度百分比设置
-        $("#progress-in").css("width", "{{ count }}%");
+        $("#progress-in").css("width", "{{ count_bar }}%");
 {##}
         //我的主页
         $("#zone").on('tap', function () {
@@ -196,9 +196,9 @@
                     },  //错误执行方法
                     success: function (ret) {
                         if (ret == '1') {
-                            alert('您的祝福对方已经收到啦～')
+                            alert('您的吐槽吓坏服务器菌啦～')
                         } else if (ret == '2') {
-                            alert('不能提交空白祝福哦～')
+                            alert('不能提交空白吐槽哟～')
                         } else {
                             alert('似乎遇到了小菌也未曾遇到的问题呢～')
                         }
@@ -247,6 +247,11 @@
                         }
                         $("#black-mask").hide()
                         $("#bless-widget").hide();
+                        // 积分与进度条变化
+                        var val = $("#count-num").val()
+                        $("#count-num").val(val-8000)
+                        var css_width = parseInt($("#progress-bar").css("width"));
+                        $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.17).toString())
                     }
                 })
             }
