@@ -197,12 +197,16 @@ def first(request):
     first_time = True  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
     imgUrl = avatar_addr = user_info['headimgurl']
     # share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
-    try:
-        owner = User.objects.get(openid=user_openid)
-        tree = Tree.objects.filter(owner=owner, type=0 or 3).order_by('-action_time')
-        water_time = tree[:1]*1000
-    except ObjectDoesNotExist:
-        water_time = 0
+
+    # # 获取时间，事实上除了iphone的返回按钮有问题外，其他一般不会重复进入第一次种树的链接，所以不这样做了
+    # try:
+    #     owner = User.objects.get(openid=user_openid)
+    #     tree = Tree.objects.filter(owner=owner, type=0 or 3).order_by('-action_time')
+    #     water_time = tree[:1].action_time*1000
+    # except ObjectDoesNotExist:
+    #     water_time = 0
+
+    water_time = time.time()*1000
 
     share_url = WeChatOAuth(appId, appsecret,
                                 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id).authorize_url
@@ -235,6 +239,9 @@ def visit(request):
         owner = owner_info['nickname']
         avatar = owner_info['headimgurl']
         owner_db = User.objects.get(openid=sourceid)
+        # 获取最近一次浇水事件，没有浇过水就是创建树木时间，所以一定会有的，而且是访问的，一定有种树了
+        owner_tree = owner_db.tree_set.filter(type=0 or 3 or 7).order_by('-action_time')[:1]
+        water_time = owner_tree.action_time*1000
         count = owner_db.count
         count_bar = count/300000*100
         tree_name = owner_db.tree_name
@@ -266,7 +273,7 @@ def visit(request):
                               'http://1.blesstree.sinaapp.com/wechat/home/'+"?visit_index='123'&return_openid="+sourceid)\
         .authorize_url
     if request.GET.get('add'):
-        friendship = User(openid=oauth_vis, nickname='na', time_stamp=time.time(), tree_name='na', is_plant=False)
+        friendship = User(openid=oauth_vis.open_id, nickname='na', time_stamp=time.time(), tree_name='na', is_plant=False)
         friendship.save()
         source_fr = User.objects.get(openid=sourceid)
         friendship.friends.add(source_fr)  # 保存朋友关系，只是此时保存的关系的友人尚未种树

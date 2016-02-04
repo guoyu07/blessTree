@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/views.py" afterPath="$PROJECT_DIR$/bTree/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/templates/visit.html" afterPath="$PROJECT_DIR$/bTree/templates/visit.html" />
     </list>
     <ignored path="blessTree.iws" />
@@ -51,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="visit.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="visit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bTree/templates/visit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6966292" vertical-offset="3154" max-vertical-offset="4752">
-              <caret line="250" column="77" selection-start-line="250" selection-start-column="77" selection-end-line="250" selection-end-column="77" />
+            <state vertical-scroll-proportion="-2.4827585" vertical-offset="2376" max-vertical-offset="3924">
+              <caret line="159" column="41" selection-start-line="159" selection-start-column="41" selection-end-line="159" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -66,7 +67,8 @@
                 <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#img#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#6534#8165#0#HTML" expanded="false" />
+                <element signature="e#6612#8639#0#HTML" expanded="false" />
+                <element signature="e#8691#10704#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -116,6 +118,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bTree/static/tree/js/home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3462" max-vertical-offset="4158">
+              <caret line="202" column="24" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="83" />
+              <folding>
+                <element signature="e#1372#1416#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blessTree/static/tree/css/home.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -126,16 +140,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.677419" vertical-offset="4139" max-vertical-offset="5274">
-              <caret line="238" column="17" selection-start-line="238" selection-start-column="8" selection-end-line="238" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.81201047" vertical-offset="1669" max-vertical-offset="5382">
+              <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
               <folding>
                 <element signature="e#48#62#0" expanded="true" />
-                <element signature="e#10551#12676#0" expanded="false" />
-                <element signature="e#12721#13197#0" expanded="false" />
+                <element signature="e#10924#13049#0" expanded="false" />
+                <element signature="e#13094#13570#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bTree/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1242">
+              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -197,8 +221,8 @@
         <option value="$PROJECT_DIR$/bTree/static/tree/js/visit.js" />
         <option value="$PROJECT_DIR$/bTree/models.py" />
         <option value="$PROJECT_DIR$/bTree/ajax_process.py" />
-        <option value="$PROJECT_DIR$/bTree/views.py" />
         <option value="$PROJECT_DIR$/bTree/templates/visit.html" />
+        <option value="$PROJECT_DIR$/bTree/views.py" />
       </list>
     </option>
   </component>
@@ -1178,6 +1202,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="738">
           <caret line="32" column="73" selection-start-line="32" selection-start-column="73" selection-end-line="32" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1185,6 +1210,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="662" max-vertical-offset="1836">
           <caret line="58" column="24" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1297,16 +1323,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/static/tree/js/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="4158">
-          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-          <folding>
-            <element signature="e#1372#1416#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/static/tree/js/home_first.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1198" max-vertical-offset="4896">
@@ -1357,24 +1373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5163934" vertical-offset="594" max-vertical-offset="1242">
-          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.142857" vertical-offset="6240" max-vertical-offset="8280">
-          <caret line="360" column="16" selection-start-line="360" selection-start-column="16" selection-end-line="360" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/ajax_process.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1366" max-vertical-offset="2106">
@@ -1394,22 +1392,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/views.py">
+    <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.677419" vertical-offset="4139" max-vertical-offset="5274">
-          <caret line="238" column="17" selection-start-line="238" selection-start-column="8" selection-end-line="238" selection-end-column="17" />
+        <state vertical-scroll-proportion="-2.142857" vertical-offset="6240" max-vertical-offset="8280">
+          <caret line="360" column="16" selection-start-line="360" selection-start-column="16" selection-end-line="360" selection-end-column="33" />
           <folding>
-            <element signature="e#48#62#0" expanded="true" />
-            <element signature="e#10551#12676#0" expanded="false" />
-            <element signature="e#12721#13197#0" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bTree/static/tree/js/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3462" max-vertical-offset="4158">
+          <caret line="202" column="24" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="83" />
+          <folding>
+            <element signature="e#1372#1416#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bTree/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="632" max-vertical-offset="1242">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree/templates/visit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6966292" vertical-offset="3154" max-vertical-offset="4752">
-          <caret line="250" column="77" selection-start-line="250" selection-start-column="77" selection-end-line="250" selection-end-column="77" />
+        <state vertical-scroll-proportion="-2.4827585" vertical-offset="2376" max-vertical-offset="3924">
+          <caret line="159" column="41" selection-start-line="159" selection-start-column="41" selection-end-line="159" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1420,7 +1434,20 @@
             <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#img#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#6534#8165#0#HTML" expanded="false" />
+            <element signature="e#6612#8639#0#HTML" expanded="false" />
+            <element signature="e#8691#10704#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bTree/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81201047" vertical-offset="1669" max-vertical-offset="5382">
+          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+          <folding>
+            <element signature="e#48#62#0" expanded="true" />
+            <element signature="e#10924#13049#0" expanded="false" />
+            <element signature="e#13094#13570#0" expanded="false" />
           </folding>
         </state>
       </provider>

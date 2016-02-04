@@ -156,6 +156,8 @@
     })
     {% else %}
     $(function () {
+        //一些需要判断逻辑的全局变量
+        var water_time = {{ water_time }}  //最近一次浇水时间
         //进度条宽度百分比设置
         $("#progress-in").css("width", "{{ count_bar }}%");
 {##}
@@ -276,7 +278,7 @@
 
     //浇水按钮
     $("#water-flower").on('tap', function () {
-        $("#water-")
+
     })
 
     //吐槽
