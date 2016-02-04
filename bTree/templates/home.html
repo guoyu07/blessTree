@@ -399,7 +399,8 @@
             alert('数据请求异常')
         }
         function succFunction(ret){
-            alert(ret)
+            var data = $.parseJSON(ret);
+            alert(data.twz)
         }
 
 
