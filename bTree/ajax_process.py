@@ -289,7 +289,7 @@ def ajax_9(request):
     :return:
     """
     response = HttpResponse()
-    response['Content-Type'] = 'text/javascript'
+    # response['Content-Type'] = 'text/javascript'
     user_id = request.POST.get('openid', '')
     source_id = request.POST.get('source_id', '')
     bless_con = request.POST.get('bless_con', '')
@@ -305,6 +305,7 @@ def ajax_9(request):
         ret = '1'
         name_dict = [{"name": '启程'}, {'name': "标"}, {'name': "啦啦啦"}]
         json_dict = json.dumps(name_dict)
+        response['Content-Type'] = 'application/json'
         response.write(json_dict)
     else:
         ret = '2'
