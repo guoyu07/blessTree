@@ -96,7 +96,7 @@ def ajax_2(request):
         # # 注意成功不反悔ret1，省去处理的麻烦
         response['Content-Type'] = 'application/json'
         name_dict = {"twz": "中文", "zqxt": "I am teaching Django"}
-        json_dict = json.dumps(name_dict, ensure_ascii=False)
+        json_dict = json.dumps(name_dict)
         response.write(json_dict)
     else:
         ret = '2'
