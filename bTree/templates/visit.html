@@ -204,6 +204,11 @@
                         }
                         $("#black-mask").hide()
                         $("#tucao-widget").hide();
+                        // 积分与进度条变化
+                        var val = parseInt($("#count-num").text().substr(3))
+                        $("#count-num").text('积分:'+(val-8000).toString())
+                        var css_width = parseInt($("#progress-bar").css("width"));
+                        $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.027).toString())
                     }
                 })
             }
