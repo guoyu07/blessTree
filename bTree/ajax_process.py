@@ -298,11 +298,11 @@ def ajax_9(request):
         user = User.objects.get(openid=user_id)
         bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(), source_id=source_id,
                      content='收到吐槽')
-        bless.save()
+        # bless.save()
         # source_user = User.objects.get(openid=source_id)
         # source_user.count = source_user.count + 5000
         # source_user.save()
-        ret = '1'
+        ret = '1'+user_id+source_id+bless_con
     else:
         ret = '2'
     response.write(ret)
