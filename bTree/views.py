@@ -242,10 +242,10 @@ def visit(request):
         # 获取最近一次浇水事件，没有浇过水就是创建树木时间，所以一定会有的，而且是访问的，一定有种树了
         if owner_db.tree_set.filter(type=0) or owner_db.tree_set.filter(type=3):
             owner_tree = owner_db.tree_set.filter(type=3)[0] or owner_db.tree_set.filter(type=0)[0]
-            water_time = owner_tree.action_time
+            water_time = int(owner_tree.action_time)
         else:
             owner_tree = owner_db.tree_set.filter(type=7)[0]
-            water_time = owner_tree.action_time
+            water_time = int(owner_tree.action_time)
         count = owner_db.count
         count_bar = count/300000*100
         tree_name = owner_db.tree_name

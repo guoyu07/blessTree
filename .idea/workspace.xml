@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/views.py" afterPath="$PROJECT_DIR$/bTree/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blessTree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -142,14 +142,14 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6956522" vertical-offset="2160" max-vertical-offset="3492">
-              <caret line="243" column="52" selection-start-line="243" selection-start-column="52" selection-end-line="243" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.5652174" vertical-offset="2196" max-vertical-offset="3546">
+              <caret line="242" column="79" selection-start-line="242" selection-start-column="79" selection-end-line="242" selection-end-column="79" />
               <folding>
                 <element signature="e#48#62#0" expanded="true" />
                 <element signature="e#3959#6410#0" expanded="false" />
                 <element signature="e#6450#8649#0" expanded="false" />
-                <element signature="e#10944#13069#0" expanded="false" />
-                <element signature="e#13114#13590#0" expanded="false" />
+                <element signature="e#11089#13214#0" expanded="false" />
+                <element signature="e#13259#13735#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1443,14 +1443,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6956522" vertical-offset="2160" max-vertical-offset="3492">
-          <caret line="243" column="52" selection-start-line="243" selection-start-column="52" selection-end-line="243" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.5652174" vertical-offset="2196" max-vertical-offset="3546">
+          <caret line="242" column="79" selection-start-line="242" selection-start-column="79" selection-end-line="242" selection-end-column="79" />
           <folding>
             <element signature="e#48#62#0" expanded="true" />
             <element signature="e#3959#6410#0" expanded="false" />
             <element signature="e#6450#8649#0" expanded="false" />
-            <element signature="e#10944#13069#0" expanded="false" />
-            <element signature="e#13114#13590#0" expanded="false" />
+            <element signature="e#11089#13214#0" expanded="false" />
+            <element signature="e#13259#13735#0" expanded="false" />
           </folding>
         </state>
       </provider>
