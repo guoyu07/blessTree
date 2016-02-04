@@ -318,11 +318,8 @@ def ajax_distribute(request):
         ret = '2'  # 返回错误码
         response.write(ret)
         return response
-    # response = HttpResponse()
-    # response['Content-Type'] = 'text/javascript'
-    # ret = '2'  # 返回错误码
-    # response.write(ret)
-    # return response
+
+
 
 
 # 一些实用的方法

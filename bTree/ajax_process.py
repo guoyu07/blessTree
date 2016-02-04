@@ -97,6 +97,7 @@ def ajax_2(request):
     #     ret = '2'
     #     response.write(ret)
     # return response
+
     response = HttpResponse()
     response['Content-Type'] = 'text/javascript'
     ret = '2'  # 返回错误码
