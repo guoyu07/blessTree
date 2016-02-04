@@ -303,7 +303,7 @@ def ajax_9(request):
         # source_user.count = source_user.count + 5000
         # source_user.save()
         ret = '1'
-        name_dict = [{"name": '启程'}, {'name': "标"}, {'name': "啦啦啦"}]
+        name_dict = [{"name": '启程'}, {'name': user_id}, {'name': "啦啦啦"}]
         json_dict = json.dumps(name_dict)
         response['Content-Type'] = 'application/json'
         response.write(json_dict)
