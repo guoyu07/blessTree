@@ -178,8 +178,34 @@
             var na = $("#bless-na").is(':checked') //是否匿名
             var source_id = "{{ flip_id }}"
             alert(na+source_id)
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '2',
+                    'openid' : $("#user_message_openid").text(),
+                    'load_begin' : '发送中文没问题'
+                },
+                beforeSend: LoadFunction, //加载执行方法
+                error: erryFunction,  //错误执行方法
+                success: succFunction //成功执行方法
+            })
+            $("#black-mask").hide()
+            $("#bless-widget").hide();
 
         })
+        function LoadFunction(){
+            alert('请求数据中')
+        }
+        function erryFunction(){
+            alert('数据请求异常')
+        }
+        function succFunction(ret){
+            alert(ret[1].name)
+        }
 
         /****************
      * 按钮逻辑
