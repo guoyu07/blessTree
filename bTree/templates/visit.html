@@ -170,13 +170,13 @@
          $('#tucao_confirm').on('tap', function () {
             var tucao_con = $('#tucao-area').val();
             var na = $("#tucao-na").is(':checked') //是否匿名
-            source_id = {{ flip_id }}
+            var source_id = "{{ flip_id }}"
 
         })
         $('#bless_confirm').on('tap', function () {
             var tucao_con = $('#bless-area').val();
             var na = $("#bless-na").is(':checked') //是否匿名
-            var source_id = {{ flip_id }}
+            var source_id = "{{ flip_id }}"
             alert(na+source_id)
 
         })
@@ -200,7 +200,7 @@
         $("#tucao-widget").show();
         $("#black-mask").show()
                 .on('tap', function () {
-                    $("#bless-widget").hide()
+                    $("#tucao-widget").hide()
                     $("#black-mask").hide()
                 })
     })
