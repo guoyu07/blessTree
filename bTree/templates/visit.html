@@ -188,7 +188,6 @@
                 url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
                 type: 'POST',
                 timeout: 1000,
-{#                dataType: 'json',#}
                 encoding:'utf-8',
                 data:{
                     'ajax_type' : '9',
@@ -196,23 +195,27 @@
                     'source_id': source_id,
                     'bless_con' : bless_con
                 },
-                beforeSend: LoadFunction, //加载执行方法
-                error: erryFunction,  //错误执行方法
-                success: succFunction //成功执行方法
+                beforeSend: function () {
+                    alert('正在发送数据中')
+                }, //加载执行方法
+                error: function () {
+                    alert('您的网络似乎不稳定，请重新尝试一下哦～')
+                },  //错误执行方法
+                success: function (ret) {
+                    if(ret == '1'){
+                        alert('您的祝福对方已经收到啦～')
+                    }else if(ret == '2'){
+                        alert('服务器似乎有点问题，谁开发的这么烂的程序～')
+                    }else{
+                        alert('似乎遇到了小菌也未曾遇到的问题呢～')
+                    }
+                } //成功执行方法
             })
             $("#black-mask").hide()
             $("#bless-widget").hide();
 
         })
-        function LoadFunction(){
-            alert('请求数据中')
-        }
-        function erryFunction(){
-            alert('数据请求异常')
-        }
-        function succFunction(ret){
-            alert(ret)
-        }
+
 
         /****************
      * 按钮逻辑
