@@ -46,7 +46,7 @@ class Tree(models.Model):
     互动信息表，主要是保存互动信息，
     """
     # 基本信息
-    owner = models.OneToOneField(User)
+    owner = models.ForeignKey(User)
     tree_name = models.CharField(max_length=40)
     count = models.IntegerField(default=0)  # 这几积分没有用了
 

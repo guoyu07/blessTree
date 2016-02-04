@@ -266,6 +266,7 @@ def visit(request):
         .authorize_url
     if request.GET.get('add'):
         friendship = User(openid=oauth_vis, nickname='na', time_stamp=time.time(), tree_name='na', is_plant=False)
+        friendship.save()
         source_fr = User.objects.get(openid=sourceid)
         friendship.friends.add(source_fr)  # 保存朋友关系，只是此时保存的关系的友人尚未种树
         friendship.save()
