@@ -308,7 +308,7 @@ def ajax_9(request):
         response.write(json_dict)
     else:
         ret = '2'
-    response.write(ret)
+        response.write(ret)
     return response
 
 
