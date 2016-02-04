@@ -338,8 +338,6 @@ def ajax_distribute(request):
         return ajax_2(request)
     elif ajax_type == '3':
         return ajax_3(request)
-    elif ajax_type == '3':
-        return ajax_4(request)
     elif ajax_type == '4':
         return ajax_4(request)
     elif ajax_type == '5':
