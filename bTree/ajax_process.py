@@ -309,7 +309,7 @@ def ajax_9(request):
     # return response
     response['Content-Type'] = 'application/json'
     # name_dict = {"twz": load_begin, "zqxt": "I am teaching Django"}
-    name_dict = [{"name": user_id}, {'name': source_id}, {'name': bless_con}]
+    name_dict = [{"name": 'name0'}, {'name': 'name1'}, {'name': 'name2'}]
     json_dict = json.dumps(name_dict)
     response.write(json_dict)
 
