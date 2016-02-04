@@ -41,7 +41,7 @@
             <div class="progress">
                 <span class="progress-bar" id="progress-bar"><span class="progress-in" id="progress-in"></span></span>
             </div>
-            <div class="count-num" id="count-num"><p>积分：{{ count }}</p></div>
+            <div class="count-num" id="count-num"><p>积分:{{ count }}</p></div>
         </div>
         <!--历史-->
         <div class="history">
@@ -248,8 +248,8 @@
                         $("#black-mask").hide()
                         $("#bless-widget").hide();
                         // 积分与进度条变化
-                        var val = parseInt($("#count-num").text())
-                        $("#count-num").text((val+8000).toString())
+                        var val = parseInt($("#count-num").text().substr(5))
+                        $("#count-num").text('积分:'+(val+8000).toString())
                         var css_width = parseInt($("#progress-bar").css("width"));
                         $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.17).toString())
                     }
