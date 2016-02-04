@@ -296,10 +296,9 @@ def ajax_9(request):
     ret = '0'
     if user_id and source_id and bless_con:
         user = User.objects.get(openid=user_id)
-        user.save()
         bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(), source_id=source_id,
                      content=bless_con)
-        bless.save()
+        # bless.save()
         # source_user = User.objects.get(openid=source_id)
         # source_user.count = source_user.count + 5000
         # source_user.save()
