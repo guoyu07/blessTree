@@ -168,15 +168,17 @@
 
         //发送ajax
          $('#tucao_confirm').on('tap', function () {
-            var tucao_con = $('#tucao-area').val();
-            var na = $("#tucao-na").is(':checked') //是否匿名
-            var source_id = "{{ flip_id }}"
+             var tucao_con = $('#tucao-area').val();
+             var na = $("#tucao-na").is(':checked') //是否匿名
+             var source_id = "{{ flip_id }}"  //这个是发送消息的id，也就是谁浇水的
+
 
         })
         $('#bless_confirm').on('tap', function () {
-            var tucao_con = $('#bless-area').val();
+            var bless_con = $('#bless-area').val();
             var na = $("#bless-na").is(':checked') //是否匿名
-            var source_id = "{{ flip_id }}"
+            var source_id = "{{ flip_id }}"  //这个是发送消息的id，也就是谁祝福的
+            var openid = "{{ sourceid }}"  //这个sourceid是谁的主页的id
             alert(na+source_id)
             $.ajax({
                 url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
@@ -185,9 +187,10 @@
                 dataType: 'json',
                 encoding:'utf-8',
                 data:{
-                    'ajax_type' : '2',
-                    'openid' : source_id,
-                    'load_begin' : '发送中文没问题'
+                    'ajax_type' : '9',
+                    'openid' : openid,
+                    'source_id': source_id
+                    'bless_con' : bless_con
                 },
                 beforeSend: LoadFunction, //加载执行方法
                 error: erryFunction,  //错误执行方法
