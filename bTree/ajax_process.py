@@ -94,7 +94,8 @@ def ajax_2(request):
         # json_rank = json.dumps(dict_user, ensure_ascii=False)
         # response.write(json_rank)
         # # 注意成功不反悔ret1，省去处理的麻烦
-        name_dict = {"twz": "hello", "zqxt": "I am teaching Django"}
+        response['Content-Type'] = 'application/json'
+        name_dict = {"twz": "中文", "zqxt": "I am teaching Django"}
         json_dict = json.dumps(name_dict, ensure_ascii=False)
         response.write(json_dict)
     else:
