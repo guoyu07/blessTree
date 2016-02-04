@@ -231,6 +231,8 @@ def visit(request):
     :param request:
     :return:
     """
+
+    # TODO:if 用户没关注公众号却想回复评论 需要重新去一个更高级的认证页面获取nickname信息与imgurl信息
     sourceid = request.GET.get('openid', '')
     oauth_vis = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+sourceid)
     error = False
