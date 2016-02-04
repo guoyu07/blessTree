@@ -187,6 +187,7 @@
                 url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
                 type: 'POST',
                 timeout: 1000,
+                dataType: 'json',
                 async:false,  //不能异步去传输，否则有些数据就没有了
                 encoding:'utf-8',
                 data:{
@@ -207,7 +208,7 @@
                     }else if(ret == '2'){
                         alert('服务器似乎有点问题，谁开发的这么烂的程序～')
                     }else{
-                        alert(ret)
+                        alert(ret[1].name)
 {#                        alert('似乎遇到了小菌也未曾遇到的问题呢～')#}
                     }
                     $("#black-mask").hide()

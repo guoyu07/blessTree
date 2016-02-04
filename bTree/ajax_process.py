@@ -289,24 +289,29 @@ def ajax_9(request):
     :return:
     """
     response = HttpResponse()
-    response['Content-Type'] = 'text/javascript'
+    # response['Content-Type'] = 'text/javascript'
     user_id = request.POST.get('openid', '')
     source_id = request.POST.get('source_id', '')
     bless_con = request.POST.get('bless_con', '')
-    ret = '0'
-    if user_id and source_id and bless_con:
-        user = User.objects.get(openid=user_id)
-        bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(), source_id=source_id,
-                     content='乱码？')
-        # bless.save()
-        # source_user = User.objects.get(openid=source_id)
-        # source_user.count = source_user.count + 5000
-        # source_user.save()
-        ret = user.nickname
-    else:
-        ret = '2'
-    response.write(ret)
-    return response
+    # ret = '0'
+    # if user_id and source_id and bless_con:
+    #     user = User.objects.get(openid=user_id)
+    #     # bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(), source_id=source_id,
+    #     #              content='乱码？')
+    #     # bless.save()
+    #     # source_user = User.objects.get(openid=source_id)
+    #     # source_user.count = source_user.count + 5000
+    #     # source_user.save()
+    #     ret = '1'
+    # else:
+    #     ret = '2'
+    # response.write(ret)
+    # return response
+    response['Content-Type'] = 'application/json'
+    # name_dict = {"twz": load_begin, "zqxt": "I am teaching Django"}
+    name_dict = [{"name": user_id}, {'name': source_id}, {'name': bless_con}]
+    json_dict = json.dumps(name_dict)
+    response.write(json_dict)
 
 
 def ajax_10(request):
