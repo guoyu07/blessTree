@@ -9,7 +9,6 @@ import time
 
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import HttpResponse
-from django.http import JsonResponse
 from django.shortcuts import render_to_response
 from django.core.exceptions import ObjectDoesNotExist
 from django.views.decorators.csrf import ensure_csrf_cookie

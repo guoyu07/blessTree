@@ -10,7 +10,7 @@ from django.shortcuts import HttpResponse
 from bTree import client
 from bTree.models import User, Tree
 from django.core.exceptions import ObjectDoesNotExist
-
+from django.http import JsonResponse
 
 # 根据不同的ajax请求码分发给不同的视图函数处理
 """
@@ -78,8 +78,8 @@ def ajax_2(request):
     :return:
     """
     # response = HttpResponse()
-    # user_id = request.POST.get('openid', '')
-    # load_begin = request.POST.get('load_begin', '')
+    user_id = request.POST.get('openid', '')
+    load_begin = request.POST.get('load_begin', '')
     # client.fetch_access_token()
     # if user_id and load_begin:
     #     user_list = User.friends.filter(user_id=user_id).order_by('-count')[load_begin:load_begin+4]
@@ -100,7 +100,7 @@ def ajax_2(request):
 
     response = HttpResponse()
     # response['Content-Type'] = 'text/javascript'
-    ret = '2'  # 返回错误码
+    ret = '2'+user_id+load_begin  # 返回错误码
     response.write(ret)
     return response
 
