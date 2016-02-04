@@ -273,7 +273,7 @@ def visit(request):
     return render_to_response('visit.html', locals())
 
 
-def ajax_2():
+def ajax_2(request):
     """
     :param request:
     :return:
@@ -332,7 +332,7 @@ def ajax_distribute(request):
     #     return response
 
     if ajax_type == '2':
-        return ajax_2()
+        return ajax_2(request)
     else:
         response = HttpResponse()
         response['Content-Type'] = 'text/javascript'
