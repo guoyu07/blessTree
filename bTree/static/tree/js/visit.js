@@ -21,60 +21,60 @@ $(function () {
     $("#rand_bless_2").text(bless_ran[ran2])
 
 
-    /****************
-     * 按钮逻辑
-     * */
-    //历史按钮
-    $("#history").on('tap', function () {
-
-    })
-
-
-    //浇水按钮
-    $("#water-flower").on('tap', function () {
-        $("#water-")
-    })
-
-    //吐槽
-    $("#tucao-btn").on('tap', function () {
-        $("#black-mask").show();
-        $("#tucao-widget").show();
-    })
-    //$("#tucao-close").on('tap', function () {
-    //    $("tucao-widget").hide();
+    ///****************
+    // * 按钮逻辑
+    // * */
+    ////历史按钮
+    //$("#history").on('tap', function () {
+    //
     //})
-
-    $("#rand_tucao_1").on('tap', function () {
-        $("#tucao-area").val($('#rand_tucao_1').text())
-    })
-    $('#rand_tucao_2').on('tap', function () {
-        $("#tucao-area").val($('#rand_tucao_2').text())
-    })
-    //祝福
-    $("#bless-btn").on('tap', function () {
-        $("#black-mask").show();
-        $("#bless-widget").show();
-    })
-    $("#black-mask").on('tap', function () {
-        $("#bless-widget").hide()
-        $("#tucao-widget").hide()
-        $("#black-mask").hide()
-
-    })
-    //$("#bless-close").on('tap', function () {
-    //    $("#bless-widget").hide();
+    //
+    //
+    ////浇水按钮
+    //$("#water-flower").on('tap', function () {
+    //    $("#water-")
     //})
-
-    $("#rand_bless_1").on('tap', function () {
-        $("#bless-area").val($('#rand_bless_1').text())
-    })
-    $('#rand_bless_2').on('tap', function () {
-        $("#bless-area").val($('#rand_bless_2').text())
-    })
-    $('#bless_confirm').on('tap', function () {
-        var tucao_con = $('#bless-area').val();
-        var na = $("#bless-na").is(':checked') //是否匿名
-        alert(na)
-
-    })
+    //
+    ////吐槽
+    //$("#tucao-btn").on('tap', function () {
+    //    $("#black-mask").show();
+    //    $("#tucao-widget").show();
+    //})
+    ////$("#tucao-close").on('tap', function () {
+    ////    $("tucao-widget").hide();
+    ////})
+    //
+    //$("#rand_tucao_1").on('tap', function () {
+    //    $("#tucao-area").val($('#rand_tucao_1').text())
+    //})
+    //$('#rand_tucao_2').on('tap', function () {
+    //    $("#tucao-area").val($('#rand_tucao_2').text())
+    //})
+    ////祝福
+    //$("#bless-btn").on('tap', function () {
+    //    $("#black-mask").show();
+    //    $("#bless-widget").show();
+    //})
+    //$("#black-mask").on('tap', function () {
+    //    $("#bless-widget").hide()
+    //    $("#tucao-widget").hide()
+    //    $("#black-mask").hide()
+    //
+    //})
+    ////$("#bless-close").on('tap', function () {
+    ////    $("#bless-widget").hide();
+    ////})
+    //
+    //$("#rand_bless_1").on('tap', function () {
+    //    $("#bless-area").val($('#rand_bless_1').text())
+    //})
+    //$('#rand_bless_2').on('tap', function () {
+    //    $("#bless-area").val($('#rand_bless_2').text())
+    //})
+    //$('#bless_confirm').on('tap', function () {
+    //    var tucao_con = $('#bless-area').val();
+    //    var na = $("#bless-na").is(':checked') //是否匿名
+    //    alert(na)
+    //
+    //})
 })
