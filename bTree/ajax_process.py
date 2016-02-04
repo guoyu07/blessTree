@@ -94,11 +94,12 @@ def ajax_2(request):
         # response.write(json_rank)
         # # 注意成功不反悔ret1，省去处理的麻烦
         name_dict = {"twz": "Love python and Django", "zqxt": "I am teaching Django"}
-        return JsonResponse(name_dict)
+        json_dict = json.dumps(name_dict)
+        response.write(json_dict)
     else:
         ret = '2'
         response.write(ret)
-        return response
+    return response
 
     # response = HttpResponse()
     # # response['Content-Type'] = 'text/javascript'
