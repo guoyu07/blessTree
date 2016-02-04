@@ -1,6 +1,6 @@
 # --coding:utf-8 -*-
 __author__ = 'albert'
-import json
+# import json
 import time
 
 # Django 库文件
@@ -11,7 +11,7 @@ from bTree import client
 from bTree.models import User, Tree
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
-import simplejson
+import simplejson as json
 
 # 根据不同的ajax请求码分发给不同的视图函数处理
 """
@@ -95,7 +95,7 @@ def ajax_2(request):
         # response.write(json_rank)
         # # 注意成功不反悔ret1，省去处理的麻烦
         name_dict = {"twz": "你好", "zqxt": "I am teaching Django"}
-        json_dict = simplejson.dumps(name_dict, ensure_ascii=False)
+        json_dict = json.dumps(name_dict, ensure_ascii=False)
         response.write(json_dict)
     else:
         ret = '2'
