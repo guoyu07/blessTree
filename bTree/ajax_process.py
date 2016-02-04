@@ -295,7 +295,7 @@ def ajax_9(request):
     bless_con = request.POST.get('bless_con', '')
     ret = '0'
     if user_id and source_id and bless_con:
-        user = User.objects.fliter(openid=user_id)
+        user = User.objects.filter(openid=user_id)
         # bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(), source_id=source_id,
         #              content=bless_con)
         bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(),
