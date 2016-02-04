@@ -306,7 +306,7 @@ def ajax_9(request):
         ret = '1'
     else:
         ret = '2'
-        response.write(ret)
+    response.write(ret)
     return response
 
 
