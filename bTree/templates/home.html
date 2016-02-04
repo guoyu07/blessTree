@@ -382,8 +382,6 @@
                 url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
                 type: 'POST',
                 timeout: 1000,
-                async:false,
-                dataType: 'json',
                 data:{
                     'ajax_type' : '2',
                     'openid' : $("#user_message_openid").text(),
@@ -403,7 +401,7 @@
             alert('数据请求异常')
         }
         function succFunction(ret){
-            alert(ret.toString)
+            alert(ret)
         }
 
 
