@@ -298,8 +298,6 @@ def ajax_9(request):
         user = User.objects.get(openid=user_id)
         user.count = user.count + 5000
         user.save()
-        # bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(), source_id=source_id,
-        #              content=bless_con)
         bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(),
                        read=False, source_id=source_id, content=bless_con)
         bless.save()
@@ -325,14 +323,11 @@ def ajax_10(request):
     ret = '0'
     if user_id and source_id and tucao_con:
         user = User.objects.get(openid=user_id)
-        will = Tree(owner=user, tree_name=user.tree_name, type=6, action_time=time.time(), read=True, source_id=source_id,
-                    content=tucao_con)
-        user.willing = 'yes'
-        will.save()
+        user.count = user.count - 8000
         user.save()
-        source_user = User.objects.get(openid=source_id)
-        source_user.count = source_user.count + 5000
-        source_user.save()
+        tucao = Tree(owner=user, tree_name=user.tree_name, type=6, action_time=time.time(), read=True,
+                    source_id=source_id, content=tucao_con)
+        tucao.save()
         ret = '1'
     else:
         ret = '2'

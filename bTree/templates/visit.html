@@ -156,7 +156,6 @@
     })
     {% else %}
     $(function () {
-        alert("cg")
         //进度条宽度百分比设置
         $("#progress-in").css("width", "{{ count }}%");
 {##}
@@ -169,7 +168,7 @@
         //发送ajax
         $('#tucao_confirm').on('tap', function () {
             var tucao_con = $('#tucao-area').val();
-            if(tucao_con=''){
+            if(tucao_con==''){
                 alert('亲还什么都没写呢～')
             }else {
                 var na = $("#tucao-na").is(':checked') //是否匿名
@@ -187,10 +186,10 @@
                     async: false,  //不能异步去传输，否则有些数据就没有了
                     encoding: 'utf-8',
                     data: {
-                        'ajax_type': '9',
+                        'ajax_type': '10',
                         'openid': openid,
                         'source_id': source_id,
-                        'bless_con': bless_con
+                        'tucao_con': tucao_con
                     },
                     error: function () {
                         alert('您的网络似乎不稳定，请重新尝试一下哦～')
@@ -204,7 +203,7 @@
                             alert('似乎遇到了小菌也未曾遇到的问题呢～')
                         }
                         $("#black-mask").hide()
-                        $("#bless-widget").hide();
+                        $("#tucao-widget").hide();
                     }
                 })
             }
@@ -212,7 +211,7 @@
         })
         $('#bless_confirm').on('tap', function () {
             var bless_con = $('#bless-area').val();
-            if(bless_con=''){
+            if(bless_con==''){
                 alert('亲还什么都没写呢～')
             }else{
                 var na = $("#bless-na").is(':checked') //是否匿名
