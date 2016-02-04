@@ -295,12 +295,12 @@ def ajax_9(request):
     bless_con = request.POST.get('bless_con', '')
     ret = '0'
     if user_id and source_id and bless_con:
-        user = User.objects.get(openid=user_id)
-        bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(), read=True,
-                     source_id=source_id, content=bless_con)
-        user.willing = 'yes'
-        user.save()
-        bless.save()
+        # user = User.objects.get(openid=user_id)
+        # bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(), read=True,
+        #              source_id=source_id, content=bless_con)
+        # user.willing = 'yes'
+        # user.save()
+        # bless.save()
         # source_user = User.objects.get(openid=source_id)
         # source_user.count = source_user.count + 5000
         # source_user.save()
