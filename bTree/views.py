@@ -23,7 +23,7 @@ from wechat_django.sdk import code_access_token, global_code
 
 from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, client, oauth, jsapi_ticket
 from bTree.models import User, Tree
-from bTree.ajax_process import ajax_1, ajax_2, ajax_3, ajax_4, ajax_5, ajax_6, ajax_7, ajax_8, ajax_9, ajax_10, ajax_11
+from bTree.ajax_process import ajax_1, ajax_3, ajax_4, ajax_5, ajax_6, ajax_7, ajax_8, ajax_9, ajax_10, ajax_11
 
 # client = WeChatClient(appId, appsecret)
 
@@ -271,6 +271,38 @@ def visit(request):
         friendship.save()
     return render_to_response('visit.html', locals())
 
+
+def ajax_2(request):
+    """
+    :param request:
+    :return:
+    """
+    # response = HttpResponse()
+    # user_id = request.POST.get('openid', '')
+    # load_begin = request.POST.get('load_begin', '')
+    # client.fetch_access_token()
+    # if user_id and load_begin:
+    #     user_list = User.friends.filter(user_id=user_id).order_by('-count')[load_begin:load_begin+4]
+    #     dict_user = {'user_nick': [], 'user_avatar': [], 'user_count': [], 'user_home': []}
+    #     for user in user_list:
+    #         user_info = client.user.get(client, user_id)
+    #         dict_user['user_nick'].append(user.nickname)
+    #         dict_user['user_avatar'].append(user_info['headimgurl'])
+    #         dict_user['user_count'].append(user.count)
+    #         dict_user['user_home'].append("test")  #
+    #     json_rank = json.dumps(dict_user, ensure_ascii=False)
+    #     response.write(json_rank)
+    #     # 注意成功不反悔ret1，省去处理的麻烦
+    # else:
+    #     ret = '2'
+    #     response.write(ret)
+    # return response
+
+    response = HttpResponse()
+    response['Content-Type'] = 'text/javascript'
+    ret = '1'  # 返回错误码
+    response.write(ret)
+    return response
 
 @ensure_csrf_cookie
 def ajax_distribute(request):
