@@ -134,7 +134,12 @@
     <p>浇水成功，不愧是我的真爱粉～~\(≧▽≦)/~</p>
     <button>我知道啦</button>
 </div>
-
+<div class="overlay" id="black-mask" style="display: none;position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.7);"></div>
 {% endif %}
 </body>
 <script>
@@ -167,7 +172,7 @@
         $('#bless_confirm').on('tap', function () {
             var tucao_con = $('#bless-area').val();
             var na = $("#bless-na").is(':checked') //是否匿名
-            var source_id = {{ flip_id }}
+{#            var source_id = {{ flip_id }}#}
             alert(na+source_id)
 
         })
