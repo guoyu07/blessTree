@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/ajax_process.py" afterPath="$PROJECT_DIR$/bTree/ajax_process.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blessTree.iws" />
@@ -34,18 +33,18 @@
       <file leaf-file-name="ajax_process.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/ajax_process.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6105769" vertical-offset="718" max-vertical-offset="2646">
-              <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.48076922" vertical-offset="718" max-vertical-offset="2646">
+              <caret line="55" column="51" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="51" />
               <folding>
                 <element signature="e#963#1045#1" expanded="false" />
-                <element signature="e#2299#3739#0" expanded="false" />
-                <element signature="e#3767#4862#0" expanded="false" />
-                <element signature="e#4890#5591#0" expanded="false" />
-                <element signature="e#5619#6700#0" expanded="false" />
-                <element signature="e#6728#7806#0" expanded="false" />
-                <element signature="e#7834#8656#0" expanded="false" />
-                <element signature="e#8684#9324#0" expanded="false" />
-                <element signature="e#9352#10111#0" expanded="false" />
+                <element signature="e#2307#3747#0" expanded="false" />
+                <element signature="e#3775#4870#0" expanded="false" />
+                <element signature="e#4898#5599#0" expanded="false" />
+                <element signature="e#5627#6708#0" expanded="false" />
+                <element signature="e#6736#7814#0" expanded="false" />
+                <element signature="e#7842#8664#0" expanded="false" />
+                <element signature="e#8692#9332#0" expanded="false" />
+                <element signature="e#9360#10119#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -941,7 +940,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="769" extended-state="7" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24318182" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -952,7 +951,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14130434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25562373" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2560778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2560778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25080732" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1618" y="384" width="1017" height="303" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1470,18 +1469,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree/ajax_process.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6105769" vertical-offset="718" max-vertical-offset="2646">
-          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.48076922" vertical-offset="718" max-vertical-offset="2646">
+          <caret line="55" column="51" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="51" />
           <folding>
             <element signature="e#963#1045#1" expanded="false" />
-            <element signature="e#2299#3739#0" expanded="false" />
-            <element signature="e#3767#4862#0" expanded="false" />
-            <element signature="e#4890#5591#0" expanded="false" />
-            <element signature="e#5619#6700#0" expanded="false" />
-            <element signature="e#6728#7806#0" expanded="false" />
-            <element signature="e#7834#8656#0" expanded="false" />
-            <element signature="e#8684#9324#0" expanded="false" />
-            <element signature="e#9352#10111#0" expanded="false" />
+            <element signature="e#2307#3747#0" expanded="false" />
+            <element signature="e#3775#4870#0" expanded="false" />
+            <element signature="e#4898#5599#0" expanded="false" />
+            <element signature="e#5627#6708#0" expanded="false" />
+            <element signature="e#6736#7814#0" expanded="false" />
+            <element signature="e#7842#8664#0" expanded="false" />
+            <element signature="e#8692#9332#0" expanded="false" />
+            <element signature="e#9360#10119#0" expanded="false" />
           </folding>
         </state>
       </provider>
