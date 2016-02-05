@@ -502,9 +502,13 @@
                 dataType: 'json',
                 encoding:'utf-8',
                 data:{
-                    'ajax_type' : '1',
-                    'openid' : $("#user_message_openid").text(),
-                    'load_begin' : '0'
+{#                    'ajax_type' : '1',#}
+{#                    'openid' : $("#user_message_openid").text(),#}
+{#                    'load_begin' : '0'#}
+                    'ajax_type': '1',
+                    'openid': $("#user_message_openid").text(),
+                    'nickname': $("#user_message_nickname").text(),
+                    'tree_name': tree_name
                 },
                 beforeSend: LoadFunction, //加载执行方法
                 error: erryFunction,  //错误执行方法
