@@ -55,15 +55,16 @@ def ajax_1(request):
         try:
             user = User.objects.get(openid=user_id)
             user.is_plant = True
-            num = user.friends.all()[0:1].get().count
-            user.friends.all()[0:1].get().count = num + 20000  # 蛋疼。。。
-            user.friends.all()[0:1].get().save()
+            friend_id = user.friends.all()[0:1].get().openid
+            friend_num = user.friends.all()[0:1].get().count
+            friend = User.objects.get(openid=friend_id).count =friend_num + 20000
+            friend.save()
             user.save()
             # msg = Tree(owner=user.friends[0], tree_name=user.friends.tree_name, type=4, action_time=time.time(),
             #            read=False, source_id=user_id, content='创建了祝福树')
             # msg.save()
 
-            ret = '4'+str(num)
+            ret = '4'+str(friend_num)
         except ObjectDoesNotExist:
             # user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name=tree_name)
             # user.save()
