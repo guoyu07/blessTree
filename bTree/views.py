@@ -312,17 +312,29 @@ def visit(request):
                               'http://1.blesstree.sinaapp.com/wechat/home/'+"?visit_index='123'&return_openid="+sourceid)\
         .authorize_url
     if request.GET.get('add') and flip_nickname:  # 通过点击别人分享进去的都需要保存，这里互动了的
-        friendship = User(openid=oauth_vis.open_id, nickname=flip_nickname, avatar_url=flip_avatar, time_stamp=time.time(), tree_name='na', is_plant=False)
-        friendship.save()
-        source_fr = User.objects.get(openid=sourceid)
-        friendship.friends.add(source_fr)  # 保存朋友关系，只是此时保存的关系的友人尚未种树
-        friendship.save()
+        try:
+            friendship = User.objects.get(openid=oauth_vis.open_id)
+            friendship.nickname = flip_nickname
+            friendship.avatar_url = flip_avatar
+            friendship.save()
+        except ObjectDoesNotExist:
+            friendship = User(openid=oauth_vis.open_id, nickname=flip_nickname, avatar_url=flip_avatar, time_stamp=time.time(), tree_name='na', is_plant=False)
+            friendship.save()
+            source_fr = User.objects.get(openid=sourceid)
+            friendship.friends.add(source_fr)  # 保存朋友关系，只是此时保存的关系的友人尚未种树
+            friendship.save()
     elif request.GET.get('add'):  # 通过点击别人分享进去的都需要保存,这里用户只是点击进去过没有互动
-        friendship = User(openid=oauth_vis.open_id, nickname='na', time_stamp=time.time(), tree_name='na', is_plant=False)
-        friendship.save()
-        source_fr = User.objects.get(openid=sourceid)
-        friendship.friends.add(source_fr)  # 保存朋友关系，只是此时保存的关系的友人尚未种树
-        friendship.save()
+        try:
+            friendship = User.objects.get(openid=oauth_vis.open_id)
+            friendship.nickname = flip_nickname
+            friendship.avatar_url = flip_avatar
+            friendship.save()
+        except ObjectDoesNotExist:
+            friendship = User(openid=oauth_vis.open_id, nickname='na', time_stamp=time.time(), tree_name='na', is_plant=False)
+            friendship.save()
+            source_fr = User.objects.get(openid=sourceid)
+            friendship.friends.add(source_fr)  # 保存朋友关系，只是此时保存的关系的友人尚未种树
+            friendship.save()
     return render_to_response('visit.html', locals())
 
 
