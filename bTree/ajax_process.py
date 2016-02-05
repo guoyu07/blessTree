@@ -92,22 +92,22 @@ def ajax_2(request):
     client.fetch_access_token()
     if user_id and load_begin:
         user = User.objects.get(openid=user_id)
-        user_list = user.friends_set.filter(is_plant=True).order_by('-count')[load_begin:load_begin+7]
-        user_dict = []
-        for user in user_list:
-            # 获取用户头像
-            client.fetch_access_token()
-            user_info = client.user.get(client, user_id)
-            # 生成用户页面访问链接
-            user_home = WeChatOAuth(appId, appsecret,
-                                'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+user.openid).authorize_url
-            # 生成传输用的数据
-            user_dict.append({"name": user.nickname,
-                              "avatar": user_info['headimgurl'],
-                              "count": user.count,
-                              "user_home": user_home})
+        # user_list = user.friends_set.filter(is_plant=True).order_by('-count')[load_begin:load_begin+7]
+        # user_dict = []
+        # for user in user_list:
+        #     # 获取用户头像
+        #     client.fetch_access_token()
+        #     user_info = client.user.get(client, user_id)
+        #     # 生成用户页面访问链接
+        #     user_home = WeChatOAuth(appId, appsecret,
+        #                         'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+user.openid).authorize_url
+        #     # 生成传输用的数据
+        #     user_dict.append({"name": user.nickname,
+        #                       "avatar": user_info['headimgurl'],
+        #                       "count": user.count,
+        #                       "user_home": user_home})
         response['Content-Type'] = 'application/json'
-        # user_dict = [{"name": '启程'}, {'name': "标"}, {'name': "啦啦啦"}]
+        user_dict = [{"name": '启程'}, {'name': "标"}, {'name': "啦啦啦"}]
         json_dict = json.dumps(user_dict)
         response.write(json_dict)
     else:
