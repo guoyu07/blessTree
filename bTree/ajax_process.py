@@ -51,7 +51,7 @@ def ajax_1(request):
     user_id = request.POST.get('openid', '')
     user_name = request.POST.get('nickname', '')
     tree_name = request.POST.get('tree_name', '')
-    # if user_id and user_name and tree_name:
+    if user_id and user_name and tree_name:
     #     try:
     #         user = User.objects.get(openid=user_id, tree_name='na')
     #         user.is_plant = True
@@ -66,10 +66,9 @@ def ajax_1(request):
     #     tree = Tree(owner=user, tree_name=tree_name, type=7, action_time=time.time(), read=True, source_id=user_id,
     #                 content='创建了祝福树')
     #     tree.save()
-    #     ret = '1'
-    # else:
-    #     ret = '2'
-    ret = '2'
+        ret = '1'
+    else:
+        ret = '2'
     response.write(ret)
     return response
 
