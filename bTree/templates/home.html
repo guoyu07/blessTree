@@ -705,21 +705,21 @@
             $("#time-to-water").fadeIn(1000);
             $("#time-to-water").fadeOut(1000);
         },600000);
-        window.setInterval(function () {
-            //定时请求消息刷新
-            $.post(
-            'http://1.blesstree.sinaapp.com/wechat/ajax',
-            {
-                'ajax_type': 3,
-                'openid': $("#user_message_openid").text(),
-                'load_begin': 0
-
-            },
-            function () {
-
-            }
-        )
-        },180000);
+{#        window.setInterval(function () {#}
+{#            //定时请求消息刷新#}
+{#            $.post(#}
+{#            'http://1.blesstree.sinaapp.com/wechat/ajax',#}
+{#            {#}
+{#                'ajax_type': 3,#}
+{#                'openid': $("#user_message_openid").text(),#}
+{#                'load_begin': 0#}
+{##}
+{#            },#}
+{#            function () {#}
+{##}
+{#            }#}
+{#        )#}
+{#        },180000);#}
 
     };
     })
