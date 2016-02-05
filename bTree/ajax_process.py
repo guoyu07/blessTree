@@ -93,6 +93,7 @@ def ajax_2(request):
     if user_id and load_begin:
         user = User.objects.get(openid=user_id)
         try:
+            user_list = user.friends.filter(is_plant=True)[0]
             user_list = user.friends.filter(is_plant=True).order_by('-count')[load_begin:load_begin+7]
         except IndexError:
             user_list = []
