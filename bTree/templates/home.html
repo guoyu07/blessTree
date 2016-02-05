@@ -351,42 +351,6 @@
     $(function () {
         //进度条宽度百分比设置
         $("#count-progress-in").css("width", "{{ count }}%");
-        $('#black-mask').on('tap',function(){
-            $('#black-mask').fadeOut(200);
-        });
-        $("#rank").on('tap', function () {
-            $.ajax({
-                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-                type: 'POST',
-                timeout: 1000,
-                dataType: 'json',
-                encoding:'utf-8',
-                data:{
-                    'ajax_type' : '2',
-                    'openid' : $("#user_message_openid").text(),
-                    'load_begin' : '0'
-                },
-                beforeSend: function () {
-                    alert('请求数据中...')
-                }, //加载执行方法
-                error: function () {
-                    alert('数据请求异常')
-                },  //错误执行方法
-                success: function (ret) {
-                    alert(ret)
-                    $("#black-mask").show()
-                    $("#rank-widget").show();
-                    $('#black-mask').on('tap',function(){
-                        $('#black-mask').fadeOut(200);
-                        $('#rank-widget').hide()
-                    });
-                } //成功执行方法
-            })
-        })
-
-        $(document).on("scrollstop",function(){
-          alert("结束滚动！");
-        });
 
         //微信分享接口设置
         wx.config({
@@ -474,90 +438,29 @@
         var tree_name = $("#text_id").val();  //获取树的名字
         $("#whos_tree").html(tree_name);
         $("#count-progress-in").css("width", "{{ count }}%");
-        alert('执行ajax')
-{#        $.post('http://1.blesstree.sinaapp.com/wechat/ajax',#}
-{#            {#}
-{#                'ajax_type': '1',#}
-{#                'openid': $("#user_message_openid").text(),#}
-{#                'nickname': $("#user_message_nickname").text(),#}
-{#                'tree_name': tree_name#}
-{#            },#}
-{#            function(ret) {#}
-{#                if (ret == '1') {#}
-{#                    alert("提交成功！");#}
-{#                } else if (ret == "2") {#}
-{#                    alert("您的网络有问题，请再试一下哦～");#}
-{#                } else {#}
-{#                    alert("网络不太好，请再试一下哦～");#}
-{#                }#}
-{#            })#}
             $.ajax({
                 url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
                 type: 'POST',
                 timeout: 1000,
                 dataType: 'text',
+                async: false,
                 encoding:'utf-8',
                 data:{
-{#                    'ajax_type' : '1',#}
-{#                    'openid' : $("#user_message_openid").text(),#}
-{#                    'load_begin' : '0'#}
                     'ajax_type': '1',
                     'openid': $("#user_message_openid").text(),
                     'nickname': $("#user_message_nickname").text(),
                     'tree_name': tree_name
                 },
-                beforeSend: LoadFunction, //加载执行方法
-                error: erryFunction,  //错误执行方法
-                success: succFunction //成功执行方法
+                beforeSend: function () {
+                    alert('请求数据中...')
+                }, //加载执行方法
+                error: function () {
+                    alert('网络傲娇啦，请再尝试保存~\\(≧▽≦)/~')
+                },  //错误执行方法
+                success: function () {
+                    alert('保存成功～多互动可以让小树快快长大哦')
+                } //成功执行方法
             })
-{#        $.ajax({#}
-{#            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
-{#            type: 'POST',#}
-{#            //timeout: 1000,#}
-{#            dataType:'text',#}
-{#            async: false,  //不能异步去传输，否则有些数据就没有了#}
-{#            encoding: 'utf-8',#}
-{#            data:{#}
-{#                'ajax_type': '1',#}
-{#                'openid': $("#user_message_openid").text(),#}
-{#                'nickname': $("#user_message_nickname").text(),#}
-{#                'tree_name': tree_name#}
-{#            },#}
-{#            error: function () {#}
-{#                alert($("#user_message_openid").text()+$("#user_message_nickname").text()+tree_name)#}
-{#                alert('您的网络似乎不稳定，请重新尝试一下哦～')#}
-{#            },  //错误执行方法#}
-{#            success: function (ret) {#}
-{#                if (ret == '1') {#}
-{#                    alert("提交成功！");#}
-{#                } else if (ret == "2") {#}
-{#                    alert("您的网络有问题，请再试一下哦～");#}
-{#                } else {#}
-{#                    alert("网络不太好，请再试一下哦～");#}
-{#                }#}
-{#                $("#fill-in-name").hide();#}
-{#                $("#black-mask").hide();#}
-{#                $("#tips-water").show();#}
-{#            }#}
-{#        })#}
-    })
-    //    $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
-    //        {
-    //            'ajax_type': '1',
-    //            'openid': $("#user_message_openid").text(),
-    //            'nickname': $("#user_message_nickname").text(),
-    //            'tree_name': tree_name
-    //        },
-    //        function(ret) {
-    //            if (ret == '1') {
-    //                alert("提交成功！");
-    //            } else if (ret == "2") {
-    //                alert("您的网络有问题，请再试一下哦～");
-    //            } else {
-    //                alert("网络不太好，请再试一下哦～");
-    //            }
-    //        })
-
 
     $("#water-tips-btn").on('tap', function () {
         $("#tips-water").hide();
@@ -575,7 +478,7 @@
     $("#tips").on('tap', function () {
         $("#message-widget").show();
     })
-    //浇水
+
     //浇水
     move.select = function(selector){
         return $(selector).get(0);
@@ -719,6 +622,44 @@
 
     };
     })
+
+    $('#black-mask').on('tap',function(){
+       $('#black-mask').fadeOut(200);
+    });
+    $("#rank").on('tap', function () {
+        $.ajax({
+            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+            type: 'POST',
+            timeout: 1000,
+            dataType: 'json',
+            async: false,
+            encoding:'utf-8',
+            data:{
+                'ajax_type' : '2',
+                'openid' : $("#user_message_openid").text(),
+                'load_begin' : '0'
+            },
+            beforeSend: function () {
+                alert('请求数据中...')
+            }, //加载执行方法
+            error: function () {
+                alert('数据请求异常')
+            },  //错误执行方法
+            success: function (ret) {
+                alert(ret)
+                $("#black-mask").show()
+                $("#rank-widget").show();
+                $('#black-mask').on('tap',function(){
+                    $('#black-mask').fadeOut(200);
+                    $('#rank-widget').hide()
+                });
+            } //成功执行方法
+        })
+    })
+
+        $(document).on("scrollstop",function(){
+          alert("结束滚动！");
+        });
 </script>
 </html>
 

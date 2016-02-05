@@ -7,10 +7,10 @@ import time
 
 from django.shortcuts import HttpResponse
 
-from bTree import client
+from bTree import client, appId, appsecret
 from bTree.models import User, Tree
 from django.core.exceptions import ObjectDoesNotExist
-from django.http import JsonResponse
+from wechat_django.sdk.oauth import WeChatOAuth
 import simplejson as json
 
 # 根据不同的ajax请求码分发给不同的视图函数处理
@@ -91,21 +91,24 @@ def ajax_2(request):
     load_begin = request.POST.get('load_begin', '')
     client.fetch_access_token()
     if user_id and load_begin:
-        # user_list = User.friends.filter(user_id=user_id).order_by('-count')[load_begin:load_begin+4]
-        # dict_user = {'user_nick': [], 'user_avatar': [], 'user_count': [], 'user_home': []}
-        # for user in user_list:
-        #     user_info = client.user.get(client, user_id)
-        #     dict_user['user_nick'].append(user.nickname)
-        #     dict_user['user_avatar'].append(user_info['headimgurl'])
-        #     dict_user['user_count'].append(user.count)
-        #     dict_user['user_home'].append("test")  # TODO:去别人家的链接还没弄
-        # json_rank = json.dumps(dict_user, ensure_ascii=False)
-        # response.write(json_rank)
-        # # 注意成功不反悔ret1，省去处理的麻烦
+        user = User.objects.get(openid=user_id)
+        user_list = user.friends_set.filter(is_plant=True).order_by('-count')[load_begin:load_begin+7]
+        user_dict = []
+        for user in user_list:
+            # 获取用户头像
+            client.fetch_access_token()
+            user_info = client.user.get(client, user_id)
+            # 生成用户页面访问链接
+            user_home = WeChatOAuth(appId, appsecret,
+                                'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+user.openid).authorize_url
+            # 生成传输用的数据
+            user_dict.append({"name": user.nickname,
+                              "avatar": user_info['headimgurl'],
+                              "count": user.count,
+                              "user_home": user_home})
         response['Content-Type'] = 'application/json'
-        # name_dict = {"twz": load_begin, "zqxt": "I am teaching Django"}
-        name_dict = [{"name": '启程'}, {'name': "标"}, {'name': "啦啦啦"}]
-        json_dict = json.dumps(name_dict)
+        # user_dict = [{"name": '启程'}, {'name': "标"}, {'name': "啦啦啦"}]
+        json_dict = json.dumps(user_dict)
         response.write(json_dict)
     else:
         ret = '2'
