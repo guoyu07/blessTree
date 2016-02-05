@@ -101,7 +101,6 @@
 <div class="message-widget" id="message-widget" style="display: none;">
     <div class="message-top">
         <img src="{% static "tree/image/btn/tips.png" %}">
-        <a class="message-close" id="message-close">X</a>
         <p style="font-size: 80%">消息</p>
     </div>
     <hr style="background-color: rgba(0,0,0,0.6)">
@@ -352,8 +351,7 @@
     $(function () {
         //进度条宽度百分比设置
         $("#count-progress-in").css("width", "{{ count }}%");
-        alert('no problem')
-        $("#tips").on('tap', function () {
+        $("#rank").on('tap', function () {
             $.ajax({
                 url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
                 type: 'POST',
@@ -365,28 +363,23 @@
                     'openid' : $("#user_message_openid").text(),
                     'load_begin' : '0'
                 },
-                beforeSend: LoadFunction, //加载执行方法
-                error: erryFunction,  //错误执行方法
-                success: succFunction //成功执行方法
+                beforeSend: function () {
+                    alert('请求数据中...')
+                }, //加载执行方法
+                error: function () {
+                    alert('数据请求异常')
+                },  //错误执行方法
+                success: function (ret) {
+                    alert(ret)
+                    $("#black-mask").show()
+                    $("#rank-widget").show();
+                    $('#black-mask').on('tap',function(){
+                        $('#black-mask').fadeOut(200);
+                        $('#rank-widget').hide()
+                    });
+                } //成功执行方法
             })
-            $("#black-mask").show()
-            $("#rank-widget").show();
         })
-        function LoadFunction(){
-            alert('请求数据中')
-        }
-        function erryFunction(){
-            alert('数据请求异常')
-        }
-        function succFunction(ret){
-            alert(ret)
-        }
-
-
-        $('#black-mask').on('tap',function(){
-            $('#black-mask').fadeOut(200);
-            $('#rank-widget').hide()
-        });
 
         $(document).on("scrollstop",function(){
           alert("结束滚动！");
