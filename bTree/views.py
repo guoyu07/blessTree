@@ -304,8 +304,15 @@ def visit(request):
         user = 0
 
     if user is not 0:
-        # 用户已经中树，因为只有关注用户才能种树，不关注用户只能评论吐槽
-        user.friends.add(User.objects.get(openid=sourceid))
+        # 用户已经中树，因为只有关注用户才能种树，不关注用户只能评论吐槽,但是朋友关系要保存
+        try:
+            user.friends.get(openid=sourceid)
+        except ObjectDoesNotExist:
+            user.friends.add(User.objects.get(openid=sourceid))
+            user.save()
+            msg = Tree(owner=owner_db, tree_name=owner_db.tree_name, type=4, action_time=time.time(),
+                           read=False, source_id=user.openid, content='成功添加好友'+user.nickname)
+            msg.save()
         my_zone_url = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home/').authorize_url
         return render_to_response('visit.html', locals())
 
