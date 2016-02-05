@@ -445,7 +445,6 @@
                 })
         })
 
-        alert("lqczzz")
         $('#fill-btn').on('tap', function () {
             tree_name = $("#text_id").val();  //获取树的名字
             $("#whos_tree").html(tree_name);
@@ -464,6 +463,7 @@
                     'tree_name': tree_name
                 },
                 error: function () {
+                    alert($("#user_message_openid").text()+$("#user_message_nickname").text()+tree_name)
                     alert('您的网络似乎不稳定，请重新尝试一下哦～')
                 },  //错误执行方法
                 success: function (ret) {
