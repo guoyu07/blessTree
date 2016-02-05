@@ -61,8 +61,9 @@ def ajax_1(request):
             #            read=False, source_id=user_id, content='创建了祝福树')
             # msg.save()
         except ObjectDoesNotExist:
-            user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name=tree_name)
-            user.save()
+            # user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name=tree_name)
+            # user.save()
+            pass
         # tree = Tree(owner=user, tree_name=tree_name, type=7, action_time=time.time(), read=True, source_id=user_id,
         #             content='创建了祝福树')
         # tree.save()
