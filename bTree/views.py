@@ -286,7 +286,7 @@ def visit(request):
         # TODO：这里是没有关注公众号的时候用户点进去，想祝福/吐槽/浇水/的时候
         try:
             client.fetch_access_token()
-            user_from_wechat = client.user.get(client)
+            user_from_wechat = client.user.get(client, flip_id)
             flip_nickname = user_from_wechat['nickname']
             flip_avatar = user_from_wechat['headimgurl']
         except AttributeError:
