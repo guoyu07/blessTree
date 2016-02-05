@@ -26,7 +26,7 @@ $(function () {
         $('#rule').hide();
         $('#tips-quming').show();
     })
-
+    alert("js加载成功")
     //提醒取名字
     $('#quming-btn').on('tap', function () {
         $('#tips-quming').hide();
