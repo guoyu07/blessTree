@@ -351,6 +351,9 @@
     $(function () {
         //进度条宽度百分比设置
         $("#count-progress-in").css("width", "{{ count }}%");
+        $('#black-mask').on('tap',function(){
+            $('#black-mask').fadeOut(200);
+        });
         $("#rank").on('tap', function () {
             $.ajax({
                 url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
