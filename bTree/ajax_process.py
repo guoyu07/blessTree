@@ -325,7 +325,7 @@ def ajax_10(request):
         user = User.objects.get(openid=user_id)
         user.count = user.count - 8000
         user.save()
-        tucao = Tree(owner=user, tree_name=user.tree_name, type=6, action_time=time.time(), read=True,
+        tucao = Tree(owner=user, tree_name=user.tree_name, type=6, action_time=time.time(), read=False,
                     source_id=source_id, content=tucao_con)
         tucao.save()
         ret = '1'
