@@ -98,10 +98,10 @@ $(function () {
         $("#rank-widget").show();
     })
 
-    // 提醒
-    $("#tips").on('tap', function () {
-        $("#message-widget").show();
-    })
+    //// 提醒
+    //$("#tips").on('tap', function () {
+    //    $("#message-widget").show();
+    //})
     //浇水
     //浇水
         move.select = function(selector){
