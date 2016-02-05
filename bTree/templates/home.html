@@ -379,7 +379,7 @@
             alert('数据请求异常')
         }
         function succFunction(ret){
-            alert(ret[1].name)
+            alert(ret)
         }
 
 
@@ -502,7 +502,7 @@
                 dataType: 'json',
                 encoding:'utf-8',
                 data:{
-                    'ajax_type' : '2',
+                    'ajax_type' : '1',
                     'openid' : $("#user_message_openid").text(),
                     'load_begin' : '0'
                 },
