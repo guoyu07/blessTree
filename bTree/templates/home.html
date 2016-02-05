@@ -242,6 +242,7 @@
     <hr style="background-color: rgba(0,0,0,0.6)">
     <div class="rank-content">
         <ul class="rank-list">
+            <li><a>加载更多哟</a></li>
 {#            {% if rank_list %}#}
 {#                {% for nickname, avatar_addr, count, nickname_home in rank_list %}#}
 {#                    <li>#}
@@ -649,6 +650,7 @@
 {#                    alert(ret[0].name)#}
                     $.each(ret, function (i, item) {
                         alert(item.name)
+                        ""
                     })
                     $("#black-mask").show()
                     $("#rank-widget").show();
