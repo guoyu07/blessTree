@@ -232,9 +232,17 @@ def visit(request):
     :return:
     """
 
-    # TODO:if 用户没关注公众号却想回复评论 需要重新去一个更高级的认证页面获取nickname信息与imgurl信息
     sourceid = request.GET.get('openid', '')
-    oauth_vis = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+sourceid)
+    high_verify = request.GET.get('state', '')
+    if high_verify == 'high_verify':
+        oauth_vis = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+sourceid)
+    else:
+        oauth_vis = WeChatOAuth(appId, appsecret,
+                                'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+sourceid,
+                                scope='snsapi_userinfo',
+                                state='high_verify')
+
+    # 这里是防止用户种树后取消关注了(不种树了)老的链接被别人点进去了
     error = False
     try:
         owner_info = client.user.get(client, sourceid)
@@ -255,6 +263,8 @@ def visit(request):
     except KeyError:
         error = True
     code = request.GET.get('code', '')
+
+    # ios系统返回按钮出现的bug的解决方法
     try:
         oauth_vis.fetch_access_token(code)
     except KeyError:
@@ -265,6 +275,28 @@ def visit(request):
         flip_id = openid = oauth_vis.open_id
     except AttributeError:
         flip_id = openid = code_access_token[code]['openid']
+    # 经过高级用户认证后的访问就有了获取头像与昵称的能力
+    flip_nickname = False
+    if high_verify == 'high_verify':
+        flip_user = oauth_vis.get_user_info(openid=flip_id, access_token=oauth_vis.access_token)
+        flip_nickname = flip_id['nickname']
+        flip_avatar = flip_id['headimgurl']
+        flip_nickname = True
+    else:
+        # TODO：这里是没有关注公众号的时候用户点进去，想祝福/吐槽/浇水/的时候
+        try:
+            client.fetch_access_token()
+            user_from_wechat = client.user.get(client)
+            flip_nickname = user_from_wechat['nickname']
+            flip_avatar = user_from_wechat['headimgurl']
+        except AttributeError:
+            flip_nickname = False
+            # 获取一个高级认证作为点击浇水/祝福/吐槽事件的跳转链接，认证之后回调到原来的位置
+            btn_redirect_url = WeChatOAuth(appId, appsecret,
+                                           'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+sourceid,
+                                           scope='snsapi_userinfo',
+                                           state='high_verify').authorize_url
+
     try:
         user = User.objects.get(openid=openid, is_plant=True)
     except ObjectDoesNotExist:

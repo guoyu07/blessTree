@@ -169,7 +169,8 @@
 
         //发送ajax
         $('#tucao_confirm').on('tap', function () {
-            var tucao_con = $('#tucao-area').val();
+            {% if flip_nickname  %}
+                var tucao_con = $('#tucao-area').val();
             if(tucao_con==''){
                 alert('亲还什么都没写呢～')
             }else {
@@ -198,7 +199,7 @@
                     },  //错误执行方法
                     success: function (ret) {
                         if (ret == '1') {
-                            alert('您的吐槽吓坏服务器菌啦～')
+                            alert('您的吐槽已对敌方造成8000点伤害～')
                         } else if (ret == '2') {
                             alert('不能提交空白吐槽哟～')
                         } else {
@@ -213,11 +214,16 @@
                         $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.027).toString())
                     }
                 })
+            {% else %}
+{#               没有关注又没有高级认证还想吐槽祝福浇水？#}
+                window.open('{{ btn_redirect_url }}')
+            {% endif %}
             }
 
         })
         $('#bless_confirm').on('tap', function () {
-            var bless_con = $('#bless-area').val();
+            {% if flip_nickname %}
+                var bless_con = $('#bless-area').val();
             if(bless_con==''){
                 alert('亲还什么都没写呢～')
             }else{
@@ -261,6 +267,9 @@
                         $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.017).toString())
                     }
                 })
+            {% else %}
+                window.open("{{ btn_redirect_url }}")
+            {% endif %}
             }
 
 
@@ -278,7 +287,11 @@
 
     //浇水按钮
     $("#water-flower").on('tap', function () {
+        {% if flip_nickname %}
 
+        {% else %}
+            window.open("{{ btn_redirect_url }}")
+        {% endif %}
     })
 
     //吐槽
