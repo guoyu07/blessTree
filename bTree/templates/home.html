@@ -40,7 +40,7 @@
         <!--积分条-->
         <div class="count-progress">
             <div class="progress">
-                <span class="progress-bar"><span class="progress-in" id="count-progress-in" style="width: 100%"></span></span>
+                <span class="progress-bar"><span class="progress-in" id="home-progress-in" style="width: 100%"></span></span>
             </div>
             <div class="count-num" id="count-num"><p>积分：{{ count }}</p></div>
         </div>
@@ -351,7 +351,7 @@
 <script>
     $(function () {
         //进度条宽度百分比设置
-        $("#count-progress-in").css("width", "{{ count }}%");
+        $("#home-progress-in").css("width", "{{ count }}%");
 
         $("#tips").on('tap', function () {
             $.ajax({
@@ -383,14 +383,14 @@
         }
 
 
-        $('#black-mask').on('tap',function(){
-            $('#black-mask').fadeOut(200);
-            $('#rank-widget').hide()
-        });
+{#        $('#black-mask').on('tap',function(){#}
+{#            $('#black-mask').fadeOut(200);#}
+{#            $('#rank-widget').hide()#}
+{#        });#}
 
-        $(document).on("scrollstop",function(){
-          alert("结束滚动！");
-        });
+{#        $(document).on("scrollstop",function(){#}
+{#          alert("结束滚动！");#}
+{#        });#}
 
         //微信分享接口设置
         wx.config({
