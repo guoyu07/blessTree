@@ -111,7 +111,7 @@ def ajax_2(request):
         except IndexError:
             user_list = []
         response['Content-Type'] = 'application/json'
-        user_dict = [{"name": '启程'}, {'name': "标"}, {'name': "啦啦啦"}]
+        # user_dict = [{"name": '启程'}, {'name': "标"}, {'name': "啦啦啦"}]
         json_dict = json.dumps(user_dict)
         response.write(json_dict)
     else:

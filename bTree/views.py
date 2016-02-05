@@ -305,6 +305,7 @@ def visit(request):
 
     if user is not 0:
         # 用户已经中树，因为只有关注用户才能种树，不关注用户只能评论吐槽
+        user.friends.add(User.objects.get(openid=sourceid))
         my_zone_url = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home/').authorize_url
         return render_to_response('visit.html', locals())
 
