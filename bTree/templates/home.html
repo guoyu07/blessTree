@@ -455,7 +455,7 @@
                     alert('请求数据中...')
                 }, //加载执行方法
                 error: function () {
-                    alert('网络傲娇啦，请再尝试保存~\\(≧▽≦)/~')
+                    alert('数据请求异常')
                 },  //错误执行方法
                 success: function () {
                     alert('保存成功～多互动可以让小树快快长大哦')
@@ -478,7 +478,7 @@
     $("#tips").on('tap', function () {
         $("#message-widget").show();
     })
-
+    //浇水
     //浇水
     move.select = function(selector){
         return $(selector).get(0);
@@ -623,46 +623,66 @@
     };
     })
 
-    $('#black-mask').on('tap',function(){
-       $('#black-mask').fadeOut(200);
+     $('#black-mask').on('tap',function(){
+        $('#black-mask').fadeOut(200);
     });
-    $("#rank").on('tap', function () {
-        $.ajax({
-            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-            type: 'POST',
-            timeout: 1000,
-            dataType: 'json',
-            async: false,
-            encoding:'utf-8',
-            data:{
-                'ajax_type' : '2',
-                'openid' : $("#user_message_openid").text(),
-                'load_begin' : '0'
-            },
-            beforeSend: function () {
-                alert('请求数据中...')
-            }, //加载执行方法
-            error: function () {
-                alert('数据请求异常')
-            },  //错误执行方法
-            success: function (ret) {
-                alert(ret)
-                $("#black-mask").show()
-                $("#rank-widget").show();
-                $('#black-mask').on('tap',function(){
-                    $('#black-mask').fadeOut(200);
-                    $('#rank-widget').hide()
-                });
-            } //成功执行方法
+        $("#rank").on('tap', function () {
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                async: false,
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '2',
+                    'openid' : $("#user_message_openid").text(),
+                    'load_begin' : '0'
+                },
+                beforeSend: function () {
+                    alert('请求数据中...')
+                }, //加载执行方法
+                error: function () {
+                    alert('数据请求异常')
+                },  //错误执行方法
+                success: function (ret) {
+                    alert(ret)
+                    $("#black-mask").show()
+                    $("#rank-widget").show();
+                    $('#black-mask').on('tap',function(){
+                        $('#black-mask').fadeOut(200);
+                        $('#rank-widget').hide()
+                    });
+                } //成功执行方法
+            })
+        });
+        //初始化事件
+     function init_main(myDate) {
+         $('#black-mask').show();
+         $('#rule').show();
+
+         //定时器事件,用于定时提醒浇水
+         window.setInterval(function () {
+             $("#time-to-water").fadeIn(1000);
+             $("#time-to-water").fadeOut(1000);
+         }, 600000);
+         window.setInterval(function () {
+             //定时请求消息刷新
+             $.post(
+                     'http://1.blesstree.sinaapp.com/wechat/ajax',
+                     {
+                         'ajax_type': 3,
+                         'openid': $("#user_message_openid").text(),
+                         'load_begin': 0
+
+                     },
+                     function () {
+
+                     }
+             )
+         }, 180000);
+     }
         })
-    })
-
-    $(document).on("scrollstop",function(){
-      alert("结束滚动！");
-    });
-
-
-    })
 </script>
 </html>
 
