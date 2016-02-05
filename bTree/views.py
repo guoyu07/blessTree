@@ -386,7 +386,7 @@ def ajax_distribute(request):
     #     return response
 
     # 最不情愿写的代码
-    if ajax_type == '1':
+    if ajax_type == '111':
         return ajax_1(request)
     elif ajax_type == '2':
         return ajax_2(request)
