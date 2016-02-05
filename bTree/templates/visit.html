@@ -211,7 +211,9 @@
                         var val = parseInt($("#count-num").text().substr(3))
                         $("#count-num").text('积分:'+(val-8000).toString())
                         var css_width = parseInt($("#progress-bar").css("width"));
-                        $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.027).toString())
+                        var after_width = (parseInt($("#progress-in").css("width"))-css_width*0.027)
+                        if(after_width<0){after_width=0}
+                        $("#progress-in").css("width", after_width.toString())
                     }
                 })
             {% else %}
