@@ -33,40 +33,41 @@ $(function () {
         $("#fill-in-name").show();
     })
 
-    //填写完树名字之后ajax提交到服务器的按钮
-    $('#fill-btn').on('tap', function () {
-        tree_name = $("#text_id").val();  //获取树的名字
-        $("#whos_tree").html(tree_name);
-        $("#count-progress-in").css("width", "{{ count }}%");
-        alert('执行ajax')
-        $.ajax({
-            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-            type: 'POST',
-            timeout: 1000,
-            async: false,  //不能异步去传输，否则有些数据就没有了
-            encoding: 'utf-8',
-            data: {
-                'ajax_type': '1',
-                'openid': $("#user_message_openid").text(),
-                'nickname': $("#user_message_nickname").text(),
-                'tree_name': tree_name
-            },
-            error: function () {
-                alert('您的网络似乎不稳定，请重新尝试一下哦～')
-            },  //错误执行方法
-            success: function (ret) {
-                if (ret == '1') {
-                    alert("提交成功！");
-                } else if (ret == "2") {
-                    alert("您的网络有问题，请再试一下哦～");
-                } else {
-                    alert("网络不太好，请再试一下哦～");
-                }
-                $("#fill-in-name").hide();
-                $("#black-mask").hide();
-                $("#tips-water").show();
-            }
-        })
+    ////填写完树名字之后ajax提交到服务器的按钮
+    //$('#fill-btn').on('tap', function () {
+    //    tree_name = $("#text_id").val();  //获取树的名字
+    //    $("#whos_tree").html(tree_name);
+    //    $("#count-progress-in").css("width", "{{ count }}%");
+    //    alert('执行ajax')
+    //    $.ajax({
+    //        url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+    //        type: 'POST',
+    //        timeout: 1000,
+    //        async: false,  //不能异步去传输，否则有些数据就没有了
+    //        encoding: 'utf-8',
+    //        data: {
+    //            'ajax_type': '1',
+    //            'openid': $("#user_message_openid").text(),
+    //            'nickname': $("#user_message_nickname").text(),
+    //            'tree_name': tree_name
+    //        },
+    //        error: function () {
+    //            alert('您的网络似乎不稳定，请重新尝试一下哦～')
+    //        },  //错误执行方法
+    //        success: function (ret) {
+    //            if (ret == '1') {
+    //                alert("提交成功！");
+    //            } else if (ret == "2") {
+    //                alert("您的网络有问题，请再试一下哦～");
+    //            } else {
+    //                alert("网络不太好，请再试一下哦～");
+    //            }
+    //            $("#fill-in-name").hide();
+    //            $("#black-mask").hide();
+    //            $("#tips-water").show();
+    //        }
+    //    })
+    //})
     //    $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
     //        {
     //            'ajax_type': '1',
@@ -83,7 +84,7 @@ $(function () {
     //                alert("网络不太好，请再试一下哦～");
     //            }
     //        })
-    })
+
 
     $("#water-tips-btn").on('tap', function () {
         $("#tips-water").hide();
@@ -101,17 +102,28 @@ $(function () {
     $("#tips").on('tap', function () {
         $("#message-widget").show();
     })
-
+    //浇水
+    //浇水
+        move.select = function(selector){
+            return $(selector).get(0);
+        };
+    $("#water-flower").on('tap', function () {
+            $("#water-widget").show();
+            move('#water-widget').rotate(70).end();
+            $('#water-widget').hide(3000);
+            $("user_message_water_time").text(myDate.getDate())
+            //TODO：这里加入浇水的动态特效，翻转啊啥的
+        })
     //加好友
     $("#friends").on('tap', function () {
         $("#add-friend-widget").show();
     })
-    //浇水
-    $("#water-flower").on('tap', function () {
-        $("#water-widget").show();
-        $("user_message_water_time").text(myDate.getDate())
-        //TODO：这里加入浇水的动态特效，翻转啊啥的
-    })
+    ////浇水
+    //$("#water-flower").on('tap', function () {
+    //    $("#water-widget").show();
+    //    $("user_message_water_time").text(myDate.getDate())
+    //    //TODO：这里加入浇水的动态特效，翻转啊啥的
+    //})
     //历史
     $("#history").on('tap', function () {
         $("#history-widget").show();
