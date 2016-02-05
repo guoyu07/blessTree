@@ -26,7 +26,7 @@ $(function () {
         $('#rule').hide();
         $('#tips-quming').show();
     })
-
+    alert("js加载成功")
     //提醒取名字
     $('#quming-btn').on('tap', function () {
         $('#tips-quming').hide();
@@ -42,8 +42,8 @@ $(function () {
         $.ajax({
             url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
             type: 'POST',
-            timeout: 1000,
-            async: false,  //不能异步去传输，否则有些数据就没有了
+            //timeout: 1000,
+            //async: false,  //不能异步去传输，否则有些数据就没有了
             encoding: 'utf-8',
             data: {
                 'ajax_type': '1',
