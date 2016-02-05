@@ -499,7 +499,7 @@
                 url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
                 type: 'POST',
                 timeout: 1000,
-                dataType: 'json',
+                dataType: 'text',
                 encoding:'utf-8',
                 data:{
 {#                    'ajax_type' : '1',#}
@@ -637,7 +637,7 @@
         $('#fill-willing').hide();
         $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
             {
-                'ajax_type':8,
+                'ajax_type':'8',
                 'openid': $("#user_message_openid").text(),
                 'will_con': $("#fill-area").val()
             },
