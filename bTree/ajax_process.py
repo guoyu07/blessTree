@@ -92,7 +92,10 @@ def ajax_2(request):
     client.fetch_access_token()
     if user_id and load_begin:
         user = User.objects.get(openid=user_id)
-        user_list = user.friends.filter(is_plant=True)
+        try:
+            user_list = user.friends.filter(is_plant=True).order_by('-count')[load_begin:load_begin+7]
+        except ObjectDoesNotExist:
+            user_list = []
         # user_dict = []
         # for user in user_list:
         #     # 获取用户头像
