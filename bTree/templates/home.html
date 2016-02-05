@@ -648,7 +648,7 @@
                 success: function (ret) {
 {#                    alert(ret[0].name)#}
                     $.each(ret, function (i, item) {
-                        alert(ret[i].item)
+                        alert(item.name)
                     })
                     $("#black-mask").show()
                     $("#rank-widget").show();
