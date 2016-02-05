@@ -101,17 +101,24 @@ $(function () {
     $("#tips").on('tap', function () {
         $("#message-widget").show();
     })
-
+    //浇水
+    $("#water-flower").on('tap', function () {
+            $("#water-widget").show();
+            move('#water-widget').rotate(70).end();
+            $('#water-widget').hide(3000);
+            $("user_message_water_time").text(myDate.getDate())
+            //TODO：这里加入浇水的动态特效，翻转啊啥的
+        })
     //加好友
     $("#friends").on('tap', function () {
         $("#add-friend-widget").show();
     })
-    //浇水
-    $("#water-flower").on('tap', function () {
-        $("#water-widget").show();
-        $("user_message_water_time").text(myDate.getDate())
-        //TODO：这里加入浇水的动态特效，翻转啊啥的
-    })
+    ////浇水
+    //$("#water-flower").on('tap', function () {
+    //    $("#water-widget").show();
+    //    $("user_message_water_time").text(myDate.getDate())
+    //    //TODO：这里加入浇水的动态特效，翻转啊啥的
+    //})
     //历史
     $("#history").on('tap', function () {
         $("#history-widget").show();
