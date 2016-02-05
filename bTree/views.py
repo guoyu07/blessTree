@@ -216,7 +216,7 @@ def first(request):
 
     #  用户第一次进去种树了，返回去的时候会返回到前面的页面，所以需要再判断一次,如果已经点进去还点进去，需要修改条件
     try:
-        user_db = User.objects.get(openid=oauth.open_id)
+        user_db = User.objects.get(openid=oauth.open_id, is_plant=True)
         count = user_db.count
         first_time = False  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
     except ObjectDoesNotExist:
