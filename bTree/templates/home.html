@@ -446,7 +446,7 @@
         })
 
         $('#fill-btn').on('tap', function () {
-            tree_name = $("#text_id").val();  //获取树的名字
+            var tree_name = $("#text_id").val();  //获取树的名字
             $("#whos_tree").html(tree_name);
             $("#count-progress-in").css("width", "{{ count }}%");
             alert('cg')
