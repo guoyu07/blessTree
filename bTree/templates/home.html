@@ -646,7 +646,10 @@
                     alert('数据请求异常')
                 },  //错误执行方法
                 success: function (ret) {
-                    alert(ret[0].name)
+{#                    alert(ret[0].name)#}
+                    $.each(ret, function (i, item) {
+                        alert(ret[i].item)
+                    })
                     $("#black-mask").show()
                     $("#rank-widget").show();
                     $('#black-mask').on('tap',function(){
