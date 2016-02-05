@@ -40,7 +40,7 @@
         <!--积分条-->
         <div class="count-progress">
             <div class="progress">
-                <span class="progress-bar"><span class="progress-in" id="home-progress-in" style="width: 100%"></span></span>
+                <span class="progress-bar"><span class="progress-in" id="count-progress-in" style="width: 100%"></span></span>
             </div>
             <div class="count-num" id="count-num"><p>积分：{{ count }}</p></div>
         </div>
@@ -351,46 +351,46 @@
 <script>
     $(function () {
         //进度条宽度百分比设置
-        $("#home-progress-in").css("width", "{{ count }}%");
-        alert("js加载成功")
-{#        $("#tips").on('tap', function () {#}
-{#            $.ajax({#}
-{#                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
-{#                type: 'POST',#}
-{#                timeout: 1000,#}
-{#                dataType: 'json',#}
-{#                encoding:'utf-8',#}
-{#                data:{#}
-{#                    'ajax_type' : '2',#}
-{#                    'openid' : $("#user_message_openid").text(),#}
-{#                    'load_begin' : '0'#}
-{#                },#}
-{#                beforeSend: LoadFunction, //加载执行方法#}
-{#                error: erryFunction,  //错误执行方法#}
-{#                success: succFunction //成功执行方法#}
-{#            })#}
-{#            $("#black-mask").show()#}
-{#            $("#rank-widget").show();#}
-{#        })#}
-{#        function LoadFunction(){#}
-{#            alert('请求数据中')#}
-{#        }#}
-{#        function erryFunction(){#}
-{#            alert('数据请求异常')#}
-{#        }#}
-{#        function succFunction(ret){#}
-{#            alert(ret[1].name)#}
-{#        }#}
+        $("#count-progress-in").css("width", "{{ count }}%");
+
+        $("#tips").on('tap', function () {
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '2',
+                    'openid' : $("#user_message_openid").text(),
+                    'load_begin' : '0'
+                },
+                beforeSend: LoadFunction, //加载执行方法
+                error: erryFunction,  //错误执行方法
+                success: succFunction //成功执行方法
+            })
+            $("#black-mask").show()
+            $("#rank-widget").show();
+        })
+        function LoadFunction(){
+            alert('请求数据中')
+        }
+        function erryFunction(){
+            alert('数据请求异常')
+        }
+        function succFunction(ret){
+            alert(ret[1].name)
+        }
 
 
-{#        $('#black-mask').on('tap',function(){#}
-{#            $('#black-mask').fadeOut(200);#}
-{#            $('#rank-widget').hide()#}
-{#        });#}
+        $('#black-mask').on('tap',function(){
+            $('#black-mask').fadeOut(200);
+            $('#rank-widget').hide()
+        });
 
-{#        $(document).on("scrollstop",function(){#}
-{#          alert("结束滚动！");#}
-{#        });#}
+        $(document).on("scrollstop",function(){
+          alert("结束滚动！");
+        });
 
         //微信分享接口设置
         wx.config({
