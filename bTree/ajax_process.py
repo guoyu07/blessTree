@@ -55,6 +55,7 @@ def ajax_1(request):
         try:
             user = User.objects.get(openid=user_id)
             user.is_plant = True
+            user.nickname = user_name
             friend_id = user.friends.all()[0:1].get().openid
             friend = User.objects.get(openid=friend_id)
             friend.count = friend.count + 20000
