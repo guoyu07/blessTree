@@ -104,9 +104,9 @@ $(function () {
     })
     //浇水
     //浇水
-        move.select = function(selector){
-            return $(selector).get(0);
-        };
+    move.select = function(selector){
+        return $(selector).get(0);
+    };
     $("#water-flower").on('tap', function () {
             $("#water-widget").show();
             move('#water-widget').rotate(70).end();

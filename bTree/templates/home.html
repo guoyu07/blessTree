@@ -348,104 +348,104 @@
 
 
 </body>
-<script>
-    $(function () {
-        //进度条宽度百分比设置
-        $("#count-progress-in").css("width", "{{ count }}%");
-
-        $("#tips").on('tap', function () {
-            $.ajax({
-                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-                type: 'POST',
-                timeout: 1000,
-                dataType: 'json',
-                encoding:'utf-8',
-                data:{
-                    'ajax_type' : '2',
-                    'openid' : $("#user_message_openid").text(),
-                    'load_begin' : '0'
-                },
-                beforeSend: LoadFunction, //加载执行方法
-                error: erryFunction,  //错误执行方法
-                success: succFunction //成功执行方法
-            })
-            $("#black-mask").show()
-            $("#rank-widget").show();
-        })
-        function LoadFunction(){
-            alert('请求数据中')
-        }
-        function erryFunction(){
-            alert('数据请求异常')
-        }
-        function succFunction(ret){
-            alert(ret[1].name)
-        }
-
-
-        $('#black-mask').on('tap',function(){
-            $('#black-mask').fadeOut(200);
-            $('#rank-widget').hide()
-        });
-
-        $(document).on("scrollstop",function(){
-          alert("结束滚动！");
-        });
-
-        //微信分享接口设置
-        wx.config({
-              debug: false,
-              appId: '{{ app_id }}',
-              timestamp: {{ timestamp }},
-              nonceStr: '{{ noncestr }}',
-              signature: '{{ signature }}',
-              jsApiList: [
-                    'checkJsApi',
-                    'onMenuShareTimeline',
-                    'onMenuShareAppMessage',
-              ]
-        });
-        wx.ready(function () {
-            // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
-                wx.checkJsApi({
-                    jsApiList: [
-                        'getNetworkType',
-                        'previewImage'
-                    ]
-                });
-
-                wx.onMenuShareAppMessage({
-                    title: '帅的人都点进去了哦',
-                    desc: '新年什么有趣？抢红包？不不不！！老司机带你寻找新鲜刺激的游戏，快和大家一起玩吧～',
-                    link: '{{ add_friend_url|safe }}',
-                    imgUrl: '{{ imgUrl|safe }}' ,
-                    success: function (res) {
-                        alert('分享成功，成功添加好友后积分给您奉上哦～');
-                      },
-                      cancel: function (res) {
-                        alert('分享一次，据说会有桃花运哦～');
-                      },
-                      fail: function (res) {
-                        alert('系统出错，程序猿正手不停蹄的赶来维修～');
-                      }
-                })
-                wx.onMenuShareTimeline({
-                      title: '快快点进去祝(吐)福(槽)我吧',
-                      link: '{{ share_url|safe }}',
-                      imgUrl: '{{ imgUrl|safe }}' ,
-                      success: function (res) {
-                        alert('分享成功，一(没有个)大波小伙伴正赶来围观～');
-                      },
-                      cancel: function (res) {
-                        alert('分享一次，据说会有桃花运哦～');
-                      },
-                      fail: function (res) {
-                        alert('系统出错，程序猿正手不停蹄的赶来维修～');
-                      }
-                })
-        });
-    })
-</script>
+{#<script>#}
+{#    $(function () {#}
+{#        //进度条宽度百分比设置#}
+{#        $("#count-progress-in").css("width", "{{ count }}%");#}
+{##}
+{#        $("#tips").on('tap', function () {#}
+{#            $.ajax({#}
+{#                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
+{#                type: 'POST',#}
+{#                timeout: 1000,#}
+{#                dataType: 'json',#}
+{#                encoding:'utf-8',#}
+{#                data:{#}
+{#                    'ajax_type' : '2',#}
+{#                    'openid' : $("#user_message_openid").text(),#}
+{#                    'load_begin' : '0'#}
+{#                },#}
+{#                beforeSend: LoadFunction, //加载执行方法#}
+{#                error: erryFunction,  //错误执行方法#}
+{#                success: succFunction //成功执行方法#}
+{#            })#}
+{#            $("#black-mask").show()#}
+{#            $("#rank-widget").show();#}
+{#        })#}
+{#        function LoadFunction(){#}
+{#            alert('请求数据中')#}
+{#        }#}
+{#        function erryFunction(){#}
+{#            alert('数据请求异常')#}
+{#        }#}
+{#        function succFunction(ret){#}
+{#            alert(ret[1].name)#}
+{#        }#}
+{##}
+{##}
+{#        $('#black-mask').on('tap',function(){#}
+{#            $('#black-mask').fadeOut(200);#}
+{#            $('#rank-widget').hide()#}
+{#        });#}
+{##}
+{#        $(document).on("scrollstop",function(){#}
+{#          alert("结束滚动！");#}
+{#        });#}
+{##}
+{#        //微信分享接口设置#}
+{#        wx.config({#}
+{#              debug: false,#}
+{#              appId: '{{ app_id }}',#}
+{#              timestamp: {{ timestamp }},#}
+{#              nonceStr: '{{ noncestr }}',#}
+{#              signature: '{{ signature }}',#}
+{#              jsApiList: [#}
+{#                    'checkJsApi',#}
+{#                    'onMenuShareTimeline',#}
+{#                    'onMenuShareAppMessage',#}
+{#              ]#}
+{#        });#}
+{#        wx.ready(function () {#}
+{#            // 1 判断当前版本是否支持指定 JS 接口，支持批量判断#}
+{#                wx.checkJsApi({#}
+{#                    jsApiList: [#}
+{#                        'getNetworkType',#}
+{#                        'previewImage'#}
+{#                    ]#}
+{#                });#}
+{##}
+{#                wx.onMenuShareAppMessage({#}
+{#                    title: '帅的人都点进去了哦',#}
+{#                    desc: '新年什么有趣？抢红包？不不不！！老司机带你寻找新鲜刺激的游戏，快和大家一起玩吧～',#}
+{#                    link: '{{ add_friend_url|safe }}',#}
+{#                    imgUrl: '{{ imgUrl|safe }}' ,#}
+{#                    success: function (res) {#}
+{#                        alert('分享成功，成功添加好友后积分给您奉上哦～');#}
+{#                      },#}
+{#                      cancel: function (res) {#}
+{#                        alert('分享一次，据说会有桃花运哦～');#}
+{#                      },#}
+{#                      fail: function (res) {#}
+{#                        alert('系统出错，程序猿正手不停蹄的赶来维修～');#}
+{#                      }#}
+{#                })#}
+{#                wx.onMenuShareTimeline({#}
+{#                      title: '快快点进去祝(吐)福(槽)我吧',#}
+{#                      link: '{{ share_url|safe }}',#}
+{#                      imgUrl: '{{ imgUrl|safe }}' ,#}
+{#                      success: function (res) {#}
+{#                        alert('分享成功，一(没有个)大波小伙伴正赶来围观～');#}
+{#                      },#}
+{#                      cancel: function (res) {#}
+{#                        alert('分享一次，据说会有桃花运哦～');#}
+{#                      },#}
+{#                      fail: function (res) {#}
+{#                        alert('系统出错，程序猿正手不停蹄的赶来维修～');#}
+{#                      }#}
+{#                })#}
+{#        });#}
+{#    })#}
+{#</script>#}
 </html>
 
 
