@@ -495,37 +495,51 @@
 {#                    alert("网络不太好，请再试一下哦～");#}
 {#                }#}
 {#            })#}
-
-        $.ajax({
-            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-            type: 'POST',
-            //timeout: 1000,
-            dataType:'text',
-            async: false,  //不能异步去传输，否则有些数据就没有了
-            encoding: 'utf-8',
-            data:{
-                'ajax_type': '1',
-                'openid': $("#user_message_openid").text(),
-                'nickname': $("#user_message_nickname").text(),
-                'tree_name': tree_name
-            },
-            error: function () {
-                alert($("#user_message_openid").text()+$("#user_message_nickname").text()+tree_name)
-                alert('您的网络似乎不稳定，请重新尝试一下哦～')
-            },  //错误执行方法
-            success: function (ret) {
-                if (ret == '1') {
-                    alert("提交成功！");
-                } else if (ret == "2") {
-                    alert("您的网络有问题，请再试一下哦～");
-                } else {
-                    alert("网络不太好，请再试一下哦～");
-                }
-                $("#fill-in-name").hide();
-                $("#black-mask").hide();
-                $("#tips-water").show();
-            }
-        })
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '2',
+                    'openid' : $("#user_message_openid").text(),
+                    'load_begin' : '0'
+                },
+                beforeSend: LoadFunction, //加载执行方法
+                error: erryFunction,  //错误执行方法
+                success: succFunction //成功执行方法
+            })
+{#        $.ajax({#}
+{#            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
+{#            type: 'POST',#}
+{#            //timeout: 1000,#}
+{#            dataType:'text',#}
+{#            async: false,  //不能异步去传输，否则有些数据就没有了#}
+{#            encoding: 'utf-8',#}
+{#            data:{#}
+{#                'ajax_type': '1',#}
+{#                'openid': $("#user_message_openid").text(),#}
+{#                'nickname': $("#user_message_nickname").text(),#}
+{#                'tree_name': tree_name#}
+{#            },#}
+{#            error: function () {#}
+{#                alert($("#user_message_openid").text()+$("#user_message_nickname").text()+tree_name)#}
+{#                alert('您的网络似乎不稳定，请重新尝试一下哦～')#}
+{#            },  //错误执行方法#}
+{#            success: function (ret) {#}
+{#                if (ret == '1') {#}
+{#                    alert("提交成功！");#}
+{#                } else if (ret == "2") {#}
+{#                    alert("您的网络有问题，请再试一下哦～");#}
+{#                } else {#}
+{#                    alert("网络不太好，请再试一下哦～");#}
+{#                }#}
+{#                $("#fill-in-name").hide();#}
+{#                $("#black-mask").hide();#}
+{#                $("#tips-water").show();#}
+{#            }#}
+{#        })#}
     })
     //    $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
     //        {
