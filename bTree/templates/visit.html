@@ -158,6 +158,7 @@
     $(function () {
         //一些需要判断逻辑的全局变量
         var water_time = {{ water_time }}  //最近一次浇水时间
+        var after_width = 0;
         //进度条宽度百分比设置
         $("#progress-in").css("width", "{{ count_bar }}%");
 {##}
@@ -211,9 +212,10 @@
                         var val = parseInt($("#count-num").text().substr(3))
                         $("#count-num").text('积分:'+(val-8000).toString())
                         var css_width = parseInt($("#progress-bar").css("width"));
-                        var after_width = (parseInt($("#progress-in").css("width"))-css_width*0.027)
-                        if(after_width<0){after_width=0}
-                        $("#progress-in").css("width", after_width.toString())
+                        after_width = after_width + (parseInt($("#progress-in").css("width"))-css_width*0.027)
+                        if(after_width<0){css_width=0}
+                        else{css_width=after_width}
+                        $("#progress-in").css("width", css_width.toString())
                     }
                 })
             {% else %}
@@ -266,6 +268,10 @@
                         var val = parseInt($("#count-num").text().substr(3))
                         $("#count-num").text('积分:'+(val+5000).toString())
                         var css_width = parseInt($("#progress-bar").css("width"));
+                        after_width = after_width +(parseInt($("#progress-in").css("width"))+css_width*0.017)
+                        if(after_width <0 ){
+                            css_width = 0;
+                        }else{css_width = after_width}
                         $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.017).toString())
                     }
                 })
