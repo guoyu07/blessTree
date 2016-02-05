@@ -56,9 +56,9 @@ def ajax_1(request):
             user = User.objects.get(openid=user_id)
             user.is_plant = True
             friend_id = user.friends.all()[0:1].get().openid
-            # friend_num = user.friends.all()[0:1].get().count
-            # friend = User.objects.get(openid=friend_id).count =friend_num + 20000
-            # friend.save()
+            friend = User.objects.get(openid=friend_id)
+            friend.count = friend.count + 20000
+            friend.save()
             user.save()
             # msg = Tree(owner=user.friends[0], tree_name=user.friends.tree_name, type=4, action_time=time.time(),
             #            read=False, source_id=user_id, content='创建了祝福树')
