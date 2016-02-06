@@ -257,10 +257,9 @@ def ajax_7(request):
     response['Content-Type'] = 'application/json'
     user_id = request.POST.get('openid', '')
     load_begin = request.POST.get('load_begin', '')
-    client.fetch_access_token()
     ret = '0'
     if user_id and load_begin:
-        owner = User.objects.get(openid=user_id)
+        # owner = User.objects.get(openid=user_id)
         # if owner.willing == 'none':
         ret = '1'
         # else:

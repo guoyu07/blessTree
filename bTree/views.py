@@ -374,25 +374,6 @@ def ajax_distribute(request):
     """
     ajax_type = request.POST.get('ajax_type', '')
     response = HttpResponse()
-    # response['Content-Type'] = 'text/javascript'
-    # try:
-    #     response = {
-    #         '1': ajax_1,
-    #         '2': ajax_2,
-    #         '3': ajax_3,
-    #         '4': ajax_4,
-    #         '5': ajax_5,
-    #         '6': ajax_6,
-    #         '7': ajax_7,
-    #         '8': ajax_8,
-    #         '9': ajax_9,
-    #         '10': ajax_10,
-    #         '11': ajax_11,
-    #     }[ajax_type](request)
-    # except KeyError:
-    #     ret = '2'  # 返回错误码
-    #     response.write(ret)
-    #     return response
 
     # 最不情愿写的代码
     if ajax_type == '1':
