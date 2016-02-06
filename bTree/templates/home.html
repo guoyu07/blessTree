@@ -622,11 +622,11 @@
             function(ret) {
                 if (ret == '1') {
                     alert("提交成功！");
-                    $("#willing-list").html("<li> <a style='float: left;width: 20%;font-size: 80%; text-align: center'>"+
-                        $.lqcGetTimeInteval(myDate.getDate())+
-                        "</a> <a style='float:left;margin-left: 20%'>"+
-                        $("#fill-area").val()+
-                        "</a> </li>"
+                    $("#willing-list").html("<li> <a style='float: left;width: 20%;font-size: 80%; text-align: center'>" +
+                            $.lqcGetTimeInteval(myDate.getDate()) +
+                            "</a> <a style='float:left;margin-left: 20%'>" +
+                            $("#fill-area").val() +
+                            "</a> </li>"
                     );
                     $("#fill-willing").hide();
                 } else if (ret == "2") {
@@ -654,11 +654,6 @@
 
     })
 
-    //排行榜
-      $("#rank-close").on('tap', function () {
-          $("#rank-widget").hide();
-      })
-
     //加好友
     $("#add-friend-widget-btn").on('tap', function () {
         $("#add-friend-widget").hide();
@@ -672,11 +667,9 @@
     /********************
      * 一些函数
      * */
-
-    })
     //初始化事件
      function init_main(myDate) {
-{#         $('#black-mask').show();#}
+{#                  $('#black-mask').show();#}
          $('#rule').show();
 
          //定时器事件,用于定时提醒浇水
@@ -700,7 +693,7 @@
              )
          }, 180000);
      }
-        })
+    })
 </script>
 </html>
 
