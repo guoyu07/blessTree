@@ -157,7 +157,7 @@ def home(request):
         imgUrl = avatar_addr = user_info['headimgurl']
         owner = User.objects.get(openid=user_openid)
         water_time = time.mktime(Tree.objects.filter(
-            owner=owner, type=0 or 3 or 7).order_by('action_time')[0:1].action_time.timetuple())
+            owner=owner, type=0 or 3 or 7).order_by('action_time')[0:0].action_time.timetuple())
         tree_name = owner.tree_name
         # 分享的链接生成，别人点进去是一个get方法，同时，这个是经过转化的，就是加入认证的链接
 
