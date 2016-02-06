@@ -165,7 +165,6 @@ def ajax_3(request):
                                  "msg_con": msg.content,
                                  "msg_time": time})
             json_msg = json.dumps(dict_msg)
-            json_msg = '1'
             response.write(json_msg)
             return response
         except IndexError:
