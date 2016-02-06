@@ -225,15 +225,15 @@ def ajax_5(request):
         try:
             bless_list = Tree.objects.filter(owner=owner, type=5)[0]
             bless_list = Tree.objects.filter(owner=owner, type=5).order_by('-action_time')
-            for bless in bless_list:
-                if bless.source_id == 'na':  # 匿名？
-                    nickname = '匿名'
-                    avatar = 'none'
-                else:
-                    source = User.objects.get(bless.source_id)  # 是否关注
-                    if source.is_plant == False:
-                        nickname = source.nickname
-                        avatar = source.avatar_url
+            # for bless in bless_list:
+            #     if bless.source_id == 'na':  # 匿名？
+            #         nickname = '匿名'
+            #         avatar = 'none'
+            #     else:
+            #         source = User.objects.get(bless.source_id)  # 是否关注
+            #         if source.is_plant == False:
+            #             nickname = source.nickname
+            #             avatar = source.avatar_url
             #         else:
             #             user_info = client.user.get(client, bless.source_id)
             #             nickname = user_info['nickname']
