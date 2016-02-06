@@ -164,6 +164,10 @@ def ajax_3(request):
                                  "msg_avatar": avatar,
                                  "msg_con": msg.content,
                                  "msg_time": time})
+
+                # 读取过一次就再也不读取了
+                msg.read = True
+                msg.save()
             json_msg = json.dumps(dict_msg)
             response.write(json_msg)
             return response
