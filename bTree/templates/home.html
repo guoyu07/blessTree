@@ -620,18 +620,19 @@
 {#                    alert(ret[0].name)#}
                 $.each(ret, function (i, item) {
                     alert(item.name+ i.toString())
+                        var list_item = $("#rank-list-li").clone()
+                        $("rank-list:last").append(list_item)
+{#                    //设置显示逻辑#}
+{#                    $("#rank-list-li img").attr({#}
+{#                        'src':item.avatar#}
+{#                    })#}
+{#                    $("#rank-name").text(item.name)#}
+{#                    $('#rank-rank').text((i+1).toString())#}
+{#                    ""#}
+{#                    $('#rank-count').text("积分"+item.count)#}
+{#                    $('#rank-home').attr('href',item.user_home)#}
 
-                    //设置显示逻辑
-                    $("#rank-list-li img").attr({
-                        'src':item.avatar
-                    })
-                    $("#rank-name").attr({
-                        'src':item.name
-                    })
-                    $('#rank-rank').text((i+1).toString())
-                    ""
-                    $('#rank-count').text("积分"+item.count)
-                    $('#rank-home').attr('href',item.user_home)
+
                 })
                 $("#black-mask").show()
                 $("#rank-widget").show();
