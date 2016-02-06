@@ -68,22 +68,22 @@ $(function () {
             }
         })
     })
-    //    $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
-    //        {
-    //            'ajax_type': '1',
-    //            'openid': $("#user_message_openid").text(),
-    //            'nickname': $("#user_message_nickname").text(),
-    //            'tree_name': tree_name
-    //        },
-    //        function(ret) {
-    //            if (ret == '1') {
-    //                alert("提交成功！");
-    //            } else if (ret == "2") {
-    //                alert("您的网络有问题，请再试一下哦～");
-    //            } else {
-    //                alert("网络不太好，请再试一下哦～");
-    //            }
-    //        })
+        //$.post('http://1.blesstree.sinaapp.com/wechat/ajax',
+        //    {
+        //        'ajax_type': '1',
+        //        'openid': $("#user_message_openid").text(),
+        //        'nickname': $("#user_message_nickname").text(),
+        //        'tree_name': tree_name
+        //    },
+        //    function(ret) {
+        //        if (ret == '1') {
+        //            alert("提交成功！");
+        //        } else if (ret == "2") {
+        //            alert("您的网络有问题，请再试一下哦～");
+        //        } else {
+        //            alert("网络不太好，请再试一下哦～");
+        //        }
+        //    })
 
 
     $("#water-tips-btn").on('tap', function () {
@@ -104,9 +104,9 @@ $(function () {
     })
     //浇水
     //浇水
-        move.select = function(selector){
-            return $(selector).get(0);
-        };
+    move.select = function(selector){
+        return $(selector).get(0);
+    };
     $("#water-flower").on('tap', function () {
             $("#water-widget").show();
             move('#water-widget').rotate(70).end();
