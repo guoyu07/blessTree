@@ -427,8 +427,6 @@ def ajax_distribute(request):
     # return JsonResponse(name_dict)
 
 
-
-
 # 一些实用的方法
 def share(url, timstamp):
     """
