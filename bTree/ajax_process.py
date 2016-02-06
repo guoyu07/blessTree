@@ -277,11 +277,11 @@ def ajax_6(request):
                 if tucao.source_id == 'na':  # 匿名？
                     nickname = '匿名'
                     avatar = 'none'
-            #     else:
-            #         source = User.objects.get(openid=tucao.source_id)  # 是否关注
-            #         if source.is_plant == False:
-            #             nickname = source.nickname
-            #             avatar = source.avatar_url
+                else:
+                    source = User.objects.get(openid=tucao.source_id)  # 是否关注
+                    if source.is_plant == False:
+                        nickname = source.nickname
+                        avatar = source.avatar_url
             #         else:
             #             user_info = client.user.get(client, tucao.source_id)
             #             nickname = user_info['nickname']
