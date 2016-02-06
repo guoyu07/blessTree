@@ -145,12 +145,12 @@ def ajax_3(request):
         try:
             msg_list = Tree.objects.filter(owner=owner, read=False)[0]
             msg_list = Tree.objects.filter(owner=owner, read=False).order_by('action_time')
-            # for msg in msg_list:
-            #     if msg.source_id == 'na':  # 匿名？
-            #         nickname = '匿名'
-            #         avatar = 'none'
-            #     else:
-            #         source = User.objects.get(msg.source_id)  # 是否关注
+            for msg in msg_list:
+                if msg.source_id == 'na':  # 匿名？
+                    nickname = '匿名'
+                    avatar = 'none'
+                else:
+                    source = User.objects.get(msg.source_id)  # 是否关注
             #         if source.is_plant == False:
             #             nickname = source.nickname
             #             avatar = source.avatar_url
