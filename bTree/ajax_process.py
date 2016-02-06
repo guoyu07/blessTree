@@ -298,8 +298,9 @@ def ajax_8(request):
         user = User.objects.get(openid=user_id)
         will = Tree(owner=user, tree_name=user.tree_name, type=2, action_time=time.time(), read=True, source_id=user_id,
                     content=will_con)
+        if user.willing == 'none':
+            user.count = user.count + 20000
         user.willing = 'yes'
-        user.count = user.count + 20000
         will.save()
         user.save()
         ret = '1'
