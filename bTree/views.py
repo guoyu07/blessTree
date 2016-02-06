@@ -253,7 +253,7 @@ def visit(request):
             # water_time = int(owner_tree.action_time.timestamp())
         water_time = 0  # TODO:时间转化问题
         count = owner_db.count
-        count_bar = count/300000*100
+        count_bar = count/3000
         tree_name = owner_db.tree_name
     except KeyError:
         error = True

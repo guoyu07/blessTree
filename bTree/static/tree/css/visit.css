@@ -384,6 +384,156 @@ margin-top: 14%;
 }
 /*浇水效果*/
 
-/*弹出全局遮盖*/
+/*取名字与填写名字,浇水与浇水成功*/
+.count-enough{
+    position: fixed;
+    width: 60%;
+    height: 20%;
+    z-index: 13;
+    left: 20%;
+    top: 35%;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+.count-enough p{
+    text-indent:2em
+    margin-top: 14%;
+    margin-left:15%;
+    width: 70%;
+    font-size: 90%;
+    text-align: left;
+    color: #2f3130;
+}
+.count-enough button{
+    background-color: #FFFFFF;
+    color:#55b698 ;
+    font-size: 90%;
+    float: right;
+    margin-right: 10%;
+    border: none;
+}
+
+/**************
+**这里是浇水特效
+*/
+.water-widget{
+    position: fixed;
+    z-index: 13;
+    width: 25%;
+    left: 50%;
+    height: auto;
+    top: 50%;
+}
+
+/*************
+**这里是常用的
+**/
+
+/*消息*/
+.willing-widget, .history-widget{
+    border-radius: 1%;
+    position: fixed;
+    z-index: 13;
+    width: 80%;
+    height: 68%;
+    left: 10%;
+    top: 12%;
+    background-color: rgba(255,255,255,0.7);
+}
+.willing-top{
+    height: 24%;
+    width: 100%;
+    text-align: center;
+}
+.willing-top img{
+    height: 52%;
+    margin-top: 5%;
+}
+.willing-top a{
+    position: fixed;
+    float: right;
+    text-align: center;
+    background-color: #000;
+    color: #FFFFFF;
+    margin-left: 25%;
+    margin-top: 2%;
+    width: 6%;
+    height: 3%;
+    padding-bottom: 1%;
+    border-radius: 50%;
+}
+.willing-content, .history-content{
+    height: 75%;
+    margin-bottom: 3%;
+}
+.history-list{
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+}
+.willing-list{
+    overflow: scroll;
+    height: 70%;
+    width: 100%;
+}
+.willing-list li{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%;
+    height: 17%;
+}
+
+/*祝福吐槽历史*/
+.history-top{
+    height: 24%;
+    width: 100%;
+    text-align: center;
+}
+.history-bless{
+    position: fixed;
+    top: 17%;
+    left: 32%;
+    font-size: larger;
+    width: 16%;
+    height: 8%;
+    border-radius: 50%;
+    padding-top: 3%;
+}
+.history-tucao{
+    position: fixed;
+    top: 17%;
+    left: 55%;
+    width: 16%;
+    border-radius: 50%;
+    font-size: larger;
+    border-radius: 50%;
+    height: 8%;
+    padding-top: 3%;
+}
+.history-list div{
+    height: 80%;
+}
+.history-list li{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 4%;
+    height: 20%;
+}
+.history-tucao:hover, .history-bless:hover{
+    background-color: #54b698;
+}
+/*新年快乐*/
+.happy-newyear{
+    position: fixed;width: 100%;height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding-top: 40%;
+    background-color: rgba(255,255,255, 0.7);
+}
+.happy-newyear img{
+    width: 40%;
+}
 
 

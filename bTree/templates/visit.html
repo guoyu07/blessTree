@@ -147,6 +147,83 @@
     right: 0;
     bottom: 0;
     background: rgba(0,0,0,.3);"></div>
+<!--心愿-->
+<div class="willing-widget" id="willing-widget" style="display: none">
+    <div class="willing-top">
+        <img src="{% static "tree/image/btn/willing.png" %}">
+        <p style="font-size: 80%">心愿</p>
+    </div>
+    <hr style="background-color: rgba(0,0,0,0.6)">
+    <div class="willing-content">
+        <ul class="willing-list" id="willing-list">
+            <li id="willing-list-na" style="display: none;text-align: center">
+                <p style="text-align: center;font-size: 100%;">您还没有填写新年愿望，第一次填写可以获得积分哦～</p>
+            </li>
+            <li id="willing-list-li" style="display: none;">
+                <a id="will-time" style="float: left;width: 20%;font-size: 80%; text-align: left;font-size: 60%">时间</a>
+                <a id="will-con" style="float:left;margin-left: 20%;text-align: left">内容</a>
+            </li>
+        </ul>
+    </div>
+    <button class="willing-add" id="willing-add">+</button>
+</div>
+
+<!--祝福吐槽的历史-->
+<div class="history-widget" id="history-widget" style="display: none">
+    <div class="history-top">
+        <a class="history-bless" id="history-bless">祝福</a>
+        <a class="history-tucao" id="history-tucao">吐槽</a>
+    </div>
+    <hr style="background-color: rgba(0,0,0,0.6)">
+    <div class="history-content">
+        <ul class="history-list" id="history-bless-list">
+            <li id="history-bless-list-na">
+               <p>没有收到小伙伴的祝福哦，赶紧分享互动起来吧～</p>
+            </li>
+            <li id="history-bless-list-li" style="display: none;">
+                <div style="float:left;"class="pure-u-5-24">
+                    <img id="history-bless-avatar" src="{% static "tree/image/btn/friends.png" %}" style="height: 75%;padding-left: 5%;border-radius: 50%">
+                    <p id="history-bless-name" style="font-size: 40%;color:grey;;">名字</p>
+                </div>
+                <div style="float: left" class="pure-u-15-24">
+                    <a id="history-bless-con" style="font-size: 100%;">吐槽内容</a>
+                </div>
+                <div style="float: left" class="pure-u-4-24">
+                    <a id="history-bless-time" style="float: right;font-size: 60%;color: grey">什么时间前</a>
+                </div>
+            </li>
+
+        </ul>
+        <ul class="history-list" id="history-tucao-list" style="display: none">
+            <li id="history-tucao-list-na">
+               <p>没有收到小伙伴的吐槽哦，小编都妒忌了～</p>
+            </li>
+            <li id="history-tucao-list-li" style="display: none">
+                <div style="float:left;"class="pure-u-5-24">
+                    <img id="history-tucao-avatar" src="{% static "tree/image/btn/friends.png" %}" style="height: 75%;padding-left: 5%;border-radius: 50%">
+                    <p id="history-tucao-name" style="font-size: 40%;color:grey;;">名字</p>
+                </div>
+                <div style="float: left" class="pure-u-15-24">
+                    <a id="history-tucao-con" style="font-size: 100%;">内容</a>
+                </div>
+                <div style="float: left" class="pure-u-4-24">
+                    <a id="history-tucao-time" style="float: right;font-size: 60%;color: grey">几天前</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<!--浇水特效-->
+<div class="water-widget" id="water-widget" style="display: none;width: 30%;position: fixed;
+    z-index: 13;
+    width: 25%;
+    left: 50%;
+    height: auto;
+    top: 50%;">
+    <img src="{% static "tree/image/others/water-tree.png" %}" style="width: 100%;height: auto">
+</div>
 {% endif %}
 </body>
 <script>
@@ -289,9 +366,111 @@
      * */
     //历史按钮
     $("#history").on('tap', function () {
+        // 祝福加载好，吐槽之后加载
+        if($("#history-bless-list li:last").css('display')=='none'){
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                async: false,
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '5',  //祝福类型
+                    'openid' : '{{ sourceid }}',
+                    'load_begin' : '0'
+                },
+                beforeSend: function () {
+                    alert('请求数据中...')
+                }, //加载执行方法
+                error: function () {
+                    alert('数据请求异常')
+                },  //错误执行方法
+                success: function (ret) {
+                    //决定显示的内容
+                    if(ret=='1'){
+                            $("#history-bless-list-na").show();
+                        }else{
+                            $("#history-bless-list-na").hide();
+                            $.each(ret, function (i, item) {
+                                if(item.bless_avatar!='none'){
+                                    $('#history-bless-avatar').attr('src', item.bless_avatar)
+                                }
+                                $('#history-bless-name').text(item.bless_nick)
+                                $("#history-bless-con").text(item.bless_con)
+                                $('#history-bless-time').text(item.bless_time)
+                                var bless_list = $("#history-bless-list-li").clone().show()
+                                $('#history-bless-list').append(bless_list)
+                            })
+                        }
+                    //控制显示
+                    $('#black-mask').show()
+                            .on('tap', function () {
+                                $("#history-widget").hide();
+                                $("#black-mask").hide();
+                            })
+                    $("#history-widget").show();
+                    $("#history-tucao-list").hide();
+                    $("#history-bless-list").show();
+                }
+            })
+        }else{
+            $("#history-widget").show();
+            $("#history-tucao-list").hide();
+            $("#history-bless-list").show(300);
+        }
 
     })
 
+    //心愿
+    $('#willing').on('tap', function () {
+        if($('#willing-list li:last').css('display') == 'none'){
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                async: false,
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '7',
+                    'openid' : '{{ sourceid }}',
+                    'load_begin' : '0'
+                },
+                beforeSend: function () {
+                    alert('请求数据中...')
+                }, //加载执行方法
+                error: function () {
+                    alert('数据请求异常')
+                },  //错误执行方法
+                success: function (ret) {
+                    if(ret=='1'){
+                        $("#willing-list-na").show()
+                    }else{
+                        $.each(ret, function (i, item) {
+                            $('#will-time').text(item.will_time)
+                            $('#will-con').text(item.will_con)
+                            var will_list = $("#willing-list-li").clone().show()
+                            $('#willing-list').append(will_list)
+                        })
+                    }
+                    $("#black-mask").show();
+                    $("#willing-widget").show();
+                    $("#black-mask").on('tap', function () {
+                        $("#willing-widget").hide();
+                        $("#black-mask").hide();
+                    })
+                }
+            })
+        }else{
+            $('#black-mask').show()
+            $('#willing-widget').show()
+            $('#black-mask').on('tap', function () {
+                $('#willing-widget').hide();
+                $('#black-mask').hide();
+            })
+        }
+    })
 
     //浇水按钮
     $("#water-flower").on('tap', function () {
