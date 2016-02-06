@@ -501,7 +501,7 @@
                 },  //错误执行方法
                 success: function (ret) {
                     if(ret==='1'){
-                        $("#willing-list").append('<p>您还没有写新年愿望哟～</p>')
+                        $("#willing-list-li").text("您还没有填写新年愿望哦～第一次填写可以获得积分～")
                     }else{
                         $.each(ret, function (i, item) {
                             $('#will-time').text(item.will_time)
