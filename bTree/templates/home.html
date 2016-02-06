@@ -462,13 +462,8 @@
     $("#tips").on('tap', function () {
         $("#message-widget").show();
     })
-{#    //浇水#}
-{#    move.select = function(selector){#}
-{#        return $(selector).get(0);#}
-{#    };#}
     $("#water-flower").on('tap', function () {
             $("#water-widget").show();
-            move('#water-widget').rotate(70).end();
             $('#water-widget').hide(3000);
             $("user_message_water_time").text(myDate.getDate())
             //TODO：这里加入浇水的动态特效，翻转啊啥的
@@ -525,8 +520,34 @@
             })
         }
     })
-    $("#willing-add").on('tap', function () {
-
+        //填写心愿
+    $("#fill-willing-close").on('tap', function(){
+        $('#fill-willing').hide();
+    })
+    $("#fill-willing-btn").on('tap', function () {
+        $('#fill-willing').hide();
+        $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
+            {
+                'ajax_type':'8',
+                'openid': $("#user_message_openid").text(),
+                'will_con': $("#fill-area").val()
+            },
+            function(ret) {
+                if (ret == '1') {
+                    alert("提交成功！");
+                    $("#willing-list").html("<li> <a style='float: left;width: 20%;font-size: 80%; text-align: center'>" +
+                            $.lqcGetTimeInteval(myDate.getDate()) +
+                            "</a> <a style='float:left;margin-left: 20%'>" +
+                            $("#fill-area").val() +
+                            "</a> </li>"
+                    );
+                    $("#fill-willing").hide();
+                } else if (ret == "2") {
+                    alert("您的网络有问题，请再试一下哦～");
+                } else {
+                    alert("网络不太好，请再试一下哦～");
+                }
+            })
     })
 
     /********************
@@ -595,41 +616,8 @@
 
 
 
-    //心愿弹出框
-    $("#willing-close").on('tap', function () {
-        $("#willing-widget").hide();
-    })
     $("#willing-add").on('tap', function () {
         $('#fill-willing').show();
-    })
-    //填写心愿
-    $("#fill-willing-close").on('tap', function(){
-        $('#fill-willing').hide();
-    })
-    $("#fill-willing-btn").on('tap', function () {
-        $('#fill-willing').hide();
-        $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
-            {
-                'ajax_type':'8',
-                'openid': $("#user_message_openid").text(),
-                'will_con': $("#fill-area").val()
-            },
-            function(ret) {
-                if (ret == '1') {
-                    alert("提交成功！");
-                    $("#willing-list").html("<li> <a style='float: left;width: 20%;font-size: 80%; text-align: center'>" +
-                            $.lqcGetTimeInteval(myDate.getDate()) +
-                            "</a> <a style='float:left;margin-left: 20%'>" +
-                            $("#fill-area").val() +
-                            "</a> </li>"
-                    );
-                    $("#fill-willing").hide();
-                } else if (ret == "2") {
-                    alert("您的网络有问题，请再试一下哦～");
-                } else {
-                    alert("网络不太好，请再试一下哦～");
-                }
-            })
     })
 
     //祝福吐槽祝福框
