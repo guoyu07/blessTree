@@ -59,7 +59,7 @@ def ajax_1(request):
             user.friends.add(user)
             friend_id = user.friends.all()[0:1].get().openid
             friend = User.objects.get(openid=friend_id)
-            friend.count = friend.count + 20000
+            friend.count = friend.count + 3000
             friend.save()
             user.save()
             msg = Tree(owner=friend, tree_name=friend.tree_name, type=4, action_time=time.time(),
@@ -299,6 +299,7 @@ def ajax_8(request):
         will = Tree(owner=user, tree_name=user.tree_name, type=2, action_time=time.time(), read=True, source_id=user_id,
                     content=will_con)
         user.willing = 'yes'
+        user.count = user.count + 20000
         will.save()
         user.save()
         ret = '1'
