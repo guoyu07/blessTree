@@ -241,102 +241,13 @@
     </div>
     <hr style="background-color: rgba(0,0,0,0.6)">
     <div class="rank-content">
-        <ul class="rank-list">
+        <ul class="rank-list" id="rank-list">
 {#            <li style="width: 100%"><a style="width: 80%; margin-left:10%;height:15%;text-align: center;font-size: 80%;background-color: #fff">没有更多啦～</a></li>#}
-            <li>
+
+            <li style="display: none">
                 <div class="pure-u-5-24" style="float: left">
                     <img src="{% static 'tree/image/btn/friends.png' %}" style="height: 90%;padding-left: 5%">
                     <p style="font-size: 50%">不想上学</p>
-                </div>
-                <div class="pure-u-15-24" style="float:left;text-align: center">
-                    <p style="height: 45%;width: 14%;margin-left: 43%;border-radius: 50%;background-color: red">1</p>
-                    <div class="rank-progress-con" style="height: 20%;margin-top: 2%">
-                        <div class="rank-progress">
-                            <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>
-                        </div>
-                        <div class="rank-count-num"><p>积分：255000</p></div>
-                    </div>
-                </div>
-                <div style="float: left" class="pure-u-4-24">
-                    <a class="rank-visit" href="#">参观</a>
-                </div>
-            </li>
-            <li>
-                <div class="pure-u-5-24" style="float: left">
-                    <img src="{% static 'tree/image/btn/friends.png' %}" style="height: 90%;padding-left: 5%">
-                    <p style="font-size: 50%">不想上学</p>
-                </div>
-                <div class="pure-u-15-24" style="float:left;text-align: center">
-                    <p style="height: 45%;width: 14%;margin-left: 43%;border-radius: 50%;background-color: red">1</p>
-                    <div class="rank-progress-con" style="height: 20%;margin-top: 2%">
-                        <div class="rank-progress">
-                            <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>
-                        </div>
-                        <div class="rank-count-num"><p>积分：255000</p></div>
-                    </div>
-                </div>
-                <div style="float: left" class="pure-u-4-24">
-                    <a class="rank-visit" href="#">参观</a>
-                </div>
-            </li>
-            <li>
-                <div class="pure-u-5-24" style="float: left">
-                    <img src="{% static 'tree/image/btn/friends.png' %}" style="height: 90%;padding-left: 5%">
-                    <p style="font-size: 50%">不想上学</p>
-                </div>
-                <div class="pure-u-15-24" style="float:left;text-align: center">
-                    <p style="height: 45%;width: 14%;margin-left: 43%;border-radius: 50%;background-color: red">1</p>
-                    <div class="rank-progress-con" style="height: 20%;margin-top: 2%">
-                        <div class="rank-progress">
-                            <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>
-                        </div>
-                        <div class="rank-count-num"><p>积分：255000</p></div>
-                    </div>
-                </div>
-                <div style="float: left" class="pure-u-4-24">
-                    <a class="rank-visit" href="#">参观</a>
-                </div>
-            </li>
-            <li>
-                <div class="pure-u-5-24" style="float: left">
-                    <img src="{% static 'tree/image/btn/friends.png' %}" style="height: 90%;padding-left: 5%">
-                    <p style="font-size: 50%">不想上学</p>
-                </div>
-                <div class="pure-u-15-24" style="float:left;text-align: center">
-                    <p style="height: 45%;width: 14%;margin-left: 43%;border-radius: 50%;background-color: red">1</p>
-                    <div class="rank-progress-con" style="height: 20%;margin-top: 2%">
-                        <div class="rank-progress">
-                            <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>
-                        </div>
-                        <div class="rank-count-num"><p>积分：255000</p></div>
-                    </div>
-                </div>
-                <div style="float: left" class="pure-u-4-24">
-                    <a class="rank-visit" href="#">参观</a>
-                </div>
-            </li>
-            <li>
-                <div class="pure-u-5-24" style="float: left">
-                    <img src="{% static 'tree/image/btn/friends.png' %}" style="height: 90%;padding-left: 5%">
-                    <p style="font-size: 50%">不想上学</p>
-                </div>
-                <div class="pure-u-15-24" style="float:left;text-align: center">
-                    <p style="height: 45%;width: 14%;margin-left: 43%;border-radius: 50%;background-color: red">1</p>
-                    <div class="rank-progress-con" style="height: 20%;margin-top: 2%">
-                        <div class="rank-progress">
-                            <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>
-                        </div>
-                        <div class="rank-count-num"><p>积分：255000</p></div>
-                    </div>
-                </div>
-                <div style="float: left" class="pure-u-4-24">
-                    <a class="rank-visit" href="#">参观</a>
-                </div>
-            </li>
-            <li>
-                <div class="pure-u-5-24" style="float: left">
-                    <img src="{% static 'tree/image/btn/friends.png' %}" style="height: 90%;padding-left: 5%">
-                    <p style="font-size: 50%">{{ nickname }}</p>
                 </div>
                 <div class="pure-u-15-24" style="float:left;text-align: center">
                     <p style="height: 45%;width: 14%;margin-left: 43%;border-radius: 50%;background-color: red">1</p>
@@ -541,10 +452,12 @@
                     alert('请求数据中...')
                 }, //加载执行方法
                 error: function () {
-                    alert('数据请求异常')
+                    alert('保存失败，亲再试一下哦～')
                 },  //错误执行方法
                 success: function () {
                     alert('保存成功～多互动可以让小树快快长大哦')
+                    $("#fill-in-name").hide();
+                    $("#black-mask").hide(500);
                 } //成功执行方法
             })
 
@@ -557,9 +470,40 @@
      * */
     // 排行
     $("#rank").on('tap', function () {
-        $("#rank-widget").show();
-    })
-
+        $.ajax({
+            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+            type: 'POST',
+            timeout: 1000,
+            dataType: 'json',
+            async: false,
+            encoding:'utf-8',
+            data:{
+                'ajax_type' : '2',
+                'openid' : $("#user_message_openid").text(),
+                'load_begin' : '0'
+            },
+            beforeSend: function () {
+                alert('请求数据中...')
+            }, //加载执行方法
+            error: function () {
+                alert('数据请求异常')
+            },  //错误执行方法
+            success: function (ret) {
+{#                    alert(ret[0].name)#}
+                $.each(ret, function (i, item) {
+                    alert(item.name+ i.toString())
+                    alert($("#rank-list img").attr('src'))
+                    ""
+                })
+                $("#black-mask").show()
+                $("#rank-widget").show();
+                $('#black-mask').on('tap',function(){
+                    $('#black-mask').fadeOut(200);
+                    $('#rank-widget').hide()
+                });
+            } //成功执行方法
+        })
+    });
     // 提醒
     $("#tips").on('tap', function () {
         $("#message-widget").show();
@@ -666,6 +610,43 @@
           $("#rank-widget").hide();
       })
 
+    $("#rank").on('tap', function () {
+        $.ajax({
+            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+            type: 'POST',
+            timeout: 1000,
+            dataType: 'json',
+            async: false,
+            encoding:'utf-8',
+            data:{
+                'ajax_type' : '2',
+                'openid' : $("#user_message_openid").text(),
+                'load_begin' : '0'
+            },
+            beforeSend: function () {
+                alert('请求数据中...')
+            }, //加载执行方法
+            error: function () {
+                alert('数据请求异常')
+            },  //错误执行方法
+            success: function (ret) {
+{#                    alert(ret[0].name)#}
+                $.each(ret, function (i, item) {
+                    alert(item.name+ i.toString())
+                    $
+                    ""
+                })
+
+                $("#black-mask").show()
+                $("#rank-widget").show();
+                $('#black-mask').on('tap',function(){
+                    $('#black-mask').fadeOut(200);
+                    $('#rank-widget').hide()
+                });
+            } //成功执行方法
+        })
+    });
+
     //加好友
     $("#add-friend-widget-btn").on('tap', function () {
         $("#add-friend-widget").hide();
@@ -680,72 +661,12 @@
      * 一些函数
      * */
 
-    //初始化事件
-     function init_main(myDate){
-        $('#black-mask').show();
-        $('#rule').show();
-
-        //定时器事件,用于定时提醒浇水
-        window.setInterval(function () {
-            $("#time-to-water").fadeIn(1000);
-            $("#time-to-water").fadeOut(1000);
-        },600000);
-{#        window.setInterval(function () {#}
-{#            //定时请求消息刷新#}
-{#            $.post(#}
-{#            'http://1.blesstree.sinaapp.com/wechat/ajax',#}
-{#            {#}
-{#                'ajax_type': 3,#}
-{#                'openid': $("#user_message_openid").text(),#}
-{#                'load_begin': 0#}
-{##}
-{#            },#}
-{#            function () {#}
-{##}
-{#            }#}
-{#        )#}
-{#        },180000);#}
-
-    };
     })
     $('#black-mask').on('tap',function(){
         $('#black-mask').fadeOut(200);
     });
-        $("#rank").on('tap', function () {
-            $.ajax({
-                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-                type: 'POST',
-                timeout: 1000,
-                dataType: 'json',
-                async: false,
-                encoding:'utf-8',
-                data:{
-                    'ajax_type' : '2',
-                    'openid' : $("#user_message_openid").text(),
-                    'load_begin' : '0'
-                },
-                beforeSend: function () {
-                    alert('请求数据中...')
-                }, //加载执行方法
-                error: function () {
-                    alert('数据请求异常')
-                },  //错误执行方法
-                success: function (ret) {
-{#                    alert(ret[0].name)#}
-                    $.each(ret, function (i, item) {
-                        alert(item.name+ i.toString())
-                        ""
-                    })
-                    $("#black-mask").show()
-                    $("#rank-widget").show();
-                    $('#black-mask').on('tap',function(){
-                        $('#black-mask').fadeOut(200);
-                        $('#rank-widget').hide()
-                    });
-                } //成功执行方法
-            })
-        });
-        //初始化事件
+
+    //初始化事件
      function init_main(myDate) {
          $('#black-mask').show();
          $('#rule').show();
