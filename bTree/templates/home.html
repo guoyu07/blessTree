@@ -488,47 +488,47 @@
         $("#history-widget").show();
     })
     //心愿
-    $('#willing').on('tap', function () {
-        if($('#willing-list li:last').css('display') == 'none'){
-            $.ajax({
-                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-                type: 'POST',
-                timeout: 1000,
-                dataType: 'json',
-                async: false,
-                encoding:'utf-8',
-                data:{
-                    'ajax_type' : '7',
-                    'openid' : $("#user_message_openid").text(),
-                    'load_begin' : '0'
-                },
-                beforeSend: function () {
-                    alert('请求数据中...')
-                }, //加载执行方法
-                error: function () {
-                    alert('数据请求异常')
-                },  //错误执行方法
-                success: function (ret) {
-                    alert(ret)
-
-
-                    $("#black-mask").show();
-                    $("#willing-widget").show();
-                    $("#black-mask").on('tap', function () {
-                        $("#willing-widget").hide();
-                        $("#black-mask").hide();
-                    })
-                }
-            })
-        }else{
-            $('#black-mask').show()
-            $('#willing-widget').show()
-            $('#black-mask').on('tap', function () {
-                $('#willing-widget').hide();
-                $('#black-mask').hide();
-            })
-        }
-    })
+{#    $('#willing').on('tap', function () {#}
+{#        if($('#willing-list li:last').css('display') == 'none'){#}
+{#            $.ajax({#}
+{#                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
+{#                type: 'POST',#}
+{#                timeout: 1000,#}
+{#                dataType: 'json',#}
+{#                async: false,#}
+{#                encoding:'utf-8',#}
+{#                data:{#}
+{#                    'ajax_type' : '7',#}
+{#                    'openid' : $("#user_message_openid").text(),#}
+{#                    'load_begin' : '0'#}
+{#                },#}
+{#                beforeSend: function () {#}
+{#                    alert('请求数据中...')#}
+{#                }, //加载执行方法#}
+{#                error: function () {#}
+{#                    alert('数据请求异常')#}
+{#                },  //错误执行方法#}
+{#                success: function (ret) {#}
+{#                    alert(ret)#}
+{##}
+{##}
+{#                    $("#black-mask").show();#}
+{#                    $("#willing-widget").show();#}
+{#                    $("#black-mask").on('tap', function () {#}
+{#                        $("#willing-widget").hide();#}
+{#                        $("#black-mask").hide();#}
+{#                    })#}
+{#                }#}
+{#            })#}
+{#        }else{#}
+{#            $('#black-mask').show()#}
+{#            $('#willing-widget').show()#}
+{#            $('#black-mask').on('tap', function () {#}
+{#                $('#willing-widget').hide();#}
+{#                $('#black-mask').hide();#}
+{#            })#}
+{#        }#}
+{#    })#}
     $("#willing-add").on('tap', function () {
 
     })
