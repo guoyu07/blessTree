@@ -293,7 +293,6 @@ def ajax_6(request):
                                    "tucao_con": tucao.content,
                                    "tucao_time": time})
             json_tucao = json.dumps(dict_tucao)
-            json_tucao = '1'
             response.write(json_tucao)
             return response
         except IndexError:
