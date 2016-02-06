@@ -254,6 +254,7 @@ def ajax_7(request):
     :return:
     """
     response = HttpResponse()
+    response['Content-Type'] = 'application/json'
     user_id = request.POST.get('openid', '')
     load_begin = request.POST.get('load_begin', '')
     client.fetch_access_token()
