@@ -65,7 +65,7 @@ def ajax_1(request):
             msg = Tree(owner=friend, tree_name=friend.tree_name, type=4, action_time=time.time(),
                        read=False, source_id=user_id, content='成功添加好友'+user_name)
             msg.save()
-            tree = Tree(owner=user, tree_name=user.tree_name, type=7, action_time = time.time(),
+            tree = Tree(owner=user, tree_name=user.tree_name, type=7, action_time=time.time(),
                         source_id=user_id, content='种下了自己的幸福树')
             tree.save()
             ret = '4'+friend_id
@@ -264,8 +264,8 @@ def ajax_7(request):
             ret = '1'
         else:
             try:
-                # will_list = Tree.objects.filter(owner=owner, type=2)[0]
-                # will_list = Tree.objects.filter(owner=owner, type=2).order_by('action_time')
+                will_list = Tree.objects.filter(owner=owner, type=2)[0]
+                will_list = Tree.objects.filter(owner=owner, type=2).order_by('action_time')
                 # will_dict = []
                 # for will in will_list:
                 #     will_dict.append({'will_time': will.action_time,
