@@ -553,7 +553,6 @@
                 },
                 beforeSend: function () {
                     alert('请求数据中...')
-                    alert($("#user_message_openid").text()+$("#fill-area").val())
                 }, //加载执行方法
                 error: function () {
                     alert('数据请求异常')
@@ -561,7 +560,7 @@
                 success: function (ret) {
                     if(ret=='1'){
                        alert('保存成功')
-                        $("#")
+                        $("#willing-list li").css('display', 'none')
                     }else{
                         alert('保存失败，请再是一次哦～')
                     }
