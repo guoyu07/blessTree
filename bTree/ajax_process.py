@@ -271,7 +271,7 @@ def ajax_7(request):
                     will_dict.append({'will_time': will.action_time,
                                       'will_con': will.content})
                 response['Content-Type'] = 'application/json'
-                json_bless = json.dumps(will_dict, ensure_ascii=False)
+                # json_bless = json.dumps(will_dict, ensure_ascii=False)
                 response.write(will_dict)
                 return response
             except IndexError:
