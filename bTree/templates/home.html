@@ -105,40 +105,23 @@
     </div>
     <hr style="background-color: rgba(0,0,0,0.6)">
     <div class="message-content">
-        <ul class="message-list">
-{#            {% if message_list %}#}
-{#                {% for nickname, avatar_addr, msg_type, msg_time in msg_list %}#}
-{#                    <li>#}
-{#                        <div class="pure-u-5-24" style="float:left;">#}
-{#                            <img src="{{ avatar_addr }}" style="height: 70%;padding-left: 5%">#}
-{#                            <p style="font-size: 50%;color: rgba(0,0,0,0.8)">{{ nickname }}</p>#}
-{#                        </div>#}
-{##}
-{#                        <div class="pure-u-19-24" style="float:left;">#}
-    {#                        根据消息类型来做不同的提醒#}
-{#                            {% if msg_type == 3 %}#}
-{#                                <p style="padding-top:3%; font-size: 90%">{{ nickname }}给你浇了一次水</p>#}
-{#                            {% elif msg_type == 5%}#}
-{#                                <p style="padding-top:3%; font-size: 90%">{{ nickname }}给你写了祝福</p>#}
-{#                            {% elif msg_type == 6 %}#}
-{#                                <p style="padding-top:3%; font-size: 90%">{{ nickname }}吐槽了你</p>#}
-{#                            {% endif %}#}
-{#                            <p style="font-size: 70%; color: grey">{{ msg_time }}分钟前</p>#}
-{##}
-{#                        </div>#}
-{##}
-{#                    </li>#}
-{#                {% endfor %}#}
-{#            {% else %}#}
-{#                <li>#}
-{#                    <div class="pure-u-5-24" style="float:left;">#}
-{#                        <p style="font-size: 100%;color: rgba(0,0,0,0.8)">您的消息空空如也，赶紧和小伙伴互动起来吧～</p>#}
-{#                    </div>#}
-{#                </li>#}
-{#            {% endif %}#}
+        <ul class="message-list" id="message-list">
+            <li id="message-list-na">
+                <div class="pure-u-5-24" style="float:left;">
+                    <p style="font-size: 100%;color: rgba(0,0,0,0.8)">您的消息空空如也，赶紧和小伙伴互动起来吧～</p>
+                </div>
+            </li>
+            <li id="message-list-li" style="display: none;">
+                <div class="pure-u-5-24" style="float:left;">
+                    <img id="message-avatar" src="{% static "tree/image/btn/tips.png" %}" style="height: 70%;padding-left: 5%">
+                    <p id="message-name" style="font-size: 50%;color: rgba(0,0,0,0.8)">名字</p>
+                </div>
+                <div class="pure-u-19-24" style="float:left;">
+                    <p id="message-con" style="padding-top:3%; font-size: 90%">消息内容</p>
+                    <p id="message-time" style="font-size: 70%; color: grey">时间</p>
+                </div>
+            </li>
         </ul>
-
-
     </div>
 </div>
 <!--心愿-->
@@ -370,7 +353,35 @@
                       link: '{{ share_url|safe }}',
                       imgUrl: '{{ imgUrl|safe }}' ,
                       success: function (res) {
-                        alert('分享成功，一(没有个)大波小伙伴正赶来围观～');
+                          $.ajax({
+                                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                                type: 'POST',
+                                timeout: 1000,
+                                dataType: 'text',
+                                encoding: 'utf-8',
+                                data: {
+                                    'ajax_type': '11',
+                                    'openid': $("#user_message_openid").text()
+                                },
+                                beforeSend: function () {
+                                    alert('请求数据中...')
+                                }, //加载执行方法
+                                error: function () {
+                                    alert('保存失败，亲再试一下哦～')
+                                },  //错误执行方法
+                                success: function (ret) {
+                                    if(ret=='1'){
+                                        alert('保存成功～多互动可以让小树快快长大哦')
+                                    }
+                                } //成功执行方法
+                          })
+                          alert('分享成功，积分已经奉上～\n一(没有个)大波小伙伴正赶来围观～');
+                          // 积分与进度条变化
+                          var val = parseInt($("#count-num").text().substr(3))
+                          $("#count-num").text('积分:'+(val+5000).toString())
+                          var css_width = parseInt($("#progress-bar").css("width"));
+                          $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.016).toString())
+
                       },
                       cancel: function (res) {
                         alert('分享一次，据说会有桃花运哦～');
@@ -451,7 +462,56 @@
 
     // 提醒
     $("#tips").on('tap', function () {
+        if($("#message-list li:last").css('display') == 'none'){
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                async: false,
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '3',
+                    'openid' : $("#user_message_openid").text(),
+                    'load_begin' : '0'
+                },
+                beforeSend: function () {
+                    alert('请求数据中...')
+                }, //加载执行方法
+                error: function () {
+                    alert('数据请求异常')
+                },  //错误执行方法
+                success: function (ret) {
+                    //消息内容控制
+                    if(ret=='1'){
+                        $("#message-list-na").show();
+                    }else{
+                        $.each(ret, function (i, items) {
+                            $("#message-name").text(items.msg_nick)
+                            $("#message-avatar").attr('src', items.msg_avatar)
+                            $("#message-con").text(items.msg_con)
+                            $("#message-time").text(items.msg_time)
+                            var msg_list = $("#message-list-li").clone().show()
+                            $("#message-list").append(msg_list)
+                        })
+                    }
+                    //消息显示
+                    $("#black-mask").show()
+                            .on('tap', function () {
+                                $("#message-widget").hide();
+                                $("#black-mask").hide();
+                            })
+                    $("#message-widget").show();
+                }
+            })
+        }else{
+            $("#black-mask").show()
+                .on('tap', function () {
+                    $("#message-widget").hide();
+                    $("#black-mask").hide();
+                })
         $("#message-widget").show();
+        }
     })
     //加好友
     $("#friends").on('tap', function () {
@@ -462,6 +522,34 @@
         alert($("#user_message_water_time"));
         $("#water-widget").show();
         $('#water-widget').hide(3000);
+        $.ajax({
+            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '4',
+                    'openid' : $("#user_message_openid").text(),
+                    'source_id' : $("#user_message_openid").text()
+                },
+                beforeSend: function () {
+                    alert('请求数据中...')
+                }, //加载执行方法
+                error: function () {
+                    alert('数据请求异常')
+                },  //错误执行方法
+                success: function (ret) {
+                    if(ret=='1'){
+                        alert('浇水成功，积分已奉上哟～')
+                        // 积分与进度条变化
+                        var val = parseInt($("#count-num").text().substr(3))
+                        $("#count-num").text('积分:'+(val+1000).toString())
+                        var css_width = parseInt($("#progress-bar").css("width"));
+                        $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.003).toString())
+                    }
+                }
+        })
         $("#user_message_water_time").text(myDate.getDate())
     })
 
@@ -514,7 +602,7 @@
             })
         }
     })
-        //填写心愿
+    //填写心愿
     $("#willing-add").on('tap', function () {
         $('#willing-widget').hide();
         $('#fill-willing').show();

@@ -4,7 +4,6 @@
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/ajax_process.py" afterPath="$PROJECT_DIR$/bTree/ajax_process.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/templates/home.html" afterPath="$PROJECT_DIR$/bTree/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/views.py" afterPath="$PROJECT_DIR$/bTree/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blessTree.iws" />
@@ -33,32 +32,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ajax_process.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ajax_process.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bTree/ajax_process.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6" vertical-offset="225" max-vertical-offset="1872">
-              <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="531" max-vertical-offset="1026">
+              <caret line="387" column="21" selection-start-line="387" selection-start-column="21" selection-end-line="387" selection-end-column="21" />
               <folding>
-                <element signature="e#1008#2640#0" expanded="false" />
-                <element signature="e#2668#4278#0" expanded="false" />
-                <element signature="e#4306#5401#0" expanded="false" />
-                <element signature="e#5429#6130#0" expanded="false" />
-                <element signature="e#6158#7545#0" expanded="false" />
-                <element signature="e#7573#8929#0" expanded="false" />
-                <element signature="e#8957#10283#0" expanded="false" />
-                <element signature="e#11058#11817#0" expanded="false" />
-                <element signature="e#11846#12604#0" expanded="false" />
-                <element signature="e#12633#12980#0" expanded="false" />
+                <element signature="e#362#992#1" expanded="false" />
+                <element signature="e#1020#2652#0" expanded="false" />
+                <element signature="e#2680#4290#0" expanded="false" />
+                <element signature="e#4318#5617#0" expanded="false" />
+                <element signature="e#5645#6377#0" expanded="false" />
+                <element signature="e#6405#7792#0" expanded="false" />
+                <element signature="e#7820#9176#0" expanded="false" />
+                <element signature="e#9204#10530#0" expanded="false" />
+                <element signature="e#10558#11277#0" expanded="false" />
+                <element signature="e#11305#12064#0" expanded="false" />
+                <element signature="e#12093#12851#0" expanded="false" />
+                <element signature="e#12880#13227#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.586207" vertical-offset="4926" max-vertical-offset="5976">
-              <caret line="681" column="46" selection-start-line="681" selection-start-column="46" selection-end-line="681" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.16704805" vertical-offset="611" max-vertical-offset="8334">
+              <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -73,10 +74,20 @@
                 <element signature="n#style#0;n#img#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#hr#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#1;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -90,6 +101,7 @@
                 <element signature="n#style#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#hr#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -131,7 +143,6 @@
                 <element signature="n#style#0;n#p#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#14;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#p#0;n#li#0;n#ul#0;n#div#1;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#1;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#li#0;n#ul#0;n#div#1;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -151,19 +162,18 @@
                 <element signature="n#div#18;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#19;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#19;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#14466#14835#0#HTML" expanded="false" />
-                <element signature="e#14867#16343#0#HTML" expanded="false" />
-                <element signature="e#16712#16780#0#HTML" expanded="false" />
-                <element signature="e#16857#16933#0#HTML" expanded="false" />
-                <element signature="e#17005#18014#0#HTML" expanded="false" />
-                <element signature="e#17180#18007#0#HTML" expanded="false" />
-                <element signature="e#18652#20470#0#HTML" expanded="false" />
-                <element signature="e#20531#20794#0#HTML" expanded="false" />
-                <element signature="e#20845#21816#0#HTML" expanded="false" />
-                <element signature="e#22011#24121#0#HTML" expanded="false" />
-                <element signature="e#24274#26207#0#HTML" expanded="false" />
-                <element signature="e#26566#28688#0#HTML" expanded="false" />
-                <element signature="e#29089#29196#0#HTML" expanded="false" />
+                <element signature="e#13746#14115#0#HTML" expanded="false" />
+                <element signature="e#17529#17597#0#HTML" expanded="false" />
+                <element signature="e#17674#17750#0#HTML" expanded="false" />
+                <element signature="e#19028#21067#0#HTML" expanded="false" />
+                <element signature="e#19093#20819#0#HTML" expanded="false" />
+                <element signature="e#22665#24483#0#HTML" expanded="false" />
+                <element signature="e#24540#24803#0#HTML" expanded="false" />
+                <element signature="e#24854#25825#0#HTML" expanded="false" />
+                <element signature="e#28190#30372#0#HTML" expanded="false" />
+                <element signature="e#28283#30216#0#HTML" expanded="false" />
+                <element signature="e#30575#32697#0#HTML" expanded="false" />
+                <element signature="e#33098#33205#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -182,11 +192,10 @@
       <file leaf-file-name="visit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bTree/templates/visit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.666667" vertical-offset="2196" max-vertical-offset="2664">
-              <caret line="151" column="7" selection-start-line="151" selection-start-column="7" selection-end-line="151" selection-end-column="7" />
+            <state vertical-scroll-proportion="-9.37037" vertical-offset="3365" max-vertical-offset="5184">
+              <caret line="266" column="24" selection-start-line="266" selection-start-column="24" selection-end-line="274" selection-end-column="125" />
               <folding>
-                <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#6224#12990#0#HTML" expanded="false" />
+                <element signature="e#6662#9041#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1016,7 +1025,13 @@
       <option name="project" value="LOCAL" />
       <updated>1454756190166</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="last day work">
+      <created>1454774935184</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1454774935184</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1116,7 +1131,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="19" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1474,17 +1489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/templates/visit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.666667" vertical-offset="2196" max-vertical-offset="2664">
-          <caret line="151" column="7" selection-start-line="151" selection-start-column="7" selection-end-line="151" selection-end-column="7" />
-          <folding>
-            <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#6224#12990#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-74.90323" vertical-offset="0" max-vertical-offset="2898">
@@ -1499,10 +1503,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bTree/templates/visit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.37037" vertical-offset="3365" max-vertical-offset="5184">
+          <caret line="266" column="24" selection-start-line="266" selection-start-column="24" selection-end-line="274" selection-end-column="125" />
+          <folding>
+            <element signature="e#6662#9041#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bTree/ajax_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="531" max-vertical-offset="1026">
+          <caret line="387" column="21" selection-start-line="387" selection-start-column="21" selection-end-line="387" selection-end-column="21" />
+          <folding>
+            <element signature="e#362#992#1" expanded="false" />
+            <element signature="e#1020#2652#0" expanded="false" />
+            <element signature="e#2680#4290#0" expanded="false" />
+            <element signature="e#4318#5617#0" expanded="false" />
+            <element signature="e#5645#6377#0" expanded="false" />
+            <element signature="e#6405#7792#0" expanded="false" />
+            <element signature="e#7820#9176#0" expanded="false" />
+            <element signature="e#9204#10530#0" expanded="false" />
+            <element signature="e#10558#11277#0" expanded="false" />
+            <element signature="e#11305#12064#0" expanded="false" />
+            <element signature="e#12093#12851#0" expanded="false" />
+            <element signature="e#12880#13227#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.586207" vertical-offset="4926" max-vertical-offset="5976">
-          <caret line="681" column="46" selection-start-line="681" selection-start-column="46" selection-end-line="681" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.16704805" vertical-offset="611" max-vertical-offset="8334">
+          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1517,10 +1552,20 @@
             <element signature="n#style#0;n#img#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#hr#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#1;n#li#1;n#ul#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1534,6 +1579,7 @@
             <element signature="n#style#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#hr#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1575,7 +1621,6 @@
             <element signature="n#style#0;n#p#1;n#div#13;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#14;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#p#0;n#li#0;n#ul#0;n#div#1;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#1;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#li#0;n#ul#0;n#div#1;n#div#15;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1595,38 +1640,18 @@
             <element signature="n#div#18;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#19;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#19;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#14466#14835#0#HTML" expanded="false" />
-            <element signature="e#14867#16343#0#HTML" expanded="false" />
-            <element signature="e#16712#16780#0#HTML" expanded="false" />
-            <element signature="e#16857#16933#0#HTML" expanded="false" />
-            <element signature="e#17005#18014#0#HTML" expanded="false" />
-            <element signature="e#17180#18007#0#HTML" expanded="false" />
-            <element signature="e#18652#20470#0#HTML" expanded="false" />
-            <element signature="e#20531#20794#0#HTML" expanded="false" />
-            <element signature="e#20845#21816#0#HTML" expanded="false" />
-            <element signature="e#22011#24121#0#HTML" expanded="false" />
-            <element signature="e#24274#26207#0#HTML" expanded="false" />
-            <element signature="e#26566#28688#0#HTML" expanded="false" />
-            <element signature="e#29089#29196#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/ajax_process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6" vertical-offset="225" max-vertical-offset="1872">
-          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-          <folding>
-            <element signature="e#1008#2640#0" expanded="false" />
-            <element signature="e#2668#4278#0" expanded="false" />
-            <element signature="e#4306#5401#0" expanded="false" />
-            <element signature="e#5429#6130#0" expanded="false" />
-            <element signature="e#6158#7545#0" expanded="false" />
-            <element signature="e#7573#8929#0" expanded="false" />
-            <element signature="e#8957#10283#0" expanded="false" />
-            <element signature="e#11058#11817#0" expanded="false" />
-            <element signature="e#11846#12604#0" expanded="false" />
-            <element signature="e#12633#12980#0" expanded="false" />
+            <element signature="e#13746#14115#0#HTML" expanded="false" />
+            <element signature="e#17529#17597#0#HTML" expanded="false" />
+            <element signature="e#17674#17750#0#HTML" expanded="false" />
+            <element signature="e#19028#21067#0#HTML" expanded="false" />
+            <element signature="e#19093#20819#0#HTML" expanded="false" />
+            <element signature="e#22665#24483#0#HTML" expanded="false" />
+            <element signature="e#24540#24803#0#HTML" expanded="false" />
+            <element signature="e#24854#25825#0#HTML" expanded="false" />
+            <element signature="e#28190#30372#0#HTML" expanded="false" />
+            <element signature="e#28283#30216#0#HTML" expanded="false" />
+            <element signature="e#30575#32697#0#HTML" expanded="false" />
+            <element signature="e#33098#33205#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -20,11 +20,11 @@ import simplejson as json
     ajax_type{
         '1': 第一次种树填入树名字时候保存到数据库[]
         '2': 主页面， 请求刷新排行榜的时候[]
-        '3': 主页面， 请求刷新消息的时候
-        '4': 请求提交浇水获取的积分的时候
-        '5': 主页面和访问页面 请求刷新祝福的时候[]
-        '6': 主页面和访问页面 请求刷新吐槽的时候[]
-        '7': 主页面和访问页面 请求刷新心愿的时候[]
+        '3': 主页面， 请求刷新消息的时候[i]
+        '4': 请求提交浇水获取的积分的时候[i][
+        '5': 主页面和访问页面 请求刷新祝福的时候[i][
+        '6': 主页面和访问页面 请求刷新吐槽的时候[i][
+        '7': 主页面和访问页面 请求刷新心愿的时候[][
         '8': 主页面， 请求提交输入心愿的时候[]
         '9': 访问页面， 祝福提交请求[]
         '10': 访问页面， 吐槽提交请求[]
@@ -135,27 +135,32 @@ def ajax_3(request):
     :return:
     """
     response = HttpResponse()
+    response['Content-Type'] = 'application/json'
     user_id = request.POST.get('openid', '')
     load_begin = request.POST.get('load_begin', '')
     client.fetch_access_token()
     if user_id and load_begin:
         owner = User.objects.get(openid=user_id)
-        msg_list = Tree.objects.filter(owner=owner, read=False).order_by('-action_time')[load_begin:load_begin+4]
-        dict_msg = {'msg_nick': [], 'msg_avatar': [], 'msg_type': [], 'msg_time': []}
-        for msg in msg_list:
-            user_info = client.user.get(client, msg.owner.openid)
-            dict_msg['msg_nick'].append(user_info['nickname'])
-            dict_msg['msg_avatar'].append(user_info['headimgurl'])
-            dict_msg['msg_type'].append(msg.type)
-            dict_msg['msg_time'].append(msg.action_time)
-            msg.read = True
-            msg.save()  # 因为发送完了消息会认为消息已经读了
-        json_msg = json.dumps(dict_msg, ensure_ascii=False)
-        response.write(json_msg)
-        # 注意成功不反悔ret1，省去处理的麻烦
+        dict_msg = []
+        try:
+            msg_list = Tree.objects.filter(owner=owner, read=False)[0]
+            msg_list = Tree.objects.filter(owner=owner, read=False).order_by('action_time')
+            for msg in msg_list:
+                user_info = client.user.get(client, msg.owner.openid)
+                time = msg.action_time.strftime("%m-%d")+'\n'\
+                           +str(8+int(msg.action_time.strftime("%H")))+msg.action_time.strftime(":%I:%S")
+                dict_msg.append({"msg_nick": user_info['nickname'],
+                                 "msg_avatar": user_info['headimgurl'],
+                                 "msg_con": msg.content,
+                                 "msg_time": time})
+                json_msg = json.dumps(dict_msg)
+                response.write(json)
+                return response
+        except IndexError:
+            ret = '1'
     else:
         ret = '2'
-        response.write(ret)
+    response.write(ret)
     return response
 
 
@@ -178,7 +183,7 @@ def ajax_4(request):
             except ObjectDoesNotExist:
                 friend = 0
             if friend == 0:
-                user.friends.add(User.objects.get(source_id))
+                user.friends.add(User.objects.get(source_id))  # 通过朋友圈啊什么的浇水，自己浇水的时候自己是自己的朋友
         user.save()
         ret = '1'
     else:
