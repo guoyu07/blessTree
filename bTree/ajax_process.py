@@ -268,8 +268,8 @@ def ajax_7(request):
                 will_list = Tree.objects.filter(owner=owner, type=2).order_by('action_time')
                 will_dict = []
                 for will in will_list:
-                    time = will.action_time.strftime("%Y-%m-%d")\
-                           +str(8+int(will.action_time.strftime("%H")))+'\n'+will.action_time.strftime(":%I:%S")
+                    time = will.action_time.strftime("%m-%d")+'\n'\
+                           +str(8+int(will.action_time.strftime("%H")))+will.action_time.strftime(":%I:%S")
                     will_dict.append({'will_time': time,
                                       'will_con': will.content})
                 response['Content-Type'] = 'application/json'
