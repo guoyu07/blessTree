@@ -244,7 +244,7 @@
         <ul class="rank-list" id="rank-list">
 {#            <li style="width: 100%"><a style="width: 80%; margin-left:10%;height:15%;text-align: center;font-size: 80%;background-color: #fff">没有更多啦～</a></li>#}
 
-            <li>
+            <li id="rank-list-li">
                 <div class="pure-u-5-24" style="float: left">
                     <img src="{% static 'tree/image/btn/friends.png' %}" style="height: 90%;padding-left: 5%">
                     <p style="font-size: 50%">不想上学</p>
@@ -620,7 +620,7 @@
 {#                    alert(ret[0].name)#}
                 $.each(ret, function (i, item) {
                     alert(item.name+ i.toString())
-                    alert($("#rank-list li img").attr(src))
+                    alert($("#rank-list-li img").attr('src'))
                     ""
                 })
                 $("#black-mask").show()
