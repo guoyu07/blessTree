@@ -164,9 +164,9 @@ def ajax_3(request):
                                  "msg_avatar": avatar,
                                  "msg_con": msg.content,
                                  "msg_time": time})
-                json_msg = json.dumps(dict_msg)
-                response.write(json)
-                return response
+            json_msg = json.dumps(dict_msg)
+            response.write(json)
+            return response
         except IndexError:
             ret = '1'
     else:
