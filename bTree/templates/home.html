@@ -627,7 +627,7 @@
                     $('#rank-count').text("积分"+item.count)
                     $('#rank-home').attr('href',item.user_home)
                     var list_item = $("#rank-list-li").clone().show()
-                    list_item.attr({
+                    list_item.get('img').attr({
                         'src':item.avatar
                     })
                     $("#rank-list").append(list_item)
