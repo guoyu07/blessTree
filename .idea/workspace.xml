@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/templates/home.html" afterPath="$PROJECT_DIR$/bTree/templates/home.html" />
-    </list>
+    <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="" />
     <ignored path="blessTree.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -51,8 +49,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.3226545" vertical-offset="7481" max-vertical-offset="9018">
-              <caret line="696" column="6" selection-start-line="696" selection-start-column="6" selection-end-line="696" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.05034325" vertical-offset="6134" max-vertical-offset="9324">
+              <caret line="391" column="0" selection-start-line="391" selection-start-column="0" selection-end-line="391" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -124,14 +122,12 @@
                 <element signature="e#17113#17189#0#HTML" expanded="false" />
                 <element signature="e#17261#18270#0#HTML" expanded="false" />
                 <element signature="e#17436#18263#0#HTML" expanded="false" />
-                <element signature="e#18747#18993#0#HTML" expanded="false" />
-                <element signature="e#19250#20607#0#HTML" expanded="false" />
-                <element signature="e#19336#20345#0#HTML" expanded="false" />
-                <element signature="e#20856#22962#0#HTML" expanded="false" />
-                <element signature="e#20918#22713#0#HTML" expanded="false" />
-                <element signature="e#23313#24286#0#HTML" expanded="false" />
-                <element signature="e#25127#25234#0#HTML" expanded="false" />
-                <element signature="e#25285#25682#0#HTML" expanded="false" />
+                <element signature="e#18647#18893#0#HTML" expanded="false" />
+                <element signature="e#19150#20507#0#HTML" expanded="false" />
+                <element signature="e#19236#20245#0#HTML" expanded="false" />
+                <element signature="e#20756#22862#0#HTML" expanded="false" />
+                <element signature="e#25039#25146#0#HTML" expanded="false" />
+                <element signature="e#25197#25594#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -961,7 +957,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="769" extended-state="7" />
+    <frame x="-1" y="0" width="1368" height="769" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1435,8 +1431,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.3226545" vertical-offset="7481" max-vertical-offset="9018">
-          <caret line="696" column="6" selection-start-line="696" selection-start-column="6" selection-end-line="696" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.05034325" vertical-offset="6134" max-vertical-offset="9324">
+          <caret line="391" column="0" selection-start-line="391" selection-start-column="0" selection-end-line="391" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1508,14 +1504,12 @@
             <element signature="e#17113#17189#0#HTML" expanded="false" />
             <element signature="e#17261#18270#0#HTML" expanded="false" />
             <element signature="e#17436#18263#0#HTML" expanded="false" />
-            <element signature="e#18747#18993#0#HTML" expanded="false" />
-            <element signature="e#19250#20607#0#HTML" expanded="false" />
-            <element signature="e#19336#20345#0#HTML" expanded="false" />
-            <element signature="e#20856#22962#0#HTML" expanded="false" />
-            <element signature="e#20918#22713#0#HTML" expanded="false" />
-            <element signature="e#23313#24286#0#HTML" expanded="false" />
-            <element signature="e#25127#25234#0#HTML" expanded="false" />
-            <element signature="e#25285#25682#0#HTML" expanded="false" />
+            <element signature="e#18647#18893#0#HTML" expanded="false" />
+            <element signature="e#19150#20507#0#HTML" expanded="false" />
+            <element signature="e#19236#20245#0#HTML" expanded="false" />
+            <element signature="e#20756#22862#0#HTML" expanded="false" />
+            <element signature="e#25039#25146#0#HTML" expanded="false" />
+            <element signature="e#25197#25594#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
