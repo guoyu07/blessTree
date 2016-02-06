@@ -24,7 +24,7 @@ import simplejson as json
         '4': 请求提交浇水获取的积分的时候
         '5': 主页面和访问页面 请求刷新祝福的时候
         '6': 主页面和访问页面 请求刷新吐槽的时候
-        '7': 主页面和访问页面 请求刷新心愿的时候
+        '7': 主页面和访问页面 请求刷新心愿的时候[]
         '8': 主页面， 请求提交输入心愿的时候
         '9': 访问页面， 祝福提交请求[]
         '10': 访问页面， 吐槽提交请求[]
@@ -260,14 +260,23 @@ def ajax_7(request):
     ret = '0'
     if user_id and load_begin:
         owner = User.objects.get(openid=user_id)
-        will_list = Tree.objects.filter(owner=owner, type=2).order_by('-action_time')[load_begin:load_begin+4]
-        dict_will = {'will_con': [], 'will_time': []}
-        for will in will_list:
-            dict_will['bless_con'].append(will.type)
-            dict_will['bless_time'].append(will.action_time)
-        json_bless = json.dumps(dict_will, ensure_ascii=False)
-        response.write(json_bless)
-        # 注意成功不反悔ret1，省去处理的麻烦
+        if owner.willing == 'none':
+            ret = '1'
+        else:
+            try:
+                will_list = Tree.objects.filter(owner=owner, type=2)[0]
+                will_list = Tree.objects.filter(owner=owner, type=2).order_by('action_time')
+                will_dict = []
+                for will in will_list:
+                    will_dict.append({'bless_time': will.action_time,
+                                      'bless_con': will.content})
+                response['Content-Type'] = 'application/json'
+                json_bless = json.dumps(will_dict)
+                response.write(json_bless)
+            except IndexError:
+                will_dict = []
+                ret = '1'
+        # 没有数据的时候返回1，表示没有新年愿望
     else:
         ret = '2'
         response.write(ret)

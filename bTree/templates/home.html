@@ -145,25 +145,15 @@
 <div class="willing-widget" id="willing-widget" style="display: none">
     <div class="willing-top">
         <img src="{% static "tree/image/btn/willing.png" %}">
-        <a class="willing-close">X</a>
         <p style="font-size: 80%">心愿</p>
     </div>
     <hr style="background-color: rgba(0,0,0,0.6)">
     <div class="willing-content">
         <ul class="willing-list" id="willing-list">
-{#            {% if willing_list %}#}
-{#                {% for will_time, will_con in willing_list %}#}
-{#                    <li>#}
-{#                        <a style="float: left;width: 20%;font-size: 80%; text-align: center">{{ will_time }}</a>#}
-{#                        <a style="float:left;margin-left: 20%">{{ will_con }}</a>#}
-{#                    </li>#}
-{#                {% endfor %}#}
-{#                <li><a>点我加载更多哦</a></li>#}
-{#            {% else %}#}
-{#                <li>#}
-{#                    <a>您的愿望空空如也，快快说出来吧～</a>#}
-{#                </li>#}
-{#            {% endif %}#}
+            <li style="display: none;">
+                <a style="float: left;width: 20%;font-size: 80%; text-align: center">时间</a>
+                <a style="float:left;margin-left: 20%">内容</a>
+            </li>
         </ul>
     </div>
     <button class="willing-add" id="willing-add">+</button>
@@ -242,8 +232,6 @@
     <hr style="background-color: rgba(0,0,0,0.6)">
     <div class="rank-content">
         <ul class="rank-list" id="rank-list">
-{#            <li style="width: 100%"><a style="width: 80%; margin-left:10%;height:15%;text-align: center;font-size: 80%;background-color: #fff">没有更多啦～</a></li>#}
-
             <li id="rank-list-li" style="display: none">
                 <div class="pure-u-5-24" style="float: left">
                     <img id="rank-avatar" src="{% static 'tree/image/btn/friends.png' %}" style="height: 90%;padding-left: 5%; border-radius: 50%">
@@ -501,23 +489,114 @@
     })
     //心愿
     $('#willing').on('tap', function () {
-        $("#willing-widget").show();
+        if($('#willing-list li:last').css('display') == 'none'){
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                async: false,
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '7',
+                    'openid' : $("#user_message_openid").text(),
+                    'load_begin' : '0'
+                },
+                beforeSend: function () {
+                    alert('请求数据中...')
+                }, //加载执行方法
+                error: function () {
+                    alert('数据请求异常')
+                },  //错误执行方法
+                success: function (ret) {
+                    alert(ret)
+
+
+                    $("#black-mask").show();
+                    $("#willing-widget").show();
+                    $("#black-mask").on('tap', function () {
+                        $("#willing-widget").hide();
+                        $("#black-mask").hide();
+                    })
+                }
+            })
+        }else{
+            $('#black-mask').show()
+            $('#willing-widget').show()
+            $('#black-mask').on('tap', function () {
+                $('#willing-widget').hide();
+                $('#black-mask').hide();
+            })
+        }
+    })
+    $("#willing-add").on('tap', function () {
+
     })
 
     /********************
      * 弹出框的按钮绑定事件
      * */
 
-     // TODO:下拉出现刷新请求按钮
-     //历史弹出框
-    $("#message-close").on('tap', function () {
-        $("#message-widget").hide();
-    })
 
-    //消息弹出框
-    $("#message-close").on('tap', function () {
-        $("#message-widget").hide();
-    })
+    $('#black-mask').on('tap',function(){
+        $('#black-mask').fadeOut(200);
+    });
+    //排行榜
+    $("#rank").on('tap', function () {
+        if($("#rank-list li:last").css('display') == 'none'){
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                async: false,
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '2',
+                    'openid' : $("#user_message_openid").text(),
+                    'load_begin' : '0'
+                },
+                beforeSend: function () {
+                    alert('请求数据中...')
+                }, //加载执行方法
+                error: function () {
+                    alert('数据请求异常')
+                },  //错误执行方法
+                success: function (ret) {
+    {#                    alert(ret[0].name)#}
+                    $.each(ret, function (i, item) {
+                        alert(item.name+ i.toString())
+                        //设置显示逻辑
+                        $("#rank-name").text(item.name)
+                        $('#rank-rank').text((i+1).toString())
+                        ""
+                        $('#rank-count').text("积分"+item.count)
+                        $('#rank-home').attr('href',item.user_home)
+                        $("#rank-avatar").attr('src', item.avatar)
+                        $("#rank-progress-in").css('width',(item.count/3000).toString()+'%')
+                        var list_item = $("#rank-list-li").clone().show()
+                        $("#rank-list").append(list_item)
+
+
+                    })
+                    $("#black-mask").show()
+                    $("#rank-widget").show();
+                    $('#black-mask').on('tap',function(){
+                        $('#black-mask').fadeOut(200);
+                        $('#rank-widget').hide()
+                    });
+                } //成功执行方法
+            })
+        }else{
+            $("#black-mask").show()
+            $("#rank-widget").show();
+            $('#black-mask').on('tap',function(){
+                $('#black-mask').fadeOut(200);
+                $('#rank-widget').hide()
+            });
+        }
+    });
+
 
 
     //心愿弹出框
@@ -594,63 +673,6 @@
      * */
 
     })
-    $('#black-mask').on('tap',function(){
-        $('#black-mask').fadeOut(200);
-    });
-    $("#rank").on('tap', function () {
-        if($("#rank-list li:last").css('display') == 'none'){
-            $.ajax({
-                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-                type: 'POST',
-                timeout: 1000,
-                dataType: 'json',
-                async: false,
-                encoding:'utf-8',
-                data:{
-                    'ajax_type' : '2',
-                    'openid' : $("#user_message_openid").text(),
-                    'load_begin' : '0'
-                },
-                beforeSend: function () {
-                    alert('请求数据中...')
-                }, //加载执行方法
-                error: function () {
-                    alert('数据请求异常')
-                },  //错误执行方法
-                success: function (ret) {
-    {#                    alert(ret[0].name)#}
-                    $.each(ret, function (i, item) {
-                        alert(item.name+ i.toString())
-                        //设置显示逻辑
-                        $("#rank-name").text(item.name)
-                        $('#rank-rank').text((i+1).toString())
-                        ""
-                        $('#rank-count').text("积分"+item.count)
-                        $('#rank-home').attr('href',item.user_home)
-                        $("#rank-avatar").attr('src', item.avatar)
-                        $("#rank-progress-in").css('width',(item.count/3000).toString()+'%')
-                        var list_item = $("#rank-list-li").clone().show()
-                        $("#rank-list").append(list_item)
-
-
-                    })
-                    $("#black-mask").show()
-                    $("#rank-widget").show();
-                    $('#black-mask').on('tap',function(){
-                        $('#black-mask').fadeOut(200);
-                        $('#rank-widget').hide()
-                    });
-                } //成功执行方法
-            })
-        }else{
-            $("#black-mask").show()
-            $("#rank-widget").show();
-            $('#black-mask').on('tap',function(){
-                $('#black-mask').fadeOut(200);
-                $('#rank-widget').hide()
-            });
-        }
-    });
     //初始化事件
      function init_main(myDate) {
          $('#black-mask').show();
