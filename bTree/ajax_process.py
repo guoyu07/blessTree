@@ -244,9 +244,9 @@ def ajax_5(request):
                                    'bless_avatar': avatar,
                                    'bless_con': bless.content,
                                    'bless_time': time})
-                json_bless = json.dumps(dict_bless)
-                response.write(json_bless)
-                return response
+            json_bless = json.dumps(dict_bless)
+            response.write(json_bless)
+            return response
         except IndexError:
             ret = '1'  # 数据库没有记录，说明没有祝福
     else:

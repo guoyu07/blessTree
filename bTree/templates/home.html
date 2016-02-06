@@ -107,7 +107,7 @@
     <div class="message-content">
         <ul class="message-list" id="message-list">
             <li id="message-list-na">
-                <div class="pure-u-5-24" style="float:left;">
+                <div style="float:left;">
                     <p style="font-size: 100%;color: rgba(0,0,0,0.8)">您的消息空空如也，赶紧和小伙伴互动起来吧～</p>
                 </div>
             </li>
@@ -165,7 +165,7 @@
             </li>
             <li id="history-bless-list-li" style="display: none;">
                 <div style="float:left;"class="pure-u-5-24">
-                    <img id="history-bless-avatar" src="{% static "tree/image/btn/bless.png" %}" style="height: 75%;padding-left: 5%;border-radius: 37%">
+                    <img id="history-bless-avatar" src="{% static "tree/image/btn/friends.png" %}" style="height: 75%;padding-left: 5%;border-radius: 37%">
                     <p id="history-bless-name" style="font-size: 40%;color:grey;;">名字</p>
                 </div>
                 <div style="float: left" class="pure-u-15-24">
@@ -183,7 +183,7 @@
             </li>
             <li id="history-tucao-list-li" style="display: none">
                 <div style="float:left;"class="pure-u-5-24">
-                    <img id="history-tucao-avatar" src="{% static "tree/image/btn/tucao.png" %}" style="height: 75%;padding-left: 5%;border-radius: 37%">
+                    <img id="history-tucao-avatar" src="{% static "tree/image/btn/friends.png" %}" style="height: 75%;padding-left: 5%;border-radius: 37%">
                     <p id="history-tucao-name" style="font-size: 40%;color:grey;;">名字</p>
                 </div>
                 <div style="float: left" class="pure-u-15-24">
@@ -735,10 +735,13 @@
                 success: function (ret) {
                     //决定显示的内容
                     if(ret=='1'){
-                            $("#history-bless-list-na").show()
+                            $("#history-bless-list-na").show();
                         }else{
+                            $("#history-bless-list-na").hide();
                             $.each(ret, function (i, item) {
-                                $('#history-bless-avatar').attr('src', item.bless_avatar)
+                                if(item.bless_avatar!='none'){
+                                    $('#history-bless-avatar').attr('src', item.bless_avatar)
+                                }
                                 $('#history-bless-name').text(item.bless_nick)
                                 $("#history-bless-con").text(item.bless_con)
                                 $('#history-bless-time').text(item.bless_time)
@@ -797,6 +800,7 @@
                         $("#history-tucao-list-na").show()
                     } else {
                         $.each(ret, function (i, item) {
+                            $("#history-tucao-list-na").hide()
                             $('#history-tucao-avatar').attr('src', item.tucao_avatar)
                             $('#history-tucao-name').text(item.tucao_nick)
                             $("#history-tucao-con").text(item.tucao_con)
