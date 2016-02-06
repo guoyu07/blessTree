@@ -253,7 +253,7 @@
                     <p id="rank-rank" style="height: 45%;width: 14%;margin-left: 43%;border-radius: 50%;background-color: red">1</p>
                     <div class="rank-progress-con" style="height: 20%;margin-top: 2%">
                         <div class="rank-progress">
-                            <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>
+                            <span class="progress-bar"><span class="progress-in" id="rank-progress-in" style="width: 85%"></span></span>
                         </div>
                         <div id="rank-count" class="rank-count-num"><p>积分：255000</p></div>
                     </div>
@@ -627,6 +627,7 @@
                     $('#rank-count').text("积分"+item.count)
                     $('#rank-home').attr('href',item.user_home)
                     $("#rank-avatar").attr('src', item.avatar)
+                    $("#rank-progress-in").css('width',(item.count/3000).toString()+'%')
                     var list_item = $("#rank-list-li").clone().show()
                     $("#rank-list").append(list_item)
 
