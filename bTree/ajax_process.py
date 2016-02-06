@@ -144,7 +144,7 @@ def ajax_3(request):
         dict_msg = []
         try:
             msg_list = Tree.objects.filter(owner=owner, read=False)[0]
-            msg_list = Tree.objects.filter(owner=owner, read=False).order_by('action_time')
+            msg_list = Tree.objects.filter(owner=owner, read=False).exclude(tree_name='na').order_by('action_time')
             for msg in msg_list:
                 if msg.source_id == 'na':  # 匿名？
                     nickname = '匿名'
