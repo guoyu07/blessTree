@@ -149,8 +149,8 @@ def ajax_3(request):
                 if msg.source_id == 'na':  # 匿名？
                     nickname = '匿名'
                     avatar = 'none'
-                else:
-                    source = User.objects.get(msg.source_id)  # 是否关注
+                # else:
+                #     source = User.objects.get(msg.source_id)  # 是否关注
             #         if source.is_plant == False:
             #             nickname = source.nickname
             #             avatar = source.avatar_url
