@@ -421,7 +421,7 @@ ul{
 .fill-willing{
     position: fixed;
     width: 60%;
-    height: 20%;
+    height: 30%;
     z-index: 13;
     left: 20%;
     top: 35%;
@@ -431,6 +431,7 @@ ul{
 }
 .fill-form{
     margin-top: 10%;
+    height: 35%
 }
 .fill-form textarea{
     font-size: small;
@@ -439,6 +440,7 @@ ul{
     width: 80%;
 }
 .fill-form p{
+    height: 10%;
     margin-top: 10%;
     margin-right: 10%;
     float: right;
@@ -483,19 +485,19 @@ ul{
 .history-tucao:hover, .history-bless:hover{
     background-color: #54b698;
 }
-.history-close, .fill-willing-close{
-    position: fixed;
-    float: right;
-    text-align: center;
-    background-color: #000;
-    color: #FFFFFF;
-    margin-left: 32%;
-    margin-top: 2%;
-    width: 6%;
-    height: 3%;
-    padding-bottom: 1%;
-    border-radius: 50%;
-}
+/*.history-close, .fill-willing-close{*/
+    /*position: fixed;*/
+    /*float: right;*/
+    /*text-align: center;*/
+    /*background-color: #000;*/
+    /*color: #FFFFFF;*/
+    /*margin-left: 32%;*/
+    /*margin-top: 2%;*/
+    /*width: 6%;*/
+    /*height: 3%;*/
+    /*padding-bottom: 1%;*/
+    /*border-radius: 50%;*/
+/*}*/
 /*排行榜*/
 .rank-count-num{
     font-family: Microsoft YaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
