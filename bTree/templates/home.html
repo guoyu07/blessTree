@@ -363,24 +363,22 @@
                                     'ajax_type': '11',
                                     'openid': $("#user_message_openid").text()
                                 },
-                                beforeSend: function () {
-                                    alert('请求数据中...')
-                                }, //加载执行方法
                                 error: function () {
                                     alert('保存失败，亲再试一下哦～')
                                 },  //错误执行方法
                                 success: function (ret) {
-                                    if(ret=='1'){
-                                        alert('保存成功～多互动可以让小树快快长大哦')
+                                    if(ret=='0'){
+                                          alert('分享成功，积分已经奉上～\n一(没有个)大波小伙伴正赶来围观～');
+                                          // 积分与进度条变化
+                                          var val = parseInt($("#count-num").text().substr(3))
+                                          $("#count-num").text('积分:'+(val+5000).toString())
+                                          var css_width = parseInt($("#progress-bar").css("width"));
+                                          $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.016).toString())
+                                          alert('保存成功～多互动可以让小树快快长大哦')
                                     }
                                 } //成功执行方法
                           })
-                          alert('分享成功，积分已经奉上～\n一(没有个)大波小伙伴正赶来围观～');
-                          // 积分与进度条变化
-                          var val = parseInt($("#count-num").text().substr(3))
-                          $("#count-num").text('积分:'+(val+5000).toString())
-                          var css_width = parseInt($("#progress-bar").css("width"));
-                          $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.016).toString())
+
 
                       },
                       cancel: function (res) {
