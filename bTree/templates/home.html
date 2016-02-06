@@ -247,19 +247,19 @@
             <li id="rank-list-li">
                 <div class="pure-u-5-24" style="float: left">
                     <img src="{% static 'tree/image/btn/friends.png' %}" style="height: 90%;padding-left: 5%; border-radius: 50%">
-                    <p style="font-size: 50%">不想上学</p>
+                    <p id="rank-name" style="font-size: 50%">不想上学</p>
                 </div>
                 <div class="pure-u-15-24" style="float:left;text-align: center">
-                    <p style="height: 45%;width: 14%;margin-left: 43%;border-radius: 50%;background-color: red">1</p>
+                    <p id="rank-rank" style="height: 45%;width: 14%;margin-left: 43%;border-radius: 50%;background-color: red">1</p>
                     <div class="rank-progress-con" style="height: 20%;margin-top: 2%">
                         <div class="rank-progress">
                             <span class="progress-bar"><span class="progress-in" style="width: 85%"></span></span>
                         </div>
-                        <div class="rank-count-num"><p>积分：255000</p></div>
+                        <div id="rank-count" class="rank-count-num"><p>积分：255000</p></div>
                     </div>
                 </div>
                 <div style="float: left" class="pure-u-4-24">
-                    <a class="rank-visit" href="#">参观</a>
+                    <a class="rank-visit" id="rank-home" href="#">参观</a>
                 </div>
             </li>
         </ul>
@@ -620,10 +620,18 @@
 {#                    alert(ret[0].name)#}
                 $.each(ret, function (i, item) {
                     alert(item.name+ i.toString())
+
+                    //设置显示逻辑
                     $("#rank-list-li img").attr({
                         'src':item.avatar
                     })
+                    $("#rank-name").attr({
+                        'src':item.name
+                    })
+                    $('#rank-rank').text((i+1).toString())
                     ""
+                    $('rank-count').text("积分"+item.count)
+                    $('rank-home').attr('href',item.user_home)
                 })
                 $("#black-mask").show()
                 $("#rank-widget").show();
