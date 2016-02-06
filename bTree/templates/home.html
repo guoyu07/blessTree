@@ -531,6 +531,15 @@
         }
     })
         //填写心愿
+    $("#willing-add").on('tap', function () {
+        $('#willing-widget').hide();
+        $('#fill-willing').show();
+        $('#black-mask').show()
+                .on('tap', function () {
+                    $('#fill-willing').hide();
+                    $('#black-mask').hide();
+                })
+    })
     $("#fill-willing-close").on('tap', function(){
         $('#fill-willing').hide();
     })
@@ -624,11 +633,6 @@
         }
     });
 
-
-
-    $("#willing-add").on('tap', function () {
-        $('#fill-willing').show();
-    })
 
     //祝福吐槽祝福框
     $("#history-close").on('tap', function () {
