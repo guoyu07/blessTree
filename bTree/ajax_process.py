@@ -258,27 +258,27 @@ def ajax_7(request):
     user_id = request.POST.get('openid', '')
     load_begin = request.POST.get('load_begin', '')
     ret = '0'
-    # if user_id and load_begin:
-    #     # owner = User.objects.get(openid=user_id)
-    #     # if owner.willing == 'none':
-    #     ret = '1'
-    #     # else:
-    #     #     try:
-    #     #         will_list = Tree.objects.filter(owner=owner, type=2)[0]
-    #     #         will_list = Tree.objects.filter(owner=owner, type=2).order_by('action_time')
-    #     #         will_dict = []
-    #     #         for will in will_list:
-    #     #             will_dict.append({'bless_time': will.action_time,
-    #     #                               'bless_con': will.content})
-    #     #         response['Content-Type'] = 'application/json'
-    #     #         json_bless = json.dumps(will_dict)
-    #     #         response.write(json_bless)
-    #     #     except IndexError:
-    #     #         will_dict = []
-    #     #         ret = '1'
-    #     # 没有数据的时候返回1，表示没有新年愿望
-    # else:
-    #     ret = '2'
+    if user_id and load_begin:
+        owner = User.objects.get(openid=user_id)
+        if owner.willing == 'none':
+            ret = '1'
+        # else:
+        #     try:
+        #         will_list = Tree.objects.filter(owner=owner, type=2)[0]
+        #         will_list = Tree.objects.filter(owner=owner, type=2).order_by('action_time')
+        #         will_dict = []
+        #         for will in will_list:
+        #             will_dict.append({'bless_time': will.action_time,
+        #                               'bless_con': will.content})
+        #         response['Content-Type'] = 'application/json'
+        #         json_bless = json.dumps(will_dict)
+        #         response.write(json_bless)
+        #     except IndexError:
+        #         will_dict = []
+        #         ret = '1'
+        # 没有数据的时候返回1，表示没有新年愿望
+    else:
+        ret = '2'
     response.write(ret)
     return response
 
