@@ -260,8 +260,8 @@ def ajax_7(request):
     ret = '0'
     if user_id and load_begin:
         owner = User.objects.get(openid=user_id)
-        if owner.willing == 'none':
-            ret = '1'
+        # if owner.willing == 'none':
+        ret = '1'
         # else:
         #     try:
         #         will_list = Tree.objects.filter(owner=owner, type=2)[0]
