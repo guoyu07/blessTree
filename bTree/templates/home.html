@@ -244,7 +244,7 @@
         <ul class="rank-list" id="rank-list">
 {#            <li style="width: 100%"><a style="width: 80%; margin-left:10%;height:15%;text-align: center;font-size: 80%;background-color: #fff">没有更多啦～</a></li>#}
 
-            <li id="rank-list-li">
+            <li id="rank-list-li" style="display: none">
                 <div class="pure-u-5-24" style="float: left">
                     <img src="{% static 'tree/image/btn/friends.png' %}" style="height: 90%;padding-left: 5%; border-radius: 50%">
                     <p id="rank-name" style="font-size: 50%">不想上学</p>
@@ -629,7 +629,7 @@
                     ""
                     $('#rank-count').text("积分"+item.count)
                     $('#rank-home').attr('href',item.user_home)
-                    var list_item = $("#rank-list-li").clone()
+                    var list_item = $("#rank-list-li").clone().show()
                     $("#rank-list").append(list_item)
 
 
