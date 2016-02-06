@@ -620,7 +620,9 @@
 {#                    alert(ret[0].name)#}
                 $.each(ret, function (i, item) {
                     alert(item.name+ i.toString())
-                    alert($("#rank-list-li img").attr('src'))
+                    $("#rank-list-li img").attr({
+                        'src':item.avatar
+                    })
                     ""
                 })
                 $("#black-mask").show()
