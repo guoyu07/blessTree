@@ -538,11 +538,35 @@
                     $('#black-mask').hide();
                 })
     })
-    $("#fill-willing-close").on('tap', function(){
-        $('#fill-willing').hide();
-    })
     $("#fill-willing-btn").on('tap', function () {
-        $('#fill-willing').hide();
+        $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                async: false,
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '8',
+                    'openid' : $("#user_message_openid").text(),
+                    'will_con' : $("#fill-area").val()
+                },
+                beforeSend: function () {
+                    alert('请求数据中...')
+                    alert($("#user_message_openid").text()+$("#fill-area").val())
+                }, //加载执行方法
+                error: function () {
+                    alert('数据请求异常')
+                },  //错误执行方法
+                success: function (ret) {
+                    if(ret=='1'){
+                       alert('保存成功')
+                        $("#")
+                    }else{
+                        alert('保存失败，请再是一次哦～')
+                    }
+                }
+            })
         $.post('http://1.blesstree.sinaapp.com/wechat/ajax',
             {
                 'ajax_type':'8',
