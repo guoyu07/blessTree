@@ -388,8 +388,8 @@ def ajax_distribute(request):
         return ajax_5(request)
     elif ajax_type == '6':
         return ajax_6(request)
-    elif ajax_type == '7':
-        return ajax_7(request)
+    # elif ajax_type == '7':
+    #     return ajax_7(request)
     elif ajax_type == '8':
         return ajax_8(request)
     elif ajax_type == '9':
