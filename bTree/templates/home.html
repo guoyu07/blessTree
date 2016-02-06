@@ -150,9 +150,9 @@
     <hr style="background-color: rgba(0,0,0,0.6)">
     <div class="willing-content">
         <ul class="willing-list" id="willing-list">
-            <li style="display: none;">
-                <a style="float: left;width: 20%;font-size: 80%; text-align: center">时间</a>
-                <a style="float:left;margin-left: 20%">内容</a>
+            <li id="willing-list-li" style="display: none;">
+                <a id="will-time" style="float: left;width: 20%;font-size: 80%; text-align: center">时间</a>
+                <a id="will-con" style="float:left;margin-left: 20%">内容</a>
             </li>
         </ul>
     </div>
@@ -500,9 +500,16 @@
                     alert('数据请求异常')
                 },  //错误执行方法
                 success: function (ret) {
-                    alert(ret)
-
-
+                    if(ret==='1'){
+                        $("#willing-list").append('<p>您还没有写新年愿望哟～</p>')
+                    }else{
+                        $.each(ret, function (i, item) {
+                            $('#will-time').text(item.will_time)
+                            $('#will-con').text(item.will_con)
+                            var will_list = $("#willing-list-li").clone().show()
+                            $('#willing-list').append(will_list)
+                        })
+                    }
                     $("#black-mask").show();
                     $("#willing-widget").show();
                     $("#black-mask").on('tap', function () {
@@ -582,7 +589,7 @@
                 success: function (ret) {
     {#                    alert(ret[0].name)#}
                     $.each(ret, function (i, item) {
-                        alert(item.name+ i.toString())
+{#                        alert(item.name+ i.toString())#}
                         //设置显示逻辑
                         $("#rank-name").text(item.name)
                         $('#rank-rank').text((i+1).toString())
