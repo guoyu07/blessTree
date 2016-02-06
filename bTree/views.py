@@ -400,7 +400,7 @@ def ajax_distribute(request):
         return ajax_11(request)
     else:
         response = HttpResponse()
-        response['Content-Type'] = 'application/json'
+        response['Content-Type'] = 'text/javascript'
         ret = '2'  # 返回错误码
         response.write(ret)
     # return response

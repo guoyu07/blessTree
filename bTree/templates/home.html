@@ -497,6 +497,7 @@
                     alert('请求数据中...')
                 }, //加载执行方法
                 error: function () {
+                    alert($("#user_message_openid").text())
                     alert('数据请求异常')
                 },  //错误执行方法
                 success: function (ret) {
