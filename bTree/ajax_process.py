@@ -282,17 +282,17 @@ def ajax_6(request):
                     if source.is_plant == False:
                         nickname = source.nickname
                         avatar = source.avatar_url
-            #         else:
-            #             user_info = client.user.get(client, tucao.source_id)
-            #             nickname = user_info['nickname']
-            #             avatar = user_info['headimgurl']
-            #     time = tucao.action_time.strftime("%m-%d")+'\n'\
-            #                +str(8+int(tucao.action_time.strftime("%H")))+tucao.action_time.strftime(":%I:%S")
-            #     dict_tucao.append({"tucao_nick": nickname,
-            #                        "tucao_avatar": avatar,
-            #                        "tucao_con": tucao.content,
-            #                        "tucao_time": tucao.action_time})
-            # json_tucao = json.dumps(dict_tucao)
+                    else:
+                        user_info = client.user.get(client, tucao.source_id)
+                        nickname = user_info['nickname']
+                        avatar = user_info['headimgurl']
+                time = tucao.action_time.strftime("%m-%d")+'\n'\
+                           +str(8+int(tucao.action_time.strftime("%H")))+tucao.action_time.strftime(":%I:%S")
+                dict_tucao.append({"tucao_nick": nickname,
+                                   "tucao_avatar": avatar,
+                                   "tucao_con": tucao.content,
+                                   "tucao_time": time})
+            json_tucao = json.dumps(dict_tucao)
             json_tucao = '1'
             response.write(json_tucao)
             return response
