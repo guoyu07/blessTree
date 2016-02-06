@@ -146,11 +146,22 @@ def ajax_3(request):
             msg_list = Tree.objects.filter(owner=owner, read=False)[0]
             msg_list = Tree.objects.filter(owner=owner, read=False).order_by('action_time')
             for msg in msg_list:
-                user_info = client.user.get(client, msg.owner.openid)
+                if msg.source_id == 'na':  # 匿名？
+                    nickname = '匿名'
+                    avatar = 'none'
+                else:
+                    source = User.objects.get(msg.source_id)  # 是否关注
+                    if source.is_plant == False:
+                        nickname = source.nickname
+                        avatar = source.avatar_url
+                    else:
+                        user_info = client.user.get(client, msg.source_id)
+                        nickname = user_info['nickname']
+                        avatar = user_info['headimgurl']
                 time = msg.action_time.strftime("%m-%d")+'\n'\
                            +str(8+int(msg.action_time.strftime("%H")))+msg.action_time.strftime(":%I:%S")
-                dict_msg.append({"msg_nick": user_info['nickname'],
-                                 "msg_avatar": user_info['headimgurl'],
+                dict_msg.append({"msg_nick": nickname,
+                                 "msg_avatar": avatar,
                                  "msg_con": msg.content,
                                  "msg_time": time})
                 json_msg = json.dumps(dict_msg)
@@ -211,11 +222,22 @@ def ajax_5(request):
             bless_list = Tree.objects.filter(owner=owner, type=5)[0]
             bless_list = Tree.objects.filter(owner=owner, type=5).order_by('-action_time')
             for bless in bless_list:
-                user_info = client.user.get(client, bless.owner.openid)
+                if bless.source_id == 'na':  # 匿名？
+                    nickname = '匿名'
+                    avatar = 'none'
+                else:
+                    source = User.objects.get(bless.source_id)  # 是否关注
+                    if source.is_plant == False:
+                        nickname = source.nickname
+                        avatar = source.avatar_url
+                    else:
+                        user_info = client.user.get(client, bless.source_id)
+                        nickname = user_info['nickname']
+                        avatar = user_info['headimgurl']
                 time = bless.action_time.strftime("%m-%d")+'\n'\
                            +str(8+int(bless.action_time.strftime("%H")))+bless.action_time.strftime(":%I:%S")
-                dict_bless.append({"bless_nick": user_info['nickname'],
-                                   'bless_avatar': user_info['headimgurl'],
+                dict_bless.append({"bless_nick": nickname,
+                                   'bless_avatar': avatar,
                                    'bless_con': bless.content,
                                    'bless_time': time})
                 json_bless = json.dumps(dict_bless)
@@ -248,11 +270,22 @@ def ajax_6(request):
             tucao_list = Tree.objects.filter(owner=owner, type=6)[0]
             tucao_list = Tree.objects.filter(owner=owner, type=6).order_by('-action_time')
             for tucao in tucao_list:
-                user_info = client.user.get(client, tucao.owner.openid)
+                if tucao.source_id == 'na':  # 匿名？
+                    nickname = '匿名'
+                    avatar = 'none'
+                else:
+                    source = User.objects.get(tucao.source_id)  # 是否关注
+                    if source.is_plant == False:
+                        nickname = source.nickname
+                        avatar = source.avatar_url
+                    else:
+                        user_info = client.user.get(client, tucao.source_id)
+                        nickname = user_info['nickname']
+                        avatar = user_info['headimgurl']
                 time = tucao.action_time.strftime("%m-%d")+'\n'\
                            +str(8+int(tucao.action_time.strftime("%H")))+tucao.action_time.strftime(":%I:%S")
-                dict_tucao.append({"tucao_nick": user_info['nickname'],
-                                   "tucao_avatar": user_info['headimgurl'],
+                dict_tucao.append({"tucao_nick": nickname,
+                                   "tucao_avatar": avatar,
                                    "tucao_con": tucao.content,
                                    "tucao_time": tucao.action_time})
             json_tucao = json.dumps(dict_tucao)
