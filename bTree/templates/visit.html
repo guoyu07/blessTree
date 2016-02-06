@@ -214,7 +214,7 @@
                         var css_width = parseInt($("#progress-bar").css("width"));
                         after_width = after_width + (parseInt($("#progress-in").css("width"))-css_width*0.027)
                         if(after_width<0){css_width=0}
-                        else{css_width=after_width}
+                        else{css_width=(parseInt($("#progress-in").css("width"))-css_width*0.027)}
                         $("#progress-in").css("width", css_width.toString())
                     }
                 })

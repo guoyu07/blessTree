@@ -165,7 +165,7 @@
             </li>
             <li id="history-bless-list-li" style="display: none;">
                 <div style="float:left;"class="pure-u-5-24">
-                    <img id="history-bless-avatar" src="{% static "tree/image/btn/friends.png" %}" style="height: 75%;padding-left: 5%;border-radius: 37%">
+                    <img id="history-bless-avatar" src="{% static "tree/image/btn/friends.png" %}" style="height: 75%;padding-left: 5%;border-radius: 50%">
                     <p id="history-bless-name" style="font-size: 40%;color:grey;;">名字</p>
                 </div>
                 <div style="float: left" class="pure-u-15-24">
@@ -309,7 +309,7 @@
 <script>
     $(function () {
         //进度条宽度百分比设置
-        $("#count-progress-in").css("width", "{{ count }}%");
+        $("#count-progress-in").css("width", "{{ count_bar }}%");
 
         //微信分享接口设置
         wx.config({

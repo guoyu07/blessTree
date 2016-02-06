@@ -153,7 +153,8 @@ def home(request):
         user_info = client.user.get(client, oauth.open_id)
         user_openid = oauth.open_id
         name = user_info['nickname']
-        count = '0'
+        count = User.objects.get(openid=user_openid).count
+        count_bar = count/3000
         imgUrl = avatar_addr = user_info['headimgurl']
         owner = User.objects.get(openid=user_openid)
         # water_time = time.mktime(Tree.objects.filter(
