@@ -229,23 +229,22 @@ def ajax_5(request):
                 if bless.source_id == 'na':  # 匿名？
                     nickname = '匿名'
                     avatar = 'none'
-            #     else:
-            #         source = User.objects.get(bless.source_id)  # 是否关注
-            #         if source.is_plant == False:
-            #             nickname = source.nickname
-            #             avatar = source.avatar_url
-            #         else:
-            #             user_info = client.user.get(client, bless.source_id)
-            #             nickname = user_info['nickname']
-            #             avatar = user_info['headimgurl']
-            #     time = bless.action_time.strftime("%m-%d")+'\n'\
-            #                +str(8+int(bless.action_time.strftime("%H")))+bless.action_time.strftime(":%I:%S")
-            #     dict_bless.append({"bless_nick": nickname,
-            #                        'bless_avatar': avatar,
-            #                        'bless_con': bless.content,
-            #                        'bless_time': time})
-            # json_bless = json.dumps(dict_bless)
-            json_bless = '1'
+                else:
+                    source = User.objects.get(openid=bless.source_id)  # 是否关注
+                    if source.is_plant == False:
+                        nickname = source.nickname
+                        avatar = source.avatar_url
+                    else:
+                        user_info = client.user.get(client, bless.source_id)
+                        nickname = user_info['nickname']
+                        avatar = user_info['headimgurl']
+                time = bless.action_time.strftime("%m-%d")+'\n'\
+                           +str(8+int(bless.action_time.strftime("%H")))+bless.action_time.strftime(":%I:%S")
+                dict_bless.append({"bless_nick": nickname,
+                                   'bless_avatar': avatar,
+                                   'bless_con': bless.content,
+                                   'bless_time': time})
+            json_bless = json.dumps(dict_bless)
             response.write(json_bless)
             return response
         except IndexError:
@@ -279,7 +278,7 @@ def ajax_6(request):
                     nickname = '匿名'
                     avatar = 'none'
                 else:
-                    source = User.objects.get(tucao.source_id)  # 是否关注
+                    source = User.objects.get(openid=tucao.source_id)  # 是否关注
                     if source.is_plant == False:
                         nickname = source.nickname
                         avatar = source.avatar_url
