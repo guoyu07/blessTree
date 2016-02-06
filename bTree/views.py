@@ -25,8 +25,6 @@ from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, client, oauth, jsapi
 from bTree.models import User, Tree
 from bTree.ajax_process import ajax_1, ajax_2, ajax_3, ajax_4, ajax_5, ajax_6, ajax_7, ajax_8, ajax_9, ajax_10, ajax_11
 
-# client = WeChatClient(appId, appsecret)
-
 
 @csrf_exempt
 def weixin_main(request):
@@ -137,7 +135,9 @@ def home(request):
         first_plant_url = first_outh.authorize_url
         if visit_index and return_openid:
             visit = True
-            return_url = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+return_openid).authorize_url
+            return_url = WeChatOAuth(appId, appsecret,
+                                     'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+return_openid)\
+                .authorize_url
         return render_to_response('index.html', locals())
     else:
         user = 'http://1.blesstree.sinaapp.com/wechat/home/'+'?code='+code+'&state='
@@ -158,7 +158,7 @@ def home(request):
         owner = User.objects.get(openid=user_openid)
         # water_time = time.mktime(Tree.objects.filter(
         #     owner=owner, type=7).order_by('action_time')[0].action_time.timetuple())+28800  # 时区差别
-        water_time = 1454766548
+        water_time = int(time.time())
         tree_name = owner.tree_name
         # 分享的链接生成，别人点进去是一个get方法，同时，这个是经过转化的，就是加入认证的链接
 
@@ -199,17 +199,8 @@ def first(request):
     count_bar = 0
     first_time = True  # 这里写如果是第一次种树，小部件需要引入的条件，配合模板if标签
     imgUrl = avatar_addr = user_info['headimgurl']
-    # share_url = 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id
 
-    # # 获取时间，事实上除了iphone的返回按钮有问题外，其他一般不会重复进入第一次种树的链接，所以不这样做了
-    # try:
-    #     owner = User.objects.get(openid=user_openid)
-    #     tree = Tree.objects.filter(owner=owner, type=0 or 3).order_by('-action_time')
-    #     water_time = tree[:1].action_time*1000
-    # except ObjectDoesNotExist:
-    #     water_time = 0
-
-    water_time = time.time()*1000
+    water_time = int(time.time())
 
     share_url = WeChatOAuth(appId, appsecret,
                                 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+oauth.open_id).authorize_url

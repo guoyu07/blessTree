@@ -177,50 +177,40 @@
     <hr style="background-color: rgba(0,0,0,0.6)">
     <div class="history-content">
         <ul class="history-list" id="history-bless-list">
-{#            加载祝福，默认显示#}
-{#            {% if bless_list %}#}
-{#                {% for nickname, avatar_addr, bless_con, bless_time in bless_list %}#}
-{#                    <li>#}
-{#                        <div style="float:left;"class="pure-u-5-24">#}
-{#                            <img src="{{ avatar_addr }}" style="height: 75%;padding-left: 5%">#}
-{#                            <p style="font-size: 40%;color:grey;;">{{ nickname }}</p>#}
-{#                        </div>#}
-{#                        <div style="float: left" class="pure-u-15-24">#}
-{#                            <a style="font-size: 100%;">{{ bless_con }}</a>#}
-{#                        </div>#}
-{#                        <div style="float: left" class="pure-u-4-24">#}
-{#                            <a style="float: right;font-size: 60%;color: grey">{{ bless_time }}前</a>#}
-{#                        </div>#}
-{#                    </li>#}
-{#                {% endfor %}#}
-{#            {% else %}#}
-{#                <li>#}
-{#                   <p>没有收到小伙伴的祝福哦，赶紧分享互动起来吧～</p>#}
-{#                </li>#}
-{#            {% endif %}#}
+            <li id="history-bless-list-na">
+               <p>没有收到小伙伴的祝福哦，赶紧分享互动起来吧～</p>
+            </li>
+            <li id="history-bless-list-li" style="display: none;">
+                <div style="float:left;"class="pure-u-5-24">
+                    <img id="history-bless-avatar" src="{% static "tree/image/btn/bless.png" %}" style="height: 75%;padding-left: 5%;border-radius: 37%">
+                    <p id="history-bless-name" style="font-size: 40%;color:grey;;">名字</p>
+                </div>
+                <div style="float: left" class="pure-u-15-24">
+                    <a id="history-bless-con" style="font-size: 100%;">吐槽内容</a>
+                </div>
+                <div style="float: left" class="pure-u-4-24">
+                    <a id="history-bless-time" style="float: right;font-size: 60%;color: grey">什么时间前</a>
+                </div>
+            </li>
+
         </ul>
         <ul class="history-list" id="history-tucao-list" style="display: none">
-{#            加载吐槽，默认隐藏#}
-{#            {% if tucao_list %}#}
-{#                {% for nickname, avatar_addr, tucao_con, tucao_time in tucao_list %}#}
-{#                    <li>#}
-{#                        <div style="float:left;"class="pure-u-5-24">#}
-{#                            <img src="{{ avatar_addr }}" style="height: 75%;padding-left: 5%">#}
-{#                            <p style="font-size: 40%;color:grey;;">{{ nickname }}</p>#}
-{#                        </div>#}
-{#                        <div style="float: left" class="pure-u-15-24">#}
-{#                            <a style="font-size: 100%;">{{ tucao_con }}</a>#}
-{#                        </div>#}
-{#                        <div style="float: left" class="pure-u-4-24">#}
-{#                            <a style="float: right;font-size: 60%;color: grey">{{ tucao_time }}前</a>#}
-{#                        </div>#}
-{#                    </li>#}
-{#                {% endfor %}#}
-{#            {% else %}#}
-{#                <li>#}
-{#                   <p>没有收到小伙伴的吐槽哦，小编都妒忌了～</p>#}
-{#                </li>#}
-{#            {% endif %}#}
+            <li id="history-tucao-list-na">
+               <p>没有收到小伙伴的吐槽哦，小编都妒忌了～</p>
+            </li>
+            <li id="history-tucao-list-li" style="display: none">
+                <div style="float:left;"class="pure-u-5-24">
+                    <img id="history-tucao-avatar" src="{% static "tree/image/btn/tucao.png" %}" style="height: 75%;padding-left: 5%;border-radius: 37%">
+                    <p id="history-tucao-name" style="font-size: 40%;color:grey;;">名字</p>
+                </div>
+                <div style="float: left" class="pure-u-15-24">
+                    <a id="history-tucao-con" style="font-size: 100%;">内容</a>
+                </div>
+                <div style="float: left" class="pure-u-4-24">
+                    <a id="history-tucao-time" style="float: right;font-size: 60%;color: grey">几天前</a>
+                </div>
+            </li>
+
         </ul>
     </div>
 </div>
@@ -474,10 +464,7 @@
         $('#water-widget').hide(3000);
         $("#user_message_water_time").text(myDate.getDate())
     })
-    //历史
-    $("#history").on('tap', function () {
-        $("#history-widget").show();
-    })
+
     //心愿
     $('#willing').on('tap', function () {
         if($('#willing-list li:last').css('display') == 'none'){
@@ -632,21 +619,116 @@
     });
 
 
-    //祝福吐槽祝福框
-    $("#history-close").on('tap', function () {
-        $("#history-widget").hide()
+    //祝福吐槽祝福历史
+    $("#history").on('tap', function () {
+        // 祝福加载好，吐槽之后加载
+        if($("#history-bless-list li:last").css('display')=='none'){
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                async: false,
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '5',  //祝福类型
+                    'openid' : $("#user_message_openid").text(),
+                    'load_begin' : '0'
+                },
+                beforeSend: function () {
+                    alert('请求数据中...')
+                }, //加载执行方法
+                error: function () {
+                    alert('数据请求异常')
+                },  //错误执行方法
+                success: function (ret) {
+                    //决定显示的内容
+                    if(ret=='1'){
+                            $("#history-bless-list-na").show()
+                        }else{
+                            $.each(ret, function (i, item) {
+                                $('#history-bless-avatar').attr('src', item.bless_avatar)
+                                $('#history-bless-name').text(item.bless_nick)
+                                $("#history-bless-con").text(item.bless_con)
+                                $('#history-bless-time').text(item.bless_time)
+                                var bless_list = $("#history-bless-list-li").clone().show()
+                                $('#history-bless-list').append(bless_list)
+                            })
+                        }
+                    //控制显示
+                    $('#black-mask').show()
+                            .on('tap', function () {
+                                $("#history-widget").hide();
+                                $("#black-mask").hide();
+                            })
+                    $("#history-widget").show();
+                    $("#history-tucao-list").hide();
+                    $("#history-bless-list").show();
+                }
+            })
+        }else{
+            $("#history-widget").show();
+            $("#history-tucao-list").hide();
+            $("#history-bless-list").show(300);
+        }
+
     })
 
+    //祝福吐槽切换
     $("#history-bless").on('tap', function () {
         $("#history-tucao-list").hide();
-        $("#history-bless-list").show();
+        $("#history-bless-list").show(300);
     });
-
-
     $("#history-tucao").on('tap', function () {
         $("#history-bless-list").hide();
-        $("#history-tucao-list").show();
-
+        if($("#history-tucao-list li:last").css('display')=='none'){
+            $.ajax({
+                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                async: false,
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '6',  //吐槽类型
+                    'openid' : $("#user_message_openid").text(),
+                    'load_begin' : '0'
+                },
+                beforeSend: function () {
+                    alert('请求数据中...')
+                }, //加载执行方法
+                error: function () {
+                    alert('数据请求异常')
+                },  //错误执行方法
+                success: function (ret) {
+                    //决定显示的内容
+                    if (ret == '1') {
+                        $("#history-tucao-list-na").show()
+                    } else {
+                        $.each(ret, function (i, item) {
+                            $('#history-tucao-avatar').attr('src', item.tucao_avatar)
+                            $('#history-tucao-name').text(item.tucao_nick)
+                            $("#history-tucao-con").text(item.tucao_con)
+                            $('#history-tucao-time').text(item.tucao_time)
+                            var tucao_list = $("#history-tucao-list-li").clone().show()
+                            $('#history-tucao-list').append(tucao_list)
+                        })
+                    }
+                    //控制显示
+                    $('#black-mask').show()
+                            .on('tap', function () {
+                                $("#history-widget").hide();
+                                $("#black-mask").hide();
+                            })
+                    $("#history-widget").show();
+                    $("#history-bless-list").hide();
+                    $("#history-tucao-list").show(300);
+                }
+            })
+        }else{
+            $("#history-bless-list").hide();
+            $("#history-tucao-list").show(300);
+        }
     })
 
     //加好友
@@ -664,7 +746,6 @@
      * */
     //初始化事件
      function init_main(myDate) {
-{#                  $('#black-mask').show();#}
          $('#rule').show();
 
          //定时器事件,用于定时提醒浇水
@@ -672,21 +753,6 @@
              $("#time-to-water").fadeIn(1000);
              $("#time-to-water").fadeOut(1000);
          }, 600000);
-         window.setInterval(function () {
-             //定时请求消息刷新
-             $.post(
-                     'http://1.blesstree.sinaapp.com/wechat/ajax',
-                     {
-                         'ajax_type': 3,
-                         'openid': $("#user_message_openid").text(),
-                         'load_begin': 0
-
-                     },
-                     function () {
-
-                     }
-             )
-         }, 180000);
      }
     })
 </script>

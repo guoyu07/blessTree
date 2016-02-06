@@ -22,8 +22,8 @@ import simplejson as json
         '2': 主页面， 请求刷新排行榜的时候[]
         '3': 主页面， 请求刷新消息的时候
         '4': 请求提交浇水获取的积分的时候
-        '5': 主页面和访问页面 请求刷新祝福的时候
-        '6': 主页面和访问页面 请求刷新吐槽的时候
+        '5': 主页面和访问页面 请求刷新祝福的时候[]
+        '6': 主页面和访问页面 请求刷新吐槽的时候[]
         '7': 主页面和访问页面 请求刷新心愿的时候[]
         '8': 主页面， 请求提交输入心愿的时候[]
         '9': 访问页面， 祝福提交请求[]
@@ -194,26 +194,33 @@ def ajax_5(request):
     :return:
     """
     response = HttpResponse()
+    response['Content-Type'] = 'application/json'
     user_id = request.POST.get('openid', '')
     load_begin = request.POST.get('load_begin', '')
     client.fetch_access_token()
     ret = '0'
     if user_id and load_begin:
         owner = User.objects.get(openid=user_id)
-        bless_list = Tree.objects.filter(owner=owner, type=5).order_by('-action_time')[load_begin:load_begin+4]
-        dict_bless = {'bless_nick': [], 'bless_avatar': [], 'bless_con': [], 'bless_time': []}
-        for bless in bless_list:
-            user_info = client.user.get(client, bless.owner.openid)
-            dict_bless['bless_nick'].append(user_info['nickname'])
-            dict_bless['bless_avatar'].append(user_info['headimgurl'])
-            dict_bless['bless_con'].append(bless.type)
-            dict_bless['bless_time'].append(bless.action_time)
-        json_bless = json.dumps(dict_bless, ensure_ascii=False)
-        response.write(json_bless)
-        # 注意成功不反悔ret1，省去处理的麻烦
+        dict_bless = []
+        try:
+            bless_list = Tree.objects.filter(owner=owner, type=5)[0]
+            bless_list = Tree.objects.filter(owner=owner, type=5).order_by('-action_time')
+            for bless in bless_list:
+                user_info = client.user.get(client, bless.owner.openid)
+                time = bless.action_time.strftime("%m-%d")+'\n'\
+                           +str(8+int(bless.action_time.strftime("%H")))+bless.action_time.strftime(":%I:%S")
+                dict_bless.append({"bless_nick": user_info['nickname'],
+                                   'bless_avatar': user_info['headimgurl'],
+                                   'bless_con': bless.content,
+                                   'bless_time': time})
+                json_bless = json.dumps(dict_bless)
+                response.write(json_bless)
+                return response
+        except IndexError:
+            ret = '1'  # 数据库没有记录，说明没有祝福
     else:
-        ret = '2'
-        response.write(ret)
+        ret = '2'  # 不明原因的错误
+    response.write(ret)
     return response
 
 
@@ -224,26 +231,33 @@ def ajax_6(request):
     :return:
     """
     response = HttpResponse()
+    response['Content-Type'] = 'application/json'
     user_id = request.POST.get('openid', '')
     load_begin = request.POST.get('load_begin', '')
     client.fetch_access_token()
     ret = '0'
     if user_id and load_begin:
         owner = User.objects.get(openid=user_id)
-        tucao_list = Tree.objects.filter(owner=owner, type=6).order_by('-action_time')[load_begin:load_begin+4]
-        dict_tucao = {'tucao_nick': [], 'tucao_avatar': [], 'tucao_con': [], 'tucao_time': []}
-        for tucao in tucao_list:
-            user_info = client.user.get(client, tucao.owner.openid)
-            dict_tucao['tucao_nick'].append(user_info['nickname'])
-            dict_tucao['tucao_avatar'].append(user_info['headimgurl'])
-            dict_tucao['tucao_con'].append(tucao.type)
-            dict_tucao['tucao_time'].append(tucao.action_time)
-        json_tucao = json.dumps(dict_tucao, ensure_ascii=False)
-        response.write(json_tucao)
-        # 注意成功不反悔ret1，省去处理的麻烦
+        dict_tucao = []
+        try:
+            tucao_list = Tree.objects.filter(owner=owner, type=6)[0]
+            tucao_list = Tree.objects.filter(owner=owner, type=6).order_by('-action_time')
+            for tucao in tucao_list:
+                user_info = client.user.get(client, tucao.owner.openid)
+                time = tucao.action_time.strftime("%m-%d")+'\n'\
+                           +str(8+int(tucao.action_time.strftime("%H")))+tucao.action_time.strftime(":%I:%S")
+                dict_tucao.append({"tucao_nick": user_info['nickname'],
+                                   "tucao_avatar": user_info['headimgurl'],
+                                   "tucao_con": tucao.content,
+                                   "tucao_time": tucao.action_time})
+            json_tucao = json.dumps(dict_tucao)
+            response.write(json_tucao)
+            return response
+        except IndexError:
+            ret = '1'
     else:
         ret = '2'
-        response.write(ret)
+    response.write(ret)
     return response
 
 
