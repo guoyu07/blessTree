@@ -158,8 +158,13 @@ def ajax_3(request):
                         user_info = client.user.get(client, msg.source_id)
                         nickname = user_info['nickname']
                         avatar = user_info['headimgurl']
-                time = msg.action_time.strftime("%m-%d")+'\n'\
-                           +str(8+int(msg.action_time.strftime("%H")))+msg.action_time.strftime(":%I:%S")
+                if 8+int(msg.action_time.strftime("%H")) > 24:
+                    time = msg.action_time.strftime("%m-")+\
+                           str(int(msg.action_time.strftime("%d"))+1)+'\n'\
+                               +str(int(msg.action_time.strftime("%H"))-16)+msg.action_time.strftime(":%I:%S")
+                else:
+                    time = msg.action_time.strftime("%m-%d")+'\n'\
+                               +str(8+int(msg.action_time.strftime("%H")))+msg.action_time.strftime(":%I:%S")
                 dict_msg.append({"msg_nick": nickname,
                                  "msg_avatar": avatar,
                                  "msg_con": msg.content,
@@ -238,8 +243,13 @@ def ajax_5(request):
                         user_info = client.user.get(client, bless.source_id)
                         nickname = user_info['nickname']
                         avatar = user_info['headimgurl']
-                time = bless.action_time.strftime("%m-%d")+'\n'\
-                           +str(8+int(bless.action_time.strftime("%H")))+bless.action_time.strftime(":%I:%S")
+                if 8+int(bless.action_time.strftime("%H")) > 24:
+                    time = bless.action_time.strftime("%m-")+\
+                           str(int(bless.action_time.strftime("%d"))+1)+'\n'\
+                               +str(int(bless.action_time.strftime("%H"))-16)+bless.action_time.strftime(":%I:%S")
+                else:
+                    time = bless.action_time.strftime("%m-%d")+'\n'\
+                               +str(8+int(bless.action_time.strftime("%H")))+bless.action_time.strftime(":%I:%S")
                 dict_bless.append({"bless_nick": nickname,
                                    'bless_avatar': avatar,
                                    'bless_con': bless.content,
@@ -286,8 +296,13 @@ def ajax_6(request):
                         user_info = client.user.get(client, tucao.source_id)
                         nickname = user_info['nickname']
                         avatar = user_info['headimgurl']
-                time = tucao.action_time.strftime("%m-%d")+'\n'\
-                           +str(8+int(tucao.action_time.strftime("%H")))+tucao.action_time.strftime(":%I:%S")
+                if 8+int(tucao.action_time.strftime("%H")) > 24:
+                    time = tucao.action_time.strftime("%m-")+\
+                           str(int(tucao.action_time.strftime("%d"))+1)+'\n'\
+                               +str(int(tucao.action_time.strftime("%H"))-16)+tucao.action_time.strftime(":%I:%S")
+                else:
+                    time = tucao.action_time.strftime("%m-%d")+'\n'\
+                               +str(8+int(tucao.action_time.strftime("%H")))+tucao.action_time.strftime(":%I:%S")
                 dict_tucao.append({"tucao_nick": nickname,
                                    "tucao_avatar": avatar,
                                    "tucao_con": tucao.content,
@@ -324,8 +339,13 @@ def ajax_7(request):
                 will_list = Tree.objects.filter(owner=owner, type=2).order_by('action_time')
                 will_dict = []
                 for will in will_list:
-                    time = will.action_time.strftime("%m-%d")+'\n'\
-                           +str(8+int(will.action_time.strftime("%H")))+will.action_time.strftime(":%I:%S")
+                    if 8+int(will.action_time.strftime("%H")) > 24:
+                        time = will.action_time.strftime("%m-")+\
+                               str(int(will.action_time.strftime("%d"))+1)+'\n'\
+                                   +str(int(will.action_time.strftime("%H"))-16)+will.action_time.strftime(":%I:%S")
+                    else:
+                        time = will.action_time.strftime("%m-%d")+'\n'\
+                                   +str(8+int(will.action_time.strftime("%H")))+will.action_time.strftime(":%I:%S")
                     will_dict.append({'will_time': time,
                                       'will_con': will.content})
                 response['Content-Type'] = 'application/json'
