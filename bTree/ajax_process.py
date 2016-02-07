@@ -199,13 +199,11 @@ def ajax_4(request):
         user.count = user.count + 1000
         if source_id:
             try:
-                # friend = User.friends.get(openid=source_id)
-                ret = '2'
+                friend = user.friends.get(openid=source_id)
             except ObjectDoesNotExist:
                 friend = 0
-            # if friend != 0:
-            #     ret = '2'
-               #  user.friends.add(User.objects.get(openid=source_id))  # 通过朋友圈啊什么的浇水，自己浇水的时候自己是自己的朋友
+            if friend != 0:
+                user.friends.add(User.objects.get(openid=source_id))  # 通过朋友圈啊什么的浇水，自己浇水的时候自己是自己的朋友
         user.save()
         ret = '1'
     else:
