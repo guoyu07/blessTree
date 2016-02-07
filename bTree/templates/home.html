@@ -678,24 +678,15 @@
                     alert('数据请求异常')
                 },  //错误执行方法
                 success: function (ret) {
-    {#                    alert(ret[0].name)#}
                     $.each(ret, function (i, item) {
-{#                        alert(item.name+ i.toString())#}
                         //设置显示逻辑
                         $("#rank-name").text(item.name)
                         $('#rank-rank').text((i+1).toString())
-                        ""
                         $('#rank-count').text("积分"+item.count)
                         $('#rank-home').attr('href',item.user_home)
                         $("#rank-progress-in").css('width',(item.count/3000).toString()+'%')
-                        var list_item = $("#rank-list-li").clone().show()
+                        var list_item = $("#rank-list-li").clone().attr('src', item.avatar).show()
                         $("#rank-list").append(list_item)
-
-
-                    })
-                    $.each(ret, function (i, items) {
-                        alert(items.avatar)
-                        $("img.rank-avatar").eq(i).attr('src', items.avatar)
                     })
                     $("#black-mask").show()
                     $("#rank-widget").show();
