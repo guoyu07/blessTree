@@ -53,8 +53,8 @@ def ajax_1(request):
     tree_name = request.POST.get('tree_name', '')
     if user_id and user_name and tree_name:
         try:
-            # user = User.objects.get(openid=user_id)
-            # user.is_plant = True
+            user = User.objects.get(openid=user_id)
+            user.is_plant = True
             # user.tree_name = tree_name
             # user.friends.add(user)
             # friend_id = user.friends.all()[0:1].get().openid
