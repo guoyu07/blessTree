@@ -74,9 +74,9 @@ def ajax_1(request):
             user.save()
             user.friends.add(user)
             user.save()
-            # tree = Tree(owner=user, tree_name=tree_name, type=7, action_time=time.time(), read=True, source_id=user_id,
-            #             content='创建了祝福树')
-            # tree.save()
+            tree = Tree(owner=user, tree_name=tree_name, type=7, action_time=time.time(), read=True, source_id=user_id,
+                        content='创建了祝福树')
+            tree.save()
             ret = '3'
     else:
         ret = '2'
