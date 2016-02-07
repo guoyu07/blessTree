@@ -21,7 +21,7 @@ import simplejson as json
         '1': 第一次种树填入树名字时候保存到数据库[]
         '2': 主页面， 请求刷新排行榜的时候[]
         '3': 主页面， 请求刷新消息的时候[]
-        '4': 请求提交浇水获取的积分的时候[i][
+        '4': 请求提交浇水获取的积分的时候[][
         '5': 主页面和访问页面 请求刷新祝福的时候[][
         '6': 主页面和访问页面 请求刷新吐槽的时候[][
         '7': 主页面和访问页面 请求刷新心愿的时候[][
@@ -196,6 +196,14 @@ def ajax_4(request):
     source_id = request.POST.get('source_id', '')
     if user_id:
         user = User.objects.get(openid=user_id)
+        if user_id == source_id:
+            type = 0
+        else:
+            type = 3
+        Tree(owner=user, tree_name=user.tree_name, count=user.count, type=type,
+             action_time=time.time(), source_id=source_id,
+             content=User.objects.get(openid=source_id).nickname+'给树木浇水了').save()
+
         user.count = user.count + 1000
         if source_id:
             try:
