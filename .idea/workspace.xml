@@ -54,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.85863876" vertical-offset="4586" max-vertical-offset="6336">
-              <caret line="696" column="70" selection-start-line="696" selection-start-column="70" selection-end-line="696" selection-end-column="70" />
+              <caret line="696" column="64" selection-start-line="696" selection-start-column="64" selection-end-line="696" selection-end-column="64" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -72,9 +72,9 @@
                 <element signature="e#22911#24698#0#HTML" expanded="false" />
                 <element signature="e#24755#25018#0#HTML" expanded="false" />
                 <element signature="e#25069#26040#0#HTML" expanded="false" />
-                <element signature="e#28449#31022#0#HTML" expanded="false" />
-                <element signature="e#31084#31176#0#HTML" expanded="false" />
-                <element signature="e#31225#33410#0#HTML" expanded="false" />
+                <element signature="e#28450#31023#0#HTML" expanded="false" />
+                <element signature="e#31085#31177#0#HTML" expanded="false" />
+                <element signature="e#31226#33411#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -898,7 +898,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="769" extended-state="7" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2219697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -910,7 +910,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14130434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25562373" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21717991" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21717991" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25080732" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1618" y="384" width="1017" height="303" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1386,7 +1386,7 @@
     <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.85863876" vertical-offset="4586" max-vertical-offset="6336">
-          <caret line="696" column="70" selection-start-line="696" selection-start-column="70" selection-end-line="696" selection-end-column="70" />
+          <caret line="696" column="64" selection-start-line="696" selection-start-column="64" selection-end-line="696" selection-end-column="64" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1404,9 +1404,9 @@
             <element signature="e#22911#24698#0#HTML" expanded="false" />
             <element signature="e#24755#25018#0#HTML" expanded="false" />
             <element signature="e#25069#26040#0#HTML" expanded="false" />
-            <element signature="e#28449#31022#0#HTML" expanded="false" />
-            <element signature="e#31084#31176#0#HTML" expanded="false" />
-            <element signature="e#31225#33410#0#HTML" expanded="false" />
+            <element signature="e#28450#31023#0#HTML" expanded="false" />
+            <element signature="e#31085#31177#0#HTML" expanded="false" />
+            <element signature="e#31226#33411#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
