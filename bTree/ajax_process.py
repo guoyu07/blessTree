@@ -102,7 +102,7 @@ def ajax_2(request):
             for user in user_list:
                 # 获取用户头像
                 client.fetch_access_token()
-                user_info = client.user.get(client, user_id)
+                user_info = client.user.get(client, user.openid)
                 # 生成用户页面访问链接
                 user_home = WeChatOAuth(appId, appsecret,
                                     'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+user.openid).authorize_url
