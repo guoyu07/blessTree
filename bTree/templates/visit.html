@@ -538,6 +538,7 @@
     $("#water-flower").on('tap', function () {
         {% if flip_nickname %}
         if(new Date().getTime()-water_time>10*60*1000){
+            water_time = new Date().getTime();
             $("#water-widget").show();
             $('#water-widget').hide(3000);
             $.ajax({
@@ -569,7 +570,6 @@
                 }
             })
         }else{
-            water_time = new Date().getTime();
             alert('不能频繁的浇水哦～')
         }
 
