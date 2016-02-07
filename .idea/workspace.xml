@@ -53,8 +53,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6230366" vertical-offset="4046" max-vertical-offset="5796">
-              <caret line="689" column="41" selection-start-line="689" selection-start-column="41" selection-end-line="689" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.85863876" vertical-offset="4586" max-vertical-offset="6336">
+              <caret line="696" column="70" selection-start-line="696" selection-start-column="70" selection-end-line="696" selection-end-column="70" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -63,19 +63,18 @@
                 <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#13745#14114#0#HTML" expanded="false" />
-                <element signature="e#14146#17093#0#HTML" expanded="false" />
-                <element signature="e#17755#18764#0#HTML" expanded="false" />
-                <element signature="e#18961#21118#0#HTML" expanded="false" />
-                <element signature="e#21275#22839#0#HTML" expanded="false" />
-                <element signature="e#22891#24678#0#HTML" expanded="false" />
-                <element signature="e#24735#24998#0#HTML" expanded="false" />
-                <element signature="e#25049#26020#0#HTML" expanded="false" />
-                <element signature="e#28347#30920#0#HTML" expanded="false" />
-                <element signature="e#30982#31074#0#HTML" expanded="false" />
-                <element signature="e#31123#33308#0#HTML" expanded="false" />
+                <element signature="e#13765#14134#0#HTML" expanded="false" />
+                <element signature="e#14166#17113#0#HTML" expanded="false" />
+                <element signature="e#17775#18784#0#HTML" expanded="false" />
+                <element signature="e#18981#21138#0#HTML" expanded="false" />
+                <element signature="e#21295#22859#0#HTML" expanded="false" />
+                <element signature="e#22911#24698#0#HTML" expanded="false" />
+                <element signature="e#24755#25018#0#HTML" expanded="false" />
+                <element signature="e#25069#26040#0#HTML" expanded="false" />
+                <element signature="e#28449#31022#0#HTML" expanded="false" />
+                <element signature="e#31084#31176#0#HTML" expanded="false" />
+                <element signature="e#31225#33410#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1386,8 +1385,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6230366" vertical-offset="4046" max-vertical-offset="5796">
-          <caret line="689" column="41" selection-start-line="689" selection-start-column="41" selection-end-line="689" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.85863876" vertical-offset="4586" max-vertical-offset="6336">
+          <caret line="696" column="70" selection-start-line="696" selection-start-column="70" selection-end-line="696" selection-end-column="70" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1396,19 +1395,18 @@
             <element signature="n#div#7;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#8;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#img#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#13745#14114#0#HTML" expanded="false" />
-            <element signature="e#14146#17093#0#HTML" expanded="false" />
-            <element signature="e#17755#18764#0#HTML" expanded="false" />
-            <element signature="e#18961#21118#0#HTML" expanded="false" />
-            <element signature="e#21275#22839#0#HTML" expanded="false" />
-            <element signature="e#22891#24678#0#HTML" expanded="false" />
-            <element signature="e#24735#24998#0#HTML" expanded="false" />
-            <element signature="e#25049#26020#0#HTML" expanded="false" />
-            <element signature="e#28347#30920#0#HTML" expanded="false" />
-            <element signature="e#30982#31074#0#HTML" expanded="false" />
-            <element signature="e#31123#33308#0#HTML" expanded="false" />
+            <element signature="e#13765#14134#0#HTML" expanded="false" />
+            <element signature="e#14166#17113#0#HTML" expanded="false" />
+            <element signature="e#17775#18784#0#HTML" expanded="false" />
+            <element signature="e#18981#21138#0#HTML" expanded="false" />
+            <element signature="e#21295#22859#0#HTML" expanded="false" />
+            <element signature="e#22911#24698#0#HTML" expanded="false" />
+            <element signature="e#24755#25018#0#HTML" expanded="false" />
+            <element signature="e#25069#26040#0#HTML" expanded="false" />
+            <element signature="e#28449#31022#0#HTML" expanded="false" />
+            <element signature="e#31084#31176#0#HTML" expanded="false" />
+            <element signature="e#31225#33410#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

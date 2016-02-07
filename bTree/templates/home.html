@@ -687,12 +687,14 @@
                         ""
                         $('#rank-count').text("积分"+item.count)
                         $('#rank-home').attr('href',item.user_home)
-                        $("rank-avatar").first().attr('src', item.avatar)
                         $("#rank-progress-in").css('width',(item.count/3000).toString()+'%')
                         var list_item = $("#rank-list-li").clone().show()
                         $("#rank-list").append(list_item)
 
 
+                    })
+                    $.each(ret, function (i, items) {
+                        $("rank-avatar").eq(i).attr('src', item.avatar)
                     })
                     $("#black-mask").show()
                     $("#rank-widget").show();
