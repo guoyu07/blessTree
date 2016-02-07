@@ -310,7 +310,7 @@
     $(function () {
         //进度条宽度百分比设置
         $("#count-progress-in").css("width", "{{ count_bar }}%");
-
+        water_time = 0
         //微信分享接口设置
         wx.config({
               debug: false,
@@ -368,7 +368,7 @@
                                 },  //错误执行方法
                                 success: function (ret) {
                                     if(ret=='0'){
-                                          alert('分享成功，积分已经奉上～\n一(没有个)大波小伙伴正赶来围观～');
+                                          alert('分享成功,一(没有个)大波小伙伴正赶来围观～');
                                           // 积分与进度条变化
                                           var val = parseInt($("#count-num").text().substr(3))
                                           $("#count-num").text('积分:'+(val+5000).toString())
@@ -474,10 +474,9 @@
                     'load_begin' : '0'
                 },
                 beforeSend: function () {
-                    alert('请求数据中...')
                 }, //加载执行方法
                 error: function () {
-                    alert('数据请求异常')
+                    alert('服务不稳定，请亲再试一次～')
                 },  //错误执行方法
                 success: function (ret) {
                     //消息内容控制
@@ -523,7 +522,9 @@
 {#        alert($("#user_message_water_time"));#}
         $("#water-widget").show();
         $('#water-widget').hide(3000);
-        $.ajax({
+        if(new Date().getTime()-water_time>10*60*1000){
+            water_time = new Date().getTime();
+            $.ajax({
             url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
                 type: 'POST',
                 timeout: 1000,
@@ -535,10 +536,11 @@
                     'source_id' : $("#user_message_openid").text()
                 },
                 beforeSend: function () {
-                    alert('请求数据中...')
+
                 }, //加载执行方法
                 error: function () {
-                    alert('数据请求异常')
+                    water_time = 0
+                    alert('服务不稳定，请亲再试一次～')
                 },  //错误执行方法
                 success: function (ret) {
                     if(ret=='1'){
@@ -551,6 +553,10 @@
                     }
                 }
         })
+        }else{
+            alert('每个十分钟才能浇水哟～')
+        }
+
         $("#user_message_water_time").text(myDate.getDate())
     })
 
@@ -570,10 +576,10 @@
                     'load_begin' : '0'
                 },
                 beforeSend: function () {
-                    alert('请求数据中...')
+
                 }, //加载执行方法
                 error: function () {
-                    alert('数据请求异常')
+                    alert('服务不稳定，请再试一下～')
                 },  //错误执行方法
                 success: function (ret) {
                     if(ret=='1'){
@@ -667,7 +673,6 @@
                     'load_begin' : '0'
                 },
                 beforeSend: function () {
-                    alert('请求数据中...')
                 }, //加载执行方法
                 error: function () {
                     alert('数据请求异常')
@@ -682,7 +687,7 @@
                         ""
                         $('#rank-count').text("积分"+item.count)
                         $('#rank-home').attr('href',item.user_home)
-                        $("#rank-avatar").attr('src', item.avatar)
+                        $("rank-avatar").first().attr('src', item.avatar)
                         $("#rank-progress-in").css('width',(item.count/3000).toString()+'%')
                         var list_item = $("#rank-list-li").clone().show()
                         $("#rank-list").append(list_item)

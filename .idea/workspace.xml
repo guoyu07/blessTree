@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/templates/home.html" afterPath="$PROJECT_DIR$/bTree/templates/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blessTree.iws" />
@@ -50,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.155172" vertical-offset="5501" max-vertical-offset="7326">
-              <caret line="853" column="20" selection-start-line="853" selection-start-column="20" selection-end-line="853" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.71727747" vertical-offset="4046" max-vertical-offset="5796">
+              <caret line="691" column="55" selection-start-line="691" selection-start-column="55" selection-end-line="691" selection-end-column="55" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -65,32 +66,34 @@
                 <element signature="n#style#0;n#img#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#18948#21136#0#HTML" expanded="false" />
-                <element signature="e#22738#24556#0#HTML" expanded="false" />
-                <element signature="e#24613#24876#0#HTML" expanded="false" />
-                <element signature="e#24927#25898#0#HTML" expanded="false" />
-                <element signature="e#26093#28203#0#HTML" expanded="false" />
-                <element signature="e#28263#30836#0#HTML" expanded="false" />
-                <element signature="e#30898#30990#0#HTML" expanded="false" />
-                <element signature="e#31039#33224#0#HTML" expanded="false" />
+                <element signature="e#13745#14114#0#HTML" expanded="false" />
+                <element signature="e#14146#17093#0#HTML" expanded="false" />
+                <element signature="e#17755#18764#0#HTML" expanded="false" />
+                <element signature="e#18961#21118#0#HTML" expanded="false" />
+                <element signature="e#21275#22839#0#HTML" expanded="false" />
+                <element signature="e#22891#24678#0#HTML" expanded="false" />
+                <element signature="e#24735#24998#0#HTML" expanded="false" />
+                <element signature="e#25049#26020#0#HTML" expanded="false" />
+                <element signature="e#28347#30920#0#HTML" expanded="false" />
+                <element signature="e#30982#31074#0#HTML" expanded="false" />
+                <element signature="e#31123#33308#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="visit.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="visit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bTree/templates/visit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5205811" vertical-offset="4393" max-vertical-offset="5454">
-              <caret line="541" column="62" selection-start-line="541" selection-start-column="62" selection-end-line="541" selection-end-column="62" />
+            <state vertical-scroll-proportion="-4.111111" vertical-offset="3885" max-vertical-offset="6048">
+              <caret line="237" column="8" selection-start-line="237" selection-start-column="8" selection-end-line="237" selection-end-column="22" />
               <folding>
-                <element signature="e#10149#12575#0#HTML" expanded="false" />
-                <element signature="e#12627#15033#0#HTML" expanded="false" />
-                <element signature="e#15136#17693#0#HTML" expanded="false" />
-                <element signature="e#17895#20080#0#HTML" expanded="false" />
-                <element signature="e#20131#21933#0#HTML" expanded="false" />
-                <element signature="e#22178#23333#0#HTML" expanded="false" />
-                <element signature="e#23483#23706#0#HTML" expanded="false" />
+                <element signature="e#10130#12556#0#HTML" expanded="false" />
+                <element signature="e#12608#15014#0#HTML" expanded="false" />
+                <element signature="e#15117#17674#0#HTML" expanded="false" />
+                <element signature="e#17876#20061#0#HTML" expanded="false" />
+                <element signature="e#20112#21914#0#HTML" expanded="false" />
+                <element signature="e#23608#23831#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -151,10 +154,10 @@
         <option value="$PROJECT_DIR$/bTree/static/tree/css/home.css" />
         <option value="$PROJECT_DIR$/bTree/static/tree/css/visit.css" />
         <option value="$PROJECT_DIR$/blessTree/static/tree/css/visit.css" />
-        <option value="$PROJECT_DIR$/bTree/templates/home.html" />
         <option value="$PROJECT_DIR$/bTree/views.py" />
         <option value="$PROJECT_DIR$/bTree/ajax_process.py" />
         <option value="$PROJECT_DIR$/bTree/templates/visit.html" />
+        <option value="$PROJECT_DIR$/bTree/templates/home.html" />
       </list>
     </option>
   </component>
@@ -896,8 +899,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="769" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1" y="0" width="1368" height="769" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2219697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -909,7 +912,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14130434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25562373" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21717991" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21717991" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25080732" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="1618" y="384" width="1017" height="303" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1349,6 +1352,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bTree/templates/visit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.111111" vertical-offset="3885" max-vertical-offset="6048">
+          <caret line="237" column="8" selection-start-line="237" selection-start-column="8" selection-end-line="237" selection-end-column="22" />
+          <folding>
+            <element signature="e#10130#12556#0#HTML" expanded="false" />
+            <element signature="e#12608#15014#0#HTML" expanded="false" />
+            <element signature="e#15117#17674#0#HTML" expanded="false" />
+            <element signature="e#17876#20061#0#HTML" expanded="false" />
+            <element signature="e#20112#21914#0#HTML" expanded="false" />
+            <element signature="e#23608#23831#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/ajax_process.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1027" max-vertical-offset="2466">
@@ -1369,8 +1387,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.155172" vertical-offset="5501" max-vertical-offset="7326">
-          <caret line="853" column="20" selection-start-line="853" selection-start-column="20" selection-end-line="853" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.71727747" vertical-offset="4046" max-vertical-offset="5796">
+          <caret line="691" column="55" selection-start-line="691" selection-start-column="55" selection-end-line="691" selection-end-column="55" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1381,30 +1399,17 @@
             <element signature="n#style#0;n#img#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#9;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#15;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#18948#21136#0#HTML" expanded="false" />
-            <element signature="e#22738#24556#0#HTML" expanded="false" />
-            <element signature="e#24613#24876#0#HTML" expanded="false" />
-            <element signature="e#24927#25898#0#HTML" expanded="false" />
-            <element signature="e#26093#28203#0#HTML" expanded="false" />
-            <element signature="e#28263#30836#0#HTML" expanded="false" />
-            <element signature="e#30898#30990#0#HTML" expanded="false" />
-            <element signature="e#31039#33224#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/templates/visit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5205811" vertical-offset="4393" max-vertical-offset="5454">
-          <caret line="541" column="62" selection-start-line="541" selection-start-column="62" selection-end-line="541" selection-end-column="62" />
-          <folding>
-            <element signature="e#10149#12575#0#HTML" expanded="false" />
-            <element signature="e#12627#15033#0#HTML" expanded="false" />
-            <element signature="e#15136#17693#0#HTML" expanded="false" />
-            <element signature="e#17895#20080#0#HTML" expanded="false" />
-            <element signature="e#20131#21933#0#HTML" expanded="false" />
-            <element signature="e#22178#23333#0#HTML" expanded="false" />
-            <element signature="e#23483#23706#0#HTML" expanded="false" />
+            <element signature="e#13745#14114#0#HTML" expanded="false" />
+            <element signature="e#14146#17093#0#HTML" expanded="false" />
+            <element signature="e#17755#18764#0#HTML" expanded="false" />
+            <element signature="e#18961#21118#0#HTML" expanded="false" />
+            <element signature="e#21275#22839#0#HTML" expanded="false" />
+            <element signature="e#22891#24678#0#HTML" expanded="false" />
+            <element signature="e#24735#24998#0#HTML" expanded="false" />
+            <element signature="e#25049#26020#0#HTML" expanded="false" />
+            <element signature="e#28347#30920#0#HTML" expanded="false" />
+            <element signature="e#30982#31074#0#HTML" expanded="false" />
+            <element signature="e#31123#33308#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
