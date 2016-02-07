@@ -536,7 +536,36 @@
     //浇水按钮
     $("#water-flower").on('tap', function () {
         {% if flip_nickname %}
-
+        $("#water-widget").show();
+        $('#water-widget').hide(3000);
+        $.ajax({
+            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+                type: 'POST',
+                timeout: 1000,
+                dataType: 'json',
+                encoding:'utf-8',
+                data:{
+                    'ajax_type' : '4',
+                    'openid' : '{{ sourceid }}',
+                    'source_id' : '{{ flip_id }}'
+                },
+                beforeSend: function () {
+                    alert('请求数据中...')
+                }, //加载执行方法
+                error: function () {
+                    alert('数据请求异常')
+                },  //错误执行方法
+                success: function (ret) {
+                    if(ret=='1'){
+                        alert('浇水成功，积分已奉上哟～')
+                        // 积分与进度条变化
+                        var val = parseInt($("#count-num").text().substr(3))
+                        $("#count-num").text('积分:'+(val+1000).toString())
+                        var css_width = parseInt($("#progress-bar").css("width"));
+                        $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.003).toString())
+                    }
+                }
+            })
         {% else %}
             window.open("{{ btn_redirect_url }}")
         {% endif %}
