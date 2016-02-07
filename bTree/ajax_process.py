@@ -191,7 +191,7 @@ def ajax_4(request):
     :return:
     """
     response = HttpResponse()
-    response['Content-Type'] = 'text/javascript'
+    response['Content-Type'] = 'application/json'
     user_id = request.POST.get('openid', '')
     source_id = request.POST.get('source_id', '')
     if user_id:
