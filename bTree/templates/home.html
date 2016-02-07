@@ -759,6 +759,12 @@
                 }
             })
         }else{
+            //控制显示
+            $('#black-mask').show()
+                    .on('tap', function () {
+                        $("#history-widget").hide();
+                        $("#black-mask").hide();
+                    })
             $("#history-widget").show();
             $("#history-tucao-list").hide();
             $("#history-bless-list").show(300);
