@@ -240,6 +240,7 @@ def visit(request):
     # 这里是防止用户种树后取消关注了(不种树了)老的链接被别人点进去了
     error = False
     try:
+        client.fetch_access_token()
         owner_info = client.user.get(client, sourceid)
         owner = owner_info['nickname']
         avatar = owner_info['headimgurl']
