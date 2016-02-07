@@ -406,7 +406,7 @@ def ajax_9(request):
         user.count = user.count + 5000
         user.save()
         bless = Tree(owner=user, tree_name=user.tree_name, type=5, action_time=time.time(),
-                       read=False, source_id=source_id, content=bless_con)
+                        read=False, source_id=source_id, content=bless_con)
         bless.save()
         ret = '1'
     else:
