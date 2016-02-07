@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/templates/home.html" afterPath="$PROJECT_DIR$/bTree/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blessTree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.56806284" vertical-offset="4553" max-vertical-offset="6210">
-              <caret line="688" column="47" selection-start-line="688" selection-start-column="47" selection-end-line="688" selection-end-column="47" />
+              <caret line="688" column="49" selection-start-line="688" selection-start-column="49" selection-end-line="688" selection-end-column="49" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -71,9 +71,9 @@
                 <element signature="e#22911#24698#0#HTML" expanded="false" />
                 <element signature="e#24755#25018#0#HTML" expanded="false" />
                 <element signature="e#25069#26040#0#HTML" expanded="false" />
-                <element signature="e#28215#30788#0#HTML" expanded="false" />
-                <element signature="e#30850#30942#0#HTML" expanded="false" />
-                <element signature="e#30991#33176#0#HTML" expanded="false" />
+                <element signature="e#28240#30813#0#HTML" expanded="false" />
+                <element signature="e#30875#30967#0#HTML" expanded="false" />
+                <element signature="e#31016#33201#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1409,7 +1409,7 @@
     <entry file="file://$PROJECT_DIR$/bTree/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.56806284" vertical-offset="4553" max-vertical-offset="6210">
-          <caret line="688" column="47" selection-start-line="688" selection-start-column="47" selection-end-line="688" selection-end-column="47" />
+          <caret line="688" column="49" selection-start-line="688" selection-start-column="49" selection-end-line="688" selection-end-column="49" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1427,9 +1427,9 @@
             <element signature="e#22911#24698#0#HTML" expanded="false" />
             <element signature="e#24755#25018#0#HTML" expanded="false" />
             <element signature="e#25069#26040#0#HTML" expanded="false" />
-            <element signature="e#28215#30788#0#HTML" expanded="false" />
-            <element signature="e#30850#30942#0#HTML" expanded="false" />
-            <element signature="e#30991#33176#0#HTML" expanded="false" />
+            <element signature="e#28240#30813#0#HTML" expanded="false" />
+            <element signature="e#30875#30967#0#HTML" expanded="false" />
+            <element signature="e#31016#33201#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
