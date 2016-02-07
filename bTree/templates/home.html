@@ -694,6 +694,7 @@
 
                     })
                     $.each(ret, function (i, items) {
+                        alert(items.avatar)
                         $("img.rank-avatar").eq(i).attr('src', items.avatar)
                     })
                     $("#black-mask").show()
