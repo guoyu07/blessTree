@@ -69,7 +69,7 @@ def ajax_1(request):
             #             source_id=user_id, content='种下了自己的幸福树')
             # tree.save()
             ret = '4'
-        except AttributeError:
+        except ObjectDoesNotExist:
             user = User(openid=user_id, nickname=user_name, time_stamp=time.time(), tree_name=tree_name)
             user.friends.add(user)
             user.save()
