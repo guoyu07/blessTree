@@ -163,7 +163,7 @@
             <li id="history-bless-list-na">
                <p>没有收到小伙伴的祝福哦，赶紧分享互动起来吧～</p>
             </li>
-            <li id="history-bless-list-li" style="display: none;">
+            <li id="history-bless-list-li" style="display: none;height: auto">
                 <div style="float:left;"class="pure-u-5-24">
                     <img id="history-bless-avatar" src="{% static "tree/image/btn/friends.png" %}" style="height: 75%;padding-left: 5%;border-radius: 50%">
                     <p id="history-bless-name" style="font-size: 40%;color:grey;;">名字</p>
@@ -177,7 +177,7 @@
             </li>
 
         </ul>
-        <ul class="history-list" id="history-tucao-list" style="display: none">
+        <ul class="history-list" id="history-tucao-list" style="display: none;height: auto">
             <li id="history-tucao-list-na">
                <p>没有收到小伙伴的吐槽哦，小编都妒忌了～</p>
             </li>
@@ -520,10 +520,10 @@
     ////浇水
     $("#water-flower").on('tap', function () {
 {#        alert($("#user_message_water_time"));#}
-        $("#water-widget").show();
-        $('#water-widget').hide(3000);
         if(new Date().getTime()-water_time>10*60*1000){
             water_time = new Date().getTime();
+            $("#water-widget").show();
+            $('#water-widget').hide(3000);
             $.ajax({
             url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
                 type: 'POST',
@@ -633,7 +633,7 @@
                     'will_con' : $("#fill-area").val()
                 },
                 beforeSend: function () {
-                    alert('请求数据中...')
+{#                    alert('请求数据中...')#}
                 }, //加载执行方法
                 error: function () {
                     alert('数据请求异常')
@@ -643,7 +643,7 @@
                        alert('保存成功')
                         $("#willing-list li").css('display', 'none')
                     }else{
-                        alert('保存失败，请再是一次哦～')
+                        alert('保存失败，请再试一次哦～')
                     }
                 }
             })
@@ -725,7 +725,7 @@
                     'load_begin' : '0'
                 },
                 beforeSend: function () {
-                    alert('请求数据中...')
+{#                    alert('请求数据中...')#}
                 }, //加载执行方法
                 error: function () {
                     alert('数据请求异常')
@@ -793,7 +793,7 @@
                     'load_begin' : '0'
                 },
                 beforeSend: function () {
-                    alert('请求数据中...')
+{#                    alert('请求数据中...')#}
                 }, //加载执行方法
                 error: function () {
                     alert('数据请求异常')
