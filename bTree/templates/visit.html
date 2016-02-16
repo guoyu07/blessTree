@@ -261,7 +261,6 @@
 {##}
         //我的主页
         $("#zone").on('tap', function () {
-            alert('click success')
             window.open("{{ my_zone_url|safe }}")
         })
 
@@ -401,7 +400,6 @@
                     'load_begin' : '0'
                 },
                 beforeSend: function () {
-                    alert('请求数据中...')
                 }, //加载执行方法
                 error: function () {
                     alert('数据请求异常')
@@ -468,7 +466,6 @@
                     'load_begin' : '0'
                 },
                 beforeSend: function () {
-                    alert('请求数据中...')
                 }, //加载执行方法
                 error: function () {
                     alert('数据请求异常')
@@ -520,7 +517,6 @@
                     'load_begin' : '0'
                 },
                 beforeSend: function () {
-                    alert('请求数据中...')
                 }, //加载执行方法
                 error: function () {
                     alert('数据请求异常')
@@ -573,7 +569,6 @@
                     'source_id' : '{{ flip_id }}'
                 },
                 beforeSend: function () {
-                    alert('请求数据中...')
                 }, //加载执行方法
                 error: function () {
                     water_time = 0;
