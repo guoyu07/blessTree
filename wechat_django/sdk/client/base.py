@@ -188,10 +188,13 @@ class BaseWeChatClient(object):
 
     _get = get
 
+
     def post(self, url, data):
+        headers = {"Content-Type": "application/x-www-form-urlencoded"}
         res = requests.post(
             url=url,
-            json=json.dumps(data, ensure_ascii=False)
+            json=json.dumps(data, ensure_ascii=False),
+            headers=headers
             # json=data
         )
         result = res.json()
