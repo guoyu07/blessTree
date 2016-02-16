@@ -60,16 +60,24 @@
     <div class="main-tree pure-u-19-24" style="float: left;">
         <div class="tree-area">
             <img src="{% static "tree/image/others/tree.png" %}">
-            <div id="bg1" style="background-color: red;height: 6%;width: 9%;position: absolute;left: 52%;top: 18%;border-radius: 50%"></div>
-            <div id="bg2" style="background-color: red;height: 6%;width: 9%;position: absolute;left: 40%;top: 36%;border-radius: 50%"></div>
-            <div id="bg3" style="background-color: red;height: 6%;width: 9%;position: absolute;left: 65%;top: 36%;border-radius: 50%"></div>
-            <div id="bg4" style="background-color: red;height: 6%;width: 9%;position: absolute;left: 52%;top: 45%;border-radius: 50%"></div>
-            <div id="bg5" style="background-color: red;height: 6%;width: 9%;position: absolute;left: 34%;top: 54%;border-radius: 50%"></div>
-            <div id="bg6" style="background-color: red;height: 6%;width: 9%;position: absolute;left: 70%;top: 54%;border-radius: 50%"></div>
-            <div id="bg7" style="background-color: red;height: 6%;width: 9%;position: absolute;left: 44%;top: 66%;border-radius: 50%"></div>
-            <div id="bg8" style="background-color: red;height: 6%;width: 9%;position: absolute;left: 60%;top: 66%;border-radius: 50%"></div>
-            <div id="bg9" style="background-color: red;height: 6%;width: 9%;position: absolute;left: 30%;top: 72%;border-radius: 50%"></div>
-            <div id="bg10" style="background-color: red;height: 6%;width: 9%;position: absolute;left: 74%;top: 72%;border-radius: 50%"></div>
+            <div class="bless1" style="background-color: red;z-index:13;height: 4%;width: 6%;position: absolute;left: 53%;top: 18%;border-radius: 50%"></div>
+            <div class="bless1" id="bless3" style="background-color: red;z-index:13;height: 4%;width: 6%;position: absolute;left: 43%;top: 24%;border-radius: 50%"></div>
+            <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 64%;top: 24%;border-radius: 50%"></div>
+
+            <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 53%;top: 32%;border-radius: 50%"></div>
+            <div class="bless1" style="background-color: red;height: 4%;width: 6%;position: absolute;left: 41%;top: 38%;border-radius: 50%"></div>
+            <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 67%;top: 38%;border-radius: 50%"></div>
+
+            <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 46%;top: 50%;border-radius: 50%"></div>
+            <div class="bless1" style="background-color: red;height: 4%;width: 6%;position: absolute;left: 60%;top: 46%;border-radius: 50%"></div>
+            <div class="bless1" style="background-color: red;height: 4%;width: 6%;position: absolute;left: 36%;top: 56%;border-radius: 50%"></div>
+            <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 70%;top: 52%;border-radius: 50%"></div>
+
+            <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 54%;top: 65%;border-radius: 50%"></div>
+            <div class="bless1" style="background-color: red;height: 4%;width: 6%;position: absolute;left: 26%;top: 70%;border-radius: 50%"></div>
+            <div class="bless1" style="background-color: red;height: 4%;width: 6%;position: absolute;left: 40%;top: 71%;border-radius: 50%"></div>
+            <div class="bless1" style="background-color: red;height: 4%;width: 6%;position: absolute;left: 66%;top: 70%;border-radius: 50%"></div>
+            <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 78%;top: 72%;border-radius: 50%"></div>
         </div>
         <div class="tree-name">
             <img src="{% static "tree/image/others/name.png" %}">
@@ -272,6 +280,19 @@
     <p>点击&nbsp&nbsp树儿渴的花儿都谢啦，虽然我没有花～～</p>
     <button id="time-water-btn">我知道啦～</button>
 </div>
+<!--祝福/吐槽果实弹出框-->
+<div class="fruit-widget" id="fruit-widget" style="display: none;">
+    <div class="fruit-content">
+        <div class="pure-u-7-24" style="float: left;text-align: center">
+            <img id="fruit-img" src="{% static "tree/image/btn/tips.png" %}" style="height: 60%;margin-top: 5%">
+            <p id="fruit-name" style="font-size: 70%;color: grey;">耶耶耶不想上学</p>
+        </div>
+        <div class="pure-u-17-24" style="float: left;">
+            <p id="fruit-con" style="font-size: 90%;margin-top: 6%">耶耶耶不想上学给你浇了一次水</p>
+        </div>
+    </div>
+</div>
+
 {% if first_time %}
 <!--begin 小部件-->
 
@@ -851,6 +872,69 @@
         $("#count-enough").hide();
     })
 
+    //祝福果
+    $('.bless1').on('tap', function () {
+        $.ajax({
+            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+            type: 'POST',
+            timeout: 1000,
+            dataType: 'json',
+            async: false,
+            encoding:'utf-8',
+            data:{
+                'ajax_type' : '12',  //祝福类型
+                'openid' : $("#user_message_openid").text()
+            },
+            beforeSend: function () {
+                alert('请求数据中...')
+            }, //加载执行方法
+            error: function () {
+                alert('数据请求异常')
+            },  //错误执行方法
+            success: function (ret) {
+                alert(ret.toString())
+                $('#fruit-name').text(ret.nickname);
+                $('#fruit-img').attr('src', ret.avatar);
+                $('#fruit-con').text(ret.con);
+                $('#fruit-widget').fadeIn(300)
+                        .on('tap', function () {
+                            $('#fruit-widget').fadeOut(300)
+                        })
+            }
+        })
+
+    })
+    //吐槽果
+    $('.bless2').on('tap', function () {
+        $.ajax({
+            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
+            type: 'POST',
+            timeout: 1000,
+            dataType: 'json',
+            async: false,
+            encoding:'utf-8',
+            data:{
+                'ajax_type' : '13',  //吐槽类型
+                'openid' : $("#user_message_openid").text()
+            },
+            beforeSend: function () {
+                alert('请求数据中...')
+            }, //加载执行方法
+            error: function () {
+                alert('数据请求异常')
+            },  //错误执行方法
+            success: function (ret) {
+                alert(ret.toString())
+                $('#fruit-name').text(ret.nickname);
+                $('#fruit-img').attr('src', ret.avatar);
+                $('#fruit-con').text(ret.con);
+                $('#fruit-widget').fadeIn(300)
+                        .on('tap', function () {
+                            $('#fruit-widget').fadeOut(300)
+                        })
+            }
+        })
+    })
 
     /********************
      * 一些函数

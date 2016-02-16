@@ -23,7 +23,8 @@ from wechat_django.sdk import code_access_token, global_code
 
 from bTree import appId, appsecret, WEIXIN_TOKEN, NONCESTR, client, oauth, jsapi_ticket
 from bTree.models import User, Tree
-from bTree.ajax_process import ajax_1, ajax_2, ajax_3, ajax_4, ajax_5, ajax_6, ajax_7, ajax_8, ajax_9, ajax_10, ajax_11
+from bTree.ajax_process import ajax_1, ajax_2, ajax_3, ajax_4, ajax_5, \
+    ajax_6, ajax_7, ajax_8, ajax_9, ajax_10, ajax_11, ajax_12
 
 
 @csrf_exempt
@@ -393,6 +394,8 @@ def ajax_distribute(request):
         return ajax_10(request)
     elif ajax_type == '11':
         return ajax_11(request)
+    elif ajax_type == '12' or ajax_type == '13':
+        return ajax_12(request)
     else:
         response = HttpResponse()
         response['Content-Type'] = 'text/javascript'

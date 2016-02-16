@@ -549,4 +549,23 @@ ul{
 .happy-newyear img{
     width: 40%;
 }
+
+/*祝福吐槽弹出框*/
+.fruit-widget{
+    border-radius: 2%;
+    position: fixed;
+    z-index: 13;
+    width: 80%;
+    height: 12%;
+    left: 10%;
+    top: 12%;
+    background-color: rgba(255,255,255,0.9);
+}
+.fruit-content{
+    height: 100%;
+}
+.fruit-content div{
+    height: 100%;
+}
+
 /*积分上限后分享的内容：做一个类似微信年会的东西*/

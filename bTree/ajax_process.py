@@ -30,7 +30,7 @@ import simplejson as json
         '10': 访问页面， 吐槽提交请求[]
         '11': 第一次分享朋友圈增加积分的请求(添加好友不需要ajax请求增加积分[]
               因为会在对方注册使用的时候发送一个json来同时增加双方的分数与建立朋友关系)
-        '12'： 预留备用的
+        '12'： 祝福吐槽果点击的ajax获取
 
     }
     :param request: 含有ajax请求数据的请求对象
@@ -468,4 +468,24 @@ def ajax_11(request):
         ret = '2'
     response.write(ret)
     return response
+
+
+def ajax_12(request):
+    response = HttpResponse()
+    response['Content-Type'] = 'application/json'
+
+    user_id = request.POST.get('openid', '')
+    ajax_type = request.POST.get('ajax_type', '')
+    if ajax_type and user_id:
+        try:
+            user = User.objects.get(openid=user_id)
+            if ajax_type == '12':
+                type = '5'
+            else:
+                type = '6'
+            fruit = Tree.objects.filter(owner=user, type=type)
+
+        except ObjectDoesNotExist:
+            ret = '2'
+
 
