@@ -68,7 +68,7 @@ def weixin_main(request):
                     "button": [
                         {
                             "type": "view",
-                            "name": 'lant',
+                            "name": '种树',
                             "url": oauth.authorize_url
                         },
                         {
