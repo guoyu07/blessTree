@@ -68,7 +68,7 @@ def weixin_main(request):
                     "button": [
                         {
                             "type": "view",
-                            "name": 'plant',
+                            "name": '祝福树耶耶耶',
                             "url": oauth.authorize_url
                         },
                         {
