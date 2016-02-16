@@ -58,20 +58,40 @@
 <div class="main-container">
     <!--上面两个菜单-->
     <div class="main-top">
-        <div class="willing">
-            <a id="willing"><img class="willing-btn" src="{% static "tree/image/btn/willing.png" %}" style="width: inherit"></a>
-        </div>
         <div class="water-flower">
             <a id="water-flower"><img class="water-btn" src="{% static "tree/image/btn/water.png" %}" style="width: inherit"></a>
+        </div>
+        <div class="willing">
+            <a id="willing"><img class="willing-btn" src="{% static "tree/image/btn/willing.png" %}" style="width: inherit"></a>
         </div>
     </div>
     <div class="main-area">
         <!--树木区域-->
         <div class="main-tree pure-u-19-24" style="float: left;">
-            <div class="tree-area"><img src="{% static "tree/image/others/tree.png" %}"></div>
+            <div class="tree-area">
+                <img src="{% static "tree/image/others/tree.png" %}">
+                <div class="bless1" style="background-color: red;z-index:13;height: 4%;width: 6%;position: absolute;left: 56%;top: 18%;border-radius: 50%"></div>
+                <div class="bless1" id="bless3" style="background-color: red;z-index:13;height: 4%;width: 6%;position: absolute;left: 47%;top: 24%;border-radius: 50%"></div>
+                <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 64%;top: 24%;border-radius: 50%"></div>
+
+                <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 56%;top: 30%;border-radius: 50%"></div>
+                <div class="bless1" style="background-color: red;height: 4%;width: 6%;position: absolute;left: 45%;top: 36%;border-radius: 50%"></div>
+                <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 70%;top: 36%;border-radius: 50%"></div>
+
+                <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 46%;top: 50%;border-radius: 50%"></div>
+                <div class="bless1" style="background-color: red;height: 4%;width: 6%;position: absolute;left: 60%;top: 46%;border-radius: 50%"></div>
+                <div class="bless1" style="background-color: red;height: 4%;width: 6%;position: absolute;left: 36%;top: 56%;border-radius: 50%"></div>
+                <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 70%;top: 52%;border-radius: 50%"></div>
+
+                <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 54%;top: 65%;border-radius: 50%"></div>
+                <div class="bless1" style="background-color: red;height: 4%;width: 6%;position: absolute;left: 26%;top: 67%;border-radius: 50%"></div>
+                <div class="bless1" style="background-color: red;height: 4%;width: 6%;position: absolute;left: 40%;top: 71%;border-radius: 50%"></div>
+                <div class="bless1" style="background-color: red;height: 4%;width: 6%;position: absolute;left: 66%;top: 70%;border-radius: 50%"></div>
+                <div class="bless2" style="background-color: white;height: 4%;width: 6%;position: absolute;left: 78%;top: 70%;border-radius: 50%"></div>
+            </div>
             <div class="tree-name">
                 <img src="{% static "tree/image/others/name.png" %}">
-                <p class="name" style="margin-top: 19%;margin-left: 23%;">{{ tree_name }}</p>
+                <p class="name" style="margin-top: 19%;margin-left: 23%;font-size: 50%">{{ tree_name }}</p>
             </div>
         </div>
         <div class="main-right pure-u-5-24" style="float:left">

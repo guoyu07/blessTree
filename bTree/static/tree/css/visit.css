@@ -117,14 +117,16 @@ ul{
     padding: 0;
 }
 .willing{
-    float: right;
-    margin-right: 5%;
+    float: left;
+    margin-left: 4%;
     height: 80%;
+    width: 12%;
 }
 .water-flower{
     float: right;
-    margin-right: 4%;
+    margin-left: 67%;
     height: 80%;
+    width: 12%;
 }
 .water-btn, .willing-btn{
     height: 100%;
