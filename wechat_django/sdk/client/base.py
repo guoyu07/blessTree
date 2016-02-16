@@ -193,7 +193,8 @@ class BaseWeChatClient(object):
         headers = {"Content-Type": "application/x-www-form-urlencoded"}
         res = requests.post(
             url=url,
-            json=data
+            json=data,
+            headers=headers
             # json=data
         )
         result = res.json()
