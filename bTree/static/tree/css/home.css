@@ -383,7 +383,7 @@ ul{
 }
 .message-list, .history-list, .rank-list{
     overflow: scroll;
-    height: 98%;
+    height: 95%;
     width: 100%;
 }
 .willing-list{
