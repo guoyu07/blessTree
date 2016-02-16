@@ -68,12 +68,12 @@ def weixin_main(request):
                     "button": [
                         {
                             "type": "view",
-                            "name": '祝福树耶耶耶',
+                            "name": 'lant',
                             "url": oauth.authorize_url
                         },
                         {
                             "type": "click",
-                            "name": '点击我',
+                            "name": 'click-me',
                             "key": "v1002"
                         }
                     ]
