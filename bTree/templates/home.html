@@ -58,7 +58,19 @@
 <!--内容-->
 <div class="main-container">
     <div class="main-tree pure-u-19-24" style="float: left;">
-        <div class="tree-area"><img src="{% static "tree/image/others/tree.png" %}"></div>
+        <div class="tree-area">
+            <img src="{% static "tree/image/others/tree.png" %}">
+            <div id="bg1" style="background-color: red;height: 4%;width: 6%;position: fixed;left: 42%;top: 29%;border-radius: 50%"></div>
+            <div id="bg2" style="background-color: red;height: 4%;width: 6%;position: fixed;left: 32%;top: 42%;border-radius: 50%"></div>
+            <div id="bg3" style="background-color: red;height: 4%;width: 6%;position: fixed;left: 53%;top: 42%;border-radius: 50%"></div>
+            <div id="bg4" style="background-color: red;height: 4%;width: 6%;position: fixed;left: 42%;top: 47%;border-radius: 50%"></div>
+            <div id="bg5" style="background-color: red;height: 4%;width: 6%;position: fixed;left: 28%;top: 54%;border-radius: 50%"></div>
+            <div id="bg6" style="background-color: red;height: 4%;width: 6%;position: fixed;left: 56%;top: 54%;border-radius: 50%"></div>
+            <div id="bg7" style="background-color: red;height: 4%;width: 6%;position: fixed;left: 35%;top: 63%;border-radius: 50%"></div>
+            <div id="bg8" style="background-color: red;height: 4%;width: 6%;position: fixed;left: 48%;top: 63%;border-radius: 50%"></div>
+            <div id="bg9" style="background-color: red;height: 4%;width: 6%;position: fixed;left: 23%;top: 66%;border-radius: 50%"></div>
+            <div id="bg10" style="background-color: red;height: 4%;width: 6%;position: fixed;left: 61%;top: 66%;border-radius: 50%"></div>
+        </div>
         <div class="tree-name">
             <img src="{% static "tree/image/others/name.png" %}">
             <p class="name" id="whos_tree" style="margin-top: 19%;margin-left: 23%;">{{ tree_name }}</p>
@@ -411,7 +423,7 @@
         $('#rule').hide();
         $('#tips-quming').show();
     })
-    alert("js加载成功")
+{#    alert("js加载成功")#}
     //提醒取名字
     $('#quming-btn').on('tap', function () {
         $('#tips-quming').hide();
