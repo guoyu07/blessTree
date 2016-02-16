@@ -128,7 +128,7 @@
         <ul class="message-list" id="message-list">
             <li id="message-list-na">
                 <div style="float:left;">
-                    <p style="font-size: 100%;color: rgba(0,0,0,0.8)">您的消息空空如也，赶紧和小伙伴互动起来吧～</p>
+                    <p style="font-size: 100%;color: rgba(0,0,0,0.8)">暂时没有您的消息，赶紧和小伙伴互动起来吧～</p>
                 </div>
             </li>
             <li id="message-list-li" style="display: none;">
@@ -770,9 +770,8 @@
                         }else{
                             $("#history-bless-list-na").hide();
                             $.each(ret, function (i, item) {
-                                if(item.bless_avatar != 'none'){
-                                    $('#history-bless-avatar').attr('src', item.bless_avatar)
-                                }
+                                alert('yici')
+                                $('#history-bless-avatar').attr('src', item.bless_avatar)
                                 $('#history-bless-name').text(item.bless_nick)
                                 $("#history-bless-con").text(item.bless_con)
                                 $('#history-bless-time').text(item.bless_time)
