@@ -126,7 +126,7 @@ class WeChatOAuth(object):
             else:
                 del global_code[code]
                 tmp = code_access_token[code]['access_token']
-                del code_access_token[code]['access_token']
+                # del code_access_token[code]['access_token']
                 return tmp
         else:
             global_code[code] = 1000
