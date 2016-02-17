@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/ajax_process.py" afterPath="$PROJECT_DIR$/bTree/ajax_process.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/templates/visit.html" afterPath="$PROJECT_DIR$/bTree/templates/visit.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -34,17 +35,17 @@
       <file leaf-file-name="ajax_process.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/ajax_process.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53139013" vertical-offset="915" max-vertical-offset="3726">
-              <caret line="64" column="35" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.3295964" vertical-offset="915" max-vertical-offset="3726">
+              <caret line="59" column="44" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
               <folding>
-                <element signature="e#2701#4315#0" expanded="false" />
-                <element signature="e#4343#6575#0" expanded="false" />
-                <element signature="e#6603#7654#0" expanded="false" />
-                <element signature="e#9925#12108#0" expanded="false" />
-                <element signature="e#12136#13832#0" expanded="false" />
-                <element signature="e#13860#14579#0" expanded="false" />
-                <element signature="e#14607#15367#0" expanded="false" />
-                <element signature="e#15396#16154#0" expanded="false" />
+                <element signature="e#2699#4313#0" expanded="false" />
+                <element signature="e#4341#6573#0" expanded="false" />
+                <element signature="e#6601#7652#0" expanded="false" />
+                <element signature="e#9923#12106#0" expanded="false" />
+                <element signature="e#12134#13830#0" expanded="false" />
+                <element signature="e#13858#14577#0" expanded="false" />
+                <element signature="e#14605#15365#0" expanded="false" />
+                <element signature="e#15394#16152#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -269,7 +270,6 @@
         <option value="$PROJECT_DIR$/blessTree/static/tree/css/visit.css" />
         <option value="$PROJECT_DIR$/bTree/templates/index.html" />
         <option value="$PROJECT_DIR$/blessTree/urls.py" />
-        <option value="$PROJECT_DIR$/bTree/ajax_process.py" />
         <option value="$PROJECT_DIR$/blessTree/static/tree/css/home.css" />
         <option value="$PROJECT_DIR$/bTree/static/tree/css/visit.css" />
         <option value="$PROJECT_DIR$/bTree/static/tree/css/home.css" />
@@ -281,6 +281,7 @@
         <option value="$PROJECT_DIR$/wechat_django/sdk/oauth.py" />
         <option value="$PROJECT_DIR$/bTree/views.py" />
         <option value="$PROJECT_DIR$/bTree/templates/visit.html" />
+        <option value="$PROJECT_DIR$/bTree/ajax_process.py" />
       </list>
     </option>
   </component>
@@ -916,7 +917,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="1" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16883117" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -925,7 +926,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14130434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20616883" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20616883" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="2050" y="0" width="337" height="755" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23292868" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1461,17 +1462,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bTree/ajax_process.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53139013" vertical-offset="915" max-vertical-offset="3726">
-          <caret line="64" column="35" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.3295964" vertical-offset="915" max-vertical-offset="3726">
+          <caret line="59" column="44" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
           <folding>
-            <element signature="e#2701#4315#0" expanded="false" />
-            <element signature="e#4343#6575#0" expanded="false" />
-            <element signature="e#6603#7654#0" expanded="false" />
-            <element signature="e#9925#12108#0" expanded="false" />
-            <element signature="e#12136#13832#0" expanded="false" />
-            <element signature="e#13860#14579#0" expanded="false" />
-            <element signature="e#14607#15367#0" expanded="false" />
-            <element signature="e#15396#16154#0" expanded="false" />
+            <element signature="e#2699#4313#0" expanded="false" />
+            <element signature="e#4341#6573#0" expanded="false" />
+            <element signature="e#6601#7652#0" expanded="false" />
+            <element signature="e#9923#12106#0" expanded="false" />
+            <element signature="e#12134#13830#0" expanded="false" />
+            <element signature="e#13858#14577#0" expanded="false" />
+            <element signature="e#14605#15365#0" expanded="false" />
+            <element signature="e#15394#16152#0" expanded="false" />
           </folding>
         </state>
       </provider>

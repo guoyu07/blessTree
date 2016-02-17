@@ -313,7 +313,7 @@ def visit(request):
         .authorize_url
     if flip_nickname:  # 通过点击别人分享进去的都需要保存，这里互动了的
         try:
-            friendship = User.objects.get(openid=oauth_vis.open_id)
+            friendship = User.objects.get(openid=flip_id)
             friendship.nickname = flip_user['nickname']
             friendship.avatar_url = flip_user['headimgurl']
             friendship.save()
