@@ -121,15 +121,15 @@ class WeChatOAuth(object):
         # 防止微信客户端重复多次使用code导致的bug
         if code in global_code:
             if global_code[code] > 0:
-                global_code[code] = global_code[code]-1
+                # global_code[code] = global_code[code]-1
                 self.access_token = code_access_token[code]['access_token']
                 return code_access_token[code]
-            else:
-                # del global_code[code]
-                tmp = code_access_token[code]['access_token']
-                del code_access_token[code]['access_token']
-                self.access_token = tmp
-                return tmp
+            # else:
+            #     # del global_code[code]
+            #     tmp = code_access_token[code]['access_token']
+            #     del code_access_token[code]['access_token']
+            #     self.access_token = tmp
+            #     return tmp
         else:
             global_code[code] = 5000
             return self._fetch_access_token(code)
