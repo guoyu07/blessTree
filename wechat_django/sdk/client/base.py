@@ -10,6 +10,7 @@ import inspect
 import six
 import json
 import requests
+import urllib
 
 from wechat_django.sdk.session.memorystorage import MemoryStorage
 
@@ -190,14 +191,15 @@ class BaseWeChatClient(object):
 
 
     def post(self, url, data):
-        headers = {"Content-Type": "application/json"}
-        res = requests.post(
-            url=url,
-            # json=json.dumps(data)
-            json=data,
-            headers=headers
-
-        )
+        headers = {"Content-Type": "application/x-www-form-urlencoded"}
+        # res = requests.post(
+        #     url=url,
+        #     # json=json.dumps(data)
+        #     json=data,
+        #     headers=headers
+        #
+        # )
+        res = urllib.request.urlopen(url, str(data).encode('utf-8'))
         result = res.json()
         return result
         # return data
