@@ -314,8 +314,8 @@ def visit(request):
     if request.GET.get('add') and flip_nickname:  # 通过点击别人分享进去的都需要保存，这里互动了的
         try:
             friendship = User.objects.get(openid=oauth_vis.open_id)
-            friendship.nickname = flip_nickname
-            friendship.avatar_url = flip_avatar
+            friendship.nickname = flip_user['nickname']
+            friendship.avatar_url = flip_user['headimgurl']
             friendship.save()
         except ObjectDoesNotExist:
             friendship = User(openid=oauth_vis.open_id, nickname=flip_nickname, avatar_url=flip_avatar, time_stamp=time.time(), tree_name='na', is_plant=False)
