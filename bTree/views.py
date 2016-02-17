@@ -313,8 +313,7 @@ def visit(request):
         .authorize_url
     if request.GET.get('add') and flip_nickname:  # 通过点击别人分享进去的都需要保存，这里互动了的
         try:
-            # friendship = User.objects.get(openid=oauth_vis.open_id)
-            friendship = User.objects.get(openid=flip_id)
+            friendship = User.objects.get(openid=oauth_vis.open_id)
             friendship.nickname = flip_nickname
             friendship.avatar_url = flip_avatar
             friendship.save()
@@ -326,7 +325,7 @@ def visit(request):
             friendship.save()
     elif request.GET.get('add'):  # 通过点击别人分享进去的都需要保存,这里用户只是点击进去过没有互动
         try:
-            friendship = User.objects.get(openid=oauth_vis.open_id)
+            friendship = User.objects.get(openid=flip_id)
             friendship.nickname = flip_nickname
             friendship.avatar_url = flip_avatar
             friendship.save()
