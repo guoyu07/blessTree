@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat_django/sdk/client/base.py" afterPath="$PROJECT_DIR$/wechat_django/sdk/client/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bTree/views.py" afterPath="$PROJECT_DIR$/bTree/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blessTree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,17 +41,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1136" max-vertical-offset="3528">
-              <caret line="70" column="74" selection-start-line="70" selection-start-column="74" selection-end-line="70" selection-end-column="74" />
+            <state vertical-scroll-proportion="0.30170316" vertical-offset="1136" max-vertical-offset="3528">
+              <caret line="70" column="40" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
               <folding>
                 <element signature="e#48#62#0" expanded="true" />
-                <element signature="e#3962#6637#0" expanded="false" />
-                <element signature="e#6677#8495#0" expanded="false" />
-                <element signature="e#8522#13838#0" expanded="false" />
-                <element signature="e#15618#16094#0" expanded="false" />
+                <element signature="e#3929#6604#0" expanded="false" />
+                <element signature="e#6644#8462#0" expanded="false" />
+                <element signature="e#8489#13805#0" expanded="false" />
+                <element signature="e#15585#16061#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -115,10 +116,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6839623" vertical-offset="3454" max-vertical-offset="4914">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3454" max-vertical-offset="4914">
               <caret line="208" column="8" selection-start-line="208" selection-start-column="10" selection-end-line="208" selection-end-column="29" />
               <folding>
                 <element signature="e#71#81#0" expanded="true" />
@@ -204,8 +205,8 @@
         <option value="$PROJECT_DIR$/bTree/static/tree/css/home.css" />
         <option value="$PROJECT_DIR$/blessTree/settings.py" />
         <option value="$PROJECT_DIR$/vender/requests/packages/urllib3/fields.py" />
-        <option value="$PROJECT_DIR$/bTree/views.py" />
         <option value="$PROJECT_DIR$/wechat_django/sdk/client/base.py" />
+        <option value="$PROJECT_DIR$/bTree/views.py" />
       </list>
     </option>
   </component>
@@ -1349,20 +1350,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1136" max-vertical-offset="3528">
-          <caret line="70" column="74" selection-start-line="70" selection-start-column="74" selection-end-line="70" selection-end-column="74" />
-          <folding>
-            <element signature="e#48#62#0" expanded="true" />
-            <element signature="e#3962#6637#0" expanded="false" />
-            <element signature="e#6677#8495#0" expanded="false" />
-            <element signature="e#8522#13838#0" expanded="false" />
-            <element signature="e#15618#16094#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/urllib.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="29160">
@@ -1381,10 +1368,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6839623" vertical-offset="3454" max-vertical-offset="4914">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3454" max-vertical-offset="4914">
           <caret line="208" column="8" selection-start-line="208" selection-start-column="10" selection-end-line="208" selection-end-column="29" />
           <folding>
             <element signature="e#71#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bTree/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30170316" vertical-offset="1136" max-vertical-offset="3528">
+          <caret line="70" column="40" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
+          <folding>
+            <element signature="e#48#62#0" expanded="true" />
+            <element signature="e#3929#6604#0" expanded="false" />
+            <element signature="e#6644#8462#0" expanded="false" />
+            <element signature="e#8489#13805#0" expanded="false" />
+            <element signature="e#15585#16061#0" expanded="false" />
           </folding>
         </state>
       </provider>

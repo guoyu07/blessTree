@@ -192,6 +192,19 @@ class BaseWeChatClient(object):
 
     def post(self, url, data):
         headers = {"Content-Type": "application/x-www-form-urlencoded", 'encoding': 'utf-8'}
+        data = {"button":[
+            {"name": u"会员服务",
+               "sub_button":[
+                     {"type":"click","name":u"健康咨询","key":"JKZX"},
+                     ]
+               },
+              {"name":u"申请加入","sub_button":[
+                                            {"type":"view","name":u"企业入会申请","url": ""},
+                                            ]
+               },
+              {"type":"view","name":u"关于","url":""}
+              ]
+        }
         # res = requests.post(
         #     url=url,
         #     json=simplejson.dumps(data, ensure_ascii=False),
