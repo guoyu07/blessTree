@@ -351,12 +351,10 @@ def ajax_7(request):
                     if 8+int(will.action_time.strftime("%H")) > 24:
                         time = will.action_time.strftime("%m-")+\
                                str(int(will.action_time.strftime("%d"))+1)+'\n'\
-                                   +str(int(will.action_time.strftime("%H"))-16)+":"\
-                               +str((32+int(will.action_time.strftime("%I"))) % 60)+will.action_time.strftime(":%S")
+                                   +str(int(will.action_time.strftime("%H"))-16)+will.action_time.strftime(":%I:%S")
                     else:
                         time = will.action_time.strftime("%m-%d")+'\n'\
-                                   +str(8+int(will.action_time.strftime("%H")))+":"\
-                               +str((32+int(will.action_time.strftime("%I"))) % 60)+will.action_time.strftime(":%S")
+                                   +str(8+int(will.action_time.strftime("%H")))+will.action_time.strftime(":%I:%S")
                     will_dict.append({'will_time': time,
                                       'will_con': will.content})
                 response['Content-Type'] = 'application/json'

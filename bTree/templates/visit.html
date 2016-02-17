@@ -257,9 +257,10 @@
         var after_width = {{ count }}/300000*100;
         water_time = 0
         //进度条宽度百分比设置
-{#        if({{ count }}== 300000 ){#}
-{#            #}
-{#        }#}
+    alert(parseInt($("#count-num").text().substr(3)))
+        if(parseInt($("#count-num").text().substr(3))==300000){
+            // 积分够了，显示新年快乐
+        }
         $("#progress-in").css("width", "{{ count_bar }}%");
 {##}
         //我的主页
