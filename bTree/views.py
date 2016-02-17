@@ -72,8 +72,8 @@ def weixin_main(request):
                             "url": oauth.authorize_url
                         },
                         {
-                            "type": "关于小创",
-                            "name": 'click-me',
+                            "type": "click",
+                            "name": '关于小创',
                             "key": "v1002"
                         }
                     ]
