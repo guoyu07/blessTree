@@ -246,13 +246,6 @@ def visit(request):
         owner = owner_info['nickname']
         avatar = owner_info['headimgurl']
         owner_db = User.objects.get(openid=sourceid)
-        # 获取最近一次浇水事件，没有浇过水就是创建树木时间，所以一定会有的，而且是访问的，一定有种树了
-        # if owner_db.tree_set.filter(type=0) or owner_db.tree_set.filter(type=3):
-        #     owner_tree = owner_db.tree_set.filter(type=3)[0] or owner_db.tree_set.filter(type=0)[0]
-        #     # water_time = int(owner_tree.action_time.timestamp())
-        # else:
-        #     owner_tree = owner_db.tree_set.filter(type=7)[0]
-        #     # water_time = int(owner_tree.action_time.timestamp())
         water_time = 0  # TODO:时间转化问题
         count = owner_db.count
         count_bar = count/3000
@@ -286,7 +279,7 @@ def visit(request):
             user_from_wechat = client.user.get(client, flip_id)
             flip_nickname = user_from_wechat['nickname']
             flip_avatar = user_from_wechat['headimgurl']
-        except AttributeError:
+        except KeyError:
             flip_nickname = False
             # 获取一个高级认证作为点击浇水/祝福/吐槽事件的跳转链接，认证之后回调到原来的位置
             btn_redirect_url = WeChatOAuth(appId, appsecret,
