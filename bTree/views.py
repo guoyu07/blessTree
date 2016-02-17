@@ -57,6 +57,8 @@ def weixin_main(request):
                 client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
                 user = client.user.get(client, msg.source)
                 reply.content = user['nickname']
+            elif msg.content == 'access':
+                reply.content = client.fetch_access_token()
             elif msg.content == "李启成爱地球":
                 # client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()
