@@ -263,7 +263,7 @@
     <button class="count-enough-btn">点我有惊喜</button>
 </div>
 <!--恭喜新年快乐-->
-<div class="happy-newyear" style="display: none">
+<div class="happy-newyear" id="happy-newyear" style="display: none">
     <img src="{% static "tree/image/others/monkey.png" %}">
     <p style="font-size: 160%;margin-top: 0%;color: red">给大家拜年啦</p>
     <p style="margin-top: 5%">赶快分享到朋友圈炫耀一下吧～</p>
@@ -430,7 +430,14 @@
     var rankpull = 5;
     var msgpull = 5;
     init_main(myDate);
-
+    //新年快乐
+    if(parseInt($("#count-num").text().substr(3))==300000){
+        // 积分够了，显示新年快乐
+        $("#happy-newyear").fadeIn(1000)
+                .on('tap', function () {
+                    $("#happy-newyear").fadeOut(1000)
+                })
+    }
     /********************
      * 引导按钮绑定事件
      * */
@@ -765,7 +772,6 @@
                         }else{
                             $("#history-bless-list-na").hide();
                             $.each(ret, function (i, item) {
-                                alert('yici')
                                 $('#history-bless-avatar').attr('src', item.bless_avatar)
                                 $('#history-bless-name').text(item.bless_nick)
                                 $("#history-bless-con").text(item.bless_con)

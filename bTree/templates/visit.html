@@ -243,6 +243,14 @@
     top: 50%;">
     <img src="{% static "tree/image/others/water-tree.png" %}" style="width: 100%;height: auto">
 </div>
+
+<!--恭喜新年快乐-->
+<div class="happy-newyear" id="happy-newyear" style="display: none">
+    <img src="{% static "tree/image/others/monkey.png" %}">
+    <p style="font-size: 160%;margin-top: 0%;color: red">给大家拜年啦</p>
+    <p style="margin-top: 5%">赶快分享到朋友圈炫耀一下吧～</p>
+</div>
+
 {% endif %}
 </body>
 <script>
@@ -256,10 +264,13 @@
         var water_time = {{ water_time }}  //最近一次浇水时间
         var after_width = {{ count }}/300000*100;
         water_time = 0
-        //进度条宽度百分比设置
-    alert(parseInt($("#count-num").text().substr(3)))
+        //新年快乐
         if(parseInt($("#count-num").text().substr(3))==300000){
             // 积分够了，显示新年快乐
+            $("#happy-newyear").fadeIn(1000)
+                    .on('tap', function () {
+                        $("#happy-newyear").fadeOut(1000)
+                    })
         }
         $("#progress-in").css("width", "{{ count_bar }}%");
 {##}
