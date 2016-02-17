@@ -199,7 +199,7 @@ class BaseWeChatClient(object):
                      ]
                },
               {"name":u"申请加入","sub_button":[
-                                            {"type":"view","name":u"企业入会申请","url": ""},
+                                            {"type":"view","name":u"企业入会申请","url": "http://www.baidu.com"},
                                             ]
                },
               {"type":"view","name":u"关于","url":"http://www.baidu.com"}
