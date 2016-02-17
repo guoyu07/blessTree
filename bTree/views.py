@@ -273,13 +273,13 @@ def visit(request):
         flip_user = oauth_vis.get_user_info(openid=flip_id, access_token=access_token)
         flip_nickname = flip_user['nickname']
         flip_avatar = flip_user['headimgurl']
-        flip_nickname = True
+        fl_nickname = flip_nickname = True
     else:
         # TODO：这里是没有关注公众号的时候用户点进去，想祝福/吐槽/浇水/的时候
         try:
             client.fetch_access_token()
             user_from_wechat = client.user.get(client, flip_id)
-            flip_nickname = user_from_wechat['nickname']
+            fl_nickname = flip_nickname = user_from_wechat['nickname']
             flip_avatar = user_from_wechat['headimgurl']
         except KeyError:
             flip_nickname = False
@@ -314,8 +314,8 @@ def visit(request):
     if flip_nickname:  # 通过点击别人分享进去的都需要保存，这里互动了的
         try:
             friendship = User.objects.get(openid=flip_id)
-            friendship.nickname = flip_user['nickname']
-            friendship.avatar_url = flip_user['headimgurl']
+            friendship.nickname = fl_nickname
+            friendship.avatar_url = flip_avatar
             friendship.save()
         except ObjectDoesNotExist:
             friendship = User(openid=flip_id, nickname=flip_user['nickname'],
