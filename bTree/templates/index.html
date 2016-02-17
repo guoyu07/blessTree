@@ -46,6 +46,12 @@
         <button class="selected-not" id="selected-not">再去看看</button>
     </div>
 </div>
+<div class="qrcode" id="qrcode" style="display: none;position: fixed;height: 70%;width: 70%;left: 15%;top: 15%;">
+    <div class="qr_con" style="width:100%;height: 100%">
+        <img src="{% static "tree/image/others/qrcode_bless.jpg" %}"style="height: 80%;width: 80%">
+        <p style="font-size: 80%;text-align: left">长按二维码关注小创菌，就能与小伙伴一起玩耍啦～</p>
+    </div>
+</div>
 
 </body>
 <script>
@@ -59,8 +65,10 @@
 
         {% if visit  %}
             $("#pg_11-plant").on('tap', function () {
-                alert('关注公众号--“小创菌”，就能与小伙伴们一起愉快的勾搭啦～～');
-                window.open('{{ return_url|safe }}');
+{#                alert('关注公众号--“小创菌”，就能与小伙伴们一起愉快的勾搭啦～～');#}
+{#                window.open('{{ return_url|safe }}');#}
+                $("#black-mask").show();
+                $("#qrcode").show();
             })
             //不玩时候
             $("#selected-sure").on('tap', function () {
