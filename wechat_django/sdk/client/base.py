@@ -10,7 +10,6 @@ import inspect
 import six
 import json
 import requests
-import urllib.request
 
 from wechat_django.sdk.session.memorystorage import MemoryStorage
 
