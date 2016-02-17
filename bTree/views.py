@@ -326,7 +326,6 @@ def visit(request):
     elif request.GET.get('add'):  # 通过点击别人分享进去的都需要保存,这里用户只是点击进去过没有互动
         try:
             friendship = User.objects.get(openid=flip_id)
-            friendship.friends.add(User.objects.get(openid=sourceid))
         except ObjectDoesNotExist:
             friendship = User(openid=oauth_vis.open_id, nickname='na', time_stamp=time.time(), tree_name='na', is_plant=False)
             friendship.save()
