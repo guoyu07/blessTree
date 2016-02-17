@@ -55,6 +55,7 @@ def ajax_1(request):
         try:
             user = User.objects.get(openid=user_id)
             user.is_plant = True
+            user.nickname = user_name
             user.tree_name = tree_name
             user.friends.add(user)
             friend = user.friends.exclude(openid=user_id)[0]
