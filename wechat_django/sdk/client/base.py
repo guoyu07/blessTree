@@ -10,7 +10,7 @@ import inspect
 import six
 import json
 import requests
-
+import simplejson
 from wechat_django.sdk.session.memorystorage import MemoryStorage
 
 
@@ -193,8 +193,8 @@ class BaseWeChatClient(object):
         headers = {"Content-Type": "application/x-www-form-urlencoded", 'encoding': 'utf-8'}
         res = requests.post(
             url=url,
-            # json=json.dumps(data)
-            data=data,
+            json=simplejson.dumps(data,ensure_ascii=False),
+            # json=data,
             headers=headers
 
         )
