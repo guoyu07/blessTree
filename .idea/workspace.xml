@@ -44,13 +44,13 @@
         <entry file="file://$PROJECT_DIR$/bTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="1136" max-vertical-offset="3528">
-              <caret line="71" column="54" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="54" />
+              <caret line="70" column="36" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
               <folding>
                 <element signature="e#48#62#0" expanded="true" />
-                <element signature="e#3929#6604#0" expanded="false" />
-                <element signature="e#6644#8462#0" expanded="false" />
-                <element signature="e#8489#13805#0" expanded="false" />
-                <element signature="e#15585#16061#0" expanded="false" />
+                <element signature="e#3928#6603#0" expanded="false" />
+                <element signature="e#6643#8461#0" expanded="false" />
+                <element signature="e#8488#13804#0" expanded="false" />
+                <element signature="e#15584#16060#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -118,8 +118,8 @@
       <file leaf-file-name="base.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.745283" vertical-offset="3536" max-vertical-offset="5148">
-              <caret line="214" column="72" selection-start-line="214" selection-start-column="72" selection-end-line="214" selection-end-column="72" />
+            <state vertical-scroll-proportion="0.49056605" vertical-offset="3410" max-vertical-offset="4914">
+              <caret line="201" column="57" selection-start-line="201" selection-start-column="57" selection-end-line="201" selection-end-column="57" />
               <folding>
                 <element signature="e#71#81#0" expanded="true" />
               </folding>
@@ -1368,21 +1368,21 @@
     <entry file="file://$PROJECT_DIR$/bTree/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1136" max-vertical-offset="3528">
-          <caret line="71" column="54" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="54" />
+          <caret line="70" column="36" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
           <folding>
             <element signature="e#48#62#0" expanded="true" />
-            <element signature="e#3929#6604#0" expanded="false" />
-            <element signature="e#6644#8462#0" expanded="false" />
-            <element signature="e#8489#13805#0" expanded="false" />
-            <element signature="e#15585#16061#0" expanded="false" />
+            <element signature="e#3928#6603#0" expanded="false" />
+            <element signature="e#6643#8461#0" expanded="false" />
+            <element signature="e#8488#13804#0" expanded="false" />
+            <element signature="e#15584#16060#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat_django/sdk/client/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.745283" vertical-offset="3536" max-vertical-offset="5148">
-          <caret line="214" column="72" selection-start-line="214" selection-start-column="72" selection-end-line="214" selection-end-column="72" />
+        <state vertical-scroll-proportion="0.49056605" vertical-offset="3410" max-vertical-offset="4914">
+          <caret line="201" column="57" selection-start-line="201" selection-start-column="57" selection-end-line="201" selection-end-column="57" />
           <folding>
             <element signature="e#71#81#0" expanded="true" />
           </folding>
