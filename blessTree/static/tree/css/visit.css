@@ -94,10 +94,10 @@ ul{
 /*好友历史与我的空间链接*/
 .history,.zone{
     float: left;
-    padding-left: 4%;
+    padding-left: 5%;
     padding-top: 8%;
     height: 46%;
-    width: 12%;
+    width: 11%;
 }
 .history-btn, .zone-btn{
     height: 100%;
