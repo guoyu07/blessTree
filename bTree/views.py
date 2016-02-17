@@ -311,11 +311,11 @@ def visit(request):
     my_zone_url = WeChatOAuth(appId, appsecret,
                               'http://1.blesstree.sinaapp.com/wechat/home/'+"?visit_index='123'&return_openid="+sourceid)\
         .authorize_url
-    if request.GET.get('add') and flip_nickname:  # 通过点击别人分享进去的都需要保存，这里互动了的
+    if flip_nickname:  # 通过点击别人分享进去的都需要保存，这里互动了的
         try:
             friendship = User.objects.get(openid=oauth_vis.open_id)
             friendship.nickname = flip_user['nickname']
-            friendship.avatar_url = flip_id['headimgurl']
+            friendship.avatar_url = flip_user['headimgurl']
             friendship.save()
         except ObjectDoesNotExist:
             friendship = User(openid=oauth_vis.open_id, nickname=flip_user['nickname'],
