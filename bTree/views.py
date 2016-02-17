@@ -57,9 +57,8 @@ def weixin_main(request):
                 client.fetch_access_token()  # 这句话必须有，先获取接口api调用权限
                 user = client.user.get(client, msg.source)
                 reply.content = user['nickname']
-            elif msg.content == '分享':
-                oauth_fir = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/first')
-                reply.content = oauth_fir.authorize_url
+                xml = reply.render()
+                return HttpResponse(xml)
             elif msg.content == "李启成爱地球":
                 # client = WeChatClient(appId, appsecret)
                 client.fetch_access_token()
@@ -80,10 +79,8 @@ def weixin_main(request):
                 }
                 )
                 reply.content = menu
-            else:
-                reply.content = msg.content
-            xml = reply.render()
-            return HttpResponse(xml)
+                xml = reply.render()
+                return HttpResponse(xml)
         # 事件处理：关注事件|点击按钮推送|
         if msg.type == 'event' and msg.event == 'subscribe':
             reply = TextReply()
@@ -103,7 +100,7 @@ def weixin_main(request):
             reply = TextReply()
             reply.source = msg.target
             reply.target = msg.source
-            reply.content = "小编冬眠ing～"
+            reply.content = "什么都没有～"
 
             xml = reply.render()
             return HttpResponse(xml)
