@@ -6,9 +6,9 @@ from wechat_django.sdk.oauth import WeChatOAuth
 # 全局变量
 # appId = 'wx96e5255e64f71a4d'
 # appsecret = '04c6d39407f0e882bcf87f207758d0d5'
-appId = 'wx96e5255e64f71a4d'
-appsecret = '04c6d39407f0e882bcf87f207758d0d5'
-WEIXIN_TOKEN = 'wechat'
+appId = 'wx4b25af5db6b38667'
+appsecret = '97663db8cdb4dbc60b5757c82d91d916'
+WEIXIN_TOKEN = 'wechat_alpha'
 
 NONCESTR = 'Wm3WZYTPz0wzccnW'
 

@@ -257,6 +257,9 @@
         var after_width = {{ count }}/300000*100;
         water_time = 0
         //进度条宽度百分比设置
+{#        if({{ count }}== 300000 ){#}
+{#            #}
+{#        }#}
         $("#progress-in").css("width", "{{ count_bar }}%");
 {##}
         //我的主页
