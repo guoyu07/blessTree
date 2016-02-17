@@ -123,7 +123,7 @@ STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static')
 if 'SERVER_SOFTWARE' in os.environ:
     import sae.const
     from sae.const import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
-    DEBUG = True
+    DEBUG = False
 else:
     MYSQL_HOST = 'localhost'
     MYSQL_PORT = '3306'
