@@ -77,6 +77,8 @@ def weixin_main(request):
                 }
                 )
                 reply.content = menu
+            else:
+                reply.content = '感谢反馈'
             xml = reply.render()
             return HttpResponse(xml)
         # 事件处理：关注事件|点击按钮推送|
