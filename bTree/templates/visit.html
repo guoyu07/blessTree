@@ -260,6 +260,7 @@
 {#        if({{ count }}== 300000 ){#}
 {#            #}
 {#        }#}
+    alert("js load success")
         $("#progress-in").css("width", "{{ count_bar }}%");
 {##}
         //我的主页
@@ -320,7 +321,7 @@
             {% else %}
 {#               没有关注又没有高级认证还想吐槽祝福浇水？#}
                 alert('you click it ')
-                window.open('{{ btn_redirect_url }}')
+                window.open('{{ btn_redirect_url|safe }}')
             {% endif %}
             }
 
@@ -376,7 +377,7 @@
                     }
                 })
             {% else %}
-                window.open("{{ btn_redirect_url }}")
+                window.open("{{ btn_redirect_url |safe}}")
             {% endif %}
             }
 
@@ -592,7 +593,7 @@
         }
 
         {% else %}
-            window.open("{{ btn_redirect_url }}")
+            window.open("{{ btn_redirect_url | safe}}")
         {% endif %}
     })
 
