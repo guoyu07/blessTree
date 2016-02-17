@@ -57,7 +57,7 @@ def ajax_1(request):
             user.is_plant = True
             user.tree_name = tree_name
             user.friends.add(user)
-            friend_id = user.friends.all()[0:1].get().openid
+            friend_id = user.friends.all()[0].get().openid
             friend = User.objects.get(openid=friend_id)
             friend.count = friend.count + 3000
             friend.save()
