@@ -315,10 +315,12 @@ def visit(request):
         try:
             friendship = User.objects.get(openid=oauth_vis.open_id)
             friendship.nickname = flip_user['nickname']
-            friendship.avatar_url = flip_user['headimgurl']
+            friendship.avatar_url = flip_id['headimgurl']
             friendship.save()
         except ObjectDoesNotExist:
-            friendship = User(openid=oauth_vis.open_id, nickname=flip_nickname, avatar_url=flip_avatar, time_stamp=time.time(), tree_name='na', is_plant=False)
+            friendship = User(openid=oauth_vis.open_id, nickname=flip_user['nickname'],
+                              avatar_url=flip_user['headimgurl'], time_stamp=time.time(),
+                              tree_name='na', is_plant=False)
             friendship.save()
             source_fr = User.objects.get(openid=sourceid)
             friendship.friends.add(source_fr)  # 保存朋友关系，只是此时保存的关系的友人尚未种树
