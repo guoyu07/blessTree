@@ -77,8 +77,6 @@ def weixin_main(request):
                 }
                 )
                 reply.content = menu
-            else:
-                reply.content = ''
             xml = reply.render()
             return HttpResponse(xml)
         # 事件处理：关注事件|点击按钮推送|
@@ -100,7 +98,7 @@ def weixin_main(request):
             reply = TextReply()
             reply.source = msg.target
             reply.target = msg.source
-            reply.content = "什么都没有～"
+            reply.content = "小编冬眠ing～"
 
             xml = reply.render()
             return HttpResponse(xml)
