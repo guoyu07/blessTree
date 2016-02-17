@@ -257,9 +257,9 @@ def visit(request):
 
     # ios系统返回按钮出现的bug的解决方法
     try:
-        oauth_vis.fetch_access_token(code)
+        access_token = oauth_vis.fetch_access_token(code)
     except KeyError:
-        oauth_vis.access_token = code_access_token[code]['access_token']
+        access_token = oauth_vis.access_token = code_access_token[code]['access_token']
         oauth_vis.open_id = code_access_token[code]['openid']
 
     try:
@@ -270,9 +270,9 @@ def visit(request):
     # 经过高级用户认证后的访问就有了获取头像与昵称的能力
     flip_nickname = False
     if high_verify == 'high_verify':
-        flip_user = oauth_vis.get_user_info(openid=flip_id, access_token=oauth_vis.access_token)
-        flip_nickname = flip_id['nickname']
-        flip_avatar = flip_id['headimgurl']
+        flip_user = oauth_vis.get_user_info(openid=flip_id, access_token=access_token)
+        flip_nickname = flip_user['nickname']
+        flip_avatar = flip_user['headimgurl']
         flip_nickname = True
     else:
         # TODO：这里是没有关注公众号的时候用户点进去，想祝福/吐槽/浇水/的时候

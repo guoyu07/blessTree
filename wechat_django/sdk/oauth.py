@@ -110,7 +110,7 @@ class WeChatOAuth(object):
         self.open_id = res['openid']
         self.refresh_token = res['refresh_token']
         self.expires_in = res['expires_in']
-        return res
+        return res['access_token']
 
 
     def fetch_access_token(self, code):
