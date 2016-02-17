@@ -260,7 +260,6 @@
 {#        if({{ count }}== 300000 ){#}
 {#            #}
 {#        }#}
-    alert("js load success")
         $("#progress-in").css("width", "{{ count_bar }}%");
 {##}
         //我的主页
@@ -268,290 +267,290 @@
             window.open("{{ my_zone_url|safe }}")
         })
 
-        //发送ajax
-        $('#tucao_confirm').on('tap', function () {
-            {% if flip_nickname  %}
-            var tucao_con = $('#tucao-area').val();
-            if(tucao_con==''){
-                alert('亲还什么都没写呢～')
-            }else {
-                var na = $("#tucao-na").is(':checked') //是否匿名
-                if (na == true) {
-                    var source_id = "na"
-                } else {
-                    var source_id = "{{ flip_id }}"  //这个是发送消息的id，也就是谁祝福的
-                }
-                var openid = "{{ sourceid }}"  //这个sourceid是谁的主页的id
-                $.ajax({
-                    url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-                    type: 'POST',
-                    timeout: 1000,
-                    dataType: 'json',
-                    async: false,  //不能异步去传输，否则有些数据就没有了
-                    encoding: 'utf-8',
-                    data: {
-                        'ajax_type': '10',
-                        'openid': openid,
-                        'source_id': source_id,
-                        'tucao_con': tucao_con
-                    },
-                    error: function () {
-                        alert('您的网络似乎不稳定，请重新尝试一下哦～')
-                    },  //错误执行方法
-                    success: function (ret) {
-                        if (ret == '1') {
-                            alert('您的吐槽已对敌方造成8000点伤害～')
-                        } else if (ret == '2') {
-                            alert('不能提交空白吐槽哟～')
-                        } else {
-                            alert('似乎遇到了小菌也未曾遇到的问题呢～')
-                        }
-                        $("#black-mask").hide()
-                        $("#tucao-widget").hide();
-                        // 积分与进度条变化
-                        var val = parseInt($("#count-num").text().substr(3))
-                        $("#count-num").text('积分:'+(val-8000).toString())
-                        var css_width = parseInt($("#progress-bar").css("width"));
-                        after_width = after_width + (parseInt($("#progress-in").css("width"))-css_width*0.027)
-                        if(after_width<0){css_width=0}
-                        else{css_width=(parseInt($("#progress-in").css("width"))-css_width*0.027)}
-                        $("#progress-in").css("width", css_width.toString())
-                    }
-                })
-            {% else %}
+{#        //发送ajax#}
+{#        $('#tucao_confirm').on('tap', function () {#}
+{#            {% if flip_nickname  %}#}
+{#            var tucao_con = $('#tucao-area').val();#}
+{#            if(tucao_con==''){#}
+{#                alert('亲还什么都没写呢～')#}
+{#            }else {#}
+{#                var na = $("#tucao-na").is(':checked') //是否匿名#}
+{#                if (na == true) {#}
+{#                    var source_id = "na"#}
+{#                } else {#}
+{#                    var source_id = "{{ flip_id }}"  //这个是发送消息的id，也就是谁祝福的#}
+{#                }#}
+{#                var openid = "{{ sourceid }}"  //这个sourceid是谁的主页的id#}
+{#                $.ajax({#}
+{#                    url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
+{#                    type: 'POST',#}
+{#                    timeout: 1000,#}
+{#                    dataType: 'json',#}
+{#                    async: false,  //不能异步去传输，否则有些数据就没有了#}
+{#                    encoding: 'utf-8',#}
+{#                    data: {#}
+{#                        'ajax_type': '10',#}
+{#                        'openid': openid,#}
+{#                        'source_id': source_id,#}
+{#                        'tucao_con': tucao_con#}
+{#                    },#}
+{#                    error: function () {#}
+{#                        alert('您的网络似乎不稳定，请重新尝试一下哦～')#}
+{#                    },  //错误执行方法#}
+{#                    success: function (ret) {#}
+{#                        if (ret == '1') {#}
+{#                            alert('您的吐槽已对敌方造成8000点伤害～')#}
+{#                        } else if (ret == '2') {#}
+{#                            alert('不能提交空白吐槽哟～')#}
+{#                        } else {#}
+{#                            alert('似乎遇到了小菌也未曾遇到的问题呢～')#}
+{#                        }#}
+{#                        $("#black-mask").hide()#}
+{#                        $("#tucao-widget").hide();#}
+{#                        // 积分与进度条变化#}
+{#                        var val = parseInt($("#count-num").text().substr(3))#}
+{#                        $("#count-num").text('积分:'+(val-8000).toString())#}
+{#                        var css_width = parseInt($("#progress-bar").css("width"));#}
+{#                        after_width = after_width + (parseInt($("#progress-in").css("width"))-css_width*0.027)#}
+{#                        if(after_width<0){css_width=0}#}
+{#                        else{css_width=(parseInt($("#progress-in").css("width"))-css_width*0.027)}#}
+{#                        $("#progress-in").css("width", css_width.toString())#}
+{#                    }#}
+{#                })#}
+{#            {% else %}#}
 {#               没有关注又没有高级认证还想吐槽祝福浇水？#}
-                alert('you click it ')
-                window.open('{{ btn_redirect_url|safe }}')
-            {% endif %}
-            }
-
-        })
-        $('#bless_confirm').on('tap', function () {
-            {% if flip_nickname %}
-                var bless_con = $('#bless-area').val();
-            if(bless_con==''){
-                alert('亲还什么都没写呢～')
-            }else{
-                var na = $("#bless-na").is(':checked') //是否匿名
-                if(na==true){
-                    var source_id = "na"
-                }else{
-                    var source_id = "{{ flip_id }}"  //这个是发送消息的id，也就是谁祝福的
-                }
-                var openid = "{{ sourceid }}"  //这个sourceid是谁的主页的id
-                $.ajax({
-                    url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-                    type: 'POST',
-                    timeout: 1000,
-                    dataType: 'json',
-                    async:false,  //不能异步去传输，否则有些数据就没有了
-                    encoding:'utf-8',
-                    data:{
-                        'ajax_type' : '9',
-                        'openid' : openid,
-                        'source_id': source_id,
-                        'bless_con' : bless_con
-                    },
-                    error: function () {
-                        alert('您的网络似乎不稳定，请重新尝试一下哦～')
-                    },  //错误执行方法
-                    success: function (ret) {
-                        if(ret == '1'){
-                            alert('您的祝福对方已经收到啦～')
-                        }else if(ret == '2'){
-                            alert('不能提交空白祝福哦～')
-                        }else{
-                            alert('似乎遇到了小菌也未曾遇到的问题呢～')
-                        }
-                        $("#black-mask").hide()
-                        $("#bless-widget").hide();
-                        // 积分与进度条变化
-                        var val = parseInt($("#count-num").text().substr(3))
-                        $("#count-num").text('积分:'+(val+5000).toString())
-                        var css_width = parseInt($("#progress-bar").css("width"));
-                        after_width = after_width +(parseInt($("#progress-in").css("width"))+css_width*0.017)
-                        if(after_width <0 ){
-                            css_width = 0;
-                        }else{css_width = after_width}
-                        $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.017).toString())
-                    }
-                })
-            {% else %}
-                window.open("{{ btn_redirect_url |safe}}")
-            {% endif %}
-            }
-
-
-        })
-
-
-        /****************
-     * 按钮逻辑
-     * */
-    //历史按钮
-    $("#history").on('tap', function () {
-        // 祝福加载好，吐槽之后加载
-        if($("#history-bless-list li:last").css('display')=='none'){
-            $.ajax({
-                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-                type: 'POST',
-                timeout: 1000,
-                dataType: 'json',
-                async: false,
-                encoding:'utf-8',
-                data:{
-                    'ajax_type' : '5',  //祝福类型
-                    'openid' : '{{ sourceid }}',
-                    'load_begin' : '0'
-                },
-                beforeSend: function () {
-                }, //加载执行方法
-                error: function () {
-                    alert('数据请求异常')
-                },  //错误执行方法
-                success: function (ret) {
-                    //决定显示的内容
-                    if(ret=='1'){
-                            $("#history-bless-list-na").show();
-                        }else{
-                            $("#history-bless-list-na").hide();
-                            $.each(ret, function (i, item) {
-                                $('#history-bless-avatar').attr('src', item.bless_avatar)
-                                $('#history-bless-name').text(item.bless_nick)
-                                $("#history-bless-con").text(item.bless_con)
-                                $('#history-bless-time').text(item.bless_time)
-                                var bless_list = $("#history-bless-list-li").clone().show()
-                                $('#history-bless-list').append(bless_list)
-                            })
-                        }
-                    //控制显示
-                    $('#black-mask').show()
-                            .on('tap', function () {
-                                $("#history-widget").hide();
-                                $("#black-mask").hide();
-                            })
-                    $("#history-widget").show();
-                    $("#history-tucao-list").hide();
-                    $("#history-bless-list").show();
-                }
-            })
-        }else{
-            //控制显示
-            $('#black-mask').show()
-                    .on('tap', function () {
-                        $("#history-widget").hide();
-                        $("#black-mask").hide();
-                    })
-            $("#history-widget").show();
-            $("#history-tucao-list").hide();
-            $("#history-bless-list").show(300);
-        }
-
-    })
-    //祝福吐槽切换
-    $("#history-bless").on('tap', function () {
-        $("#history-tucao-list").hide();
-        $("#history-bless-list").show(300);
-    });
-    $("#history-tucao").on('tap', function () {
-        $("#history-bless-list").hide();
-        if($("#history-tucao-list li:last").css('display')=='none'){
-            $.ajax({
-                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-                type: 'POST',
-                timeout: 1000,
-                dataType: 'json',
-                async: false,
-                encoding:'utf-8',
-                data:{
-                    'ajax_type' : '6',  //吐槽类型
-                    'openid' : $("#user_message_openid").text(),
-                    'load_begin' : '0'
-                },
-                beforeSend: function () {
-                }, //加载执行方法
-                error: function () {
-                    alert('数据请求异常')
-                },  //错误执行方法
-                success: function (ret) {
-                    //决定显示的内容
-                    if (ret == '1') {
-                        $("#history-tucao-list-na").show()
-                    } else {
-                        $.each(ret, function (i, item) {
-                            $("#history-tucao-list-na").hide()
-                            $('#history-tucao-avatar').attr('src', item.tucao_avatar)
-                            $('#history-tucao-name').text(item.tucao_nick)
-                            $("#history-tucao-con").text(item.tucao_con)
-                            $('#history-tucao-time').text(item.tucao_time)
-                            var tucao_list = $("#history-tucao-list-li").clone().show()
-                            $('#history-tucao-list').append(tucao_list)
-                        })
-                    }
-                    //控制显示
-                    $('#black-mask').show()
-                            .on('tap', function () {
-                                $("#history-widget").hide();
-                                $("#black-mask").hide();
-                            })
-                    $("#history-widget").show();
-                    $("#history-bless-list").hide();
-                    $("#history-tucao-list").show(300);
-                }
-            })
-        }else{
-            $("#history-bless-list").hide();
-            $("#history-tucao-list").show(300);
-        }
-    })
-    //心愿
-    $('#willing').on('tap', function () {
-        if($('#willing-list li:last').css('display') == 'none'){
-            $.ajax({
-                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',
-                type: 'POST',
-                timeout: 1000,
-                dataType: 'json',
-                async: false,
-                encoding:'utf-8',
-                data:{
-                    'ajax_type' : '7',
-                    'openid' : '{{ sourceid }}',
-                    'load_begin' : '0'
-                },
-                beforeSend: function () {
-                }, //加载执行方法
-                error: function () {
-                    alert('数据请求异常')
-                },  //错误执行方法
-                success: function (ret) {
-                    if(ret=='1'){
-                        $("#willing-list-na").show()
-                    }else{
-                        $.each(ret, function (i, item) {
-                            $('#will-time').text(item.will_time)
-                            $('#will-con').text(item.will_con)
-                            var will_list = $("#willing-list-li").clone().show()
-                            $('#willing-list').append(will_list)
-                        })
-                    }
-                    $("#black-mask").show();
-                    $("#willing-widget").show();
-                    $("#black-mask").on('tap', function () {
-                        $("#willing-widget").hide();
-                        $("#black-mask").hide();
-                    })
-                }
-            })
-        }else{
-            $('#black-mask').show()
-            $('#willing-widget').show()
-            $('#black-mask').on('tap', function () {
-                $('#willing-widget').hide();
-                $('#black-mask').hide();
-            })
-        }
-    })
+{#                alert('you click it ')#}
+{#                window.open('{{ btn_redirect_url|safe }}')#}
+{#            {% endif %}#}
+{#            }#}
+{##}
+{#        })#}
+{#        $('#bless_confirm').on('tap', function () {#}
+{#            {% if flip_nickname %}#}
+{#                var bless_con = $('#bless-area').val();#}
+{#            if(bless_con==''){#}
+{#                alert('亲还什么都没写呢～')#}
+{#            }else{#}
+{#                var na = $("#bless-na").is(':checked') //是否匿名#}
+{#                if(na==true){#}
+{#                    var source_id = "na"#}
+{#                }else{#}
+{#                    var source_id = "{{ flip_id }}"  //这个是发送消息的id，也就是谁祝福的#}
+{#                }#}
+{#                var openid = "{{ sourceid }}"  //这个sourceid是谁的主页的id#}
+{#                $.ajax({#}
+{#                    url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
+{#                    type: 'POST',#}
+{#                    timeout: 1000,#}
+{#                    dataType: 'json',#}
+{#                    async:false,  //不能异步去传输，否则有些数据就没有了#}
+{#                    encoding:'utf-8',#}
+{#                    data:{#}
+{#                        'ajax_type' : '9',#}
+{#                        'openid' : openid,#}
+{#                        'source_id': source_id,#}
+{#                        'bless_con' : bless_con#}
+{#                    },#}
+{#                    error: function () {#}
+{#                        alert('您的网络似乎不稳定，请重新尝试一下哦～')#}
+{#                    },  //错误执行方法#}
+{#                    success: function (ret) {#}
+{#                        if(ret == '1'){#}
+{#                            alert('您的祝福对方已经收到啦～')#}
+{#                        }else if(ret == '2'){#}
+{#                            alert('不能提交空白祝福哦～')#}
+{#                        }else{#}
+{#                            alert('似乎遇到了小菌也未曾遇到的问题呢～')#}
+{#                        }#}
+{#                        $("#black-mask").hide()#}
+{#                        $("#bless-widget").hide();#}
+{#                        // 积分与进度条变化#}
+{#                        var val = parseInt($("#count-num").text().substr(3))#}
+{#                        $("#count-num").text('积分:'+(val+5000).toString())#}
+{#                        var css_width = parseInt($("#progress-bar").css("width"));#}
+{#                        after_width = after_width +(parseInt($("#progress-in").css("width"))+css_width*0.017)#}
+{#                        if(after_width <0 ){#}
+{#                            css_width = 0;#}
+{#                        }else{css_width = after_width}#}
+{#                        $("#progress-in").css("width", (parseInt($("#progress-in").css("width"))+css_width*0.017).toString())#}
+{#                    }#}
+{#                })#}
+{#            {% else %}#}
+{#                window.open("{{ btn_redirect_url |safe}}")#}
+{#            {% endif %}#}
+{#            }#}
+{##}
+{##}
+{#        })#}
+{##}
+{##}
+{#        /****************#}
+{#     * 按钮逻辑#}
+{#     * */#}
+{#    //历史按钮#}
+{#    $("#history").on('tap', function () {#}
+{#        // 祝福加载好，吐槽之后加载#}
+{#        if($("#history-bless-list li:last").css('display')=='none'){#}
+{#            $.ajax({#}
+{#                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
+{#                type: 'POST',#}
+{#                timeout: 1000,#}
+{#                dataType: 'json',#}
+{#                async: false,#}
+{#                encoding:'utf-8',#}
+{#                data:{#}
+{#                    'ajax_type' : '5',  //祝福类型#}
+{#                    'openid' : '{{ sourceid }}',#}
+{#                    'load_begin' : '0'#}
+{#                },#}
+{#                beforeSend: function () {#}
+{#                }, //加载执行方法#}
+{#                error: function () {#}
+{#                    alert('数据请求异常')#}
+{#                },  //错误执行方法#}
+{#                success: function (ret) {#}
+{#                    //决定显示的内容#}
+{#                    if(ret=='1'){#}
+{#                            $("#history-bless-list-na").show();#}
+{#                        }else{#}
+{#                            $("#history-bless-list-na").hide();#}
+{#                            $.each(ret, function (i, item) {#}
+{#                                $('#history-bless-avatar').attr('src', item.bless_avatar)#}
+{#                                $('#history-bless-name').text(item.bless_nick)#}
+{#                                $("#history-bless-con").text(item.bless_con)#}
+{#                                $('#history-bless-time').text(item.bless_time)#}
+{#                                var bless_list = $("#history-bless-list-li").clone().show()#}
+{#                                $('#history-bless-list').append(bless_list)#}
+{#                            })#}
+{#                        }#}
+{#                    //控制显示#}
+{#                    $('#black-mask').show()#}
+{#                            .on('tap', function () {#}
+{#                                $("#history-widget").hide();#}
+{#                                $("#black-mask").hide();#}
+{#                            })#}
+{#                    $("#history-widget").show();#}
+{#                    $("#history-tucao-list").hide();#}
+{#                    $("#history-bless-list").show();#}
+{#                }#}
+{#            })#}
+{#        }else{#}
+{#            //控制显示#}
+{#            $('#black-mask').show()#}
+{#                    .on('tap', function () {#}
+{#                        $("#history-widget").hide();#}
+{#                        $("#black-mask").hide();#}
+{#                    })#}
+{#            $("#history-widget").show();#}
+{#            $("#history-tucao-list").hide();#}
+{#            $("#history-bless-list").show(300);#}
+{#        }#}
+{##}
+{#    })#}
+{#    //祝福吐槽切换#}
+{#    $("#history-bless").on('tap', function () {#}
+{#        $("#history-tucao-list").hide();#}
+{#        $("#history-bless-list").show(300);#}
+{#    });#}
+{#    $("#history-tucao").on('tap', function () {#}
+{#        $("#history-bless-list").hide();#}
+{#        if($("#history-tucao-list li:last").css('display')=='none'){#}
+{#            $.ajax({#}
+{#                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
+{#                type: 'POST',#}
+{#                timeout: 1000,#}
+{#                dataType: 'json',#}
+{#                async: false,#}
+{#                encoding:'utf-8',#}
+{#                data:{#}
+{#                    'ajax_type' : '6',  //吐槽类型#}
+{#                    'openid' : $("#user_message_openid").text(),#}
+{#                    'load_begin' : '0'#}
+{#                },#}
+{#                beforeSend: function () {#}
+{#                }, //加载执行方法#}
+{#                error: function () {#}
+{#                    alert('数据请求异常')#}
+{#                },  //错误执行方法#}
+{#                success: function (ret) {#}
+{#                    //决定显示的内容#}
+{#                    if (ret == '1') {#}
+{#                        $("#history-tucao-list-na").show()#}
+{#                    } else {#}
+{#                        $.each(ret, function (i, item) {#}
+{#                            $("#history-tucao-list-na").hide()#}
+{#                            $('#history-tucao-avatar').attr('src', item.tucao_avatar)#}
+{#                            $('#history-tucao-name').text(item.tucao_nick)#}
+{#                            $("#history-tucao-con").text(item.tucao_con)#}
+{#                            $('#history-tucao-time').text(item.tucao_time)#}
+{#                            var tucao_list = $("#history-tucao-list-li").clone().show()#}
+{#                            $('#history-tucao-list').append(tucao_list)#}
+{#                        })#}
+{#                    }#}
+{#                    //控制显示#}
+{#                    $('#black-mask').show()#}
+{#                            .on('tap', function () {#}
+{#                                $("#history-widget").hide();#}
+{#                                $("#black-mask").hide();#}
+{#                            })#}
+{#                    $("#history-widget").show();#}
+{#                    $("#history-bless-list").hide();#}
+{#                    $("#history-tucao-list").show(300);#}
+{#                }#}
+{#            })#}
+{#        }else{#}
+{#            $("#history-bless-list").hide();#}
+{#            $("#history-tucao-list").show(300);#}
+{#        }#}
+{#    })#}
+{#    //心愿#}
+{#    $('#willing').on('tap', function () {#}
+{#        if($('#willing-list li:last').css('display') == 'none'){#}
+{#            $.ajax({#}
+{#                url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
+{#                type: 'POST',#}
+{#                timeout: 1000,#}
+{#                dataType: 'json',#}
+{#                async: false,#}
+{#                encoding:'utf-8',#}
+{#                data:{#}
+{#                    'ajax_type' : '7',#}
+{#                    'openid' : '{{ sourceid }}',#}
+{#                    'load_begin' : '0'#}
+{#                },#}
+{#                beforeSend: function () {#}
+{#                }, //加载执行方法#}
+{#                error: function () {#}
+{#                    alert('数据请求异常')#}
+{#                },  //错误执行方法#}
+{#                success: function (ret) {#}
+{#                    if(ret=='1'){#}
+{#                        $("#willing-list-na").show()#}
+{#                    }else{#}
+{#                        $.each(ret, function (i, item) {#}
+{#                            $('#will-time').text(item.will_time)#}
+{#                            $('#will-con').text(item.will_con)#}
+{#                            var will_list = $("#willing-list-li").clone().show()#}
+{#                            $('#willing-list').append(will_list)#}
+{#                        })#}
+{#                    }#}
+{#                    $("#black-mask").show();#}
+{#                    $("#willing-widget").show();#}
+{#                    $("#black-mask").on('tap', function () {#}
+{#                        $("#willing-widget").hide();#}
+{#                        $("#black-mask").hide();#}
+{#                    })#}
+{#                }#}
+{#            })#}
+{#        }else{#}
+{#            $('#black-mask').show()#}
+{#            $('#willing-widget').show()#}
+{#            $('#black-mask').on('tap', function () {#}
+{#                $('#willing-widget').hide();#}
+{#                $('#black-mask').hide();#}
+{#            })#}
+{#        }#}
+{#    })#}
 
     //浇水按钮
     $("#water-flower").on('tap', function () {
