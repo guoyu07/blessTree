@@ -100,7 +100,7 @@ def weixin_main(request):
             reply = TextReply()
             reply.source = msg.target
             reply.target = msg.source
-            reply.content = "小编冬眠ing～"
+            reply.content = "什么都没有～"
 
             xml = reply.render()
             return HttpResponse(xml)
