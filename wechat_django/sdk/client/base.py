@@ -200,7 +200,8 @@ class BaseWeChatClient(object):
         #
         # )
         res = urllib.request.urlopen(url, str(data).encode('utf-8'))
-        result = res.json()
+        result = json.loads(res.read().decode("utf-8"))
+        # result = res.json()
         return result
         # return data
 
