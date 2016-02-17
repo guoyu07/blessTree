@@ -41,6 +41,7 @@ class WeChatOAuth(object):
             url=self.API_BASE_URL + url,
             params=params
         )
+        res.encoding = 'utf-8'
         return res.json()
 
     @property

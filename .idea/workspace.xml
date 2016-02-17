@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5d418d-2a18-47e0-b63d-c05f5628196f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat_django/sdk/client/base.py" afterPath="$PROJECT_DIR$/wechat_django/sdk/client/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blessTree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,21 +30,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blessTree/settings.py">
+      <file leaf-file-name="ajax_process.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bTree/ajax_process.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.580645" vertical-offset="2072" max-vertical-offset="3096">
-              <caret line="125" column="16" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="16" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="616" max-vertical-offset="2088">
+              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+              <folding>
+                <element signature="e#1027#2720#0" expanded="false" />
+                <element signature="e#2748#4362#0" expanded="false" />
+                <element signature="e#4390#6622#0" expanded="false" />
+                <element signature="e#6650#7701#0" expanded="false" />
+                <element signature="e#7729#9944#0" expanded="false" />
+                <element signature="e#9972#12155#0" expanded="false" />
+                <element signature="e#12183#13879#0" expanded="false" />
+                <element signature="e#13907#14626#0" expanded="false" />
+                <element signature="e#14654#15414#0" expanded="false" />
+                <element signature="e#15443#16201#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bTree/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5927711" vertical-offset="2418" max-vertical-offset="4176">
-              <caret line="269" column="17" selection-start-line="269" selection-start-column="4" selection-end-line="269" selection-end-column="17" />
+            <state vertical-scroll-proportion="-9.096774" vertical-offset="2418" max-vertical-offset="4176">
+              <caret line="271" column="40" selection-start-line="271" selection-start-column="40" selection-end-line="271" selection-end-column="40" />
               <folding>
                 <element signature="e#48#62#0" expanded="true" />
                 <element signature="e#994#3782#0" expanded="false" />
@@ -56,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="oauth.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="oauth.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wechat_django/sdk/oauth.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1971" max-vertical-offset="4176">
-              <caret line="126" column="12" selection-start-line="126" selection-start-column="14" selection-end-line="131" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.37254903" vertical-offset="423" max-vertical-offset="4176">
+              <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -191,7 +202,6 @@
         <option value="$PROJECT_DIR$/bTree/static/tree/css/home.css" />
         <option value="$PROJECT_DIR$/vender/requests/packages/urllib3/fields.py" />
         <option value="$PROJECT_DIR$/bTree/__init__.py" />
-        <option value="$PROJECT_DIR$/bTree/ajax_process.py" />
         <option value="$PROJECT_DIR$/bTree/static/tree/css/visit.css" />
         <option value="$PROJECT_DIR$/bTree/templates/visit.html" />
         <option value="$PROJECT_DIR$/bTree/views.py" />
@@ -199,6 +209,7 @@
         <option value="$PROJECT_DIR$/wechat_django/sdk/oauth.py" />
         <option value="$PROJECT_DIR$/bTree/templates/home.html" />
         <option value="$PROJECT_DIR$/wechat_django/sdk/client/base.py" />
+        <option value="$PROJECT_DIR$/bTree/ajax_process.py" />
       </list>
     </option>
   </component>
@@ -1200,23 +1211,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bTree/ajax_process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1824" max-vertical-offset="3726">
-          <caret line="288" column="29" selection-start-line="288" selection-start-column="19" selection-end-line="288" selection-end-column="29" />
-          <folding>
-            <element signature="e#2710#4324#0" expanded="false" />
-            <element signature="e#4352#6584#0" expanded="false" />
-            <element signature="e#6612#7663#0" expanded="false" />
-            <element signature="e#7691#9906#0" expanded="false" />
-            <element signature="e#12145#13841#0" expanded="false" />
-            <element signature="e#13869#14588#0" expanded="false" />
-            <element signature="e#14616#15376#0" expanded="false" />
-            <element signature="e#15405#16163#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/templates/visit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-54.051723" vertical-offset="411" max-vertical-offset="11484">
@@ -1263,14 +1257,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wechat_django/sdk/oauth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1971" max-vertical-offset="4176">
-          <caret line="126" column="12" selection-start-line="126" selection-start-column="14" selection-end-line="131" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1327,10 +1313,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bTree/ajax_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="616" max-vertical-offset="2088">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+          <folding>
+            <element signature="e#1027#2720#0" expanded="false" />
+            <element signature="e#2748#4362#0" expanded="false" />
+            <element signature="e#4390#6622#0" expanded="false" />
+            <element signature="e#6650#7701#0" expanded="false" />
+            <element signature="e#7729#9944#0" expanded="false" />
+            <element signature="e#9972#12155#0" expanded="false" />
+            <element signature="e#12183#13879#0" expanded="false" />
+            <element signature="e#13907#14626#0" expanded="false" />
+            <element signature="e#14654#15414#0" expanded="false" />
+            <element signature="e#15443#16201#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bTree/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5927711" vertical-offset="2418" max-vertical-offset="4176">
-          <caret line="269" column="17" selection-start-line="269" selection-start-column="4" selection-end-line="269" selection-end-column="17" />
+        <state vertical-scroll-proportion="-9.096774" vertical-offset="2418" max-vertical-offset="4176">
+          <caret line="271" column="40" selection-start-line="271" selection-start-column="40" selection-end-line="271" selection-end-column="40" />
           <folding>
             <element signature="e#48#62#0" expanded="true" />
             <element signature="e#994#3782#0" expanded="false" />
@@ -1338,6 +1343,14 @@
             <element signature="e#13222#14902#0" expanded="false" />
             <element signature="e#14945#15421#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat_django/sdk/oauth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37254903" vertical-offset="423" max-vertical-offset="4176">
+          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
