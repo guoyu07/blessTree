@@ -265,7 +265,7 @@
         var after_width = {{ count }}/300000*100;
         water_time = 0
         //新年快乐
-        if(parseInt($("#count-num").text().substr(3))==300000){
+        if(parseInt($("#count-num").text().substr(3))>=300000){
             // 积分够了，显示新年快乐
             $("#happy-newyear").fadeIn(1000)
                     .on('tap', function () {
