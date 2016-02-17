@@ -271,9 +271,9 @@ def visit(request):
     flip_nickname = False
     if high_verify == 'high_verify':
         flip_user = oauth_vis.get_user_info(openid=flip_id, access_token=access_token)
-        flip_nickname = flip_user['nickname']
+        fl_nickname = flip_nickname = flip_user['nickname']
         flip_avatar = flip_user['headimgurl']
-        fl_nickname = flip_nickname = True
+        flip_nickname = True
     else:
         # TODO：这里是没有关注公众号的时候用户点进去，想祝福/吐槽/浇水/的时候
         try:
