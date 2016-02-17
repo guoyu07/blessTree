@@ -224,11 +224,13 @@ def first(request):
 def visit(request):
     """
     处理访问别人的主页的逻辑
-    :param request:
+    :param sourceid: 谁的空间
     :return:
     """
 
     sourceid = request.GET.get('openid', '')
+    code = request.GET.get('code', '')
+
     high_verify = request.GET.get('state', '')
     if high_verify == 'high_verify':
         oauth_vis = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/visit'+'?openid='+sourceid)
@@ -252,7 +254,6 @@ def visit(request):
         tree_name = owner_db.tree_name
     except KeyError:
         error = True
-    code = request.GET.get('code', '')
 
     # ios系统返回按钮出现的bug的解决方法
     try:
@@ -265,6 +266,7 @@ def visit(request):
         flip_id = openid = oauth_vis.open_id
     except AttributeError:
         flip_id = openid = code_access_token[code]['openid']
+
     # 经过高级用户认证后的访问就有了获取头像与昵称的能力
     flip_nickname = False
     if high_verify == 'high_verify':
@@ -311,7 +313,8 @@ def visit(request):
         .authorize_url
     if request.GET.get('add') and flip_nickname:  # 通过点击别人分享进去的都需要保存，这里互动了的
         try:
-            friendship = User.objects.get(openid=oauth_vis.open_id)
+            # friendship = User.objects.get(openid=oauth_vis.open_id)
+            friendship = User.objects.get(openid=flip_id)
             friendship.nickname = flip_nickname
             friendship.avatar_url = flip_avatar
             friendship.save()
