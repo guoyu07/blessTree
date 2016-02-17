@@ -68,7 +68,7 @@ def weixin_main(request):
                     "button": [
                         {
                             "type": "view",
-                            "name": u'中文',
+                            "name": '中文',
                             "url": oauth.authorize_url
                         },
                         {
