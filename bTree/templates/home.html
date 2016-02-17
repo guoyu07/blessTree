@@ -316,7 +316,7 @@
 <div class="fill-in-name" id="fill-in-name" style="display: none">
     <form class="fill-form">
         <input id="text_id" type="text" name="tree-name" placeholder="输入祝福树名字">
-        <p class="fill-btn" id="fill-btn">确定</p>
+        <p class="fill-btn" id="fill-btn" style="font-size: 100%;height: auto">确定</p>
     </form>
 </div>
 <!--浇水提醒-->
@@ -479,7 +479,7 @@
             },  //错误执行方法
             success: function () {
                 alert('保存成功～多互动可以让小树快快长大哦')
-                $("#fill-in-name").hide();
+                $("#fill-in-name").hide(500);
                 $("#black-mask").hide(500);
             } //成功执行方法
         })
@@ -685,6 +685,7 @@
                     if(ret=='1'){
                        alert('保存成功')
                         $("#willing-list li").css('display', 'none')
+                        $("#fill-willing").hide(500)
                     }else{
                         alert('保存失败，请再试一次哦～')
                     }
