@@ -202,7 +202,7 @@ class BaseWeChatClient(object):
                                             {"type":"view","name":u"企业入会申请","url": ""},
                                             ]
                },
-              {"type":"view","name":u"关于","url":""}
+              {"type":"view","name":u"关于","url":"http://www.baidu.com"}
               ]
         }
         # res = requests.post(
