@@ -318,8 +318,8 @@ def visit(request):
             friendship.avatar_url = flip_avatar
             friendship.save()
         except ObjectDoesNotExist:
-            friendship = User(openid=flip_id, nickname=flip_user['nickname'],
-                              avatar_url=flip_user['headimgurl'], time_stamp=time.time(),
+            friendship = User(openid=flip_id, nickname=fl_nickname,
+                              avatar_url=flip_avatar, time_stamp=time.time(),
                               tree_name='na', is_plant=False)
             friendship.save()
             source_fr = User.objects.get(openid=sourceid)
