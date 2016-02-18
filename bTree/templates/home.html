@@ -795,9 +795,9 @@
                             .on('tap', function () {
                                 $("#history-widget").hide();
                                 $("#black-mask").hide();
-                                enableScroll();
+                                enableScroll();     //弹出框架消失，滚动允许
                             })
-                    disableScroll();
+                    disableScroll();  //每次打开弹出框禁止外部滚动
                     $("#history-widget").show();
                     $("#history-tucao-list").hide();
                     $("#history-bless-list").show();
@@ -934,20 +934,20 @@
     };
 
     // 内部可滚
-    $('div .popupLayer').on('mousewheel', innerScroll);
+    $('#history-bless-list').on('mousewheel', innerScroll);
     // 外部禁用
 
 
 
     // 移动端touch重写
     var startX, startY;
-    $('div .popupLayer').on('touchstart', function(e){
+    $('#history-bless-list').on('touchstart', function(e){
         startX = e.changedTouches[0].pageX;
         startY = e.changedTouches[0].pageY;
     });
 
     // 仿innerScroll方法
-    $('div .popupLayer').on('touchmove', function(e){
+    $('#history-bless-list').on('touchmove', function(e){
         e.stopPropagation();
 
         var deltaX = e.changedTouches[0].pageX - startX;
