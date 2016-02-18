@@ -934,20 +934,20 @@
     };
 
     // 内部可滚
-    $('#history-bless-list').on('mousewheel', innerScroll);
+    $('#history-widget').on('mousewheel', innerScroll);
     // 外部禁用
 
 
 
     // 移动端touch重写
     var startX, startY;
-    $('#history-bless-list').on('touchstart', function(e){
+    $('#history-widget').on('touchstart', function(e){
         startX = e.changedTouches[0].pageX;
         startY = e.changedTouches[0].pageY;
     });
 
     // 仿innerScroll方法
-    $('#history-bless-list').on('touchmove', function(e){
+    $('#history-widget').on('touchmove', function(e){
         e.stopPropagation();
 
         var deltaX = e.changedTouches[0].pageX - startX;
