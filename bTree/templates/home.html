@@ -167,14 +167,14 @@
     </form>
 </div>
 <!--祝福吐槽历史-->
-<div class="history-widget popupLayer" id="history-widget" style="display: none">
+<div class="history-widget" id="history-widget" style="display: none">
     <div class="history-top">
         <a class="history-bless" id="history-bless">祝福</a>
         <a class="history-tucao" id="history-tucao">吐槽</a>
     </div>
     <hr style="background-color: rgba(0,0,0,0.6)">
     <div class="history-content">
-        <ul class="history-list" id="history-bless-list">
+        <ul class="history-list popupLayer" id="history-bless-list">
             <li id="history-bless-list-na">
                <p>没有收到小伙伴的祝福哦，赶紧分享互动起来吧～</p>
             </li>
@@ -934,20 +934,20 @@
     };
 
     // 内部可滚
-    $('#history-widget').on('mousewheel', innerScroll);
+    $('ul .popupLayer').on('mousewheel', innerScroll);
     // 外部禁用
 
 
 
     // 移动端touch重写
     var startX, startY;
-    $('#history-widget').on('touchstart', function(e){
+    $('ul .popupLayer').on('touchstart', function(e){
         startX = e.changedTouches[0].pageX;
         startY = e.changedTouches[0].pageY;
     });
 
     // 仿innerScroll方法
-    $('#history-widget').on('touchmove', function(e){
+    $('ul .popupLayer').on('touchmove', function(e){
         e.stopPropagation();
 
         var deltaX = e.changedTouches[0].pageX - startX;
