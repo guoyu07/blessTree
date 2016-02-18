@@ -805,10 +805,12 @@
             })
         }else{
             //控制显示
+            disableScroll();  //每次打开弹出框禁止外部滚动
             $('#black-mask').show()
                     .on('tap', function () {
                         $("#history-widget").hide();
                         $("#black-mask").hide();
+                        enableScroll();     //弹出框架消失，滚动允许
                     })
             $("#history-widget").show();
             $("#history-tucao-list").hide();
@@ -934,20 +936,20 @@
     };
 
     // 内部可滚
-    $('ul .popupLayer').on('mousewheel', innerScroll);
+    $('.popupLayer').on('mousewheel', innerScroll);
     // 外部禁用
 
 
 
     // 移动端touch重写
     var startX, startY;
-    $('ul .popupLayer').on('touchstart', function(e){
+    $('.popupLayer').on('touchstart', function(e){
         startX = e.changedTouches[0].pageX;
         startY = e.changedTouches[0].pageY;
     });
 
     // 仿innerScroll方法
-    $('ul .popupLayer').on('touchmove', function(e){
+    $('.popupLayer').on('touchmove', function(e){
         e.stopPropagation();
 
         var deltaX = e.changedTouches[0].pageX - startX;
