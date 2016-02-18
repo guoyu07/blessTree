@@ -673,7 +673,7 @@
                 data:{
                     'ajax_type' : '8',
                     'openid' : $("#user_message_openid").text(),
-                    'will_con' : $("#fill-area").val()
+                    'will_con' : $("#fill-area").val().replace('\r','')
                 },
                 beforeSend: function () {
 {#                    alert('请求数据中...')#}
