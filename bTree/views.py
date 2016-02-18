@@ -9,6 +9,7 @@ import time
 
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.core.exceptions import ObjectDoesNotExist
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -122,8 +123,9 @@ def home(request):
     try:
         oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
     except KeyError:
-        oauth.access_token = code_access_token[code]['access_token']
-        oauth.open_id = code_access_token[code]['openid']
+        # oauth.access_token = code_access_token[code]['access_token']
+        # oauth.open_id = code_access_token[code]['openid']
+        return HttpResponseRedirect(oauth.authorize_url)  # 如果网页认证code获取失败，只有ios会
     try:
         user_db = User.objects.get(openid=oauth.open_id, is_plant=True)
     except ObjectDoesNotExist:
@@ -176,11 +178,13 @@ def home(request):
 def first(request):
     # oauth = WeChatOAuth(appId, appsecret, 'http://1.blesstree.sinaapp.com/wechat/home')
     code = request.GET.get('code')  # 通过认证的code获取openid
+    first_outh = WeChatOAuth(appId, appsecret, "http://1.blesstree.sinaapp.com/wechat/first")
     try:
         oauth.fetch_access_token(code)  # 包含获取用户信息的所有条件
     except KeyError:
-        oauth.access_token = code_access_token[code]['access_token']
-        oauth.open_id = code_access_token[code]['openid']
+        # oauth.access_token = code_access_token[code]['access_token']
+        # oauth.open_id = code_access_token[code]['openid']
+        return HttpResponseRedirect(first_outh.authorize_url)
 
     user = 'http://1.blesstree.sinaapp.com/wechat/first'+'?code='+code+'&state='
     # 以下信息是为了分享接口而使用的
@@ -263,8 +267,9 @@ def visit(request):
     try:
         access_token = oauth_vis.fetch_access_token(code)
     except KeyError:
-        access_token = oauth_vis.access_token = code_access_token[code]['access_token']
-        oauth_vis.open_id = code_access_token[code]['openid']
+        # access_token = oauth_vis.access_token = code_access_token[code]['access_token']
+        # oauth_vis.open_id = code_access_token[code]['openid']
+        return HttpResponseRedirect(oauth_vis.authorize_url)
 
     try:
         flip_id = openid = oauth_vis.open_id
