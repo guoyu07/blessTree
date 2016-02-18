@@ -113,13 +113,13 @@
     background: rgba(0,0,0,.7);"></div>
 
 <!--消息-->
-<div class="message-widget" id="message-widget" style="display: none;">
+<div class="message-widget " id="message-widget" style="display: none;">
     <div class="message-top">
         <img src="{% static "tree/image/btn/tips.png" %}">
         <p style="font-size: 80%">消息</p>
     </div>
     <hr style="background-color: rgba(0,0,0,0.6)">
-    <div class="message-content">
+    <div class="message-content ">
         <ul class="message-list" id="message-list">
             <li id="message-list-na">
                 <div style="float:left;">
@@ -167,7 +167,7 @@
     </form>
 </div>
 <!--祝福吐槽历史-->
-<div class="history-widget" id="history-widget" style="display: none">
+<div class="history-widget popupLayer" id="history-widget" style="display: none">
     <div class="history-top">
         <a class="history-bless" id="history-bless">祝福</a>
         <a class="history-tucao" id="history-tucao">吐槽</a>
@@ -294,7 +294,7 @@
 <!--规则-->
 <div class="rule" id="rule" style="display:none">
     <div class="rule-title"><p>游戏规则</p></div>
-    <div class="rule-list" style="overflow: scroll">
+    <div class="rule-list popupLayer" style="overflow: scroll">
         <ul>
             <li><p style="width:15%">点击</p><img style="width: 15%" src="{% static "tree/image/btn/water.png" %}" ><p class="p-float" style="width:66% ;">浇水一次得1000积分</p></li>
             <li><p style="width:15%">点击</p><img style="width: 15%" src="{% static "tree/image/btn/willing.png" %}"><p class="p-float" style="width:66%">添加新年愿望得20000积分</p></li>
@@ -795,7 +795,9 @@
                             .on('tap', function () {
                                 $("#history-widget").hide();
                                 $("#black-mask").hide();
+                                enableScroll();
                             })
+                    disableScroll();
                     $("#history-widget").show();
                     $("#history-tucao-list").hide();
                     $("#history-bless-list").show();
@@ -881,71 +883,6 @@
     $("#count-enough-btn").on('tap', function () {
         $("#count-enough").hide();
     })
-
-    //祝福果
-{#    $('.bless1').on('tap', function () {#}
-{#        $.ajax({#}
-{#            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
-{#            type: 'POST',#}
-{#            timeout: 1000,#}
-{#            dataType: 'json',#}
-{#            async: false,#}
-{#            encoding:'utf-8',#}
-{#            data:{#}
-{#                'ajax_type' : '12',  //祝福类型#}
-{#                'openid' : $("#user_message_openid").text()#}
-{#            },#}
-{#            beforeSend: function () {#}
-{#                alert('请求数据中...')#}
-{#            }, //加载执行方法#}
-{#            error: function () {#}
-{#                alert('数据请求异常')#}
-{#            },  //错误执行方法#}
-{#            success: function (ret) {#}
-{#                alert(ret.toString())#}
-{#                $('#fruit-name').text(ret.nickname);#}
-{#                $('#fruit-img').attr('src', ret.avatar);#}
-{#                $('#fruit-con').text(ret.con);#}
-{#                $('#fruit-widget').fadeIn(300)#}
-{#                        .on('tap', function () {#}
-{#                            $('#fruit-widget').fadeOut(300)#}
-{#                        })#}
-{#            }#}
-{#        })#}
-{##}
-{#    })#}
-{#    //吐槽果#}
-{#    $('.bless2').on('tap', function () {#}
-{#        $.ajax({#}
-{#            url: 'http://1.blesstree.sinaapp.com/wechat/ajax',#}
-{#            type: 'POST',#}
-{#            timeout: 1000,#}
-{#            dataType: 'json',#}
-{#            async: false,#}
-{#            encoding:'utf-8',#}
-{#            data:{#}
-{#                'ajax_type' : '13',  //吐槽类型#}
-{#                'openid' : $("#user_message_openid").text()#}
-{#            },#}
-{#            beforeSend: function () {#}
-{#                alert('请求数据中...')#}
-{#            }, //加载执行方法#}
-{#            error: function () {#}
-{#                alert('数据请求异常')#}
-{#            },  //错误执行方法#}
-{#            success: function (ret) {#}
-{#                alert(ret.toString())#}
-{#                $('#fruit-name').text(ret.nickname);#}
-{#                $('#fruit-img').attr('src', ret.avatar);#}
-{#                $('#fruit-con').text(ret.con);#}
-{#                $('#fruit-widget').fadeIn(300)#}
-{#                        .on('tap', function () {#}
-{#                            $('#fruit-widget').fadeOut(300)#}
-{#                        })#}
-{#            }#}
-{#        })#}
-{#    })#}
-
     /********************
      * 一些函数
      * */
@@ -959,6 +896,84 @@
              $("#time-to-water").fadeOut(1000);
          }, 600000);
      }
+    function preventDefault(e) {
+        e = e || window.event;
+        e.preventDefault && e.preventDefault();
+        e.returnValue = false;
+    }
+    function stopPropagation(e){
+        e = e || window.event;
+        e.stopPropagation && e.stopPropagation();
+        e.cancelBubble = false;
+    }
+    function innerScroll(e){
+        // 阻止冒泡到document
+        stopPropagation(e);
+        var delta = e.wheelDelta || e.detail || 0;
+        var box = $(this).get(0);
+        if($(box).height() + box.scrollTop >= box.scrollHeight){
+            if(delta < 0) {
+                preventDefault(e);
+                return false;
+            }
+        }
+        if(box.scrollTop === 0){
+            if(delta > 0) {
+                preventDefault(e);
+                return false;
+            }
+        }
+    }
+    var disableScroll = function(){
+        $(document).on('mousewheel', preventDefault);
+        $(document).on('touchmove', preventDefault);
+    };
+    var enableScroll = function(){
+        $(document).off('mousewheel', preventDefault);
+        $(document).off('touchmove', preventDefault);
+    };
+
+    // 内部可滚
+    $('div .popupLayer').on('mousewheel', innerScroll);
+    // 外部禁用
+
+
+
+    // 移动端touch重写
+    var startX, startY;
+    $('div .popupLayer').on('touchstart', function(e){
+        startX = e.changedTouches[0].pageX;
+        startY = e.changedTouches[0].pageY;
+    });
+
+    // 仿innerScroll方法
+    $('div .popupLayer').on('touchmove', function(e){
+        e.stopPropagation();
+
+        var deltaX = e.changedTouches[0].pageX - startX;
+        var deltaY = e.changedTouches[0].pageY - startY;
+
+        // 只能纵向滚
+        if(Math.abs(deltaY) < Math.abs(deltaX)){
+            e.preventDefault();
+            return false;
+        }
+
+        var box = $(this).get(0);
+
+        if($(box).height() + box.scrollTop >= box.scrollHeight){
+            if(deltaY < 0) {
+                e.preventDefault();
+                return false;
+            }
+        }
+        if(box.scrollTop === 0){
+            if(deltaY > 0) {
+                e.preventDefault();
+                return false;
+            }
+        }
+    });
     })
 </script>
 </html>
