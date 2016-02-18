@@ -739,7 +739,9 @@
                     $('#black-mask').on('tap',function(){
                         $('#black-mask').fadeOut(200);
                         $('#rank-widget').hide()
+                        enableScroll();     //弹出框架消失，滚动允许
                     });
+                    disableScroll();
                 } //成功执行方法
             })
         }else{
@@ -748,7 +750,9 @@
             $('#black-mask').on('tap',function(){
                 $('#black-mask').fadeOut(200);
                 $('#rank-widget').hide()
+                enableScroll();     //弹出框架消失，滚动允许
             });
+            disableScroll();
         }
     });
 
