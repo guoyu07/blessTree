@@ -252,7 +252,12 @@ def visit(request):
         count_bar = count/3000
         tree_name = owner_db.tree_name
     except KeyError:
+        pass
+    try:
+        User.objects.get(openid=sourceid, is_plant=False)
         error = True
+    except ObjectDoesNotExist:
+        pass
 
     # ios系统返回按钮出现的bug的解决方法
     try:
