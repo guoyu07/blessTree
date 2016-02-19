@@ -223,7 +223,7 @@
                     <p id="history-tucao-name" style="font-size: 40%;color:grey;">名字</p>
                 </div>
                 <div style="float: left" class="pure-u-15-24">
-                    <a id="history-tucao-con" style="font-size: 70%;width: 100%;min-height:70px;height: auto">内容</a>
+                    <p id="history-tucao-con" style="font-size: 70%;width: 100%;min-height:70px;height: auto">内容</p>
                 </div>
                 <div style="float: left" class="pure-u-4-24">
                     <a id="history-tucao-time" style="float: right;font-size: 60%;color: grey">几天前</a>
@@ -432,7 +432,7 @@
                     $("#history-widget").show();
                     $("#history-tucao-list").hide();
                     $("#history-bless-list").show();
-                    disableScroll()
+{#                    disableScroll()#}
                 }
             })
         }else{
@@ -445,7 +445,7 @@
             $("#history-widget").show();
             $("#history-tucao-list").hide();
             $("#history-bless-list").show(300);
-            disableScroll()
+{#            disableScroll()#}
         }
 
     })
@@ -643,88 +643,87 @@
     $('#rand_bless_2').on('tap', function () {
         $("#bless-area").val($('#rand_bless_2').text())
     })
-
-    })
     //***************这里是下拉bug的修复*********************//
-    function preventDefault(e) {
-        e = e || window.event;
-        e.preventDefault && e.preventDefault();
-        e.returnValue = false;
-    }
-    function stopPropagation(e){
-        e = e || window.event;
-        e.stopPropagation && e.stopPropagation();
-        e.cancelBubble = false;
-    }
-    function innerScroll(e){
-        // 阻止冒泡到document
-        stopPropagation(e);
-        var delta = e.wheelDelta || e.detail || 0;
-        var box = $(this).get(0);
-        if($(box).height() + box.scrollTop >= box.scrollHeight){
-            if(delta < 0) {
-                preventDefault(e);
-                return false;
-            }
-        }
-        if(box.scrollTop === 0){
-            if(delta > 0) {
-                preventDefault(e);
-                return false;
-            }
-        }
-    }
-    var disableScroll = function(){
-        $(document).on('mousewheel', preventDefault);
-        $(document).on('touchmove', preventDefault);
-    };
-    var enableScroll = function(){
-        $(document).off('mousewheel', preventDefault);
-        $(document).off('touchmove', preventDefault);
-    };
-
-    // 内部可滚
-    $('.popupLayer').on('mousewheel', innerScroll);
-    // 外部禁用
-    disableScroll()
-
-
-
-    // 移动端touch重写
-    var startX, startY;
-    $('.popupLayer').on('touchstart', function(e){
-        startX = e.changedTouches[0].pageX;
-        startY = e.changedTouches[0].pageY;
-    });
-
-    // 仿innerScroll方法
-    $('.popupLayer').on('touchmove', function(e){
-        e.stopPropagation();
-
-        var deltaX = e.changedTouches[0].pageX - startX;
-        var deltaY = e.changedTouches[0].pageY - startY;
-
-        // 只能纵向滚
-        if(Math.abs(deltaY) < Math.abs(deltaX)){
-            e.preventDefault();
-            return false;
-        }
-
-        var box = $(this).get(0);
-
-        if($(box).height() + box.scrollTop >= box.scrollHeight){
-            if(deltaY < 0) {
-                e.preventDefault();
-                return false;
-            }
-        }
-        if(box.scrollTop === 0){
-            if(deltaY > 0) {
-                e.preventDefault();
-                return false;
-            }
-        }
-    });
+{#    function preventDefault(e) {#}
+{#        e = e || window.event;#}
+{#        e.preventDefault && e.preventDefault();#}
+{#        e.returnValue = false;#}
+{#    }#}
+{#    function stopPropagation(e){#}
+{#        e = e || window.event;#}
+{#        e.stopPropagation && e.stopPropagation();#}
+{#        e.cancelBubble = false;#}
+{#    }#}
+{#    function innerScroll(e){#}
+{#        // 阻止冒泡到document#}
+{#        stopPropagation(e);#}
+{#        var delta = e.wheelDelta || e.detail || 0;#}
+{#        var box = $(this).get(0);#}
+{#        if($(box).height() + box.scrollTop >= box.scrollHeight){#}
+{#            if(delta < 0) {#}
+{#                preventDefault(e);#}
+{#                return false;#}
+{#            }#}
+{#        }#}
+{#        if(box.scrollTop === 0){#}
+{#            if(delta > 0) {#}
+{#                preventDefault(e);#}
+{#                return false;#}
+{#            }#}
+{#        }#}
+{#    }#}
+{#    var disableScroll = function(){#}
+{#        $(document).on('mousewheel', preventDefault);#}
+{#        $(document).on('touchmove', preventDefault);#}
+{#    };#}
+{#    var enableScroll = function(){#}
+{#        $(document).off('mousewheel', preventDefault);#}
+{#        $(document).off('touchmove', preventDefault);#}
+{#    };#}
+{##}
+{#    // 内部可滚#}
+{#    $('.popupLayer').on('mousewheel', innerScroll);#}
+{#    // 外部禁用#}
+{#    disableScroll()#}
+{##}
+{##}
+{##}
+{#    // 移动端touch重写#}
+{#    var startX, startY;#}
+{#    $('.popupLayer').on('touchstart', function(e){#}
+{#        startX = e.changedTouches[0].pageX;#}
+{#        startY = e.changedTouches[0].pageY;#}
+{#    });#}
+{##}
+{#    // 仿innerScroll方法#}
+{#    $('.popupLayer').on('touchmove', function(e){#}
+{#        e.stopPropagation();#}
+{##}
+{#        var deltaX = e.changedTouches[0].pageX - startX;#}
+{#        var deltaY = e.changedTouches[0].pageY - startY;#}
+{##}
+{#        // 只能纵向滚#}
+{#        if(Math.abs(deltaY) < Math.abs(deltaX)){#}
+{#            e.preventDefault();#}
+{#            return false;#}
+{#        }#}
+{##}
+{#        var box = $(this).get(0);#}
+{##}
+{#        if($(box).height() + box.scrollTop >= box.scrollHeight){#}
+{#            if(deltaY < 0) {#}
+{#                e.preventDefault();#}
+{#                return false;#}
+{#            }#}
+{#        }#}
+{#        if(box.scrollTop === 0){#}
+{#            if(deltaY > 0) {#}
+{#                e.preventDefault();#}
+{#                return false;#}
+{#            }#}
+{#        }#}
+{#    });#}
+    })
 
     {% endif %}
 </script>
