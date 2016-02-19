@@ -790,8 +790,7 @@
                                 $('#history-bless-name').text(item.bless_nick)
                                 $("#history-bless-con").text(item.bless_con)
                                 $('#history-bless-time').text(item.bless_time)
-                                var bless_list = $("#history-bless-list-li").clone().show()
-                                bless_list.css('display', 'flex')
+                                var bless_list = $("#history-bless-list-li").clone().show().css('display','flex')
                                 $('#history-bless-list').append(bless_list)
                             })
                         }
