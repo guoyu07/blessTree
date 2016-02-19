@@ -178,7 +178,7 @@
             <li id="history-bless-list-na">
                <p>没有收到小伙伴的祝福哦，赶紧分享互动起来吧～</p>
             </li>
-            <li id="history-bless-list-li" style="display: none;height: auto">
+            <li id="history-bless-list-li" style="display: none;min-height:70px;height: auto">
                 <div style="float:left;"class="pure-u-5-24">
                     <img id="history-bless-avatar" src="{% static "tree/image/btn/friends.png" %}" style="width: 75%;padding-left: 5%;border-radius: 50%">
                     <p id="history-bless-name" style="font-size: 40%;color:grey;">名字</p>
@@ -196,7 +196,7 @@
             <li id="history-tucao-list-na">
                <p>没有收到小伙伴的吐槽哦，小编都妒忌了～</p>
             </li>
-            <li id="history-tucao-list-li" style="display: none;height: auto">
+            <li id="history-tucao-list-li" style="display: none;min-height:70px;height: auto">
                 <div style="float:left;"class="pure-u-5-24">
                     <img id="history-tucao-avatar" src="{% static "tree/image/btn/friends.png" %}" style="width: 75%;padding-left: 5%;border-radius: 50%">
                     <p id="history-tucao-name" style="font-size: 40%;color:grey;;">名字</p>
@@ -790,7 +790,7 @@
                                 $('#history-bless-name').text(item.bless_nick)
                                 $("#history-bless-con").text(item.bless_con)
                                 $('#history-bless-time').text(item.bless_time)
-                                var bless_list = $("#history-bless-list-li").css('display', 'inline-flex').clone().show()
+                                var bless_list = $("#history-bless-list-li").clone().show()
                                 $('#history-bless-list').append(bless_list)
                             })
                         }
